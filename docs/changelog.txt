@@ -14,6 +14,9 @@
 - Split icon graphics (in graphics/hud/icons/) further into their own sub-folders (ammo/ and invitems/).
 - Fixed the Dark Matter Cannon projectile spawning its trail even if sgd_spawntrails is 0.
 - Fixed a jump to the wrong offset in the Dark Matter Cannon projectile's Spawn state.
+- Rewrote readme.txt almost entirely.
+- Rearranged things in the main menu slightly.
+- Moved the "SGD Options" menu to the main menu.
 
 [13-09-2019] v1.0.2:
 - Fixed the Chaingunner's "burst fire" behavior when sgd_hitscanbehavior is set to 0.

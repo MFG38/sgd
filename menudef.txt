@@ -1,20 +1,22 @@
 ListMenu "MainMenu"
 {
-	Position 97, 74
+	Position 95, 72
 	PatchItem "M_NGAME" ,"n", "EpisodeMenu"
+	TextItem "$SGD_MENU_HOWTOPLAY", "i", "ReadThisMenu"
 	IfOption(SwapMenu)
 	{
 		PatchItem "M_LOADG", "l", "LoadGameMenu"
 		PatchItem "M_SAVEG", "s", "SaveGameMenu"
 		PatchItem "M_OPTION", "o", "OptionsMenu"
+		TextItem "$SGD_MENU_MODSETUP", "", "SGD_Setup"
 	}
 	Else
 	{
 		PatchItem "M_OPTION", "o", "OptionsMenu"
+		TextItem "$SGD_MENU_MODSETUP", "", "SGD_Setup"
 		PatchItem "M_LOADG", "l", "LoadGameMenu"
 		PatchItem "M_SAVEG", "s", "SaveGameMenu"
 	}
-	PatchItem "M_RDTHIS", "i", "ReadThisMenu"
 	PatchItem "M_QUITG", "q", "QuitMenu"
 }
 
@@ -71,8 +73,8 @@ OptionValue "TracerBehavior"
 	1, "SGD-style"
 }
 
-AddOptionMenu "OptionsMenu"
+/* AddOptionMenu "OptionsMenu"
 {
 	StaticText ""
 	Submenu "SGD Options", "SGD_Setup"
-}
+} */
