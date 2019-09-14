@@ -1,6 +1,6 @@
 [enu default]
 
-SGD_VERSIONNUM = "v1.1";
+SGD_VERSIONNUM = "v1.1-pre";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
