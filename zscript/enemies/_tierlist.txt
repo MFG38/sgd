@@ -20,7 +20,7 @@ Tier 3: 40 finisher tokens
 	Pain Elementals
 	Mancubi
 
-Tier 4: 60 finisher tokens
+Tier 4: 65 finisher tokens
 	Arachnotrons
 	Arch-Viles
 
