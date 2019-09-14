@@ -39,19 +39,17 @@ other IWADs is neither guaranteed nor planned.
 	into a folder of your choice. You may also extract any of the .txt files
 	if you wish, but they are not necessary for running the mod.
 2.	Click on and drag sgd_*.pk3 over gzdoom.exe or use your launcher of choice
-	to run the mod. Using a launcher is highly recommended if you want to run
-	other mods alongside SGD.
+	to run the mod. If you want to load sgd_*.pk3 alongside other PWADs, using
+	a launcher is highly recommended.
 
-3.2 If you downloaded a ZIP from GitHub:
-----------------------------------------
-1.	Open sgd_master.zip with your archive manager of choice and extract the
-	contents of sgd_master/ within the ZIP to a folder of your choice. NOTE:
-	If you're using IZArc or a similar program that has an option to restore
-	the original folders, make sure that it's enabled.
-2.	With the content of the ZIP extracted, create a new ZIP archive and import
-	ALL contents of the folder that was within sgd_master/ into it.
-3*.	Open the new ZIP archive in SLADE3 (or another program that allows saving
+3.2 If you downloaded a ZIP of the source from GitHub:
+------------------------------------------------------
+1.	Move sgd_master.zip to your folder of choice. DO NOT UNZIP THE ARCHIVE.
+2*.	Open sgd_master.zip in SLADE3 (or another program that allows saving
 	archives in .pk3 format) and save it in .pk3 format.
+3.	Click on and drag sgd_master.zip over gzdoom.exe or use your launcher of
+	choice to run the mod. If you want to load sgd_*.pk3 alongside other PWADs,
+	using a launcher is highly recommended.
 
 	* This step is optional - GZDoom is capable of running normal .zip archives
 	  in place of .pk3 archives, as long as they follow the PK3 structure. See
