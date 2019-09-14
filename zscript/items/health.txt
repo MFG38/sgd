@@ -1,0 +1,39 @@
+class SGDHealthBonus : HealthBonus replaces HealthBonus
+{
+	Default
+	{
+		Inventory.PickupMessage "$SGD_ART_HEALTHBONUS";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+		-INVENTORY.ALWAYSPICKUP;
+	}
+}
+
+class SGDStimpack : Stimpack replaces Stimpack
+{
+	Default { Inventory.PickupMessage "$SGD_ITEM_STIMPACK"; Inventory.ForbiddenTo "DemonizedPlayer"; }
+}
+
+class SGDStimpackAlt : SGDStimpack
+{
+	Default { Inventory.Amount 5; Inventory.PickupMessage "$SGD_ITEM_STIMPACKALT"; }
+}
+
+class SGDMedikit : Medikit replaces Medikit
+{
+	Default
+	{
+		Inventory.PickupMessage "$SGD_ITEM_MEDIKIT";
+		Health.LowMessage 25,"$SGD_ITEM_MEDIKIT";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class SGDMedikitAlt : SGDMedikit
+{
+	Default
+	{
+		Inventory.Amount 15;
+		Inventory.PickupMessage "$SGD_ITEM_MEDIKITALT";
+		Health.LowMessage 25,"$SGD_ITEM_MEDIKITALT";
+	}
+}

@@ -1,0 +1,78 @@
+ListMenu "MainMenu"
+{
+	Position 97, 74
+	PatchItem "M_NGAME" ,"n", "EpisodeMenu"
+	IfOption(SwapMenu)
+	{
+		PatchItem "M_LOADG", "l", "LoadGameMenu"
+		PatchItem "M_SAVEG", "s", "SaveGameMenu"
+		PatchItem "M_OPTION", "o", "OptionsMenu"
+	}
+	Else
+	{
+		PatchItem "M_OPTION", "o", "OptionsMenu"
+		PatchItem "M_LOADG", "l", "LoadGameMenu"
+		PatchItem "M_SAVEG", "s", "SaveGameMenu"
+	}
+	PatchItem "M_RDTHIS", "i", "ReadThisMenu"
+	PatchItem "M_QUITG", "q", "QuitMenu"
+}
+
+OptionMenu "SGD_Setup"
+{
+	Title "SGD Options"
+	StaticText "Options marked with (*) will only take effect", "Gold"
+	StaticText "when either a new game is started or the current", "Gold"
+	StaticText "map is restarted.", "Gold"
+	StaticText ""
+	StaticText "Visuals", "White"
+	Option "Spawn projectile trails (*)", "sgd_spawntrails", "OnOff"
+	StaticText "(Does not affect bullet trails)", "Red"
+	Option "Fancy teleport effect", "sgd_fancyteleport", "OnOff"
+	StaticText ""
+	StaticText "HUD", "White"
+	Option "Display finisher bar", "sgd_displayfbar", "OnOff"
+	Option "Finisher message type", "sgd_finisherprompt", "FinisherPrompt"
+	Option "Display hazmat timer", "sgd_displayhsbar", "OnOff"
+	Slider "Low health screen flash intensity", "sgd_lowhpflash", 0.00, 0.25, 0.05, 2
+	StaticText ""
+	StaticText "Sounds", "White"
+	Option "Field Med Pack use sound", "sgd_fieldmedsound", "OnOff"
+	Option "Hazmat Suit warning sound", "sgd_hswarningsound", "OnOff"
+	StaticText ""
+	StaticText "Enemy behavior", "White"
+	Option "Enemy spawn behavior (*)", "sgd_spawnbehavior", "SpawnBehavior"
+	Option "Bullet attack type", "sgd_hitscanbehavior", "HitscanBehavior"
+	Option "Revenant rocket type", "sgd_revrocketbehavior", "TracerBehavior"
+}
+
+OptionValue "FinisherPrompt"
+{
+	0, "Off"
+	1, "No button prompt"
+	2, "Full"
+}
+
+OptionValue "SpawnBehavior"
+{
+	0, "Stand still"
+	1, "Wander"
+}
+
+OptionValue "HitscanBehavior"
+{
+	0, "Hitscan"
+	1, "Projectile"
+}
+
+OptionValue "TracerBehavior"
+{
+	0, "Original"
+	1, "SGD-style"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+	StaticText ""
+	Submenu "SGD Options", "SGD_Setup"
+}

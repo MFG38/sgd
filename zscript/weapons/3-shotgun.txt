@@ -1,0 +1,174 @@
+class SGDShotgun : SGDWeapon replaces Shotgun
+{
+	Default
+	{
+		Weapon.SlotNumber 3;
+		Weapon.SelectionOrder 280;
+		Weapon.AmmoType "ShellAmmo";
+		Weapon.AmmoGive 10;
+		Weapon.AmmoUse 1;
+		Tag "$SGD_WEP_SHOTGUN";
+		Inventory.PickupMessage "$SGD_WEP_SHOTGUN";
+	}
+
+	States
+	{
+	Spawn:
+		DNSP A -1;
+		Stop;
+	Select:
+		TNT1 AAA 0 A_Raise;
+		DNSG A 1 A_Raise;
+		Goto Select+2;
+	Deselect:
+		TNT1 AAA 0 A_Lower;
+		DNSG A 1 A_Lower;
+		Goto Deselect+2;
+	Ready:
+		DNSG A 0;
+		Goto ReadyLoop;
+	Fire:
+		DNSG A 3;
+		DNSG B 1 A_ShotgunFire;
+		DNSG CDEDCB 1 bright;
+		DNSG A 3;
+		DNSG FGH 1;
+		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG JKLKJI 2;
+		DNSG HGF 1;
+		DNSG A 7 A_ReFire;
+		Goto ReadyLoop;
+	FinisherFail:
+		DNSG A 0;
+		Goto ReadyLoop;
+	Finisher1:
+		DNSG A 3 ACS_NamedExecute("InitFinisher",0,0);
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG A 3;
+		DNSG FGH 1;
+		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG JKLKJI 2;
+		DNSG HGF 1;
+		DNSG A 7 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher2:
+		DNSG A 3 ACS_NamedExecute("InitFinisher",0,0);
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG A 3;
+		DNSG FGH 1;
+		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG JKLKJI 2;
+		DNSG HGF 1;
+		DNSG A 7 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher3:
+		DNSG A 3 ACS_NamedExecute("InitFinisher",0,0);
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG B 1 A_ShotgunFinisher;
+		DNSG CDEDCB 1 bright;
+		DNSG A 3;
+		DNSG FGH 1;
+		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG JKLKJI 2;
+		DNSG HGF 1;
+		DNSG A 7 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	}
+}
+
+extend class SGDShotgun
+{
+	action void A_ShotgunFire()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_PlaySound("DukeShotgun/fire",CHAN_WEAPON);
+
+		for(int i = 0; i < 12; i++)
+		{
+			int dmg = random(14,18);
+			int range;
+			double xspread;
+			double yspread;
+			
+			if(FindInventory("Shotgun_Range"))
+			{
+				range = 384;
+			}
+			else
+			{
+				range = 288;
+			}
+			
+			if(FindInventory("Shotgun_Cone"))
+			{
+				xspread = angle + random2() * (11.25 / 256);
+				yspread = pitch + random2() * (8.65 / 256);
+			}
+			else
+			{
+				xspread = angle + random2() * (16.65 / 256);
+				yspread = pitch + random2() * (13.5 / 256);
+			}
+			
+			LineAttack(xspread,range,yspread,dmg,'Normal',"BulletPuff");
+		}
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_ShotgunFinisher()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_PlaySound("DukeShotgun/fire",CHAN_WEAPON);
+
+		for(int i = 0; i < 16; i++)
+		{
+			int dmg = 20;
+			double xspread = angle + random2() * (21.75 / 256);
+			double yspread = pitch + random2() * (6.875 / 256);
+			
+			LineAttack(xspread,512,yspread,dmg,'Normal',"BulletPuff");
+		}
+		ACS_NamedExecute("FeatTracker",0);
+	}
+}

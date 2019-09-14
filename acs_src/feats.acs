@@ -1,0 +1,192 @@
+#library "feats"
+#include "zcommon.acs"
+#include "miscdef.acs"
+
+#define		TOTAL_FEATS		39
+//#define	NUM_ENEMIES		17
+#define 	NUM_UPGRADES	13
+
+str Feats[TOTAL_FEATS] =
+	// Rifle accuracy
+	{"75 zombiemen","50 imps","50 cacodemons",
+	// Rifle fire rate
+	"150 zombiemen","100 imps","50 pinkies",
+	// Shotgun cone
+	"125 shotgunners","100 pinkies","150 lost souls",
+	// Shotgun range
+	"200 shotgunners","125 imps","125 pinkies",
+	// SSG recoil
+	"75 spectres","100 cacodemons","75 hell knights",
+	// SSG reload speed
+	"125 spectres","150 cacodemons","50 archviles",
+	// Minigun accuracy
+	"50 chaingunners","50 hell knights","25 barons",
+	// Minigun windup
+	"100 chaingunners","100 hell knights","75 barons",
+	// Bazooka fire rate
+	"100 barons","150 revenants","100 mancubi",
+	// Bazooka recoil
+	"50 arch-viles","100 revenants","75 arachnotrons",
+	// Argent Rifle cooldown
+	"10 Spider Masterminds","10 Cyberdemons","100 pain elementals",
+	// Flamethrower flame linger
+	"25 arch-viles","75 mancubi","50 arachnotrons",
+	// Chainsaw damage
+	"200 chaingunners","75 spectres","75 pain elementals"};
+
+global int 1:FeatStatus[]; /*=
+	// Indices 0-9
+	{0,0,0,0,0,0,0,0,0,0,
+	// Indices 10-19
+	0,0,0,0,0,0,0,0,0,0,
+	// Indices 20-29
+	0,0,0,0,0,0,0,0,0,0,
+	// Indices 30-38
+	0,0,0,0,0,0,0,0,0}; */
+
+str Rewards[NUM_UPGRADES] =
+	{"Rifle_Accuracy","Rifle_FireRate","Shotgun_Cone","Shotgun_Range","SSG_Recoil","SSG_Reload",
+	"Minigun_Accuracy","Minigun_Windup","Bazooka_FireRate","Bazooka_Recoil","ArgentRifle_Cooldown",
+	"Flamethrower_FlameLinger","Chainsaw_Damage"};
+
+/* str TokenCheck[NUM_ENEMIES] =
+	{"ZombiemenKilled","ShotgunnersKilled","ChaingunnersKilled","ImpsKilled",
+	"LostSoulsKilled","PinkiesKilled","SpectresKilled","CacodemonsKilled",
+	"PainElementalsKilled","HellKnightsKilled","BaronsKilled","RevenantsKilled",
+	"ArachnotronsKilled","MancubiKilled","ArchvilesKilled",
+	"CyberdemonsKilled","SpiderMastermindsKilled"};
+int AmountCheck; */
+
+str UpgradeName[NUM_UPGRADES] =
+	// Rifle
+	{"Rifle accuracy increase","Rifle fire rate increase",
+	// Shotgun
+	"Shotgun spread reduction","Shotgun range increase",
+	// SSG
+	"Double-Barrel Shotgun recoil reduction","Double-Barrel Shotgun reload speed increase",
+	// Minigun
+	"Minigun accuracy increase","Minigun windup time reduction",
+	// Bazooka
+	"Bazooka fire rate increase","Bazooka recoil reduction",
+	// Argent Rifle
+	"Argent Rifle faster cooldown",
+	// Flamethrower
+	"Flamethrower flame linger",
+	// Chainsaw
+	"Chainsaw damage increase"};
+
+bool FeatInProgress = false;
+
+function void DisplayFeatMsg (int index)
+{
+	SetHudSize(HUDSIZE_X,HUDSIZE_Y,0);
+		
+	SetFont("BIGFONT");
+	HudMessage(s:"FEAT ACCOMPLISHED: ",s:Feats[index],s:" killed";
+		HUDMSG_TYPEON,200,CR_RED,CENTER_X,45.0,4.0,FRAME,2.0);
+}
+
+function void GiveFeatReward (int index)
+{	
+	SetHudSize(HUDSIZE_X,HUDSIZE_Y,0);
+	if(!CheckActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index]))
+	{
+		SetFont("SMALLFONT");
+		HudMessage(s:"Upgrade awarded: ",s:UpgradeName[index];
+			HUDMSG_TYPEON,201,CR_RED,CENTER_X,75.0,4.0,FRAME,2.0);
+	}
+	else
+	{
+		SetFont("SMALLFONT");
+		HudMessage(s:"Upgrade already awarded: ",s:UpgradeName[index];
+			HUDMSG_TYPEON,201,CR_RED,CENTER_X,75.0,4.0,FRAME,2.0);
+	}
+	
+	if(!CheckActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index]))
+	{
+		GiveActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index],1);
+	}
+}
+
+function bool CheckForFeatCompletion (int index, str tokencheck, int amountcheck)
+{
+	if(CheckActorInventory(PL_TIDSTART+PlayerNumber(),tokencheck) >= amountcheck && FeatStatus[index] == 0)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+script "FeatRewarder" (int featindex, int rewardindex)
+{
+	FeatInProgress = true;
+	FeatStatus[featindex] = 1;
+	DisplayFeatMsg(featindex);
+	GiveFeatReward(rewardindex);
+	
+	if(GetCVar("sgd_debugmode") == true)
+	{
+		Log(s:"You got mail!");
+	}
+	
+	Delay(4*SEC);
+	FeatInProgress = false;
+}
+
+script "FeatTracker" (void)
+// Tried having this run as an ENTER script, but interestingly, that broke the entire script...
+{
+	// Rifle accuracy
+	if(CheckForFeatCompletion(0,"ZombiemenKilled",75)) { ACS_NamedExecute("FeatRewarder",0,0,0); }
+	if(CheckForFeatCompletion(1,"ImpsKilled",50)) { ACS_NamedExecute("FeatRewarder",0,1,0); }
+	if(CheckForFeatCompletion(2,"CacodemonsKilled",50)) { ACS_NamedExecute("FeatRewarder",0,2,0); }
+	// Rifle fire rate
+	if(CheckForFeatCompletion(3,"ZombiemenKilled",150)) { ACS_NamedExecute("FeatRewarder",0,3,1); }
+	if(CheckForFeatCompletion(4,"ImpsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,4,1); }
+	if(CheckForFeatCompletion(5,"PinkiesKilled",50)) { ACS_NamedExecute("FeatRewarder",0,5,1); }
+	// Shotgun cone
+	if(CheckForFeatCompletion(6,"ShotgunnersKilled",125)) { ACS_NamedExecute("FeatRewarder",0,6,2); }
+	if(CheckForFeatCompletion(7,"PinkiesKilled",100)) { ACS_NamedExecute("FeatRewarder",0,7,2); }
+	if(CheckForFeatCompletion(8,"LostSoulsKilled",150)) { ACS_NamedExecute("FeatRewarder",0,8,2); }
+	// Shotgun range
+	if(CheckForFeatCompletion(9,"ShotgunnersKilled",200)) { ACS_NamedExecute("FeatRewarder",0,9,3); }
+	if(CheckForFeatCompletion(10,"ImpsKilled",125)) { ACS_NamedExecute("FeatRewarder",0,10,3); }
+	if(CheckForFeatCompletion(11,"PinkiesKilled",125)) { ACS_NamedExecute("FeatRewarder",0,11,3); }
+	// SSG recoil
+	if(CheckForFeatCompletion(12,"SpectresKilled",75)) { ACS_NamedExecute("FeatRewarder",0,12,4); }
+	if(CheckForFeatCompletion(13,"CacodemonsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,13,4); }
+	if(CheckForFeatCompletion(14,"HellKnightsKilled",75)) { ACS_NamedExecute("FeatRewarder",0,14,4); }
+	// SSG reload speed
+	if(CheckForFeatCompletion(15,"SpectresKilled",125)) { ACS_NamedExecute("FeatRewarder",0,15,5); }
+	if(CheckForFeatCompletion(16,"CacodemonsKilled",150)) { ACS_NamedExecute("FeatRewarder",0,16,5); }
+	if(CheckForFeatCompletion(17,"ArchvilesKilled",50)) { ACS_NamedExecute("FeatRewarder",0,17,5); }
+	// Minigun accuracy
+	if(CheckForFeatCompletion(18,"ChaingunnersKilled",50)) { ACS_NamedExecute("FeatRewarder",0,18,6); }
+	if(CheckForFeatCompletion(19,"HellKnightsKilled",50)) { ACS_NamedExecute("FeatRewarder",0,19,6); }
+	if(CheckForFeatCompletion(20,"BaronsKilled",25)) { ACS_NamedExecute("FeatRewarder",0,20,6); }
+	// Minigun windup
+	if(CheckForFeatCompletion(21,"ChaingunnersKilled",100)) { ACS_NamedExecute("FeatRewarder",0,21,7); }
+	if(CheckForFeatCompletion(22,"HellKnightsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,22,7); }
+	if(CheckForFeatCompletion(23,"BaronsKilled",75)) { ACS_NamedExecute("FeatRewarder",0,23,7); }
+	// Bazooka fire rate
+	if(CheckForFeatCompletion(24,"BaronsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,24,8); }
+	if(CheckForFeatCompletion(25,"RevenantsKilled",150)) { ACS_NamedExecute("FeatRewarder",0,25,8); }
+	if(CheckForFeatCompletion(26,"MancubiKilled",100)) { ACS_NamedExecute("FeatRewarder",0,26,8); }
+	// Bazooka recoil
+	if(CheckForFeatCompletion(27,"ArchvilesKilled",50)) { ACS_NamedExecute("FeatRewarder",0,27,9); }
+	if(CheckForFeatCompletion(28,"RevenantsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,28,9); }
+	if(CheckForFeatCompletion(29,"ArachnotronsKilled",75)) { ACS_NamedExecute("FeatRewarder",0,29,9); }
+	// Argent Rifle cooldown
+	if(CheckForFeatCompletion(30,"SpiderMastermindsKilled",10)) { ACS_NamedExecute("FeatRewarder",0,30,10); }
+	if(CheckForFeatCompletion(31,"CyberdemonsKilled",10)) { ACS_NamedExecute("FeatRewarder",0,31,10); }
+	if(CheckForFeatCompletion(32,"PainElementalsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,32,10); }
+	// Flamethrower flame linger
+	if(CheckForFeatCompletion(33,"ArchvilesKilled",50)) { ACS_NamedExecute("FeatRewarder",0,33,11); }
+	if(CheckForFeatCompletion(34,"MancubiKilled",75)) { ACS_NamedExecute("FeatRewarder",0,34,11); }
+	if(CheckForFeatCompletion(35,"ArachnotronsKilled",50)) { ACS_NamedExecute("FeatRewarder",0,35,11); }
+	// Chainsaw damage
+	if(CheckForFeatCompletion(36,"ChaingunnersKilled",200)) { ACS_NamedExecute("FeatRewarder",0,36,12); }
+	if(CheckForFeatCompletion(37,"SpectresKilled",75)) { ACS_NamedExecute("FeatRewarder",0,37,12); }
+	if(CheckForFeatCompletion(38,"PainElementalsKilled",75)) { ACS_NamedExecute("FeatRewarder",0,38,12); }
+}

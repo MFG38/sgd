@@ -1,0 +1,2 @@
+This folder is for the compiled ACS libraries. The uncompiled scripts
+are in acs_src/ if you want to take a look at them.

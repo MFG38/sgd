@@ -1,0 +1,20 @@
+user noarchive bool sgd_debugmode = false;
+
+// HUD stuff
+user int sgd_finisherprompt = 2;		// 0 = Off, 1 = No button prompt, 2 = Full
+user bool sgd_displayfbar = true;
+user float sgd_lowhpflash = 0.25;
+user bool sgd_displayhsbar = true;
+
+// Visual stuff
+server bool sgd_spawntrails = true;
+server bool sgd_fancyteleport = true;
+
+// Enemy stuff
+server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
+server int sgd_hitscanbehavior = 1;		// 0 = Hitscan, 1 = Projectile
+server int sgd_revrocketbehavior = 1;	// 0 = Original, 1 = SGD-style
+
+// Sound stuff
+user bool sgd_fieldmedsound = true;
+user bool sgd_hswarningsound = true;

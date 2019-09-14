@@ -1,0 +1,29 @@
+Tier 0: 8 finisher tokens
+	Zombiemen
+	Shotgunners
+	Lost Souls
+
+Tier 1: 12 finisher tokens
+	Chaingunners
+	Imps
+	Pinkies
+	Spectres
+	Wolfenstein SS
+
+Tier 2: 25 finisher tokens
+	Revenants
+	Cacodemons
+	Hell Knights
+
+Tier 3: 40 finisher tokens
+	Barons
+	Pain Elementals
+	Mancubi
+
+Tier 4: 60 finisher tokens
+	Arachnotrons
+	Arch-Viles
+
+Tier 5: 100 finisher tokens
+	Cyberdemons
+	Spider Masterminds

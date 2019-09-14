@@ -1,0 +1,65 @@
+[??-??-????] v1.1:
+- Removed weakness against Holy Water from zombies.
+- Fixed a harmless but annoying typo in the sgdcore ACS script.
+- Modified skill 6:
+	* Health and armor pickups give normal amounts instead of 75%.
+	* Stimpacks and medikits have replacements that give 5 HP and 15 HP respectively.
+	* Field Med Pack functions normally without the 99 HP bug in some situations.
+	* Megasphere has a replacement that grants 100 health and armor instead of 200.
+- Implemented additional OpenGL lighting effects.
+- Implemented custom damage type and color translation for the Flamethrower projectiles.
+- Implemented 25% damage resistance against Fire damage for the Lost Soul.
+- Renamed all existing OpenGL light definitions (added "L_" prefix).
+- Fixed the Argent Rifle overheating faster on skills 1 and 6.
+- Split icon graphics (in graphics/hud/icons/) further into their own sub-folders (ammo/ and invitems/).
+- Fixed the Dark Matter Cannon projectile spawning its trail even if sgd_spawntrails is 0.
+- Fixed a jump to the wrong offset in the Dark Matter Cannon projectile's Spawn state.
+
+[13-09-2019] v1.0.2:
+- Fixed the Chaingunner's "burst fire" behavior when sgd_hitscanbehavior is set to 0.
+- Fixed weapons picked up while in demonized form not being added to player's inventory.
+
+[12-09-2019] v1.0.1:
+- Fixed Hazmat Suit not getting removed upon exiting a level.
+- Added some clarification to sgd_lowhpflash in the "SGD Options" menu.
+- Increased the Argent Rifle's Level 3 finisher's speed from 50 to 55.
+- Increased the Argent Rifle's Level 3 finisher's damage from random(4,8)*3 to random(5,8)*3.
+- Reduced the volume of the Hazmat Suit warning sound.
+
+[10-09-2019] v1.0:
+- Implemented a screen flash with modifiable intensity for when a player's health drops below 20.
+- Increased number of simultaneous bullets fired by the Minigun's Level 3 finisher from 5 to 6.
+- Truncated the Arachnotron's AltSpawn state code.
+- Implemented custom radiation suit with togglable timer and warning sound.
+- Increased the amount of finisher tokens granted by each enemy type.
+- Moved changelog.txt, credits.txt and readme.txt into their own folder (docs/).
+- Added a sound for the Field Med Pack that plays upon use (togglable via a cvar).
+- Rearranged options in the "SGD Options" menu.
+
+[26-08-2019] Beta v0.9.3:
+- Implemented different blood colors for Cacodemons (blue) and Hell Knights/Barons (green).
+- Fixed a typo in the FeatTracker script.
+- Removed an unnecessary line in the readme.
+
+[16-08-2019] Beta v0.9.2:
+- Fixed the Bazooka's homing missiles.
+- Made the Dark Matter Cannon's projectile move with moving sectors upon spawning the black hole.
+- Removed stuff related to the unused finisher ready sound.
+- Implemented new teleport effect and a cvar to toggle it.
+- Slightly reduced the strength of the tint caused by the Holy Water Grenade.
+
+[12-08-2019] Beta v0.9.1:
+- Disabled demonized player from picking up most items.
+- Fixed health bonus displaying the wrong message upon being picked up.
+- Added an option for Revenant rockets to behave vanilla-style.
+- Implemented morph effect for Demonizer powerup.
+- Implemented particle effect for Holy Water Grenade.
+- Fixed player not being immune to holy water.
+- Reworked ammo icons.
+- Added notification related to sgd_spawntrails in the SGD Options menu.
+- Added sound for Holy Water Grenade explosion.
+- Fixed Dark Matter Cannon giving 2 ammo upon being picked up on skills 1 and 6.
+- Added a scaling thrust to the Fist's finisher function.
+
+[10-08-2019] Beta v0.9:
+- First public release.

@@ -1,0 +1,31 @@
+class FieldMedPack : CustomInventory replaces Berserk
+{
+	Default
+	{
+		Inventory.Amount 100;
+		Inventory.MaxAmount 100;
+		Inventory.PickupMessage "$SGD_PU_FIELDMED";
+		Inventory.Icon "ICON_FMP";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+		+INVENTORY.INVBAR;
+		+INVENTORY.UNDROPPABLE;
+		//+INVENTORY.IGNORESKILL;
+	}
+
+	States
+	{
+	Spawn:
+		MBPK A -1;
+		Stop;
+	Use:
+		TNT1 A 0
+		{
+			if(CVar.FindCVar('sgd_fieldmedsound').GetBool() == true)
+			{
+				A_PlaySound("fieldmed/use",CHAN_BODY);
+			}
+			ACS_NamedExecute("FieldMedHeal",0);
+		}
+		Fail;
+	}
+}

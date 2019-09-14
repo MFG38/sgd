@@ -1,0 +1,47 @@
+class ArgentRifleOrDMCSpawner : RandomSpawner replaces BFG9000
+{
+	Default
+	{
+		DropItem "SGDArgentRifle";
+		DropItem "SGDDarkMatterCannon";
+	}
+}
+
+class RandomAmmoSpawner : RandomSpawner replaces Backpack
+{
+	Default
+	{
+		DropItem "RifleMag";
+		DropItem "HandfulOfShells";
+		DropItem "BoxOfShells";
+		DropItem "MinigunBulletBox";
+		DropItem "LonelyRocket";
+		DropItem "PileOfRockets";
+		DropItem "GasCanister";
+		DropItem "GasTank";
+		DropItem "DarkMatterCell";
+	}
+}
+
+class FinisherInvul : PowerInvulnerable
+{
+	Default
+	{
+		Powerup.Duration 0x7FFFFFFD;
+	}
+}
+
+/* class DemonizerTransTestDummy : Actor
+{
+	Default
+	{
+		Translation "DemonizerTrans";
+	}
+	
+	States
+	{
+	Spawn:
+		PLAY A -1;
+		Stop;
+	}
+} */

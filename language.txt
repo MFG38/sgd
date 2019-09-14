@@ -1,0 +1,64 @@
+[enu default]
+
+SGD_VERSIONNUM = "v1.1";
+
+SGD_SKILL_VERYEASY = "Slayer in Training";
+SGD_SKILL_EASY = "Fresh Graduate";
+SGD_SKILL_MEDIUM = "Been There, Done That";
+SGD_SKILL_HARD = "Hell Veteran";
+SGD_SKILL_VERYHARD = "Advanced Slayer";
+SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
+
+SGD_WEP_FIST = "Fist";
+SGD_WEP_RIFLE = "Rifle";
+SGD_WEP_SHOTGUN = "Shotgun";
+SGD_WEP_SSG = "Double-Barrel Shotgun";
+SGD_WEP_MINIGUN = "Minigun";
+SGD_WEP_BAZOOKA = "Bazooka";
+SGD_WEP_ARGENTRIFLE = "Argent Rifle";
+SGD_WEP_FLAMETHROWER = "Flamethrower";
+SGD_WEP_DMCANNON = "Dark Matter Cannon";
+SGD_WEP_CHAINSAW = "Chainsaw";
+
+SGD_AMMO_RIFLEAMMO = "Rifle magazine (+8 Rifle ammo)";
+SGD_AMMO_SHELLAMMO = "Handful of shells (+4 Shotgun ammo)";
+SGD_AMMO_SHELLAMMOBIG = "Shell box (+16 Shotgun ammo)";
+SGD_AMMO_MGAMMO = "Bullet box (+100 Minigun ammo)";
+SGD_AMMO_BAZOOKAAMMO = "Rocket (+1 Bazooka ammo)";
+SGD_AMMO_BAZOOKAAMMOBIG = "Pile of rockets (+3 Bazooka ammo)";
+SGD_AMMO_GASAMMO = "Gas canister (+30 Flamethrower ammo)";
+SGD_AMMO_GASAMMOBIG = "Gas tank (+120 Flamethrower ammo)";
+SGD_AMMO_DMCAMMO = "Dark matter cell (+1 Dark Matter Cannon ammo)";
+
+SGD_ITEM_STIMPACK = "Stimpack (+10 health)";
+SGD_ITEM_MEDIKIT = "Medikit (+25 health)";
+SGD_ITEM_STIMPACKALT = "Stimpack (+5 health)";
+SGD_ITEM_MEDIKITALT = "Medikit (+15 health)";
+SGD_ITEM_GREENARMOR = "Security vest (+100 armor)";
+SGD_ITEM_BLUEARMOR = "Combat armor (+200 armor)";
+
+SGD_ART_HEALTHBONUS = "Health bonus (+1 health)";
+SGD_ART_ARMORBONUS = "Armor bonus (+1 armor)";
+SGD_ART_SOULSPHERE = "Soulsphere (+100 health)";
+SGD_ART_MEGASPHERE = "Megasphere (+200 health and armor)";
+SGD_ART_MEGASPHEREALT = "Megasphere (+100 health and armor)";
+
+SGD_PU_FIELDMED =
+	"Field Med Pack - A portable chunk of health, ready to go in a pinch.\n"
+	"Press the 'Use Powerup' button to use.";
+SGD_PU_HWGRENADE =
+	"Holy Water Grenade - It's a grenade. Effective against zombies.\n"
+	"Press the 'Use Powerup' button to use.";
+SGD_PU_DEMONIZER =
+	"Demonizer - Turn into an unstoppable killing machine for a minute!\n"
+	"Press the 'Use Powerup' button to activate.";
+SGD_PU_RADSUIT =
+	"Hazmat suit - Lets you traverse toxic waste safely.\n"
+	"Press the 'Use Powerup' button to activate.";
+	
+GOTBLUECARD = "Blue keycard";
+GOTYELWCARD = "Yellow keycard";
+GOTREDCARD = "Red keycard";
+GOTBLUESKUL = "Blue skull key";
+GOTYELWSKUL = "Yellow skull key";
+GOTREDSKUL = "Red skull key";

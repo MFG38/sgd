@@ -1,0 +1,48 @@
+// This essentially acts as only a list of the weapon upgrades, hence there's no code other
+// than the actor definitions. The actual code for how the upgrades act is in the code for
+// the weapons themselves - look into those if you wish to find out how the upgrades work.
+
+class Rifle_Accuracy : WeaponUpgrade {}
+class Rifle_FireRate : WeaponUpgrade {}
+
+class Shotgun_Cone : WeaponUpgrade {}
+class Shotgun_Range : WeaponUpgrade {}
+
+class SSG_Recoil : WeaponUpgrade {}
+class SSG_ReloadSpeed : WeaponUpgrade {}
+
+class Minigun_Accuracy : WeaponUpgrade {}
+class Minigun_Windup : WeaponUpgrade {}
+
+class Bazooka_FireRate : WeaponUpgrade {}
+class Bazooka_Recoil : WeaponUpgrade {}
+
+class ArgentRifle_Cooldown : WeaponUpgrade {}
+
+class Flamethrower_FlameLinger : WeaponUpgrade {}
+
+class Chainsaw_Damage : WeaponUpgrade {}
+
+class AllUpgrades : CustomInventory
+// A shortcut item that gives all the weapon upgrades. Made simply for testing purposes. If you
+// want to have fun, just type 'give AllUpgrades' in the console. I ain't stopping ya.
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0 A_GiveInventory("Rifle_Accuracy");
+		TNT1 A 0 A_GiveInventory("Rifle_FireRate");
+		TNT1 A 0 A_GiveInventory("Shotgun_Cone");
+		TNT1 A 0 A_GiveInventory("Shotgun_Range");
+		TNT1 A 0 A_GiveInventory("SSG_Recoil");
+		TNT1 A 0 A_GiveInventory("SSG_ReloadSpeed");
+		TNT1 A 0 A_GiveInventory("Minigun_Accuracy");
+		TNT1 A 0 A_GiveInventory("Minigun_Windup");
+		TNT1 A 0 A_GiveInventory("Bazooka_FireRate");
+		TNT1 A 0 A_GiveInventory("Bazooka_Recoil");
+		TNT1 A 0 A_GiveInventory("ArgentRifle_Cooldown");
+		TNT1 A 0 A_GiveInventory("Flamethrower_FlameLinger");
+		TNT1 A 0 A_GiveInventory("Chainsaw_Damage");
+		Stop;
+	}
+}

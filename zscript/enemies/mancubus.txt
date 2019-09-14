@@ -1,0 +1,106 @@
+class SGDMancubus : SGDMonster replaces Fatso
+{
+	Default
+	{
+		Health 600;
+		Radius 48;
+		Height 64;
+		Mass 1000;
+		Speed 8;
+		PainChance 80;
+		+BOSSDEATH;
+		SeeSound "fatso/sight";
+		PainSound "fatso/pain";
+		DeathSound "fatso/death";
+		ActiveSound "fatso/active";
+		Obituary "$OB_FATSO";
+	}
+	States
+	{
+	Spawn:
+		FATT A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		FATT AB 15 A_Look;
+		Loop;
+	AltSpawn:
+		FATT AABBCCDDEEFF 4 A_Wander;
+		FATT A 0 A_Look;
+		Loop;
+	See:
+		FATT AABBCCDDEEFF 4 A_Chase;
+		Loop;
+	Missile:
+		FATT G 16 A_FatRaise;
+		FATT H 10 BRIGHT A_FatAttack1;
+		FATT IG 5 A_FaceTarget;
+		FATT H 10 BRIGHT A_FatAttack2;
+		FATT IG 5 A_FaceTarget;
+		FATT H 10 BRIGHT A_FatAttack3;
+		FATT IG 5 A_FaceTarget;
+		Goto See;
+	Pain:
+		FATT J 3;
+		FATT J 3 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		FATT J 3 A_SetTranslation("HolyWaterTrans");
+		FATT J 3 A_Pain;
+		Goto See;
+	Pain.Fire:
+		FATT J 3 A_SetTranslation("CharredTrans");
+		FATT J 3 A_Pain;
+		Goto See;
+	Death:
+		FATT K 6
+		{
+			A_GiveToTarget("MancubiKilled");
+			A_GiveToTarget("FinisherToken",40);
+		}
+		FATT L 6 A_Scream;
+		FATT M 6 A_NoBlocking;
+		FATT NOPQRS 6;
+		FATT T -1 A_BossDeath;
+		Stop;
+	Death.HolyWater:
+		FATT K 6
+		{
+			A_SetTranslation("HolyWaterTrans");
+			A_GiveToTarget("MancubiKilled");
+			A_GiveToTarget("FinisherToken",40);
+		}
+		FATT L 6 A_Scream;
+		FATT M 6 A_NoBlocking;
+		FATT NOPQRS 6;
+		FATT T -1 A_BossDeath;
+		Stop;
+	Death.Fire:
+		FATT K 6
+		{
+			A_SetTranslation("CharredTrans");
+			A_GiveToTarget("MancubiKilled");
+			A_GiveToTarget("FinisherToken",40);
+		}
+		FATT L 6 A_Scream;
+		FATT M 6 A_NoBlocking;
+		FATT NOPQRS 6;
+		FATT T -1 A_BossDeath;
+		Stop;
+	 Raise:
+		FATT R 5 A_SetTranslation("ResetTrans");
+		FATT QPONMLK 5;
+		Goto See;
+	}
+}
+
+class SGDMancubusShot : FatShot replaces FatShot
+{
+	Default
+	{
+		Speed 24;
+	}
+
+	States
+	{
+	Spawn:
+		MANF AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }}
+	}
+}

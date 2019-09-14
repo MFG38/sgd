@@ -1,0 +1,146 @@
+Height 0;
+Resolution 320, 240;
+
+StatusBar normal, fullscreenoffsets, forcescaled
+{
+	InInventory not "DemonizerTimer"
+	{
+		// Inventory selection
+		DrawImage "INVFRAME", 4, -54;
+		DrawSelectedInventory SMALLFONT, 10, -48;
+	
+		// Health and armor
+		DrawImage "HAFRAME", 52, -32;
+		DrawNumber 3, SGDHUDFONT, RED, Health, Alignment(right), 85, -29;
+		DrawNumber 3, SGDHUDFONT, RED, Armor, Alignment(right), 121, -29;
+	
+		// Weapon selection and ammo
+		DrawImage "AMMFRAME", -48, -54;
+		DrawImage "WEPFRAME", -124, -32;
+		DrawNumber 3, SGDHUDFONT, RED, Ammo1, Alignment(center), -88, -29;
+	
+		InInventory "SGDFists"				{ DrawImage "WEPLIGHT", -117, -14; }
+		InInventory "SGDRifle"				{ DrawImage "WEPLIGHT", -111, -14; }
+		InInventory "SGDShotgun"			{ DrawImage "WEPLIGHT", -105, -14; }
+		InInventory "SGDSuperShotgun"		{ DrawImage "WEPLIGHT", -99, -14; }
+		InInventory "SGDMinigun"			{ DrawImage "WEPLIGHT", -93, -14; }
+		InInventory "SGDBazooka"			{ DrawImage "WEPLIGHT", -87, -14; }
+		InInventory "SGDFlamethrower"		{ DrawImage "WEPLIGHT", -81, -14; }
+		InInventory "SGDArgentRifle"		{ DrawImage "WEPLIGHT", -75, -14; }
+		InInventory "SGDDarkMatterCannon"	{ DrawImage "WEPLIGHT", -69, -14; }
+		InInventory "SGDChainsaw"			{ DrawImage "WEPLIGHT", -63, -14; }
+	
+		IsSelected "SGDRifle"						{ DrawImage "ICON_ARF", -42, -48; }
+		IsSelected "SGDShotgun", "SGDSuperShotgun"	{ DrawImage "ICON_SHL", -42, -48; }
+		IsSelected "SGDMinigun"						{ DrawImage "ICON_MNG", -42, -48; }
+		IsSelected "SGDBazooka"						{ DrawImage "ICON_BAZ", -42, -48; }
+		IsSelected "SGDFlamethrower"				{ DrawImage "ICON_FLM", -42, -48; }
+		IsSelected "SGDArgentRifle"					{ DrawImage "ICON_AOH", -42, -48; }
+		IsSelected "SGDDarkMatterCannon"			{ DrawImage "ICON_DMC", -42, -48; }
+		//IsSelected "SGDFists", "SGDChainsaw" {}
+	
+		// Keys
+		InInventory "BlueCard"		{ DrawImage "STKEYS0", -111, -39; }
+		InInventory "YellowCard"	{ DrawImage "STKEYS1", -103, -39; }
+		InInventory "RedCard"		{ DrawImage "STKEYS2", -95, -39; }
+		InInventory "BlueSkull"		{ DrawImage "STKEYS3", -87, -40; }
+		InInventory "YellowSkull"	{ DrawImage "STKEYS4", -79, -40; }
+		InInventory "RedSkull"		{ DrawImage "STKEYS5", -71, -40; }
+		
+		//Hazmat suit timer
+		IfCVarInt "sgd_displayhsbar", 1
+		{
+			InInventory "RadSuitTimer"
+			{
+				DrawBar "HSBAR_FG", "HSBAR_BG", RadSuitTimer, Horizontal, reverse, -89, 8;
+			}
+		}
+	
+		// Finisher token bar
+		IfCVarInt "sgd_displayfbar", 1
+		{
+			DrawImage "FTBARFRM", 4, 4;
+			DrawBar "FTBAR_FG", "FTBAR_BG", FinisherToken, Horizontal, 10, 10;
+		}
+	}
+	
+	InInventory "DemonizerTimer"
+	{
+		// Demonizer powerup timer
+		DrawBar "DBARL_FG", "DBARL_BG", DemonizerTimer, Horizontal, reverse, 55, -19;
+		DrawBar "DBARR_FG", "DBARR_BG", DemonizerTimer, Horizontal, -155, -19;
+	}
+}
+
+StatusBar fullscreen, fullscreenoffsets, forcescaled
+{
+	InInventory not "DemonizerTimer"
+	{
+		// Inventory selection
+		DrawImage "INVFRAME", 4, -54;
+		DrawSelectedInventory SMALLFONT, 10, -48;
+	
+		// Health and armor
+		DrawImage "HAFRAME", 52, -32;
+		DrawNumber 3, SGDHUDFONT, RED, Health, Alignment(right), 85, -29;
+		DrawNumber 3, SGDHUDFONT, RED, Armor, Alignment(right), 121, -29;
+	
+		// Weapon selection and ammo
+		DrawImage "AMMFRAME", -48, -54;
+		DrawImage "WEPFRAME", -124, -32;
+		DrawNumber 3, SGDHUDFONT, RED, Ammo1, Alignment(center), -88, -29;
+	
+		InInventory "SGDFists"				{ DrawImage "WEPLIGHT", -117, -14; }
+		InInventory "SGDRifle"				{ DrawImage "WEPLIGHT", -111, -14; }
+		InInventory "SGDShotgun"			{ DrawImage "WEPLIGHT", -105, -14; }
+		InInventory "SGDSuperShotgun"		{ DrawImage "WEPLIGHT", -99, -14; }
+		InInventory "SGDMinigun"			{ DrawImage "WEPLIGHT", -93, -14; }
+		InInventory "SGDBazooka"			{ DrawImage "WEPLIGHT", -87, -14; }
+		InInventory "SGDFlamethrower"		{ DrawImage "WEPLIGHT", -81, -14; }
+		InInventory "SGDArgentRifle"		{ DrawImage "WEPLIGHT", -75, -14; }
+		InInventory "SGDDarkMatterCannon"	{ DrawImage "WEPLIGHT", -69, -14; }
+		InInventory "SGDChainsaw"			{ DrawImage "WEPLIGHT", -63, -14; }
+	
+		IsSelected "SGDRifle"						{ DrawImage "ICON_ARF", -42, -48; }
+		IsSelected "SGDShotgun", "SGDSuperShotgun"	{ DrawImage "ICON_SHL", -42, -48; }
+		IsSelected "SGDMinigun"						{ DrawImage "ICON_MNG", -42, -48; }
+		IsSelected "SGDBazooka"						{ DrawImage "ICON_BAZ", -42, -48; }
+		IsSelected "SGDFlamethrower"				{ DrawImage "ICON_FLM", -42, -48; }
+		IsSelected "SGDArgentRifle"					{ DrawImage "ICON_AOH", -42, -48; }
+		IsSelected "SGDDarkMatterCannon"			{ DrawImage "ICON_DMC", -42, -48; }
+		//IsSelected "SGDFists", "SGDChainsaw" {}
+	
+		// Keys
+		InInventory "BlueCard"		{ DrawImage "STKEYS0", -111, -39; }
+		InInventory "YellowCard"	{ DrawImage "STKEYS1", -103, -39; }
+		InInventory "RedCard"		{ DrawImage "STKEYS2", -95, -39; }
+		InInventory "BlueSkull"		{ DrawImage "STKEYS3", -87, -40; }
+		InInventory "YellowSkull"	{ DrawImage "STKEYS4", -79, -40; }
+		InInventory "RedSkull"		{ DrawImage "STKEYS5", -71, -40; }
+		
+		//Hazmat suit timer
+		IfCVarInt "sgd_displayhsbar", 1
+		{
+			InInventory "RadSuitTimer"
+			{
+				DrawBar "HSBAR_FG", "HSBAR_BG", RadSuitTimer, Horizontal, reverse, -89, 8;
+			}
+		}
+	
+		// Finisher token bar
+		IfCVarInt "sgd_displayfbar", 1
+		{
+			DrawImage "FTBARFRM", 4, 4;
+			DrawBar "FTBAR_FG", "FTBAR_BG", FinisherToken, Horizontal, 10, 10;
+		}
+	}
+	
+	InInventory "DemonizerTimer"
+	{
+		// Demonizer powerup timer
+		DrawBar "DBARL_FG", "DBARL_BG", DemonizerTimer, Horizontal, reverse, 55, -19;
+		DrawBar "DBARR_FG", "DBARR_BG", DemonizerTimer, Horizontal, -155, -19;
+	}
+}
+
+StatusBar automap {}

@@ -1,0 +1,105 @@
+class SGDArachnotron : SGDMonster replaces Arachnotron
+{
+	Default
+	{
+		Health 500;
+		Radius 64;
+		Height 64;
+		Mass 600;
+		Speed 12;
+		PainChance 128;
+		SeeSound "baby/sight";
+		PainSound "baby/pain";
+		DeathSound "baby/death";
+		ActiveSound "baby/active";
+		Obituary "$OB_BABY";
+	}
+	States
+	{
+	Spawn:
+		BSPI A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		BSPI AB 10 A_Look;
+		Loop;
+	AltSpawn:
+		BSPI A 3 A_BabyMetal;
+		BSPI ABBCC 3 A_Wander;
+		BSPI D 3 A_BabyMetal;
+		BSPI DEEFF 3 A_Wander;
+		BSPI A 0 A_Look;
+		Loop;
+	See:
+		BSPI A 20;
+		BSPI A 3 A_BabyMetal;
+		BSPI ABBCC 3 A_Chase;
+		BSPI D 3 A_BabyMetal;
+		BSPI DEEFF 3 A_Chase;
+		Goto See+1;
+	Missile:
+		BSPI A 10 BRIGHT A_FaceTarget;
+		BSPI G 4 BRIGHT A_BspiAttack;
+		BSPI H 3 BRIGHT;
+		BSPI H 1 BRIGHT A_SpidRefire;
+		Goto Missile+1;
+	Pain:
+		BSPI I 3;
+		BSPI I 3 A_Pain;
+		Goto See+1;
+	Pain.HolyWater:
+		BSPI I 3 A_SetTranslation("HolyWaterTrans");
+		BSPI I 3 A_Pain;
+		Goto See+1;
+	Pain.Fire:
+		BSPI I 3 A_SetTranslation("CharredTrans");
+		BSPI I 3 A_Pain;
+		Goto See+1;
+	Death:
+		BSPI J 0
+		{
+			A_GiveToTarget("ArachnotronsKilled");
+			A_GiveToTarget("FinisherToken",65);
+		}
+		BSPI J 20 A_Scream;
+		BSPI K 7 A_NoBlocking;
+		BSPI LMNO 7;
+		BSPI P -1 A_BossDeath;
+		Stop;
+	Death.HolyWater:
+		BSPI J 0
+		{
+			A_SetTranslation("HolyWaterTrans");
+			A_GiveToTarget("ArachnotronsKilled");
+			A_GiveToTarget("FinisherToken",65);
+		}
+		BSPI J 20 A_Scream;
+		BSPI K 7 A_NoBlocking;
+		BSPI LMNO 7;
+		BSPI P -1 A_BossDeath;
+		Stop;
+	Death.Fire:
+		BSPI J 0
+		{
+			A_SetTranslation("CharredTrans");
+			A_GiveToTarget("ArachnotronsKilled");
+			A_GiveToTarget("FinisherToken",65);
+		}
+		BSPI J 20 A_Scream;
+		BSPI K 7 A_NoBlocking;
+		BSPI LMNO 7;
+		BSPI P -1 A_BossDeath;
+		Stop;
+    Raise:
+		BSPI P 5 A_SetTranslation("ResetTrans");
+		BSPI ONMLKJ 5;
+		Goto See+1;
+	}
+}
+
+class SGDArachnotronPlasma : ArachnotronPlasma replaces ArachnotronPlasma
+{
+	States
+	{
+	Spawn:
+		APLS AAAAABBBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		Loop;
+	}
+}

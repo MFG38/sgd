@@ -1,0 +1,98 @@
+gameinfo
+{
+	playerclasses = "SGDPlayer"
+	//drawreadthis = true
+	infopage = "HOWTO1"
+}
+
+clearskills
+
+skill baby
+{
+	acsreturn = 1
+	name = "$SGD_SKILL_VERYEASY"
+	mustconfirm = "You're new to this whole thing.\
+		Minimal enemy spawns. Enemies deal\
+		half the damage and ammo pickups grant\
+		50% more ammo."
+	aggressiveness = 0.1
+	spawnfilter = baby
+	damagefactor = 0.5
+	ammofactor = 1.5
+	autousehealth
+	easybossbrain
+}
+
+skill easy
+{
+	acsreturn = 2
+	name = "$SGD_SKILL_EASY"
+	mustconfirm = "You're not completely inexperienced.\
+		Minimal enemy spawns."
+	aggressiveness = 0.5
+	spawnfilter = easy
+	easybossbrain
+}
+
+skill normal
+{
+	defaultskill
+	acsreturn = 3
+	name = "$SGD_SKILL_MEDIUM"
+	mustconfirm = "You know what you're getting yourself\
+		into. Normal enemy spawns."
+	aggressiveness = 0.5
+	spawnfilter = normal
+}
+
+skill hard
+{
+	acsreturn = 4
+	name = "$SGD_SKILL_HARD"
+	mustconfirm = "You're a demon-slaying veteran.\
+		Maximum enemy spawns."
+	aggressiveness = 0.5
+	spawnfilter = hard
+}
+
+skill nightmare
+{
+	acsreturn = 5
+	name = "$SGD_SKILL_VERYHARD"
+	mustconfirm = "You've seen things others wouldn't believe.\
+		Maximum enemy spawns. Enemies deal\
+		200% damage."
+	aggressiveness = 0.8
+	spawnfilter = nightmare
+	damagefactor = 2.0
+	disablecheats
+}
+
+skill whywouldyoueventrythis
+{
+	acsreturn = 6
+	name = "$SGD_SKILL_IMPOSSIBLE"
+	mustconfirm = "You're not afraid of anything.\
+		Enemies deal 200% damage and have 50%\
+		more health. Ammo pickups grant twice\
+		the ammo and some health pickups\
+		give less health."
+	aggressiveness = 1.0
+	spawnfilter = nightmare
+	damagefactor = 2.0
+	monsterhealth = 1.5
+	ammofactor = 2.0
+	//healthfactor = 0.75
+	//armorfactor = 0.75
+	//replaceactor = "ArmorBonus", "SGDArmorBonus_Fix"
+	replaceactor = "Stimpack", "SGDStimpackAlt"
+	replaceactor = "Medikit", "SGDMedikitAlt"
+	replaceactor = "Megasphere", "SGDMegasphereAlt"
+	disablecheats
+}
+
+map TITLEMAP "SGD Title"
+{
+	levelnum = 0
+	music = "MFG_HELL"
+}

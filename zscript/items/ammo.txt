@@ -1,0 +1,214 @@
+class RifleAmmo : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 150;
+		Inventory.Icon "ICON_ARF";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class RifleMag : RifleAmmo replaces Clip
+{
+	Default
+	{
+		Inventory.Amount 8;
+		Inventory.PickupMessage "$SGD_AMMO_RIFLEAMMO";
+	}
+
+	States
+	{
+	Spawn:
+		CLIP A -1;
+		Stop;
+	}
+}
+
+class ShellAmmo : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 80;
+		Inventory.Icon "ICON_SHL";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class HandfulOfShells : ShellAmmo replaces Shell
+{
+	Default
+	{
+		Inventory.Amount 4;
+		Inventory.PickupMessage "$SGD_AMMO_SHELLAMMO";
+	}
+
+	States
+	{
+	Spawn:
+		SHEL A -1;
+		Stop;
+	}
+}
+
+class BoxOfShells : ShellAmmo replaces ShellBox
+{
+	Default
+	{
+		Inventory.Amount 16;
+		Inventory.PickupMessage "$SGD_AMMO_SHELLAMMOBIG";
+	}
+
+	States
+	{
+	Spawn:
+		SBOX A -1;
+		Stop;
+	}
+}
+
+class MinigunAmmo : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 500;
+		Inventory.Icon "ICON_MNG";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class MinigunBulletBox : MinigunAmmo replaces ClipBox
+{
+	Default
+	{
+		Inventory.Amount 100;
+		Inventory.PickupMessage "$SGD_AMMO_MGAMMO";
+	}
+
+	States
+	{
+	Spawn:
+		AMMO A -1;
+		Stop;
+	}
+}
+
+class BazookaAmmo : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 45;
+		Inventory.Icon "ICON_BAZ";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class LonelyRocket : BazookaAmmo replaces RocketAmmo
+{
+	Default
+	{
+		Inventory.Amount 1;
+		Inventory.PickupMessage "$SGD_AMMO_BAZOOKAAMMO";
+	}
+
+	States
+	{
+	Spawn:
+		HSRK A -1;
+		Stop;
+	}
+}
+
+class PileOfRockets : BazookaAmmo replaces RocketBox
+{
+	Default
+	{
+		Inventory.Amount 3;
+		Inventory.PickupMessage "$SGD_AMMO_BAZOOKAAMMOBIG";
+	}
+
+	States
+	{
+	Spawn:
+		HSRP A -1;
+		Stop;
+	}
+}
+
+class ArgentRifleHeat : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 100;
+		Inventory.Icon "ICON_AOH";
+		+INVENTORY.IGNORESKILL;
+	}
+}
+
+class FTAmmo : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 450;
+		Inventory.Icon "ICON_FLM";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class GasCanister : FTAmmo replaces Cell
+{
+	Default
+	{
+		Inventory.Amount 30;
+		Inventory.PickupMessage "$SGD_AMMO_GASAMMO";
+	}
+
+	States
+	{
+	Spawn:
+		AGAS A -1;
+		Stop;
+	}
+}
+
+class GasTank : FTAmmo replaces CellPack
+{
+	Default
+	{
+		Inventory.Amount 120;
+		Inventory.PickupMessage "$SGD_AMMO_GASAMMOBIG";
+	}
+
+	States
+	{
+	Spawn:
+		AGAS B -1;
+		Stop;
+	}
+}
+
+class DMCAmmo : Ammo
+{
+	Default
+	{
+		Inventory.MaxAmount 3;
+		Inventory.Icon "ICON_DMC";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+	}
+}
+
+class DarkMatterCell : DMCAmmo
+{
+	Default
+	{
+		Inventory.Amount 1;
+		Inventory.PickupMessage "$SGD_AMMO_DMCAMMO";
+		+INVENTORY.IGNORESKILL;
+	}
+	
+	States
+	{
+	Spawn:
+		DMCA A -1;
+		Stop;
+	}
+}

@@ -1,0 +1,148 @@
+==========
+== CODE ==
+==========
+
+All code (with exceptions listed below): MFG38
+
+Monster code taken from gzdoom.pk3, modified where seen fit by MFG38
+
+Shotgun and Double-Barrel Shotgun DECORATE code by Captain Toenail, converted to
+ZScript and modified where seen fit by MFG38
+
+Parts of Dark Matter Cannon DECORATE code by Gothic, converted to ZSCript and
+modified where seen fit by MFG38
+
+
+==============
+== GRAPHICS ==
+==============
+
+HUD font: id Software, randi, Jimmy
+
+All other graphics: MFG38 (some inventory icons are edited from sprites: see the
+"SPRITES" section for sprite credits)
+
+
+=============
+== MAPPING ==
+=============
+
+TITLEMAP: MFG38
+
+
+===========
+== MUSIC ==
+===========
+
+"BFG Division" (plays during effect of Demonizer powerup): Mick Gordon (from DOOM 2016)
+
+"When Hell Freezes Over" (TITLEMAP music): MFG38
+
+
+============
+== SOUNDS ==
+============
+
+Fists: unknown
+
+Rifle: id Software
+
+Shotgun: id Software and Ryan Williams
+
+Double-Barrel Shotgun: Croteam
+
+Minigun firing sound: Tormentor667
+
+Minigun wind-up / wind-down sounds: source sounds by Infinity Ward, edited by MFG38
+
+Bazooka: id Software (Quake), MagicWazard
+
+Argent Rifle primary fire sounds: Raven Software
+
+Argent Rifle laser sound: MFG38
+
+Argent Rifle overheat sound: MFG38 (reused from Deliverance 2600)
+
+Flamethrower: Eriance, Raven Software
+
+Dark Matter Cannon: Raven Software (Quake 4), Epic Games (UT 2004)
+
+Chainsaw: Doom 64, PSX Doom
+
+Holy Water Grenade explosion: taken from fesliyanstudios.com
+
+Field Med Pack use sound: id Software (Quake III Arena)
+
+Hazmat Suit warning sound: base sound by id Software (Quake III Arena), edited
+by MFG38
+
+
+=============
+== SPRITES ==
+=============
+
+Fists: id Software, Banjo Software, That_One_Doom_Mod
+
+Rifle: id Software, Captain Toenail
+
+Shotgun: base sprites by id Software and 3D Realms, edits by JoeyTD
+
+Double-Barrel Shotgun: KDiZD Team, Captain Toenail
+
+Minigun: id Software, Skulltag
+
+Bazooka: Rise of the Triad, DBJ87
+
+Bazooka air strike rockets: DavidRaven
+
+Bazooka air strike markers: MFG38
+
+Argent Rifle: base sprites by Raven Software and Eriance, edits by MFG38
+
+Argent Rifle primary projectile: base sprites by id Sofware, edits by MFG38
+
+Argent Rifle laser (Level 3 finisher): MFG38
+
+Flamethrower: 3D Realms, Eriance
+
+Dark Matter Cannon: NMN, Zero Prophet, Reactor, Kronos, Midway
+
+Dark Matter Cannon ammo: base sprites by id Software, edits by MFG38
+
+Chainsaw: Midway (Doom 64)
+
+Field Med Pack: id Software, Bloody Acid
+
+Holy Water Grenade: base sprites by Black Isle Software and Ichor, edits by MFG38
+
+Demonizer: id Software (Doom 2), Midway (Doom 64), Blue Shadow
+
+Hazmat Suit: id Software, DeVloek
+
+Bullet projectile: MFG38
+
+Demonizer morph and Holy Water Pool particle effects: MFG38
+
+Custom teleport particle effect: MFG38
+
+
+=========================
+== TEXTURES (TITLEMAP) ==
+=========================
+
+5th Episode Textures (N5*): Nightmare
+
+Mars 3D Textures (WALL2_09): ENGINE Technology, Player Lin
+
+
+====================
+== SPECIAL THANKS ==
+====================
+
+The obvious ones: id Software, the GZDoom dev team
+
+For noticing bugs I didn't:
+RonnieJamesDiner, somagu
+
+For the coverage:
+Iron Droog, Piece of Pie Software

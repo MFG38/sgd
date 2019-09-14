@@ -1,0 +1,213 @@
+class SGDSuperShotgun : SGDWeapon replaces SuperShotgun
+{
+	Default
+	{
+		Weapon.SlotNumber 4;
+		Weapon.SelectionOrder 250;
+		Weapon.AmmoType "ShellAmmo";
+		Weapon.AmmoGive 10;
+		Weapon.AmmoUse 2;
+		Weapon.Kickback 200;
+		Tag "$SGD_WEP_SSG";
+		Inventory.PickupMessage "$SGD_WEP_SSG";
+	}
+
+	States
+	{
+	Spawn:
+		COCP A -1;
+		Stop;
+	Select:
+		TNT1 AAA 0 A_Raise;
+		COCH A 1 A_Raise;
+		Goto Select+2;
+	Deselect:
+		TNT1 AAA 0 A_Lower;
+		COCH A 1 A_Lower;
+		Goto Deselect+2;
+	Ready:
+		COCH A 0;
+		Goto ReadyLoop;
+	Fire:
+		COCH A 0 A_JumpIfInventory("SSG_ReloadSpeed",1,"FireUpgraded");
+		COCH A 3;
+		COCH B 1 A_SSGFire;
+		COCH C 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-2.0); }}
+		COCH D 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.6); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.2); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.9); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.6); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3); }}
+		COCH A 4;
+		COCH EFG 2;
+		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH I 2;
+		COCH J 12;
+		COCH KLMNO 1;
+		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH QRSTU 1;
+		COCH V 8;
+		COCH W 2;
+		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH GFE 2;
+		COCH A 7 A_Refire;
+		Goto ReadyLoop;
+	FireUpgraded:
+		COCH A 3;
+		COCH B 1 A_SSGFire;
+		COCH C 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-2.0); }}
+		COCH D 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.6); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.2); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.9); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.6); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3); }}
+		COCH A 1;
+		COCH EFG 1;
+		COCH H 1 A_PlaySound("coachgun/reload1");
+		COCH I 1;
+		COCH J 1;
+		COCH KLMNO 1;
+		COCH P 1 A_PlaySound("coachgun/reload2");
+		COCH QRSTU 1;
+		COCH V 1;
+		COCH W 1;
+		COCH X 1 A_PlaySound("coachgun/reload3");
+		COCH GFE 1;
+		COCH A 7 A_Refire;
+		Goto ReadyLoop;
+	FinisherFail:
+		COCH A 0;
+		Goto ReadyLoop;
+	Finisher1:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_GiveInventory("SSGFinisherDamageScaler",1);
+		COCH A 3;
+		COCH B 1 A_SSGFinisher;
+		COCH CD 1;
+		COCH AAAAA 4;
+		COCH EFG 2;
+		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH I 2;
+		COCH J 12;
+		COCH KLMNO 1;
+		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH QRSTU 1;
+		COCH V 8;
+		COCH W 2;
+		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH GFE 2;
+		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
+		COCH A 7 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher2:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_GiveInventory("SSGFinisherDamageScaler",2);
+		COCH A 3;
+		COCH B 1 A_SSGFinisher;
+		COCH CD 1;
+		COCH AAAAAAA 4;
+		COCH EFG 2;
+		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH I 2;
+		COCH J 12;
+		COCH KLMNO 1;
+		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH QRSTU 1;
+		COCH V 8;
+		COCH W 2;
+		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH GFE 2;
+		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
+		COCH A 7 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher3:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_GiveInventory("SSGFinisherDamageScaler",3);
+		COCH A 3;
+		COCH B 1 A_SSGFinisher;
+		COCH CD 1;
+		COCH AAAAAAAAA 4;
+		COCH EFG 2;
+		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH I 2;
+		COCH J 12;
+		COCH KLMNO 1;
+		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH QRSTU 1;
+		COCH V 8;
+		COCH W 2;
+		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH GFE 2;
+		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
+		COCH A 7 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	}
+}
+
+extend class SGDSuperShotgun
+{
+	action void A_SSGFire()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_PlaySound("coachgun/fire",CHAN_WEAPON);
+
+		for(int i = 0; i < 24; i++)
+		{
+			int dmg = random(16,20);
+			double xspread = angle + random2() * (21.5 / 256);
+			double yspread = pitch + random2() * (15.25 / 256);
+			
+			LineAttack(xspread,288,yspread,dmg,'Normal',"BulletPuff");
+		}
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_SSGFinisher()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_PlaySound("coachgun/fire",CHAN_WEAPON);
+		A_Recoil(CountInv("SSGFinisherDamageScaler") * 2);
+
+		for(int i = 0; i < 20; i++)
+		{
+			int dmg = CountInv("SSGFinisherDamageScaler") * 50;
+			double xspread = angle + random2() * (28.0 / 256);
+			double yspread = pitch + random2() * (15.25 / 256);
+			
+			LineAttack(xspread,384,yspread,dmg,'Normal',"BulletPuff");
+		}
+		ACS_NamedExecute("FeatTracker",0);
+	}
+}

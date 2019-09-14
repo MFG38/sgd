@@ -1,0 +1,63 @@
+misc/wpnpickup				DSSGPUMP
+// Defined separately so I can just change this here in case I want to change the weapon pickup sound later.
+
+$volume misc/wpnpickup 0.7
+
+fist/swing					dsfistgo
+
+chainsaw/up					MAGSREA1
+chainsaw/idle				MAGSREA2
+chainsaw/attack				MAGSATT1
+chainsaw/hit				MAGSATT2
+
+DSMGUN1						DSMGUN1
+DSMGUN2						DSMGUN2
+DSMGUN3						DSMGUN3
+DSMGUN4						DSMGUN4
+DSMGUN5						DSMGUN5
+
+$random rifle/fire			{ DSMGUN1 DSMGUN2 DSMGUN3 DSMGUN4 DSMGUN5 }
+$limit rifle/fire 0
+
+DSSGBOO1					DSSGBOO1
+DSSGBOO2					DSSGBOO2
+DSSGBOO3					DSSGBOO3
+
+$random DukeShotgun/Fire	{ DSSGBOO1 DSSGBOO2 DSSGBOO3 }
+DukeShotgun/Pump			DSSGPUMP
+
+coachgun/reload1			DSCOCHR1
+coachgun/reload2			DSCOCHR2
+coachgun/reload3			DSCOCHR3
+coachgun/fire				DSCOCHFG
+
+minigun/fire				dsminign
+minigun/windup				mgunwup
+minigun/winddown			mgunwdn
+
+bazooka/fire				SEEKFIRE
+bazooka/explosion			SEEKXPLD
+
+argentrifle/fire			stnrfire
+argentrifle/ballhit			stnrhit
+argentrifle/overheat		ohbeep
+argentrifle/laser			arlaser
+
+flamethrower/fire			FMTRFIRE
+flamethrower/hit			FMTRHIT
+
+DMC/Charge					DMC_CHRG
+DMC/Fire					DMC_FIRE
+DMBall/Impact				DMC_IMPX
+BHole/Suck					DMC_VOID
+BHole/Explosion				DMC_XPLD
+$limit DMBall/Impact 0
+$limit BHole/Suck 0
+$limit BHole/Explosion 0
+
+fieldmed/use				s_health
+hazmat/warning				hs_rout
+$volume hazmat/warning 0.8
+hwgrenade/splode			hwgrenxp
+
+fx/fireburn					FMTRFLAM

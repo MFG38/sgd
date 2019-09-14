@@ -1,0 +1,49 @@
+// This code is for stuff related to the Demonizer powerup itself. See "demonized_player.txt"
+// for the player morph and powered-up fists.
+
+class DemonizerPowerup : CustomInventory replaces InvulnerabilitySphere
+{
+	Default
+	{
+		Scale 0.75;
+		Inventory.MaxAmount 1;
+		Inventory.Icon "ICON_DEM";
+		Inventory.PickupMessage "$SGD_PU_DEMONIZER";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+		+INVENTORY.INVBAR;
+	}
+
+	States
+	{
+	Spawn:
+		INSS ABCD 6 Light("L_DemonizerPickup");
+		Loop;
+	Use:
+		TNT1 A 0 ACS_NamedExecute("Demonizer_SoundAndVision",0);
+		//TNT1 A 0 A_GiveInventory("DemonizerIsActive",1);
+		//TNT1 A 0 A_GiveInventory("DemonVisionEffect",1);
+		TNT1 A 0 A_GiveInventory("DemonizerMorph",1);
+		Stop;
+	}
+}
+
+class DemonVisionEffect : FakePowerup
+{
+	Default
+	{
+		Powerup.Color "RedMap";
+		//Powerup.Duration -60;
+	}
+}
+
+class DemonizerMorph : PowerMorph
+{
+	Default
+	{
+		PowerMorph.PlayerClass "DemonizedPlayer";
+		PowerMorph.MorphStyle MRF_FULLHEALTH;
+		PowerMorph.MorphFlash "DemonizerMorphFX";
+		PowerMorph.UnMorphFlash "DemonizerMorphFX";
+		Powerup.Duration -60;
+	}
+}

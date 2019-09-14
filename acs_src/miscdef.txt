@@ -1,0 +1,14 @@
+#define	SEC			35
+#define	TIC			0.0286
+#define	FRAME		0.0167
+
+#define	PL_TIDSTART	1000
+
+#define	HUDSIZE_X	640
+#define	HUDSIZE_Y	480
+#define	CENTER_X	320.0
+#define	CENTER_Y	240.0
+
+#define	ALL			0x7FFFFFFF
+#define	DEMONTIME	2099
+#define RADSUITTIME	2100

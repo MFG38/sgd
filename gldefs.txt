@@ -1,0 +1,161 @@
+///////////////////
+// CUSTOM ACTORS //
+///////////////////
+
+pointlight L_HolyWaterPool
+{
+	color 0.0 0.5 1.0
+	size 80
+}
+
+pointlight L_HolyWaterPool_Fade1
+{
+	color 0.0 0.5 1.0
+	size 64
+}
+
+pointlight L_HolyWaterPool_Fade2
+{
+	color 0.0 0.5 1.0
+	size 48
+}
+
+pointlight L_HolyWaterPool_Fade3
+{
+	color 0.0 0.5 1.0
+	size 32
+}
+
+pointlight L_HolyWaterPool_Fade4
+{
+	color 0.0 0.5 1.0
+	size 16
+}
+
+pointlight L_HolyWaterPickup
+{
+	color 0.0 0.5 1.0
+	size 12
+}
+
+pulselight L_DemonizerPickup
+{
+	color 1.0 0.0 0.0
+	size 24
+	secondarysize 30
+	interval 0.5
+}
+
+pointlight L_Titlemap1
+{
+	color 1.0 0.0 0.5
+	size 80
+}
+
+pointlight L_Titlemap2
+{
+	color 1.0 0.0 1.0
+	size 80
+}
+
+pointlight L_Titlemap3
+{
+	color 0.5 1.0 0.0
+	size 80
+}
+
+pointlight L_Titlemap4
+{
+	color 0.0 1.0 1.0
+	size 80
+}
+
+
+////////////////////
+// VANILLA ACTORS //
+////////////////////
+
+flickerlight2 L_BlueTorch
+{
+	color 0.0 0.25 1.0
+	size 68
+	secondarysize 84
+	interval 0.1
+	offset 0 60 0
+}
+
+object BlueTorch { frame TBLU { light L_BlueTorch }}
+
+flickerlight2 L_GreenTorch
+{
+	color 0.0 1.0 0.1
+	size 68
+	secondarysize 84
+	interval 0.1
+	offset 0 60 0
+}
+
+object GreenTorch { frame TGRN { light L_GreenTorch }}
+
+flickerlight2 L_RedTorch
+{
+	color 1.0 0.5 0.0
+	size 68
+	secondarysize 84
+	interval 0.1
+	offset 0 60 0
+}
+
+object RedTorch { frame TRED { light L_RedTorch }}
+
+flickerlight2 L_ShortBlueTorch
+{
+	color 0.0 0.25 1.0
+	size 56
+	secondarysize 70
+	interval 0.1
+	offset 0 35 0
+}
+
+object ShortBlueTorch { frame SMBT { light L_ShortBlueTorch }}
+
+flickerlight2 L_ShortGreenTorch
+{
+	color 0.0 1.0 0.1
+	size 56
+	secondarysize 70
+	interval 0.1
+	offset 0 35 0
+}
+
+object ShortGreenTorch { frame SMGT { light L_ShortGreenTorch }}
+
+flickerlight2 L_ShortRedTorch
+{
+	color 1.0 0.5 0.0
+	size 56
+	secondarysize 70
+	interval 0.1
+	offset 0 35 0
+}
+
+object ShortRedTorch { frame SMRT { light L_ShortRedTorch }}
+
+
+//////////////////////
+// VANILLA TEXTURES //
+//////////////////////
+
+glow
+{
+	texture "BLOOD1", FF0000, 12, fullbright
+	texture "BLOOD2", FF0000, 12, fullbright
+	texture "BLOOD3", FF0000, 12, fullbright
+	texture "LAVA1", CC5F00, 28, fullbright
+	texture "LAVA2", CC5F00, 28, fullbright
+	texture "LAVA3", CC5F00, 28, fullbright
+	texture "LAVA4", CC5F00, 28, fullbright
+	texture "NUKAGE1", 008800, 16, fullbright
+	texture "NUKAGE2", 008800, 16, fullbright
+	texture "NUKAGE3", 008800, 16, fullbright
+}

@@ -1,0 +1,25 @@
+class SGDArmorBonus : ArmorBonus replaces ArmorBonus
+{
+	Default
+	{
+		Inventory.PickupMessage "$SGD_ART_ARMORBONUS";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+		-INVENTORY.ALWAYSPICKUP;
+	}
+}
+
+/* class SGDArmorBonus_Fix : SGDArmorBonus
+// Because armor bonuses would give no armor whatsoever on skill 6 otherwise.
+{
+	Default { Armor.SaveAmount 2; }
+} */
+
+class SGDSecurityArmor : GreenArmor replaces GreenArmor
+{
+	Default { Inventory.PickupMessage "$SGD_ITEM_GREENARMOR"; Inventory.ForbiddenTo "DemonizedPlayer"; }
+}
+
+class SGDCombatArmor : BlueArmor replaces BlueArmor
+{
+	Default { Inventory.PickupMessage "$SGD_ITEM_BLUEARMOR"; Inventory.ForbiddenTo "DemonizedPlayer"; }
+}

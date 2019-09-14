@@ -1,0 +1,142 @@
+class SGDPinky : SGDMonster replaces Demon
+{
+	Default
+	{
+		Health 150;
+		PainChance 180;
+		Speed 12;
+		Radius 30;
+		Height 56;
+		Mass 400;
+		SeeSound "demon/sight";
+		AttackSound "demon/melee";
+		PainSound "demon/pain";
+		DeathSound "demon/death";
+		ActiveSound "demon/active";
+		Obituary "$OB_DEMONHIT";
+	}
+	States
+	{
+	Spawn:
+		SARG A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		SARG AB 10 A_Look;
+		Loop;
+	AltSpawn:
+		SARG AAABBBCCCDDD 1 A_Wander;
+		SARG A 0 A_Look;
+		Loop;
+	See:
+		SARG AAABBBCCCDDD 1 A_Chase;
+		Loop;
+	Melee:
+		SARG EF 5 A_FaceTarget;
+		SARG G 6 A_SargAttack;
+		Goto See;
+	Pain:
+		SARG H 2;
+		SARG H 2 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		SARG H 2 A_SetTranslation("HolyWaterTrans");
+		SARG H 2 A_Pain;
+		Goto See;
+	Pain.Fire:
+		SARG H 2 A_SetTranslation("CharredTrans");
+		SARG H 2 A_Pain;
+		Goto See;
+	Death:
+		SARG I 8
+		{
+			A_GiveToTarget("PinkiesKilled");
+			A_GiveToTarget("FinisherToken",12);
+		}
+		SARG J 8 A_Scream;
+		SARG K 4;
+		SARG L 4 A_NoBlocking;
+		SARG M 4;
+		SARG N -1;
+		Stop;
+	Death.HolyWater:
+		SARG I 8
+		{
+			A_SetTranslation("HolyWaterTrans");
+			A_GiveToTarget("PinkiesKilled");
+			A_GiveToTarget("FinisherToken",12);
+		}
+		SARG J 8 A_Scream;
+		SARG K 4;
+		SARG L 4 A_NoBlocking;
+		SARG M 4;
+		SARG N -1;
+		Stop;
+	Death.Fire:
+		SARG I 8
+		{
+			A_SetTranslation("CharredTrans");
+			A_GiveToTarget("PinkiesKilled");
+			A_GiveToTarget("FinisherToken",12);
+		}
+		SARG J 8 A_Scream;
+		SARG K 4;
+		SARG L 4 A_NoBlocking;
+		SARG M 4;
+		SARG N -1;
+		Stop;
+	Raise:
+		SARG N 5 A_SetTranslation("ResetTrans");
+		SARG MLKJI 5;
+		Goto See;
+	}
+}
+
+class SGDSpectre : SGDPinky replaces Spectre
+{
+	Default
+	{
+		Renderstyle "OptFuzzy";
+		Alpha 0.5;
+		HitObituary "$OB_SPECTREHIT";
+	}
+
+	States
+	{
+	Death:
+		SARG I 8
+		{
+			A_GiveToTarget("SpectresKilled");
+			A_GiveToTarget("FinisherToken",12);
+		}
+		SARG J 8 A_Scream;
+		SARG K 4;
+		SARG L 4 A_NoBlocking;
+		SARG M 4;
+		SARG N -1;
+		Stop;
+	Death.HolyWater:
+		SARG I 8
+		{
+			A_SetTranslation("HolyWaterTrans");
+			A_GiveToTarget("SpectresKilled");
+			A_GiveToTarget("FinisherToken",12);
+		}
+		SARG J 8 A_Scream;
+		SARG K 4;
+		SARG L 4 A_NoBlocking;
+		SARG M 4;
+		SARG N -1;
+		Stop;
+	Death.Fire:
+		SARG I 8
+		{
+			A_SetTranslation("CharredTrans");
+			A_GiveToTarget("SpectresKilled");
+			A_GiveToTarget("FinisherToken",12);
+		}
+		SARG J 8 A_Scream;
+		SARG K 4;
+		SARG L 4 A_NoBlocking;
+		SARG M 4;
+		SARG N -1;
+		Stop;
+	}
+}

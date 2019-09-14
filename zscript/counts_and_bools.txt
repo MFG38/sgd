@@ -1,0 +1,80 @@
+// These used to be in DECORATE, but I decided to convert them over to ZSCript in
+// case of problems caused by mixing the two.
+
+class Counter : Inventory
+// Note to self: don't inherit from CustomInventory if you want state jumps
+// involving inventory checks to work.
+{
+	Default
+	{
+		inventory.maxamount 0x7FFFFFFF;
+		+INVENTORY.UNDROPPABLE;
+		//-INVENTORY.INVBAR;
+	}
+}
+
+class Boolean : Inventory
+{
+	Default
+	{
+		inventory.maxamount 1;
+		+INVENTORY.UNDROPPABLE;
+		//-INVENTORY.INVBAR;
+	}
+}
+
+class FinisherToken : Counter
+{
+	Default { inventory.maxamount 1000; }
+}
+
+//class FinisherInProgress : Boolean {}
+
+class ZombiemenKilled : Counter {}
+class ShotgunnersKilled : Counter {}
+class ChaingunnersKilled : Counter {}
+class ImpsKilled : Counter {}
+class LostSoulsKilled : Counter {}
+class PinkiesKilled : Counter {}
+class SpectresKilled : Counter {}
+class CacodemonsKilled : Counter {}
+class PainElementalsKilled : Counter {}
+class HellKnightsKilled : Counter {}
+class BaronsKilled : Counter {}
+class RevenantsKilled : Counter {}
+class ArachnotronsKilled : Counter {}
+class MancubiKilled : Counter {}
+class ArchvilesKilled : Counter {}
+class CyberdemonsKilled : Counter {}
+class SpiderMastermindsKilled : Counter {}
+
+//class SecretsFound : Counter {}
+
+class FistSwitcher : Boolean {}
+
+//class DemonizerIsActive : Boolean {}
+
+class FistFinisherThrustScaler : Counter
+{
+	Default { Inventory.MaxAmount 3; }
+}
+
+class SSGFinisherDamageScaler : Counter
+{
+	Default { Inventory.MaxAmount 3; }
+}
+
+class MinigunFinisherBulletScaler : Counter
+{
+	Default { Inventory.MaxAmount 6; }
+}
+
+class DemonizerTimer : Counter
+{
+	Default { Inventory.MaxAmount 2099; }
+}
+
+class RadSuitTimer : Counter
+{
+	Default { Inventory.MaxAmount 2100; }
+}

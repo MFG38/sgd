@@ -1,0 +1,106 @@
+class SGDRifle : SGDWeapon replaces Pistol
+{
+	Default
+	{
+		Weapon.SlotNumber 2;
+		Weapon.SelectionOrder 400;
+		Weapon.AmmoType "RifleAmmo";
+		Weapon.AmmoGive 16;		// Only ever dropped by Zombiemen upon death, so it actually gives 8 ammo.
+		Weapon.AmmoUse 1;
+		Tag "$SGD_WEP_RIFLE";
+		Inventory.PickupMessage "$SGD_WEP_RIFLE";
+	}
+
+	States
+	{
+	Spawn:
+		RGUP A -1;
+		Stop;
+	Select:
+		TNT1 AAA 0 A_Raise;
+		RGUN A 1 A_Raise;
+		Goto Select+2;
+	Deselect:
+		TNT1 AAA 0 A_Lower;
+		RGUN A 1 A_Lower;
+		Goto Deselect+2;
+	Ready:
+		RGUN A 0;
+		Goto ReadyLoop;
+	Fire:
+		RGUN B 0 A_JumpIfInventory("Rifle_FireRate",1,"FireUpgraded");
+		RGUN B 3 A_RifleFire;
+		RGUN C 3;
+		RGUN A 4;
+		Goto ReadyLoop;
+	FireUpgraded:
+		RGUN B 2 A_RifleFire;
+		RGUN C 2;
+		RGUN A 2;
+		Goto ReadyLoop;
+	FinisherFail:
+		RGUN A 0;
+		Goto ReadyLoop;
+	Finisher1:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		RGUN BCBCBCBCBCBC 3 A_RifleFire;
+		RGUN A 8;
+		RGUN A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher2:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		RGUN BCBCBCBCBCBCBCBCBCBCBCBC 3 A_RifleFire;
+		RGUN A 8;
+		RGUN A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher3:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		RGUN BCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBC 2 A_RifleFire;
+		RGUN A 12;
+		RGUN A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	}
+}
+
+extend class SGDRifle
+{
+	action void A_RifleFire()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_PlaySound("rifle/fire",CHAN_WEAPON);
+
+		int dmg = random(3,5) * 4;
+		double xspread;
+		double yspread;
+		
+		if(FindInventory("Rifle_Accuracy"))
+		{
+			xspread = angle + random2() * (1.6 / 256);
+			yspread = pitch + random2() * (1.2 / 256);
+		}
+		else
+		{
+			xspread = angle + random2() * (3.2 / 256);
+			yspread = pitch + random2() * (2.4 / 256);
+		}
+		
+		A_AlertMonsters();
+		LineAttack(xspread,1280,yspread,dmg,'Normal',"BulletPuff");
+		ACS_NamedExecute("FeatTracker",0);
+	}
+}

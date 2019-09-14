@@ -1,0 +1,91 @@
+class SGDPainElemental : SGDMonster replaces PainElemental
+{
+	Default
+	{
+		Health 400;
+		Radius 31;
+		Height 56;
+		Mass 400;
+		Speed 8;
+		PainChance 128;
+		+FLOAT;
+		+NOGRAVITY;
+		-FLOORCLIP;
+		-MISSILEMORE;
+		SeeSound "pain/sight";
+		PainSound "pain/pain";
+		DeathSound "pain/death";
+		ActiveSound "pain/active";
+	}
+	States
+	{
+	Spawn:
+		PAIN A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		PAIN A 10 A_Look;
+		Loop;
+	AltSpawn:
+		PAIN AABBCC 3 A_Wander;
+		PAIN A 0 A_Look;
+		Loop;
+	See:
+		PAIN AABBCC 3 A_Chase;
+		Loop;
+	Missile:
+		PAIN D 5 A_FaceTarget;
+		PAIN E 5 A_FaceTarget;
+		PAIN F 5 BRIGHT A_FaceTarget;
+		PAIN F 0 BRIGHT A_PainAttack;
+		Goto See;
+	Pain:
+		PAIN G 6;
+		PAIN G 6 A_Pain;
+		Goto See;
+	Pain.HolyWater:
+		PAIN G 6 A_SetTranslation("HolyWaterTrans");
+		PAIN G 6 A_Pain;
+		Goto See;
+	Pain.Fire:
+		PAIN G 6 A_SetTranslation("CharredTrans");
+		PAIN G 6 A_Pain;
+		Goto See;
+	Death:
+		PAIN H 8 BRIGHT
+		{
+			A_GiveToTarget("PainElementalsKilled");
+			A_GiveToTarget("FinisherToken",40);
+		}
+		PAIN I 8 BRIGHT A_Scream;
+		PAIN JK 8 BRIGHT;
+		PAIN L 8 BRIGHT A_PainDie;
+		PAIN M 8 BRIGHT;
+		Stop;
+	Death.HolyWater:
+		PAIN H 8 BRIGHT
+		{
+			A_SetTranslation("HolyWaterTrans");
+			A_GiveToTarget("PainElementalsKilled");
+			A_GiveToTarget("FinisherToken",40);
+		}
+		PAIN I 8 BRIGHT A_Scream;
+		PAIN JK 8 BRIGHT;
+		PAIN L 8 BRIGHT A_PainDie;
+		PAIN M 8 BRIGHT;
+		Stop;
+	Death.Fire:
+		PAIN H 8 BRIGHT
+		{
+			A_SetTranslation("CharredTrans");
+			A_GiveToTarget("PainElementalsKilled");
+			A_GiveToTarget("FinisherToken",40);
+		}
+		PAIN I 8 BRIGHT A_Scream;
+		PAIN JK 8 BRIGHT;
+		PAIN L 8 BRIGHT A_PainDie;
+		PAIN M 8 BRIGHT;
+		Stop;
+	Raise:
+		PAIN M 8 A_SetTranslation("ResetTrans");
+		PAIN LKJIH 8;
+		Goto See;
+	}
+}

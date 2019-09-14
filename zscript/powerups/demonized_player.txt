@@ -1,0 +1,167 @@
+// This code is for the player morph and powered-up fists for the Demonizer powerup. See
+// "demonizer.txt" for the actual powerup stuff.
+
+class DemonizedPlayer : PlayerPawn
+{
+	Default
+	{
+		Speed 1.25;
+		Health 666;		// Evil.
+		Radius 15;
+		Height 56;
+		Mass 999;
+		PainChance 255;
+		DamageFactor "Normal", 0.0;
+		DamageFactor "Fire", 0.0;
+		DamageFactor "HolyWater", 1.25;
+		Player.DisplayName "Satan's Arch-Nemesis";
+		Player.CrouchSprite "PLYC";
+		Player.MorphWeapon "DemonizedFists";
+		//Player.WeaponSlot 0, "DemonizedFists";
+		Translation "DemonizerTrans";
+	}
+
+	States
+	{
+	Spawn:
+		PLAY A -1;
+		Loop;
+	See:
+		PLAY ABCD 4;
+		Loop;
+	Missile:
+		PLAY E 12;
+		Goto Spawn;
+	Melee:
+		PLAY F 6 BRIGHT;
+		Goto Missile;
+	Pain:
+		PLAY G 4;
+		PLAY G 4 A_Pain;
+		Goto Spawn;
+	Death:
+		PLAY H 0 A_PlayerSkinCheck("AltSkinDeath");
+	Death1:
+		PLAY H 10;
+		PLAY I 10 A_PlayerScream;
+		PLAY J 10 A_NoBlocking;
+		PLAY KLM 10;
+		PLAY N -1;
+		Stop;
+	XDeath:
+		PLAY O 0 A_PlayerSkinCheck("AltSkinXDeath");
+	XDeath1:
+		PLAY O 5;
+		PLAY P 5 A_XScream;
+		PLAY Q 5 A_NoBlocking;
+		PLAY RSTUV 5;
+		PLAY W -1;
+		Stop;
+	AltSkinDeath:
+		PLAY H 6;
+		PLAY I 6 A_PlayerScream;
+		PLAY JK 6;
+		PLAY L 6 A_NoBlocking;
+		PLAY MNO 6;
+		PLAY P -1;
+		Stop;
+	AltSkinXDeath:
+		PLAY Q 5 A_PlayerScream;
+		PLAY R 0 A_NoBlocking;
+		PLAY R 5 A_SkullPop;
+		PLAY STUVWX 5;
+		PLAY Y -1;
+		Stop;
+	}
+}
+
+class DemonizedFists : SGDWeapon
+{
+	Default
+	{
+		//Weapon.SlotNumber 0;
+		//Weapon.SelectionOrder 666;
+		Weapon.Kickback 20;
+		//Inventory.ForbiddenTo "";
+		+WEAPON.MELEEWEAPON;
+		+WEAPON.NOALERT;
+		+WEAPON.CHEATNOTWEAPON;
+	}
+
+	States
+	{
+	Select:
+		PUCH A 1 A_Raise;
+		Loop;
+	Deselect:
+		PUCH A 1 A_Lower;
+		Loop;
+	Ready:
+		PUCH A 0;
+		Goto ReadyLoop;
+	Fire:
+		PUCH A 0 A_JumpIfInventory("FistSwitcher",1,"SecondPunch");
+		PUCH A 1 A_PlaySound("fist/swing",CHAN_WEAPON);
+		PUCH B 1;
+		PUCH L 1 A_DemonFistAttack;
+		PUCH C 1;
+		PUCH M 1;
+		PUCH D 1;
+		PUCH N 1;
+		PUCH E 1;
+		PUCH R 1;
+		PUCH K 1
+		{
+			A_GiveInventory("FistSwitcher",1);
+			A_ReFire();
+		}
+		Goto ReadyLoop;
+	SecondPunch:
+		PUCH F 1 A_PlaySound("fist/swing",CHAN_WEAPON);
+		PUCH G 1;
+		PUCH O 1 A_DemonFistAttack;
+		PUCH H 1;
+		PUCH P 1;
+		PUCH I 1;
+		PUCH Q 1;
+		PUCH J 1;
+		PUCH K 1
+		{
+			A_TakeInventory("FistSwitcher",1);
+			A_ReFire();
+		}
+		Goto ReadyLoop;
+	AltFire:	// Overriding since finishers are unnecessary for this weapon.
+		PUCH A 0;
+		Goto ReadyLoop;
+	}
+}
+
+extend class DemonizedFists
+{	
+	action void A_DemonFistAttack()
+	{
+		FTranslatedLineTarget t;
+		
+		if (player != null)
+		{
+			Weapon weap = player.ReadyWeapon;
+			if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+			{
+				if (!weap.DepleteAmmo (weap.bAltFire))
+					return;
+			}
+		}
+
+		int dmg = 500;
+
+		LineAttack(angle,64,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
+		ACS_NamedExecute("FeatTracker",0);
+		
+		if(t.linetarget)
+		{
+			A_PlaySound("*fist",CHAN_WEAPON);
+			A_AlertMonsters(256);
+		}
+	}
+}

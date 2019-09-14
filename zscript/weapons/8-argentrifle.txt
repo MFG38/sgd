@@ -1,0 +1,176 @@
+class SGDArgentRifle : SGDWeapon
+{
+	Default
+	{
+		Weapon.SlotNumber 8;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType "ArgentRifleHeat";
+		Weapon.AmmoGive 0;
+		Weapon.AmmoUse 0;
+		Tag "$SGD_WEP_ARGENTRIFLE";
+		Inventory.PickupMessage "$SGD_WEP_ARGENTRIFLE";
+		//+WEAPON.NOAUTOAIM;
+	}
+
+	States
+	{
+	Spawn:
+		STPP A -1;
+		Stop;
+	Select:
+		TNT1 AAA 0 A_Raise;
+		STPO E 1 A_Raise;
+		Goto Select+2;
+	Deselect:
+		TNT1 AAA 0 A_Lower;
+		STPO E 1 A_Lower;
+		Goto Deselect+2;
+	Ready:
+		STPO A 0;
+		Goto ReadyLoop;
+	ReadyLoop:
+		STPO A 0 A_JumpIfInventory("ArgentRifle_Cooldown",1,"ReadyLoopUpgraded");
+		STPO A 0 A_TakeInventory("ArgentRifleHeat",1);
+		STPO ABCABC 2
+		{
+			A_WeaponReady();
+			ACS_NamedExecute("FeatTracker",0);
+		}
+		Loop;
+	ReadyLoopUpgraded:
+		STPO A 0 A_TakeInventory("ArgentRifleHeat",1);
+		STPO ABC 2
+		{
+			A_WeaponReady();
+			ACS_NamedExecute("FeatTracker",0);
+		}
+		Loop;
+	Fire:
+		STPO D 0 A_JumpIfInventory("ArgentRifleHeat",100,"OverheatLoop");
+		STPO D 1 A_GiveInventory("ArgentRifleHeat",2);
+		STPO F 1 A_ArgentRifleFire(0.0);
+		STPO GH 1;
+		STPO H 0 A_ReFire;
+		Goto ReadyLoop;
+	OverheatLoop:
+		STPO E 1
+		{
+			A_PlaySound("argentrifle/overheat",CHAN_WEAPON);
+			A_TakeInventory("ArgentRifleHeat",1);
+		}
+		STPO EEEEEEE 1 A_TakeInventory("ArgentRifleHeat",1);
+		STPO E 0 A_JumpIfInventory("ArgentRifleHeat",65,"OverheatLoop");
+		Goto ReadyLoop;
+	FinisherFail:
+		STPO A 0;
+		Goto ReadyLoop;
+	Finisher1:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		STPO D 1;
+		STPO F 0 A_ArgentRifleFire(-12.0);
+		STPO F 0 A_ArgentRifleFire(-6.0);
+		STPO F 0 A_ArgentRifleFire(0.0);
+		STPO F 0 A_ArgentRifleFire(6.0);
+		STPO F 1 A_ArgentRifleFire(12.0);
+		STPO GH 1;
+		STPO A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher2:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		STPO D 1;
+		STPO F 0 A_ArgentRifleFire(-20.0);
+		STPO F 0 A_ArgentRifleFire(-15.0);
+		STPO F 0 A_ArgentRifleFire(-10.0);
+		STPO F 0 A_ArgentRifleFire(-5.0);
+		STPO F 0 A_ArgentRifleFire(0.0);
+		STPO F 0 A_ArgentRifleFire(5.0);
+		STPO F 0 A_ArgentRifleFire(10.0);
+		STPO F 0 A_ArgentRifleFire(15.0);
+		STPO F 1 A_ArgentRifleFire(20.0);
+		STPO GH 1;
+		STPO A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher3:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,1);
+		STPO D 0 A_PlaySound("argentrifle/laser",CHAN_WEAPON);
+		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 A_ArgentRifleLaser;
+		STPO A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	}
+}
+
+class ArgentRifleBall : Actor
+{
+	Default
+	{
+		Height 10;
+		Radius 5;
+		DamageFunction (random(4,6) * 5);
+		Speed 25;
+		RenderStyle "Translucent";
+		Alpha 0.75;
+		DeathSound "argentrifle/ballhit";
+		PROJECTILE;
+		+RANDOMIZE;
+	}
+
+	States
+	{
+	Spawn:
+		PLSS AABB 1 Bright { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		Loop;
+	Death:
+		PLSE ABCDE 3 Bright;
+		Stop;
+	}
+}
+
+class ArgentRifleLaser : Actor
+{
+	Default
+	{
+		Height 10;
+		Radius 5;
+		DamageFunction (random(5,8) * 3);
+		Speed 55;
+		RenderStyle "Translucent";
+		Alpha 0.5;
+		DeathSound "argentrifle/ballhit";
+		PROJECTILE;
+		+RANDOMIZE;
+	}
+
+	States
+	{
+	Spawn:
+		ARLS AABB 1 Bright
+		{
+			A_SpawnItemEx("ArgentRifleLaserTrail",-(0.2*vel.x),0,-(0.2*vel.z));
+			A_SpawnItemEx("ArgentRifleLaserTrail",-(0.4*vel.x),0,-(0.4*vel.z));
+			A_SpawnItemEx("ArgentRifleLaserTrail",-(0.6*vel.x),0,-(0.6*vel.z));
+			A_SpawnItemEx("ArgentRifleLaserTrail",-(0.8*vel.x),0,-(0.8*vel.z));
+		}
+		Loop;
+	Death:
+		ARLS A 0;
+		Stop;
+	}
+}
+
+extend class SGDArgentRifle
+{
+	action void A_ArgentRifleFire(double ang)
+	{
+		A_AlertMonsters();
+		A_PlaySound("argentrifle/fire",CHAN_WEAPON);
+		SpawnPlayerMissile("ArgentRifleBall",angle+ang);
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_ArgentRifleLaser()
+	{
+		A_AlertMonsters();
+		SpawnPlayerMissile("ArgentRifleLaser");
+		ACS_NamedExecute("FeatTracker",0);
+	}
+}

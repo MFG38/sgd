@@ -1,0 +1,194 @@
+class SGDMinigun : SGDWeapon replaces Chaingun
+{
+	Default
+	{
+		Weapon.SlotNumber 5;
+		Weapon.SelectionOrder 200;
+		Weapon.AmmoType "MinigunAmmo";
+		Weapon.AmmoGive 100;
+		Weapon.AmmoUse 1;
+		Tag "$SGD_WEP_MINIGUN";
+		Inventory.PickupMessage "$SGD_WEP_MINIGUN";
+	}
+
+	States
+	{
+	Spawn:
+		MNGN A -1;
+		Loop;
+	Select:
+		TNT1 AAA 0 A_Raise;
+		MNGG A 1 A_Raise;
+		Goto Select+2;
+	Deselect:
+		TNT1 AAA 0 A_Lower;
+		MNGG A 1 A_Lower;
+		Goto Deselect+2;
+	Ready:
+		MNGG A 0;
+		Goto ReadyLoop;
+	Fire:
+		MNGG A 0;
+		Goto Windup;
+	Windup:
+		MNGG A 0 A_JumpIfInventory("Minigun_Windup",1,"WindupUpgraded");
+		MNGG A 7 A_MinigunWindup;
+		MNGG B 7;
+		MNGG AB 6;
+		MNGG AB 5;
+		MNGG AB 4;
+		Goto Hold;
+	WindupUpgraded:
+		MNGG A 6 A_MinigunWindup;
+		MNGG B 6;
+		MNGG AB 5;
+		MNGG AB 4;
+		Goto Hold;
+	WindDown:
+		MNGG A 4 A_MinigunWindDown;
+		MNGG B 4;
+		MNGG AB 5;
+		MNGG AB 6;
+		MNGG AB 7;
+		Goto ReadyLoop;
+	Hold:
+		MNGG A 3 A_MinigunFire;
+		MNGG B 3 A_MinigunFire;
+		MNGG A 0 A_ReFire;
+		Goto WindDown;
+	Flash:
+		MNGF A 3 BRIGHT A_Light1;
+		MNGF B 3 BRIGHT A_Light0;
+		Stop;
+	FinisherFail:
+		MNGG A 0;
+		Goto ReadyLoop;
+	Finisher1:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",2);
+		MNGG ABABABABABABABAB 2 A_MinigunFire;
+		MNGG A 3 A_MinigunWindDown;
+		MNGG B 3;
+		MNGG AB 4;
+		MNGG AB 5;
+		MNGG AB 6;
+		MNGG A 0 A_TakeInventory("MinigunFinisherBulletScaler",0x7FFFFFFF);
+		MNGG A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher2:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",4);
+		MNGG ABABABABABABABABABABABABABAB 2 A_MinigunFire;
+		MNGG A 3 A_MinigunWindDown;
+		MNGG B 3;
+		MNGG AB 4;
+		MNGG AB 5;
+		MNGG AB 6;
+		MNGG A 0 A_TakeInventory("MinigunFinisherBulletScaler",0x7FFFFFFF);
+		MNGG A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	Finisher3:
+		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,1);
+		TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",6);
+		MNGG A 6 A_MinigunWindup;
+		MNGG B 6;
+		MNGG AB 5;
+		MNGG AB 4;
+		MNGG AB 3;
+		MNGG ABABABABABABABABABABABABABABABABABAB 2 A_MinigunFinisher;
+		MNGG A 3 A_MinigunWindDown;
+		MNGG B 3;
+		MNGG AB 4;
+		MNGG AB 5;
+		MNGG AB 6;
+		MNGG A 0 A_TakeInventory("MinigunFinisherBulletScaler",0x7FFFFFFF);
+		MNGG A 0 ACS_NamedExecute("EndFinisher",0);
+		Goto ReadyLoop;
+	}
+}
+
+extend class SGDMinigun
+{
+	action void A_MinigunWindup()
+	{
+		A_PlaySound("minigun/windup",CHAN_WEAPON);
+		A_AlertMonsters(384);
+	}
+	
+	action void A_MinigunWindDown()
+	{
+		A_PlaySound("minigun/winddown");	// Omitted CHAN_WEAPON here so this doesn't interrupt the firing sound.
+	}
+	
+	action void A_MinigunFire()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_PlaySound("minigun/fire",CHAN_WEAPON);
+
+		int dmg = random(12,15);
+		double xspread;
+		double yspread;
+		
+		if(FindInventory("Minigun_Accuracy"))
+		{
+			xspread = angle + random2() * (4.5 / 256);
+			yspread = pitch + random2() * (3.75 / 256);
+		}
+		else
+		{
+			xspread = angle + random2() * (6.25 / 256);
+			yspread = pitch + random2() * (5.0 / 256);
+		}
+
+		LineAttack(xspread,768,yspread,dmg,'Normal',"BulletPuff");
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_MinigunFinisher()
+	{
+		if (player == null)
+		{
+			return;
+		}
+		
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_PlaySound("minigun/fire",CHAN_WEAPON);
+
+		for(int i = 0; i < CountInv("MinigunFinisherBulletScaler"); i++)
+		{
+			int dmg = 20 + random(0,5);
+			double xspread = angle + random2() * (8.25 / 256);
+			double yspread = pitch + random2() * (6.575 / 256);
+
+			LineAttack(xspread,768,yspread,dmg,'Normal',"BulletPuff");
+		}
+		ACS_NamedExecute("FeatTracker",0);
+	}
+}
