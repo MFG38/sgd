@@ -36,6 +36,7 @@ OptionMenu "SGD_Setup"
 	Option "Display finisher bar", "sgd_displayfbar", "OnOff"
 	Option "Finisher message type", "sgd_finisherprompt", "FinisherPrompt"
 	Option "Display hazmat timer", "sgd_displayhsbar", "OnOff"
+	Slider "Low health screen flash threshold", "sgd_lowhpfthres", 10, 30, 5
 	Slider "Low health screen flash intensity", "sgd_lowhpflash", 0.00, 0.25, 0.05, 2
 	StaticText ""
 	StaticText "Sounds", "White"

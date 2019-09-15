@@ -232,7 +232,9 @@ script "RadSuitStuff" (void)
 
 script "LowHealthFlash" ENTER
 {
-	if(GetActorProperty(PL_TIDSTART+PlayerNumber(),APROP_HEALTH) < 21 && GetActorProperty(PL_TIDSTART+PlayerNumber(),APROP_HEALTH) > 0)
+	int threshold = GetCVar("sgd_lowhpfthres");
+	
+	if(GetActorProperty(PL_TIDSTART+PlayerNumber(),APROP_HEALTH) <= threshold && GetActorProperty(PL_TIDSTART+PlayerNumber(),APROP_HEALTH) > 0)
 	{
 		FadeTo(255,0,0,GetCVar("sgd_lowhpflash"),0.8);
 		Delay(28);
