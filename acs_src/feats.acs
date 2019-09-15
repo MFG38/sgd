@@ -16,7 +16,7 @@ str Feats[TOTAL_FEATS] =
 	// Shotgun range
 	"200 shotgunners","125 imps","125 pinkies",
 	// SSG recoil
-	"75 spectres","100 cacodemons","75 hell knights",
+	"100 spectres","100 cacodemons","75 hell knights",
 	// SSG reload speed
 	"125 spectres","150 cacodemons","50 archviles",
 	// Minigun accuracy
@@ -154,7 +154,7 @@ script "FeatTracker" (void)
 	if(CheckForFeatCompletion(10,"ImpsKilled",125)) { ACS_NamedExecute("FeatRewarder",0,10,3); }
 	if(CheckForFeatCompletion(11,"PinkiesKilled",125)) { ACS_NamedExecute("FeatRewarder",0,11,3); }
 	// SSG recoil
-	if(CheckForFeatCompletion(12,"SpectresKilled",75)) { ACS_NamedExecute("FeatRewarder",0,12,4); }
+	if(CheckForFeatCompletion(12,"SpectresKilled",100)) { ACS_NamedExecute("FeatRewarder",0,12,4); }
 	if(CheckForFeatCompletion(13,"CacodemonsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,13,4); }
 	if(CheckForFeatCompletion(14,"HellKnightsKilled",75)) { ACS_NamedExecute("FeatRewarder",0,14,4); }
 	// SSG reload speed

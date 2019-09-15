@@ -9,7 +9,8 @@
 	3.2 If you downloaded a ZIP of the source from GitHub
 4. Reporting bugs
 5. License information
-6. Links
+6. Credits
+7. Links
 
 
 1. INTRODUCTION
@@ -96,7 +97,15 @@ material, you must distribute your contributions under the same license as
 the original.
 
 
-6. LINKS
+6. CREDITS
+==========
+
+Satanic Gameshow Deluxe is created by Santtu "MFG38" Pesonen.
+
+See credits.txt for a full credits list.
+
+
+7. LINKS
 ========
 
 ModDB page:		http://www.moddb.com/mods/satanic-gameshow-deluxe
