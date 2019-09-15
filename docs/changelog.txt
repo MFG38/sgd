@@ -1,6 +1,6 @@
 [??-??-????] v1.1:
 - Removed weakness against Holy Water from zombies.
-- Fixed a harmless but annoying typo in the sgdcore ACS script.
+- Fixed a harmless but annoying typo in the "LowHealthFlash" script's name.
 - Modified skill 6:
 	* Health and armor pickups give normal amounts instead of 75%.
 	* Stimpacks and medikits have replacements that give 5 HP and 15 HP respectively.
