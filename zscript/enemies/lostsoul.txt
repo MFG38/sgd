@@ -22,7 +22,6 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		RenderStyle "SoulTrans";
 		Obituary "$OB_SKULL";
 		DamageFactor "Fire", 0.75;
-		PainChance "Fire", 160;
 	}
 	States
 	{
