@@ -45,12 +45,12 @@ class SGDAllmap : Allmap replaces Allmap
 	Default { Inventory.ForbiddenTo "DemonizedPlayer"; -INVENTORY.ALWAYSPICKUP; }
 }
 
-class SGDInfrared : Infrared replaces Infrared
+/* class SGDInfrared : Infrared replaces Infrared
 {
 	Default { Inventory.ForbiddenTo "DemonizedPlayer"; -INVENTORY.ALWAYSPICKUP; }
 }
 
-/* class SGDRadSuit : RadSuit replaces RadSuit
+class SGDRadSuit : RadSuit replaces RadSuit
 {
 	Default { Inventory.ForbiddenTo "DemonizedPlayer"; -INVENTORY.ALWAYSPICKUP; }
 } */

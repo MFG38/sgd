@@ -78,3 +78,5 @@ class RadSuitTimer : Counter
 {
 	Default { Inventory.MaxAmount 2100; }
 }
+
+class GogglesActive : Boolean {}

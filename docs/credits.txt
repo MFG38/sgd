@@ -125,6 +125,8 @@ Demonizer morph and Holy Water Pool particle effects: MFG38
 
 Custom teleport particle effect: MFG38
 
+Light Amp Goggles: base sprites by id Software, edited by MFG38
+
 
 =========================
 == TEXTURES (TITLEMAP) ==

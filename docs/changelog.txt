@@ -19,6 +19,7 @@
 - Moved the "SGD Options" menu to the main menu.
 - Increased the number of Spectre kills required for the Double-Barrel recoil upgrade from 75 to 100.
 - Implemented a modifiable threshold for the low health screen flash.
+- Implemented a togglable light amp goggle powerup.
 
 [13-09-2019] v1.0.2:
 - Fixed the Chaingunner's "burst fire" behavior when sgd_hitscanbehavior is set to 0.

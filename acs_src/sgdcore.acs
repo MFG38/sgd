@@ -92,6 +92,9 @@ script "ResetInventory" UNLOADING
 	TakeInventory("SGDRadSuit",ALL);
 	TakeInventory("RadSuitGiver",ALL);
 	TakeInventory("RadSuitTimer",ALL);
+	TakeInventory("SGDLightAmpGoggles",ALL);
+	TakeInventory("LightAmpGogglesGiver",ALL);
+	TakeInventory("GogglesActive",ALL);
 }
 
 script "ArgentRifleCooldown" ENTER
@@ -228,6 +231,17 @@ script "RadSuitStuff" (void)
 	}
 	
 	TakeInventory("RadSuitColorSetter",1);
+}
+
+script "GoggleTaker" (void)
+{
+	while(CheckInventory("GogglesActive"))
+	{
+		TakeInventory("SGDLightAmpGoggles",1);
+		Delay(42);
+	}
+	TakeInventory("LightAmpGogglesGiver",1);
+	TakeInventory("GogglesActive",1);
 }
 
 script "LowHealthFlash" ENTER

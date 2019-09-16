@@ -58,6 +58,9 @@ SGD_PU_DEMONIZER =
 SGD_PU_RADSUIT =
 	"Hazmat suit - Lets you traverse toxic waste safely.\n"
 	"Press the 'Use Powerup' button to activate.";
+SGD_PU_LAGOGGLES =
+	"Light amp goggles - Lets you see clearly in darkness.\n"
+	"Press the 'Use Powerup' button to toggle.";
 	
 GOTBLUECARD = "Blue keycard";
 GOTYELWCARD = "Yellow keycard";
