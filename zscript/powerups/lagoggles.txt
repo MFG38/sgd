@@ -20,11 +20,13 @@ class SGDLightAmpGoggles : CustomInventory replaces Infrared
 		TNT1 A 0 A_JumpIf(FindInventory("GogglesActive"),"ToggleOff");
 		Fail;
 	ToggleOn:
+		TNT1 A 0 { if(CVar.FindCVar('sgd_visortogglesound').GetBool() == true) { A_PlaySound("visor/toggle"); }}
 		TNT1 A 0 A_GiveInventory("LightAmpGogglesGiver");
 		TNT1 A 0 A_GiveInventory("GogglesActive");
 		TNT1 A 0 ACS_NamedExecute("GoggleTaker",0);
 		Fail;
 	ToggleOff:
+		TNT1 A 0 { if(CVar.FindCVar('sgd_visortogglesound').GetBool() == true) { A_PlaySound("visor/toggle"); }}
 		TNT1 A 0 A_TakeInventory("LightAmpGogglesGiver");
 		TNT1 A 0 A_TakeInventory("GogglesActive");
 		TNT1 A 0 ACS_NamedSuspend("GoggleTaker",0);

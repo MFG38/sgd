@@ -11,13 +11,13 @@ StatusBar normal, fullscreenoffsets, forcescaled
 	
 		// Health and armor
 		DrawImage "HAFRAME", 52, -32;
-		DrawNumber 3, SGDHUDFONT, RED, Health, Alignment(right), 85, -29;
-		DrawNumber 3, SGDHUDFONT, RED, Armor, Alignment(right), 121, -29;
+		DrawNumber 3, SGDHUDFONT, Red, Health, Alignment(right), 85, -29;
+		DrawNumber 3, SGDHUDFONT, Red, Armor, Alignment(right), 121, -29;
 	
 		// Weapon selection and ammo
 		DrawImage "AMMFRAME", -48, -54;
 		DrawImage "WEPFRAME", -124, -32;
-		DrawNumber 3, SGDHUDFONT, RED, Ammo1, Alignment(center), -88, -29;
+		DrawNumber 3, SGDHUDFONT, Red, Ammo1, Alignment(center), -88, -29;
 	
 		InInventory "SGDFists"				{ DrawImage "WEPLIGHT", -117, -14; }
 		InInventory "SGDRifle"				{ DrawImage "WEPLIGHT", -111, -14; }
@@ -53,6 +53,16 @@ StatusBar normal, fullscreenoffsets, forcescaled
 			InInventory "RadSuitTimer"
 			{
 				DrawBar "HSBAR_FG", "HSBAR_BG", RadSuitTimer, Horizontal, reverse, -89, 8;
+			}
+		}
+		
+		//Light amp visor charge counter
+		IfCVarInt "sgd_displayvisortime", 1
+		{
+			InInventory "GogglesActive"
+			{
+				DrawImage "VISORCNT", -29, 19;
+				DrawNumber 3, SGDHUDFONT, Yellow, SGDLightAmpGoggles, Alignment(right), -32, 19;
 			}
 		}
 	
@@ -124,6 +134,16 @@ StatusBar fullscreen, fullscreenoffsets, forcescaled
 			InInventory "RadSuitTimer"
 			{
 				DrawBar "HSBAR_FG", "HSBAR_BG", RadSuitTimer, Horizontal, reverse, -89, 8;
+			}
+		}
+		
+		//Light amp visor charge counter
+		IfCVarInt "sgd_displayvisortime", 1
+		{
+			InInventory "GogglesActive"
+			{
+				DrawImage "VISORCNT", -29, 19;
+				DrawNumber 3, SGDHUDFONT, Yellow, SGDLightAmpGoggles, Alignment(right), -32, 19;
 			}
 		}
 	

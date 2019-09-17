@@ -45,17 +45,19 @@ class SGDSpiderMastermind : SGDMonster replaces SpiderMastermind
 		Loop;
 	Missile:
 		SPID A 0 A_JumpIf(GetCVar("sgd_hitscanbehavior") == 1,"AltMissile");
-		SPID A 20 BRIGHT A_FaceTarget;
+		SPID A 0 A_FaceTarget;
+		SPID A 30 BRIGHT A_PlaySound("minigun/windup");
 		SPID G 4 BRIGHT A_SPosAttackUseAtkSound;
 		SPID H 4 BRIGHT A_SposAttackUseAtkSound;
 		SPID H 1 BRIGHT A_SpidRefire;
-		Goto Missile+2;
+		Goto Missile+3;
 	AltMissile:
-		SPID A 20 BRIGHT A_FaceTarget;
+		SPID A 0 A_FaceTarget;
+		SPID A 30 BRIGHT A_PlaySound("minigun/windup");
 		SPID G 4 BRIGHT A_SposAltAttack;
 		SPID H 4 BRIGHT A_SposAltAttack;
 		SPID H 1 BRIGHT A_SpidRefire;
-		Goto AltMissile+1;
+		Goto AltMissile+2;
 	Pain:
 		SPID I 3;
 		SPID I 3 A_Pain;

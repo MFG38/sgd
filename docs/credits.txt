@@ -76,6 +76,8 @@ Field Med Pack use sound: id Software (Quake III Arena)
 Hazmat Suit warning sound: base sound by id Software (Quake III Arena), edited
 by MFG38
 
+Light Amp Visor toggle sound: id Software (Quake III Arena)
+
 
 =============
 == SPRITES ==
@@ -125,7 +127,7 @@ Demonizer morph and Holy Water Pool particle effects: MFG38
 
 Custom teleport particle effect: MFG38
 
-Light Amp Goggles: base sprites by id Software, edited by MFG38
+Light Amp Visor: base sprites by id Software, edited by MFG38
 
 
 =========================

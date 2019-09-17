@@ -1,4 +1,4 @@
-[??-??-????] v1.1:
+[18-09-2019] v1.1:
 - Removed weakness against Holy Water from zombies.
 - Fixed a harmless but annoying typo in the "LowHealthFlash" script's name.
 - Modified skill 6:
@@ -20,6 +20,9 @@
 - Increased the number of Spectre kills required for the Double-Barrel recoil upgrade from 75 to 100.
 - Implemented a modifiable threshold for the low health screen flash.
 - Implemented a togglable light amp goggle powerup.
+- Increased the Spider Mastermind's attack windup time from 20 tics to 30.
+- Added the minigun windup sound to the Spider Mastermind's attack functions.
+- Modified the Holy Water Grenade's pickup message.
 
 [13-09-2019] v1.0.2:
 - Fixed the Chaingunner's "burst fire" behavior when sgd_hitscanbehavior is set to 0.

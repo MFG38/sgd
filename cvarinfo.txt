@@ -6,6 +6,7 @@ user bool sgd_displayfbar = true;
 user float sgd_lowhpflash = 0.25;
 user int sgd_lowhpfthres = 25;
 user bool sgd_displayhsbar = true;
+user bool sgd_displayvisortime = true;
 
 // Visual stuff
 server bool sgd_spawntrails = true;
@@ -19,3 +20,4 @@ server int sgd_revrocketbehavior = 1;	// 0 = Original, 1 = SGD-style
 // Sound stuff
 user bool sgd_fieldmedsound = true;
 user bool sgd_hswarningsound = true;
+user bool sgd_visortogglesound = true;

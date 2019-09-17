@@ -1,6 +1,6 @@
 [enu default]
 
-SGD_VERSIONNUM = "v1.1-pre";
+SGD_VERSIONNUM = "v1.1";
 
 SGD_MENU_HOWTOPLAY = "How to play";
 SGD_MENU_MODSETUP = "Mod settings";
@@ -50,7 +50,7 @@ SGD_PU_FIELDMED =
 	"Field Med Pack - A portable chunk of health, ready to go in a pinch.\n"
 	"Press the 'Use Powerup' button to use.";
 SGD_PU_HWGRENADE =
-	"Holy Water Grenade - It's a grenade. Effective against zombies.\n"
+	"Holy Water Grenade - It's a grenade. 'Nuff said.\n"
 	"Press the 'Use Powerup' button to use.";
 SGD_PU_DEMONIZER =
 	"Demonizer - Turn into an unstoppable killing machine for a minute!\n"
@@ -59,7 +59,7 @@ SGD_PU_RADSUIT =
 	"Hazmat suit - Lets you traverse toxic waste safely.\n"
 	"Press the 'Use Powerup' button to activate.";
 SGD_PU_LAGOGGLES =
-	"Light amp goggles - Lets you see clearly in darkness.\n"
+	"Light amp visor - Lets you see clearly in darkness.\n"
 	"Press the 'Use Powerup' button to toggle.";
 	
 GOTBLUECARD = "Blue keycard";
