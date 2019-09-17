@@ -59,5 +59,6 @@ fieldmed/use				s_health
 hazmat/warning				hs_rout
 $volume hazmat/warning 0.8
 hwgrenade/splode			hwgrenxp
+visor/toggle				latoggle
 
 fx/fireburn					FMTRFLAM
