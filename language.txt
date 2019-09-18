@@ -1,6 +1,6 @@
 [enu default]
 
-SGD_VERSIONNUM = "v1.1";
+SGD_VERSIONNUM = "v1.1.1-pre";
 
 SGD_MENU_HOWTOPLAY = "How to play";
 SGD_MENU_MODSETUP = "Mod settings";

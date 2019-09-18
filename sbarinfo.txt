@@ -62,7 +62,7 @@ StatusBar normal, fullscreenoffsets, forcescaled
 			InInventory "GogglesActive"
 			{
 				DrawImage "VISORCNT", -29, 19;
-				DrawNumber 3, SGDHUDFONT, Yellow, SGDLightAmpGoggles, Alignment(right), -32, 19;
+				DrawNumber 3, SGDHUDFONT, Gold, SGDLightAmpGoggles, Alignment(right), -32, 19;
 			}
 		}
 	
@@ -143,7 +143,7 @@ StatusBar fullscreen, fullscreenoffsets, forcescaled
 			InInventory "GogglesActive"
 			{
 				DrawImage "VISORCNT", -29, 19;
-				DrawNumber 3, SGDHUDFONT, Yellow, SGDLightAmpGoggles, Alignment(right), -32, 19;
+				DrawNumber 3, SGDHUDFONT, Gold, SGDLightAmpGoggles, Alignment(right), -32, 19;
 			}
 		}
 	
