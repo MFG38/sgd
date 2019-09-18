@@ -19,6 +19,7 @@ class SGDSpiderMastermind : SGDMonster replaces SpiderMastermind
 		DeathSound "spider/death";
 		ActiveSound "spider/active";
 		Obituary "$OB_SPIDER";
+		PainChance "Fire", 50;
 	}
 	States
 	{

@@ -21,7 +21,7 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		ActiveSound "skull/active";
 		RenderStyle "SoulTrans";
 		Obituary "$OB_SKULL";
-		DamageFactor "Fire", 0.75;
+		DamageFactor "Fire", 0.85;
 	}
 	States
 	{
