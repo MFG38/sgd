@@ -3,10 +3,12 @@ user noarchive bool sgd_debugmode = false;
 // HUD stuff
 user int sgd_finisherprompt = 2;		// 0 = Off, 1 = No button prompt, 2 = Full
 user bool sgd_displayfbar = true;
-user float sgd_lowhpflash = 0.25;
-user int sgd_lowhpfthres = 25;
 user bool sgd_displayhsbar = true;
 user bool sgd_displayvisortime = true;
+
+user bool sgd_lowhpflash_on = true;
+user float sgd_lowhpflash_int = 0.25;
+user int sgd_lowhpflash_thres = 25;
 
 // Visual stuff
 server bool sgd_spawntrails = true;

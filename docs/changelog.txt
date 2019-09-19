@@ -1,7 +1,13 @@
-[??-??-????] v1.1.1:
+[20-09-2019] v1.1.1:
 - Changed the color of the Light Amp Visor charge indicator.
 - Reduced the Lost Soul's Fire damage resistance from 25% to 15%.
 - Reduced pain chance against Fire for the Cyberdemon and Spider Mastermind.
+- Reduced demonized player's damage factor from Holy Water from 125% to 110%.
+- Increased the speed of the low health screen flash.
+- Implemented a new cvar to toggle the low health screen flash (sgd_lowhpflash_on).
+- Renamed cvar sgd_lowhpflash to sgd_lowhpflash_int.
+- Renamed cvar sgd_lowhpfthres to sgd_lowhpflash_thres.
+- Slightly reduced the customization range of sgd_lowhpflash_int.
 
 [18-09-2019] v1.1:
 - Removed weakness against Holy Water from zombies.

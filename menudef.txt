@@ -37,8 +37,10 @@ OptionMenu "SGD_Setup"
 	Option "Finisher message type", "sgd_finisherprompt", "FinisherPrompt"
 	Option "Display hazmat timer", "sgd_displayhsbar", "OnOff"
 	Option "Display light amp visor charge", "sgd_displayvisortime", "OnOff"
-	Slider "Low health screen flash threshold", "sgd_lowhpfthres", 10, 30, 5
-	Slider "Low health screen flash intensity", "sgd_lowhpflash", 0.00, 0.25, 0.05, 2
+	StaticText ""
+	Option "Enable low health screen flash", "sgd_lowhpflash_on", "YesNo"
+	Slider "Low health screen flash threshold", "sgd_lowhpflash_thres", 10, 30, 5
+	Slider "Low health screen flash intensity", "sgd_lowhpflash_int", 0.05, 0.25, 0.05, 2
 	StaticText ""
 	StaticText "Sounds", "White"
 	Option "Field Med Pack use sound", "sgd_fieldmedsound", "OnOff"
