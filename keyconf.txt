@@ -1,0 +1,13 @@
+addkeysection "SGD Powerup Hotkeys" SGD_PowerupHotkeys
+
+alias quick_demonizer	"use DemonizerPowerup"
+alias quick_fieldmed	"use FieldMedPack"
+alias quick_hwgrenade	"use HolyWaterGrenadePickup"
+alias quick_goggles	"use SGDLightAmpGoggles"
+alias quick_radsuit	"use SGDRadSuit"
+
+addmenukey "Demonizer"		quick_demonizer
+addmenukey "Field Med Pack"	quick_fieldmed
+addmenukey "Holy Water Grenade"	quick_hwgrenade
+addmenukey "Light Amp Visor"	quick_goggles
+addmenukey "Hazmat Suit"	quick_radsuit

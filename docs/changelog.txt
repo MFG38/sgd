@@ -1,3 +1,7 @@
+[??-??-????] v1.2:
+- Implemented configurable hotkeys for the powerups.
+- Added a key config submenu to the "SGD Options" menu.
+
 [20-09-2019] v1.1.1:
 - Changed the color of the Light Amp Visor charge indicator.
 - Reduced the Lost Soul's Fire damage resistance from 25% to 15%.
