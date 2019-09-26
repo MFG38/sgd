@@ -111,11 +111,11 @@ script "ArgentRifleCooldown" ENTER
 	
 	if(!CheckInventory("ArgentRifle_Cooldown"))
 	{
-		Delay(12);
+		Delay(18);
 	}
 	else
 	{
-		Delay(6);
+		Delay(12);
 	}
 	Restart;
 }

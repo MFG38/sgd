@@ -1,12 +1,12 @@
-class ZombiemanBullet : Actor
+class ZombiemanBullet : FastProjectile
 {
 	Default
 	{
 		Radius 2;
 		Height 4;
-		Speed 56;
+		Speed 64;
 		DamageFunction (random(1,5) * 3);
-		PROJECTILE;
+		//PROJECTILE;
 		+ROCKETTRAIL;
 		Scale 0.5;
 	}
