@@ -4,6 +4,7 @@
 - Slowed down the Argent Rifle's cooldown rate (both normal and upgraded) by 6 tics.
 - Changed ZombiemanBullet to inherit from FastProjectile instead of Actor.
 - Increased ZombiemanBullet's speed from 56 to 64.
+- Slightly modified readme.txt.
 
 [20-09-2019] v1.1.1:
 - Changed the color of the Light Amp Visor charge indicator.
