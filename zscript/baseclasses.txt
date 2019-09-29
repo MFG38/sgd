@@ -53,6 +53,44 @@ class SGDWeapon : Weapon
 	}
 }
 
+class SGDWeaponPickup : CustomInventory
+{
+	// Custom properties
+	class<Inventory> WeaponClass;	// Defines the given weapon's actor class.
+	class<Inventory> AmmoClass;		// Defines the given ammo type's actor class.
+	int AmmoAmount;					// Defines the amount of ammo given.
+
+	property GiveWeapon: WeaponClass;
+	property GiveAmmo: AmmoClass, AmmoAmount;
+
+	Default
+	{
+		Inventory.MaxAmount 0;
+		Inventory.PickupSound "misc/wpnpickup";
+		Inventory.ForbiddenTo "DemonizedPlayer";
+
+		// Custom property defaults
+		SGDWeaponPickup.GiveWeapon "SGDRifle";
+		SGDWeaponPickup.GiveAmmo "RifleAmmo", 8;
+	}
+
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		{
+			let fuck = SGDWeaponPickup(self);
+			
+			if(fuck)
+			{
+				A_GiveInventory(fuck.WeaponClass);
+				A_GiveInventory(fuck.AmmoClass,fuck.AmmoAmount);
+			}
+		}
+		Stop;
+	}
+}
+
 class WeaponUpgrade : Inventory
 {
 	Default
