@@ -66,7 +66,7 @@ class SGDMinigun : SGDWeapon replaces Chaingun
 	Finisher1:
 		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
 		TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",2);
-		MNGG ABABABABABABABAB 2 A_MinigunFire;
+		MNGG ABABABABABABABAB 2 A_MinigunFinisher;
 		MNGG A 3 A_MinigunWindDown;
 		MNGG B 3;
 		MNGG AB 4;
@@ -78,7 +78,7 @@ class SGDMinigun : SGDWeapon replaces Chaingun
 	Finisher2:
 		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
 		TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",4);
-		MNGG ABABABABABABABABABABABABABAB 2 A_MinigunFire;
+		MNGG ABABABABABABABABABABABABABAB 2 A_MinigunFinisher;
 		MNGG A 3 A_MinigunWindDown;
 		MNGG B 3;
 		MNGG AB 4;

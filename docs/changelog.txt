@@ -5,6 +5,7 @@
 - Changed ZombiemanBullet to inherit from FastProjectile instead of Actor.
 - Increased ZombiemanBullet's speed from 56 to 64.
 - Slightly modified readme.txt.
+- Fixed the Minigun's Level 1 and 2 finishers using the wrong function.
 
 [20-09-2019] v1.1.1:
 - Changed the color of the Light Amp Visor charge indicator.
