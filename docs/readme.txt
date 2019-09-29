@@ -46,10 +46,9 @@ other IWADs is neither guaranteed nor planned.
 3.2 If you downloaded a ZIP of the source from GitHub:
 ------------------------------------------------------
 1.	Move sgd-master.zip to your folder of choice. DO NOT UNZIP THE ARCHIVE.
-2.	Click on and drag sgd-master.pk3 over gzdoom.exe or use your launcher of
-	choice to run the mod. If you want to load sgd-master.pk3 alongside other
-	PWADs, using a launcher is highly recommended. If you skipped step 2,
-	execute this step with sgd-master.zip.
+2.	Click on and drag sgd-master.zip over gzdoom.exe or use your launcher of
+	choice to run the mod. If you want to load sgd-master.zip alongside other
+	PWADs, using a launcher is highly recommended.
 
 
 4. REPORTING BUGS
