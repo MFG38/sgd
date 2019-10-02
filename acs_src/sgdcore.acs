@@ -78,6 +78,61 @@ script "FinisherReadyMsg" ENTER
 	Restart;
 }
 
+/* script "WeaponAcquiredMsg" (int weapon)
+// This was a bad idea.
+{
+	str WeaponClass;
+	str WeaponName;
+	str WeaponFullName = StrParam(s:"SGD_WEP_",s:WeaponName);
+	
+	switch(weapon)
+	{
+		case 3:
+			WeaponClass = "SGDShotgun";
+			WeaponName = "SHOTGUN";
+			break;
+		case 4:
+			WeaponClass = "SGDSuperShotgun";
+			WeaponName = "SSG";
+			break;
+		case 5:
+			WeaponClass = "SGDMinigun";
+			WeaponName = "MINIGUN";
+			break;
+		case 6:
+			WeaponClass = "SGDBazooka";
+			WeaponName = "BAZOOKA";
+			break;
+		case 7:
+			WeaponClass = "SGDFlamethrower";
+			WeaponName = "FLAMETHROWER";
+			break;
+		case 8:
+			WeaponClass = "SGDArgentRifle";
+			WeaponName = "ARGENTRIFLE";
+			break;
+		case 9:
+			WeaponClass = "SGDDarkMatterCannon";
+			WeaponName = "DMCANNON";
+			break;
+		case 0:
+			WeaponClass = "SGDChainsaw";
+			WeaponName = "CHAINSAW";
+			break;
+		default:
+			WeaponClass = "SGDRifle";
+			WeaponName = "RIFLE";
+	}
+	
+	if(!CheckInventory(WeaponClass))
+	{
+		SetHudSize(HUDSIZE_X,HUDSIZE_Y,0);
+		SetFont("BIGFONT");
+		HudMessage(s:"NEW WEAPON ACQUIRED: ",l:WeaponFullName;
+			HUDMSG_TYPEON,200,CR_RED,CENTER_X,45.0,4.0,FRAME,2.0);
+	}
+} */
+
 /////////////////////
 // INVENTORY STUFF //
 /////////////////////

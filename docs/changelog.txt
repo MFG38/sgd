@@ -1,4 +1,4 @@
-[??-??-????] v1.2:
+[03-10-2019] v1.2:
 - Implemented configurable hotkeys for the powerups.
 - Added a key config submenu to the "SGD Options" menu.
 - Slowed down the Argent Rifle's cooldown rate (both normal and upgraded) by 6 tics.

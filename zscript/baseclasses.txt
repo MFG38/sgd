@@ -53,13 +53,14 @@ class SGDWeapon : Weapon
 	}
 }
 
-class SGDWeaponPickup : CustomInventory
+/* class SGDWeaponPickup : CustomInventory
+// This was a bad idea.
 {
 	// Custom properties
-	class<Inventory> WeaponClass;	// Defines the given weapon's actor class.
-	class<Inventory> AmmoClass;		// Defines the given ammo type's actor class.
-	int AmmoAmount;					// Defines the amount of ammo given.
-	int ACSVal;						// Unused for the time being.
+	class<Inventory> WeaponClass;
+	class<Inventory> AmmoClass;
+	int AmmoAmount;
+	int ACSVal;
 
 	property GiveWeapon: WeaponClass;
 	property GiveAmmo: AmmoClass, AmmoAmount;
@@ -74,7 +75,7 @@ class SGDWeaponPickup : CustomInventory
 		// Custom property defaults
 		SGDWeaponPickup.GiveWeapon "SGDRifle";
 		SGDWeaponPickup.GiveAmmo "RifleAmmo", 8;
-		SGDWeaponPickup.ACSNumber 0;
+		SGDWeaponPickup.ACSNumber 2;
 	}
 
 	States
@@ -88,11 +89,12 @@ class SGDWeaponPickup : CustomInventory
 			{
 				A_GiveInventory(fuck.WeaponClass);
 				A_GiveInventory(fuck.AmmoClass,fuck.AmmoAmount);
+				ACS_NamedExecute("",0,fuck.ACSVal);
 			}
 		}
 		Stop;
 	}
-}
+} */
 
 class WeaponUpgrade : Inventory
 {
