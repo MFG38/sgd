@@ -169,7 +169,7 @@ extend class SGDSuperShotgun
 
 		for(int i = 0; i < 24; i++)
 		{
-			int dmg = random(16,20);
+			int dmg = random(20,24);
 			double xspread = angle + random2() * (21.5 / 256);
 			double yspread = pitch + random2() * (15.25 / 256);
 			

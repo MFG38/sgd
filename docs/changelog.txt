@@ -1,3 +1,6 @@
+[??-??-????] v2.0:
+- Increased the damage of the Double-Barrel Shotgun's pellets from random(16,20) to random(20,24).
+
 [03-10-2019] v1.2:
 - Implemented configurable hotkeys for the powerups.
 - Added a key config submenu to the "SGD Options" menu.
