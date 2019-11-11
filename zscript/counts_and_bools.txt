@@ -50,7 +50,7 @@ class SpiderMastermindsKilled : Counter {}
 
 //class SecretsFound : Counter {}
 
-class FistSwitcher : Boolean {}
+//class FistSwitcher : Boolean {}
 
 //class DemonizerIsActive : Boolean {}
 
