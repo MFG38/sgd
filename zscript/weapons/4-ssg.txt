@@ -200,7 +200,7 @@ extend class SGDSuperShotgun
 		A_PlaySound("coachgun/fire",CHAN_WEAPON);
 		A_Recoil(CountInv("SSGFinisherDamageScaler") * 2);
 
-		for(int i = 0; i < 20; i++)
+		for(int i = 0; i < 24; i++)
 		{
 			int dmg = CountInv("SSGFinisherDamageScaler") * 50;
 			double xspread = angle + random2() * (28.0 / 256);
