@@ -15,6 +15,7 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		+DONTFALL;
 		+ZDOOMTRANS;
 		-FLOORCLIP;
+		+NOBLOOD;
 		AttackSound "skull/melee";
 		PainSound "skull/pain";
 		DeathSound "skull/death";
