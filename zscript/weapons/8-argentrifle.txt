@@ -31,7 +31,7 @@ class SGDArgentRifle : SGDWeapon
 	ReadyLoop:
 		STPO A 0 A_JumpIfInventory("ArgentRifle_Cooldown",1,"ReadyLoopUpgraded");
 		STPO A 0 A_TakeInventory("ArgentRifleHeat",1);
-		STPO ABCABCABC 2
+		STPO ABCABCABCABC 2
 		{
 			A_WeaponReady();
 			ACS_NamedExecute("FeatTracker",0);
@@ -39,7 +39,7 @@ class SGDArgentRifle : SGDWeapon
 		Loop;
 	ReadyLoopUpgraded:
 		STPO A 0 A_TakeInventory("ArgentRifleHeat",1);
-		STPO ABCABC 2
+		STPO ABCABCABC 2
 		{
 			A_WeaponReady();
 			ACS_NamedExecute("FeatTracker",0);
