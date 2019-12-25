@@ -1,8 +1,9 @@
-[??-??-????] v1.3:
+[25-12-2019] v1.3:
 - Increased the damage of the Double-Barrel Shotgun's pellets from random(16,20) to random(20,24).
 - Changed the Fists' "firing" logic to be random instead of dependent on the FistSwitcher dummy inventory item.
 - Added NOBLOOD flag to Lost Souls.
 - Slowed down the Argent Rifle's cooldown rate by another 6 tics (both normal and upgraded).
+- Reduced the Minigun's windup time with the windup upgrade by 6 tics.
 
 [03-10-2019] v1.2:
 - Implemented configurable hotkeys for the powerups.

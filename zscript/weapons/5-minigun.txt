@@ -39,8 +39,8 @@ class SGDMinigun : SGDWeapon replaces Chaingun
 		MNGG AB 4;
 		Goto Hold;
 	WindupUpgraded:
-		MNGG A 6 A_MinigunWindup;
-		MNGG B 6;
+		//MNGG A 6 A_MinigunWindup;
+		MNGG B 6 A_MinigunWindup;
 		MNGG AB 5;
 		MNGG AB 4;
 		Goto Hold;
