@@ -29,7 +29,7 @@ class SGDProjectileTrail : Actor
 		Radius 3;
 		Height 6;
 		Renderstyle "Translucent";
-		Alpha 0.5;
+		Alpha 0.25;
 		Scale 0.75;
 		+NOBLOCKMAP;
 		+NOGRAVITY;
@@ -60,6 +60,7 @@ class ArgentRifleLaserTrail : SGDProjectileTrail
 	Default
 	{
 		Scale 1.0;
+		Alpha 0.5;
 	}
 	
 	States
