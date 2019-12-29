@@ -139,7 +139,7 @@ class SGDRevenantRocket : RevenantTracer
 	Spawn:
 		FATB AABB 1 BRIGHT
 		{
-			A_Weave(3,3,1.125,1.125);
+			A_Weave(3,3,1.065,1.065);
 			if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItem("SGDProjectileTrail",-20,0,-vel.z+10); }
 		}
 		Loop;
