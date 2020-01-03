@@ -9,7 +9,7 @@ Monster code taken from gzdoom.pk3, modified where seen fit by MFG38
 Shotgun and Double-Barrel Shotgun DECORATE code by Captain Toenail, converted to
 ZScript and modified where seen fit by MFG38
 
-Parts of Dark Matter Cannon DECORATE code by Gothic, converted to ZSCript and
+Parts of Dark Matter Cannon DECORATE code by Gothic, converted to ZScript and
 modified where seen fit by MFG38
 
 

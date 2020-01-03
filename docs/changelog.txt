@@ -4,6 +4,7 @@
 - Reduced the amplitude of the Revenant rocket's weave from 1.125 to 1.065.
 - Reduced Cyberdemon's pain chance against Fire from 50 to 40.
 - Truncated BHExplosion's Spawn state code.
+- Fixed a minor but annoying miscapitalized letter in credits.txt.
 
 [25-12-2019] v1.3:
 - Increased the damage of the Double-Barrel Shotgun's pellets from random(16,20) to random(20,24).
