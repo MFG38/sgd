@@ -5,6 +5,73 @@ SGD_VERSIONNUM = "v1.4-pre";
 SGD_MENU_HOWTOPLAY = "How to play";
 SGD_MENU_MODSETUP = "Mod settings";
 
+SGD_OMENU_NOTICE =
+	"Options marked with (*) will only take effect\n"
+	"when either a new game is started or the current\n"
+	"map is restarted.";
+
+SGD_OMENU_KEYBIND =
+	"Press Enter, then any key to bind.\n"
+	"Press Backspace to unbind.";
+
+SGD_TTL_CVARS = "SGD Options";
+SGD_TTL_CONTROLS = "SGD key configuration";
+
+SGD_SUBTTL_VISUALS = "Visuals";
+SGD_SUBTTL_HUD = "HUD";
+SGD_SUBTTL_SOUNDS = "Sounds";
+SGD_SUBTTL_BEHAVIOR = "Enemy behavior";
+SGD_SUBTTL_CONTROLS = "Customize mod controls";
+SGD_SUBTTL_CONTROLS1 = "Essential controls";
+SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
+
+SGD_OM_PROJTRAILS = "Spawn projectile trails (*)";
+SGD_OM_PROJTRAILSNOTICE = "(Does not affect bullet trails)";
+SGD_OM_FANCYTELE = "Fancy teleport effect";
+
+SGD_OM_FINISHERBAR = "Display finisher bar";
+SGD_OM_FMSGTYPE = "Finisher message type";
+SGD_OM_HAZMATTIMER = "Display hazmat timer";
+SGD_OM_GOGGLECHARGE = "Display light amp visor charge";
+
+SGD_OM_FLASHTOGGLE = "Enable low health screen flash";
+SGD_OM_FLASHTHRES = "Low health screen flash threshold";
+SGD_OM_FLASHINT = "Low health screen flash intensity";
+
+SGD_OM_MEDUSESOUND = "Field Med Pack use sound";
+SGD_OM_HSWARNINGSOUND = "Hazmat Suit warning sound";
+SGD_OM_GOGGLETOGGLESOUND = "Light Amp Visor toggle sound";
+
+SGD_OM_SPAWNBEHAVIOR = "Enemy spawn behavior (*)";
+SGD_OM_HITSCANBEHAVIOR = "Bullet attack type";
+SGD_OM_TRACERBEHAVIOR = "Revenant rocket type";
+
+SGD_CVAR_FMSG0 = "Off";
+SGD_CVAR_FMSG1 = "No button prompt";
+SGD_CVAR_FMSG2 = "Full";
+SGD_CVAR_SPAWN0 = "Stand still";
+SGD_CVAR_SPAWN1 = "Wander";
+SGD_CVAR_HITSCAN0 = "Hitscan";
+SGD_CVAR_HITSCAN1 = "Projectile";
+SGD_CVAR_TRACER0 = "Original";
+SGD_CVAR_TRACER1 = "SGD-style";
+
+SGD_KEY_ALTFIRE = "Altfire (uses finisher)";
+SGD_KEY_INVUSE = "Use inventory item";
+SGD_KEY_INVNEXT = "Next item";
+SGD_KEY_INVPREV = "Previous item";
+SGD_KEY_DEMONIZER = "Demonizer";
+SGD_KEY_FIELDMED = "Field Med Pack";
+SGD_KEY_GOGGLES = "Light Amp Visor";
+SGD_KEY_HWGRENADE = "Holy Water Grenade";
+SGD_KEY_RADSUIT = "Hazmat Suit";
+
+SGD_FMSG_LVL1READY = "LEVEL 1 FINISHER READY";
+SGD_FMSG_LVL2READY = "LEVEL 2 FINISHER READY";
+SGD_FMSG_LVL3READY = "LEVEL 3 FINISHER READY";
+SGD_FMSG_USE1 = "PRESS ";
+SGD_FMSG_USE2 = " TO USE";
+
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
 SGD_SKILL_MEDIUM = "Been There, Done That";
