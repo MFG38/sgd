@@ -50,26 +50,26 @@ script "FinisherReadyMsg" ENTER
 	
 		if(CheckInventory("FinisherToken") >= 300 && CheckInventory("FinisherToken") < 600)
 		{
-			HudMessage(s:"LEVEL 1 FINISHER READY";HUDMSG_PLAIN,500,CR_GREEN,CENTER_X,448.0,0.1);
+			HudMessage(l:"SGD_FMSG_LVL1READY";HUDMSG_PLAIN,500,CR_GREEN,CENTER_X,448.0,0.1);
 			if(GetCVar("sgd_finisherprompt") == 2)
 			{
-				HudMessage(s:"PRESS ",k:"+altattack",s:" TO USE";HUDMSG_PLAIN,501,CR_GREEN,CENTER_X,455.0,0.1);
+				HudMessage(l:"SGD_FMSG_USE1",k:"+altattack",l:"SGD_FMSG_USE2";HUDMSG_PLAIN,501,CR_GREEN,CENTER_X,455.0,0.1);
 			}
 		}
 		else if(CheckInventory("FinisherToken") >= 600 && CheckInventory("FinisherToken") < 900)
 		{
-			HudMessage(s:"LEVEL 2 FINISHER READY";HUDMSG_PLAIN,500,CR_GREEN,CENTER_X,448.0,0.1);
+			HudMessage(l:"SGD_FMSG_LVL2READY";HUDMSG_PLAIN,500,CR_GREEN,CENTER_X,448.0,0.1);
 			if(GetCVar("sgd_finisherprompt") == 2)
 			{
-				HudMessage(s:"PRESS ",k:"+altattack",s:" TO USE";HUDMSG_PLAIN,501,CR_GREEN,CENTER_X,455.0,0.1);
+				HudMessage(l:"SGD_FMSG_USE1",k:"+altattack",l:"SGD_FMSG_USE2";HUDMSG_PLAIN,501,CR_GREEN,CENTER_X,455.0,0.1);
 			}
 		}
 		else if(CheckInventory("FinisherToken") >= 900)
 		{
-			HudMessage(s:"LEVEL 3 FINISHER READY";HUDMSG_PLAIN,500,CR_GREEN,CENTER_X,448.0,0.1);
+			HudMessage(l:"SGD_FMSG_LVL3READY";HUDMSG_PLAIN,500,CR_GREEN,CENTER_X,448.0,0.1);
 			if(GetCVar("sgd_finisherprompt") == 2)
 			{
-				HudMessage(s:"PRESS ",k:"+altattack",s:" TO USE";HUDMSG_PLAIN,501,CR_GREEN,CENTER_X,455.0,0.1);
+				HudMessage(l:"SGD_FMSG_USE1",k:"+altattack",l:"SGD_FMSG_USE2";HUDMSG_PLAIN,501,CR_GREEN,CENTER_X,455.0,0.1);
 			}
 		}
 		Delay(6);
