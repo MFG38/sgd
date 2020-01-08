@@ -6,6 +6,7 @@
 - Truncated BHExplosion's Spawn state code.
 - Fixed a minor but annoying miscapitalized letter in credits.txt.
 - Added lookup identifiers for all missing text strings to language.txt; useful for potential localization later.
+- Changed one of the kill count requirements for the Bazooka recoil upgrade from 50 Arch-Viles to 50 Pain Elementals.
 
 [25-12-2019] v1.3:
 - Increased the damage of the Double-Barrel Shotgun's pellets from random(16,20) to random(20,24).

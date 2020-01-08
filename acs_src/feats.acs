@@ -8,31 +8,31 @@
 
 str Feats[TOTAL_FEATS] =
 	// Rifle accuracy
-	{"75 zombiemen","50 imps","50 cacodemons",
+	{"SGD_FEAT01","SGD_FEAT02","SGD_FEAT03",
 	// Rifle fire rate
-	"150 zombiemen","100 imps","50 pinkies",
+	"SGD_FEAT04","SGD_FEAT05","SGD_FEAT06",
 	// Shotgun cone
-	"125 shotgunners","100 pinkies","150 lost souls",
+	"SGD_FEAT07","SGD_FEAT08","SGD_FEAT09",
 	// Shotgun range
-	"200 shotgunners","125 imps","125 pinkies",
+	"SGD_FEAT10","SGD_FEAT11","SGD_FEAT12",
 	// SSG recoil
-	"100 spectres","100 cacodemons","75 hell knights",
+	"SGD_FEAT13","SGD_FEAT14","SGD_FEAT15",
 	// SSG reload speed
-	"125 spectres","150 cacodemons","50 archviles",
+	"SGD_FEAT16","SGD_FEAT17","SGD_FEAT18",
 	// Minigun accuracy
-	"50 chaingunners","50 hell knights","25 barons",
+	"SGD_FEAT19","SGD_FEAT20","SGD_FEAT21",
 	// Minigun windup
-	"100 chaingunners","100 hell knights","75 barons",
+	"SGD_FEAT22","SGD_FEAT23","SGD_FEAT24",
 	// Bazooka fire rate
-	"100 barons","150 revenants","100 mancubi",
+	"SGD_FEAT25","SGD_FEAT26","SGD_FEAT27",
 	// Bazooka recoil
-	"50 arch-viles","100 revenants","75 arachnotrons",
+	"SGD_FEAT28","SGD_FEAT29","SGD_FEAT30",
 	// Argent Rifle cooldown
-	"10 Spider Masterminds","10 Cyberdemons","100 pain elementals",
+	"SGD_FEAT31","SGD_FEAT32","SGD_FEAT33",
 	// Flamethrower flame linger
-	"25 arch-viles","75 mancubi","50 arachnotrons",
+	"SGD_FEAT34","SGD_FEAT35","SGD_FEAT36",
 	// Chainsaw damage
-	"200 chaingunners","75 spectres","75 pain elementals"};
+	"SGD_FEAT37","SGD_FEAT38","SGD_FEAT39"};
 
 global int 1:FeatStatus[]; /*=
 	// Indices 0-9
@@ -59,21 +59,21 @@ int AmountCheck; */
 
 str UpgradeName[NUM_UPGRADES] =
 	// Rifle
-	{"Rifle accuracy increase","Rifle fire rate increase",
+	{"SGD_UPGRADE_RIFLEACCURACY","SGD_UPGRADE_RIFLEFIRERATE",
 	// Shotgun
-	"Shotgun spread reduction","Shotgun range increase",
+	"SGD_UPGRADE_SHOTTYSPREAD","SGD_UPGRADE_SHOTTYRANGE",
 	// SSG
-	"Double-Barrel Shotgun recoil reduction","Double-Barrel Shotgun reload speed increase",
+	"SGD_UPGRADE_SSGRECOIL","SGD_UPGRADE_SSGRELSPEED",
 	// Minigun
-	"Minigun accuracy increase","Minigun windup time reduction",
+	"SGD_UPGRADE_MINIGUNACCURACY","SGD_UPGRADE_MINIGUNWINDUP",
 	// Bazooka
-	"Bazooka fire rate increase","Bazooka recoil reduction",
+	"SGD_UPGRADE_BAZOOKAFIRERATE","SGD_UPGRADE_BAZOOKARECOIL",
 	// Argent Rifle
-	"Argent Rifle faster cooldown",
+	"SGD_UPGRADE_ARGENTCOOLDOWN",
 	// Flamethrower
-	"Flamethrower flame linger",
+	"SGD_UPGRADE_FLAMERLINGER",
 	// Chainsaw
-	"Chainsaw damage increase"};
+	"SGD_UPGRADE_CHAINSAWDAMAGE"};
 
 bool FeatInProgress = false;
 
@@ -82,7 +82,7 @@ function void DisplayFeatMsg (int index)
 	SetHudSize(HUDSIZE_X,HUDSIZE_Y,0);
 		
 	SetFont("BIGFONT");
-	HudMessage(s:"FEAT ACCOMPLISHED: ",s:Feats[index],s:" killed";
+	HudMessage(l:"SGD_FEATACCOMPLISHED",l:Feats[index];
 		HUDMSG_TYPEON,200,CR_RED,CENTER_X,45.0,4.0,FRAME,2.0);
 }
 
@@ -92,13 +92,13 @@ function void GiveFeatReward (int index)
 	if(!CheckActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index]))
 	{
 		SetFont("SMALLFONT");
-		HudMessage(s:"Upgrade awarded: ",s:UpgradeName[index];
+		HudMessage(l:"SGD_UPGRADEAWARDED",l:UpgradeName[index];
 			HUDMSG_TYPEON,201,CR_RED,CENTER_X,75.0,4.0,FRAME,2.0);
 	}
 	else
 	{
 		SetFont("SMALLFONT");
-		HudMessage(s:"Upgrade already awarded: ",s:UpgradeName[index];
+		HudMessage(l:"SGD_UPGRADEALREADYAWARDED",l:UpgradeName[index];
 			HUDMSG_TYPEON,201,CR_RED,CENTER_X,75.0,4.0,FRAME,2.0);
 	}
 	
@@ -174,7 +174,7 @@ script "FeatTracker" (void)
 	if(CheckForFeatCompletion(25,"RevenantsKilled",150)) { ACS_NamedExecute("FeatRewarder",0,25,8); }
 	if(CheckForFeatCompletion(26,"MancubiKilled",100)) { ACS_NamedExecute("FeatRewarder",0,26,8); }
 	// Bazooka recoil
-	if(CheckForFeatCompletion(27,"ArchvilesKilled",50)) { ACS_NamedExecute("FeatRewarder",0,27,9); }
+	if(CheckForFeatCompletion(27,"PainElementalsKilled",50)) { ACS_NamedExecute("FeatRewarder",0,27,9); }
 	if(CheckForFeatCompletion(28,"RevenantsKilled",100)) { ACS_NamedExecute("FeatRewarder",0,28,9); }
 	if(CheckForFeatCompletion(29,"ArachnotronsKilled",75)) { ACS_NamedExecute("FeatRewarder",0,29,9); }
 	// Argent Rifle cooldown

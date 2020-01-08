@@ -1,6 +1,6 @@
 [enu default]
 
-SGD_VERSIONNUM = "v1.4-pre";
+SGD_VERSIONNUM = "v1.4";
 
 SGD_MENU_HOWTOPLAY = "How to play";
 SGD_MENU_MODSETUP = "Mod settings";
@@ -71,6 +71,63 @@ SGD_FMSG_LVL2READY = "LEVEL 2 FINISHER READY";
 SGD_FMSG_LVL3READY = "LEVEL 3 FINISHER READY";
 SGD_FMSG_USE1 = "PRESS ";
 SGD_FMSG_USE2 = " TO USE";
+
+SGD_FEATACCOMPLISHED = "FEAT ACCOMPLISHED: ";
+SGD_FEAT01 = "75 zombiemen killed";
+SGD_FEAT02 = "50 imps killed";
+SGD_FEAT03 = "50 cacodemons killed";
+SGD_FEAT04 = "150 zombiemen killed";
+SGD_FEAT05 = "100 imps killed";
+SGD_FEAT06 = "50 pinkies killed";
+SGD_FEAT07 = "125 shotgunners killed";
+SGD_FEAT08 = "100 pinkies killed";
+SGD_FEAT09 = "150 lost souls killed";
+SGD_FEAT10 = "200 shotgunners killed";
+SGD_FEAT11 = "125 imps killed";
+SGD_FEAT12 = "125 pinkies killed";
+SGD_FEAT13 = "100 spectres killed";
+SGD_FEAT14 = "100 cacodemons killed";
+SGD_FEAT15 = "75 hell knights killed";
+SGD_FEAT16 = "125 spectres killed";
+SGD_FEAT17 = "150 cacodemons killed";
+SGD_FEAT18 = "50 arch-viles killed";
+SGD_FEAT19 = "50 chaingunners killed";
+SGD_FEAT20 = "50 hell knights killed";
+SGD_FEAT21 = "25 barons killed";
+SGD_FEAT22 = "100 chaingunners killed";
+SGD_FEAT23 = "100 hell knights killed";
+SGD_FEAT24 = "75 barons killed";
+SGD_FEAT25 = "100 barons killed";
+SGD_FEAT26 = "150 revenants killed";
+SGD_FEAT27 = "100 mancubi killed";
+SGD_FEAT28 = "50 pain elementals killed";
+SGD_FEAT29 = "100 revenants killed";
+SGD_FEAT30 = "75 arachnotrons killed";
+SGD_FEAT31 = "10 spider masterminds killed";
+SGD_FEAT32 = "10 cyberdemons killed";
+SGD_FEAT33 = "100 pain elementals killed";
+SGD_FEAT34 = "25 arch-viles killed";
+SGD_FEAT35 = "75 mancubi killed";
+SGD_FEAT36 = "50 arachnotrons killed";
+SGD_FEAT37 = "200 chaingunners killed";
+SGD_FEAT38 = "75 spectres killed";
+SGD_FEAT39 = "75 pain elementals killed";
+
+SGD_UPGRADEAWARDED = "Upgrade awarded: ";
+SGD_UPGRADEALREADYAWARDED = "Upgrade already awarded: ";
+SGD_UPGRADE_RIFLEACCURACY = "Rifle accuracy increase";
+SGD_UPGRADE_RIFLEFIRERATE = "Rifle fire rate increase";
+SGD_UPGRADE_SHOTTYSPREAD = "Shotgun spread reduction";
+SGD_UPGRADE_SHOTTYRANGE = "Shotgun range increase";
+SGD_UPGRADE_SSGRECOIL = "Double-Barrel Shotgun recoil reduction";
+SGD_UPGRADE_SSGRELSPEED = "Double-Barrel Shotgun reload speed increase";
+SGD_UPGRADE_MINIGUNACCURACY = "Minigun accuracy increase";
+SGD_UPGRADE_MINIGUNWINDUP = "Minigun windup time reduction";
+SGD_UPGRADE_BAZOOKAFIRERATE = "Bazooka fire rate increase";
+SGD_UPGRADE_BAZOOKARECOIL = "Bazooka recoil reduction";
+SGD_UPGRADE_ARGENTCOOLDOWN = "Argent Rifle faster cooldown";
+SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
+SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
