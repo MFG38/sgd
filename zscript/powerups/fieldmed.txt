@@ -20,11 +20,30 @@ class FieldMedPack : CustomInventory replaces Berserk
 	Use:
 		TNT1 A 0
 		{
-			if(CVar.FindCVar('sgd_fieldmedsound').GetBool() == true)
+			if(invoker.owner.Health < 100)
 			{
-				A_PlaySound("fieldmed/use",CHAN_BODY);
+				int AmtToHeal = 100 - invoker.owner.Health;
+				if(AmtToHeal >= CountInv("FieldMedPack"))
+				{
+					A_GiveInventory("Health",CountInv("FieldMedPack"));
+					A_SetInventory("FieldMedPack",0);
+				}
+				else
+				{
+					A_GiveInventory("Health",AmtToHeal);
+					A_SetInventory("FieldMedPack",CountInv("FieldMedPack") - AmtToHeal);
+				}
+				
+				if(CVar.FindCVar('sgd_fieldmedsound').GetBool() == true)
+				{
+					A_PlaySound("fieldmed/use",CHAN_BODY);
+				}
 			}
-			ACS_NamedExecute("FieldMedHeal",0);
+			else
+			{
+				A_Log(StringTable.Localize("$SGD_WRN_CANTUSEFIELDMED"));
+			}
+			//ACS_NamedExecute("FieldMedHeal",0);
 		}
 		Fail;
 	}

@@ -1,6 +1,6 @@
 [enu default]
 
-SGD_VERSIONNUM = "v1.4";
+SGD_VERSIONNUM = "v2.0-pre";
 
 SGD_MENU_HOWTOPLAY = "How to play";
 SGD_MENU_MODSETUP = "Mod settings";
@@ -128,6 +128,8 @@ SGD_UPGRADE_BAZOOKARECOIL = "Bazooka recoil reduction";
 SGD_UPGRADE_ARGENTCOOLDOWN = "Argent Rifle faster cooldown";
 SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
+
+SGD_WRN_CANTUSEFIELDMED = "Can't use Field Med Pack right now!";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";

@@ -65,7 +65,7 @@ class DarkMatterProjectile : Actor
 	States
 	{
 	Spawn:
-		VOIP AABBCCDDEEFF 1 Bright { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("DMBTrail"); }}
+		VOIP AABBCCDDEEFFAABBCCDDEEFF 1 Bright { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("DMBTrail"); }}
 		VOIP AABBCCDDEEFF 1 Bright
 		{
 			if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("DMBTrail"); }

@@ -8,6 +8,7 @@ class SGDPlayer : PlayerPawn
 		Height 56;
 		Mass 100;
 		PainChance 255;
+		//Player.MaxHealth 100;
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
 		Player.StartItem "SGDRifle";
