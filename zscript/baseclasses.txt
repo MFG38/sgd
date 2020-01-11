@@ -53,6 +53,25 @@ class SGDWeapon : Weapon
 	}
 }
 
+extend class SGDWeapon
+{
+	action void A_BeginFinisher(bool freeze)
+	{
+		A_GiveInventory("FinisherInvul",1);
+		if(freeze)
+		{
+			A_Stop();
+			A_SetSpeed(0.0);
+		}
+	}
+	
+	action void A_EndFinisher()
+	{
+		A_TakeInventory("FinisherInvul",1);
+		A_SetSpeed(1.0);
+	}
+}
+
 /* class SGDWeaponPickup : CustomInventory
 // This was a bad idea.
 {
