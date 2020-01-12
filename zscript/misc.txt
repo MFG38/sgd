@@ -23,6 +23,16 @@ class RandomAmmoSpawner : RandomSpawner replaces Backpack
 	}
 }
 
+class FinisherFreeze : PowerSpeed
+{
+	Default
+	{
+		Speed 0.0;
+		Powerup.Duration 0x7FFFFFFD;
+		+POWERSPEED.NOTRAIL;
+	}
+}
+
 class FinisherInvul : PowerInvulnerable
 {
 	Default
