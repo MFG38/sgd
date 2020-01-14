@@ -292,11 +292,19 @@ script "GoggleTaker" (void)
 {
 	while(CheckInventory("GogglesActive"))
 	{
-		TakeInventory("SGDLightAmpGoggles",1);
-		Delay(42);
+		TakeInventory("GoggleTimer",1);
+		if(CheckInventory("GoggleTimer") % 42 == 0)
+		{
+			TakeInventory("SGDLightAmpGoggles",1);
+		}
+		Delay(1);
+		
+		if(CheckInventory("GoggleTimer") == 0)
+		{
+			TakeInventory("LightAmpGogglesGiver",1);
+			TakeInventory("GogglesActive",1);
+		}
 	}
-	TakeInventory("LightAmpGogglesGiver",1);
-	TakeInventory("GogglesActive",1);
 }
 
 script "LowHealthFlash" ENTER

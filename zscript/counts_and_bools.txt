@@ -66,7 +66,7 @@ class SSGFinisherDamageScaler : Counter
 
 class MinigunFinisherBulletScaler : Counter
 {
-	Default { Inventory.MaxAmount 6; }
+	Default { Inventory.MaxAmount 7; }
 }
 
 class DemonizerTimer : Counter
@@ -77,6 +77,11 @@ class DemonizerTimer : Counter
 class RadSuitTimer : Counter
 {
 	Default { Inventory.MaxAmount 2100; }
+}
+
+class GoggleTimer : Counter
+{
+	Default { Inventory.MaxAmount 4200; }
 }
 
 class GogglesActive : Boolean {}
