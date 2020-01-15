@@ -59,6 +59,11 @@ class FistFinisherThrustScaler : Counter
 	Default { Inventory.MaxAmount 3; }
 }
 
+class FistFinisherTimer : Counter
+{
+	Default { Inventory.MaxAmount 175; }
+}
+
 class SSGFinisherDamageScaler : Counter
 {
 	Default { Inventory.MaxAmount 3; }
