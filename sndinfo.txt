@@ -37,6 +37,7 @@ minigun/winddown			mgunwdn
 
 bazooka/fire				SEEKFIRE
 bazooka/explosion			SEEKXPLD
+bazooka/airstrike			airstrk
 
 argentrifle/fire			stnrfire
 argentrifle/ballhit			stnrhit
