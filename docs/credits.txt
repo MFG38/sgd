@@ -55,7 +55,9 @@ Minigun firing sound: Tormentor667
 
 Minigun wind-up / wind-down sounds: source sounds by Infinity Ward, edited by MFG38
 
-Bazooka: id Software (Quake), MagicWazard
+Bazooka fire and explosion sounds: id Software (Quake), MagicWazard
+
+Bazooka air strike warning sound: MFG38
 
 Argent Rifle primary fire sounds: Raven Software
 
