@@ -91,4 +91,4 @@ class GoggleTimer : Counter
 
 class GogglesActive : Boolean {}
 
-class ChainExploder : Boolean {}
+//class ChainExploder : Boolean {}

@@ -89,7 +89,7 @@ class SGDFlameBoi : SGDMonster replaces Archvile
 		VILE TUVWXY 7;
 		VILE Z -1;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		VILE Q 2 A_Pain;
 		VILE QQQQQQQQQQ 5;
 		VILE Q 7
@@ -97,8 +97,7 @@ class SGDFlameBoi : SGDMonster replaces Archvile
 			A_GiveToTarget("ArchvilesKilled");
 			A_GiveToTarget("FinisherToken",65);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		VILE R 7
 		{

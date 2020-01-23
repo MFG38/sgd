@@ -123,8 +123,8 @@ class SGDShotgunner : SGDMonster replaces ShotgunGuy
 		SPOS PQRST 5;
 		SPOS U -1;
 		Stop;
-	Death.Kick:
-	XDeath.Kick:
+	Death.Sploder:
+	XDeath.Sploder:
 		SPOS G 2 A_Pain;
 		SPOS GGGGGGGGGG 5;
 		SPOS M 5
@@ -132,8 +132,7 @@ class SGDShotgunner : SGDMonster replaces ShotgunGuy
 			A_GiveToTarget("ShotgunnersKilled");
 			A_GiveToTarget("FinisherToken",8);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SPOS N 5
 		{

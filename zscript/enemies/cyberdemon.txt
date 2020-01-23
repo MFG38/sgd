@@ -99,7 +99,7 @@ class SGDCyberdemon : SGDMonster replaces Cyberdemon
 		CYBR P 30;
 		CYBR P -1 A_BossDeath;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		CYBR G 2 A_Pain;
 		CYBR GGGGGGGGGG 5;
 		CYBR H 10
@@ -107,8 +107,7 @@ class SGDCyberdemon : SGDMonster replaces Cyberdemon
 			A_GiveToTarget("CyberdemonsKilled");
 			A_GiveToTarget("FinisherToken",100);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		CYBR I 10
 		{

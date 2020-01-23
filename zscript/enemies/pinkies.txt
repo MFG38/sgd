@@ -82,7 +82,7 @@ class SGDPinky : SGDMonster replaces Demon
 		SARG M 4;
 		SARG N -1;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		SARG H 2 A_Pain;
 		SARG HHHHHHHHHH 5;
 		SARG I 8
@@ -90,8 +90,7 @@ class SGDPinky : SGDMonster replaces Demon
 			A_GiveToTarget("PinkiesKilled");
 			A_GiveToTarget("FinisherToken",12);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SARG J 8
 		{
@@ -159,7 +158,7 @@ class SGDSpectre : SGDPinky replaces Spectre
 		SARG M 4;
 		SARG N -1;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		SARG H 2 A_Pain;
 		SARG HHHHHHHHHH 5;
 		SARG I 8
@@ -167,8 +166,7 @@ class SGDSpectre : SGDPinky replaces Spectre
 			A_GiveToTarget("SpectresKilled");
 			A_GiveToTarget("FinisherToken",12);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SARG J 8
 		{

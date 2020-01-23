@@ -92,7 +92,7 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		SKUL J 6;
 		SKUL K 6;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		SKUL E 2 BRIGHT A_Pain;
 		SKUL EEEEEEEEEE 5;
 		SKUL F 6 BRIGHT
@@ -100,8 +100,7 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 			A_GiveToTarget("LostSoulsKilled");
 			A_GiveToTarget("FinisherToken",8);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SKUL G 6 BRIGHT
 		{

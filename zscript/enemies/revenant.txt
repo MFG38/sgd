@@ -100,7 +100,7 @@ class SGDRevenant: SGDMonster replaces Revenant
 		SKEL P 7;
 		SKEL Q -1;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		SKEL L 2 A_Pain;
 		SKEL LLLLLLLLLL 5;
 		SKEL L 7
@@ -108,8 +108,7 @@ class SGDRevenant: SGDMonster replaces Revenant
 			A_GiveToTarget("RevenantsKilled");
 			A_GiveToTarget("FinisherToken",25);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SKEL M 7;
 		SKEL N 7

@@ -118,8 +118,8 @@ class SGDImp : SGDMonster replaces DoomImp
 		TROO RST 5;
 		TROO U -1;
 		Stop;
-	Death.Kick:
-	XDeath.Kick:
+	Death.Sploder:
+	XDeath.Sploder:
 		TROO H 2 A_Pain;
 		TROO HHHHHHHHHH 5;
 		TROO N 5
@@ -127,8 +127,7 @@ class SGDImp : SGDMonster replaces DoomImp
 			A_GiveToTarget("ImpsKilled");
 			A_GiveToTarget("FinisherToken",12);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		TROO O 5
 		{

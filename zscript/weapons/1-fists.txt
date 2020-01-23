@@ -53,7 +53,7 @@ class SGDFists : SGDWeapon replaces Fist
 	Finisher1:
 		TNT1 A 0 A_BeginFinisher(false);
 		MLEG ABCD 2;
-		MLEG EEEEEEEE 2 A_Kick;
+		MLEG EEEEEEEEEEEE 2 A_Kick('Normal');
 		MLEG FGH 2;
 		PUCH A 3;
 		PUCH A 0 A_EndFinisher;
@@ -62,13 +62,7 @@ class SGDFists : SGDWeapon replaces Fist
 		TNT1 A 0 A_BeginFinisher(false);
 		MLEG A 5;
 		MLEG ABCD 2;
-		MLEG EEEEEEEEEEEE 2
-		{
-			A_Kick();
-			
-			FTranslatedLineTarget t;
-			if(t.linetarget) { A_GiveToTarget("ChainExploder"); }
-		}
+		MLEG EEEEEEEEEEEE 2 A_Kick('Sploder');
 		MLEG FGH 2;
 		PUCH A 6;
 		PUCH A 0 A_EndFinisher;
@@ -115,7 +109,7 @@ extend class SGDFists
 		}
 	}
 	
-	action void A_Kick()
+	action void A_Kick(name damagetype)
 	{
 		FTranslatedLineTarget t;
 		
@@ -129,10 +123,10 @@ extend class SGDFists
 			}
 		}
 
-		int dmg = 80 + (random(0,4) * 5);
+		int dmg = 100;
 
 		A_Recoil(-10);
-		LineAttack(angle,64,pitch,dmg,'Kick',"BulletPuff",LAF_ISMELEEATTACK,t);
+		LineAttack(angle,64,pitch,dmg,damagetype,"BulletPuff",LAF_ISMELEEATTACK,t);
 		//A_RadiusThrust(CountInv("FistFinisherThrustScaler") * 2000,64,RTF_NOTMISSILE);
 		ACS_NamedExecute("FeatTracker",0);
 		

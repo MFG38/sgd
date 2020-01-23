@@ -84,7 +84,7 @@ class SGDHellKnight : SGDMonster replaces HellKnight
 		BOS2 MN 8;
 		BOS2 O -1;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		BOS2 H  2 A_Pain;
 		BOS2 HHHHHHHHHH 5;
 		BOS2 I  8
@@ -92,8 +92,7 @@ class SGDHellKnight : SGDMonster replaces HellKnight
 			A_GiveToTarget("HellKnightsKilled");
 			A_GiveToTarget("FinisherToken",25);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		BOS2 J  8
 		{
@@ -193,7 +192,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS MN 8;
 		BOSS O -1;
 		Stop;
-	Death.Kick:
+	Death.Sploder:
 		BOSS H  2 A_Pain;
 		BOSS HHHHHHHHHH 5;
 		BOSS I  8
@@ -201,8 +200,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 			A_GiveToTarget("BaronsKilled");
 			A_GiveToTarget("FinisherToken",25);
 			A_SpawnItemEx("Explosion",0,0,35);
-			
-			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		BOSS J  8
 		{
