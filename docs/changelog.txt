@@ -2,6 +2,7 @@
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).
 - Improved the functionality of the Light Amp Goggles.
 - Fixed Barons giving the wrong token upon dying from Holy Water and Fire damage.
+- Slightly modified the spawning logic of the Holy Water Pool particles.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.
