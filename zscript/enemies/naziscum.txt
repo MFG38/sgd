@@ -116,6 +116,26 @@ class SGDNazi : SGDMonster replaces WolfensteinSS
 		SSWV QRSTU 5;
 		SSWV V -1;
 		Stop;
+	Death.Kick:
+	XDeath.Kick:
+		SSWV H 2 A_Pain;
+		SSWV HHHHHHHHHH 5;
+		SSWV N 5
+		{
+			A_GiveToTarget("FinisherToken",12);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		SSWV O 5
+		{
+			A_XScream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		SSWV P 5 A_NoBlocking;
+		SSWV QRSTU 5;
+		SSWV V -1;
+		Stop;
 	Raise:
 		SSWV M 5 A_SetTranslation("ResetTrans");
 		SSWV LKJI 5;

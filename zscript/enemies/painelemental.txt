@@ -83,6 +83,26 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 		PAIN L 8 BRIGHT A_PainDie;
 		PAIN M 8 BRIGHT;
 		Stop;
+	Death.Kick:
+		PAIN G 2 A_Pain;
+		PAIN GGGGGGGGGG 5;
+		PAIN H 8 BRIGHT
+		{
+			A_GiveToTarget("PainElementalsKilled");
+			A_GiveToTarget("FinisherToken",40);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		PAIN I 8 BRIGHT
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		PAIN JK 8 BRIGHT;
+		PAIN L 8 BRIGHT A_PainDie;
+		PAIN M 8 BRIGHT;
+		Stop;
 	Raise:
 		PAIN M 8 A_SetTranslation("ResetTrans");
 		PAIN LKJIH 8;

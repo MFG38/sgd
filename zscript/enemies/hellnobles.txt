@@ -84,6 +84,27 @@ class SGDHellKnight : SGDMonster replaces HellKnight
 		BOS2 MN 8;
 		BOS2 O -1;
 		Stop;
+	Death.Kick:
+		BOS2 H  2 A_Pain;
+		BOS2 HHHHHHHHHH 5;
+		BOS2 I  8
+		{
+			A_GiveToTarget("HellKnightsKilled");
+			A_GiveToTarget("FinisherToken",25);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		BOS2 J  8
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		BOS2 K  8;
+		BOS2 L  8 A_NoBlocking;
+		BOS2 MN 8;
+		BOS2 O -1;
+		Stop;
 	Raise:
 		BOS2 O 8 A_SetTranslation("ResetTrans");
 		BOS2 NMLKJI  8;
@@ -150,7 +171,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS I  8
 		{
 			A_SetTranslation("HolyWaterTrans");
-			A_GiveToTarget("HellKnightsKilled");
+			A_GiveToTarget("BaronsKilled");
 			A_GiveToTarget("FinisherToken",40);
 		}
 		BOSS J  8 A_Scream;
@@ -163,10 +184,31 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS I  8
 		{
 			A_SetTranslation("CharredTrans");
-			A_GiveToTarget("HellKnightsKilled");
+			A_GiveToTarget("BaronsKilled");
 			A_GiveToTarget("FinisherToken",40);
 		}
 		BOSS J  8 A_Scream;
+		BOSS K  8;
+		BOSS L  8 A_NoBlocking;
+		BOSS MN 8;
+		BOSS O -1;
+		Stop;
+	Death.Kick:
+		BOSS H  2 A_Pain;
+		BOSS HHHHHHHHHH 5;
+		BOSS I  8
+		{
+			A_GiveToTarget("BaronsKilled");
+			A_GiveToTarget("FinisherToken",25);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		BOSS J  8
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
 		BOSS K  8;
 		BOSS L  8 A_NoBlocking;
 		BOSS MN 8;

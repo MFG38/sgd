@@ -260,3 +260,21 @@ class TeleportParticle : Actor
 		Stop;
 	}
 }
+
+class Explosion : Actor
+{
+	Default
+	{
+		+NOBLOCKMAP;
+		+NOTELEPORT;
+		+NOGRAVITY;
+	}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound("bazooka/explosion");
+		FX08 AABBCCDDEEFFGGHH 1 BRIGHT A_FadeOut(0.063);
+		Stop;
+	}
+}

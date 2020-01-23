@@ -92,5 +92,26 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		SKUL J 6;
 		SKUL K 6;
 		Stop;
+	Death.Kick:
+		SKUL E 2 BRIGHT A_Pain;
+		SKUL EEEEEEEEEE 5;
+		SKUL F 6 BRIGHT
+		{
+			A_GiveToTarget("LostSoulsKilled");
+			A_GiveToTarget("FinisherToken",8);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		SKUL G 6 BRIGHT
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		SKUL H 6 BRIGHT;
+		SKUL I 6 BRIGHT A_NoBlocking;
+		SKUL J 6;
+		SKUL K 6;
+		Stop;
 	}
 }

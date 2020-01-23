@@ -48,16 +48,16 @@ class ArchvilesKilled : Counter {}
 class CyberdemonsKilled : Counter {}
 class SpiderMastermindsKilled : Counter {}
 
-//class SecretsFound : Counter {}
+/* class SecretsFound : Counter {}
 
-//class FistSwitcher : Boolean {}
+class FistSwitcher : Boolean {}
 
-//class DemonizerIsActive : Boolean {}
+class DemonizerIsActive : Boolean {}
 
 class FistFinisherThrustScaler : Counter
 {
 	Default { Inventory.MaxAmount 3; }
-}
+} */
 
 class FistFinisherTimer : Counter
 {
@@ -90,3 +90,5 @@ class GoggleTimer : Counter
 }
 
 class GogglesActive : Boolean {}
+
+class ChainExploder : Boolean {}

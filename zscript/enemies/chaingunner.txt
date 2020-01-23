@@ -125,6 +125,27 @@ class SGDChaingunner : SGDMonster replaces ChaingunGuy
 		CPOS RS 5;
 		CPOS T -1;
 		Stop;
+	Death.Kick:
+	XDeath.Kick:
+		CPOS G 2 A_Pain;
+		CPOS GGGGGGGGGG 5;
+		CPOS O 5
+		{
+			A_GiveToTarget("ChaingunnersKilled");
+			A_GiveToTarget("FinisherToken",12);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		CPOS P 5
+		{
+			A_XScream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		CPOS Q 5 A_NoBlocking;
+		CPOS RS 5;
+		CPOS T -1;
+		Stop;
 	Raise:
 		CPOS N 5 A_SetTranslation("ResetTrans");
 		CPOS MLKJIH 5;

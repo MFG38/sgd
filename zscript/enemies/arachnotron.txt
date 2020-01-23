@@ -87,6 +87,26 @@ class SGDArachnotron : SGDMonster replaces Arachnotron
 		BSPI LMNO 7;
 		BSPI P -1 A_BossDeath;
 		Stop;
+	Death.Kick:
+		BSPI I 2 A_Pain;
+		BSPI IIIIIIIIII 5;
+		BSPI J 0
+		{
+			A_GiveToTarget("ArachnotronsKilled");
+			A_GiveToTarget("FinisherToken",65);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		BSPI J 20
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		BSPI K 7 A_NoBlocking;
+		BSPI LMNO 7;
+		BSPI P -1 A_BossDeath;
+		Stop;
     Raise:
 		BSPI P 5 A_SetTranslation("ResetTrans");
 		BSPI ONMLKJ 5;

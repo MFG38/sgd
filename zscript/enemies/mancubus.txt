@@ -84,7 +84,27 @@ class SGDMancubus : SGDMonster replaces Fatso
 		FATT NOPQRS 6;
 		FATT T -1 A_BossDeath;
 		Stop;
-	 Raise:
+	Death.Kick:
+		FATT J 2 A_Pain;
+		FATT JJJJJJJJJJ 5;
+		FATT K 6
+		{
+			A_GiveToTarget("MancubiKilled");
+			A_GiveToTarget("FinisherToken",40);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		FATT L 6
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		FATT M 6 A_NoBlocking;
+		FATT NOPQRS 6;
+		FATT T -1 A_BossDeath;
+		Stop;
+	Raise:
 		FATT R 5 A_SetTranslation("ResetTrans");
 		FATT QPONMLK 5;
 		Goto See;

@@ -90,6 +90,27 @@ class SGDCacodemon : SGDMonster replaces Cacodemon
 		HEAD K 8 A_NoBlocking;
 		HEAD L -1 A_SetFloorClip;
 		Stop;
+	Death.Kick:
+		HEAD E 3 A_Pain;
+		HEAD EEEEEEEEEE 5;
+		HEAD G 8
+		{
+			A_GiveToTarget("CacodemonsKilled");
+			A_GiveToTarget("FinisherToken",25);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		HEAD H 8
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		HEAD I 8;
+		HEAD J 8;
+		HEAD K 8 A_NoBlocking;
+		HEAD L -1 A_SetFloorClip;
+		Stop;
 	Raise:
 		HEAD L 8
 		{

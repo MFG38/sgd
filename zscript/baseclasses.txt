@@ -147,6 +147,7 @@ class SGDMonster : Actor
 	{
 		PainChance "HolyWater", 255;
 		PainChance "Fire", 200;
+		PainChance "Kick", 200;
 		MONSTER;
 		+FLOORCLIP;
 		+MISSILEMORE;

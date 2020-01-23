@@ -122,6 +122,27 @@ class SGDZombieman : SGDMonster replaces Zombieman
 		POSS PQRST 5;
 		POSS U -1;
 		Stop;
+	Death.Kick:
+	XDeath.Kick:
+		POSS G 2 A_Pain;
+		POSS GGGGGGGGGG 5;
+		POSS M 5
+		{
+			A_GiveToTarget("ZombiemenKilled");
+			A_GiveToTarget("FinisherToken",8);
+			A_SpawnItemEx("Explosion",0,0,35);
+			
+			if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+		}
+		POSS N 5
+		{
+			A_XScream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		POSS O 5 A_NoBlocking;
+		POSS PQRST 5;
+		POSS U -1;
+		Stop;
 	Raise:
 		POSS K 5 A_SetTranslation("ResetTrans");
 		POSS JIH 5;
