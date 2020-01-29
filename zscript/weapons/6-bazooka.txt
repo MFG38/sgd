@@ -121,11 +121,13 @@ class BazookaAirStrikeRocket : BazookaRocket
 		Height 24;
 		Radius 5;
 		Speed 0;
+		Alpha 0.0;
 	}
 	
 	States
 	{
 	Spawn:
+		ASRK AAAA 1 A_FadeIn(0.25);
 		ASRK A 1;
 		Loop;
 	}
@@ -152,12 +154,12 @@ class AirStrikeLocator : FastProjectile
 	Death:
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2
 		{
-			A_SpawnItemEx("AirStrikeMarker",104,0,floorz,angle:0+addang);
-			A_SpawnItemEx("AirStrikeMarker",104,0,floorz,angle:120+addang);
-			A_SpawnItemEx("AirStrikeMarker",104,0,floorz,angle:240+addang);
-			addang += 6;
+			A_SpawnItemEx("AirStrikeMarker",104,0,0,angle:0+addang);
+			A_SpawnItemEx("AirStrikeMarker",104,0,0,angle:120+addang);
+			A_SpawnItemEx("AirStrikeMarker",104,0,0,angle:240+addang);
+			addang += 8;
 		}
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 3 A_SpawnItemEx("BazookaAirStrikeRocket",(random(-8,8)*12),0,ceilingz-40,0,0,-24,random(0,17)*20);
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 3 A_SpawnItemEx("BazookaAirStrikeRocket",(random(-8,8)*12),0,ceilingz-floorz-64,0,0,-24,random(0,11)*30);
 		Stop;
 	}
 }
