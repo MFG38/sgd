@@ -25,6 +25,7 @@ class SGDPlayer : PlayerPawn
 		Player.WeaponSlot 9, "SGDDarkMatterCannon";
 		Player.WeaponSlot 0, "SGDChainsaw";
 		DamageFactor "HolyWater", 0.0;
+		DamageFactor "Sploder", 0.0;
 	}
 
 	States
