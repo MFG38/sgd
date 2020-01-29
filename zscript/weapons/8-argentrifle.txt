@@ -75,9 +75,9 @@ class SGDArgentRifle : SGDWeapon
 		STPO D 0 A_PlaySound("argentrifle/laser",CHAN_WEAPON);
 		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1
 		{
-			A_ArgentRifleLaser(-8.0);
+			A_ArgentRifleLaser(-16.0);
 			A_ArgentRifleLaser(0.0);
-			A_ArgentRifleLaser(8.0);
+			A_ArgentRifleLaser(16.0);
 		}
 		STPO A 0 A_EndFinisher;
 		Goto ReadyLoop;
