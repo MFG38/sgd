@@ -134,7 +134,7 @@ class ArgentRifleLaser : Actor
 	States
 	{
 	Spawn:
-		ARLS AABB 1 Bright
+		ARLS A 1 Bright
 		{
 			A_SpawnItemEx("ArgentRifleLaserTrail",-(0.2*vel.x),0,-(0.2*vel.z));
 			A_SpawnItemEx("ArgentRifleLaserTrail",-(0.4*vel.x),0,-(0.4*vel.z));
