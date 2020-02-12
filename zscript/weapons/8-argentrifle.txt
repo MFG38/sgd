@@ -67,7 +67,7 @@ class SGDArgentRifle : SGDWeapon
 	Finisher1:
 		TNT1 A 0 A_BeginFinisher(false);
 		STPO D 0 A_PlaySound("argentrifle/laser",CHAN_WEAPON);
-		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 A_ArgentRifleLaser(0.0);
+		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 A_ArgentRifleLaser(0.0,0);
 		STPO A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
@@ -75,16 +75,16 @@ class SGDArgentRifle : SGDWeapon
 		STPO D 0 A_PlaySound("argentrifle/laser",CHAN_WEAPON);
 		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1
 		{
-			A_ArgentRifleLaser(-16.0);
-			A_ArgentRifleLaser(0.0);
-			A_ArgentRifleLaser(16.0);
+			A_ArgentRifleLaser(-20.0,-4);
+			A_ArgentRifleLaser(0.0,0);
+			A_ArgentRifleLaser(20.0,4);
 		}
 		STPO A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
 		TNT1 A 0 A_BeginFinisher(false);
 		STPO D 0 A_PlaySound("argentrifle/laser",CHAN_WEAPON);
-		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 A_ArgentRifleLaser(0.0);
+		STPO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 A_ArgentRifleLaser(0.0,0);
 		STPO A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
@@ -128,7 +128,7 @@ class ArgentRifleLaser : Actor
 		Alpha 0.5;
 		DeathSound "argentrifle/ballhit";
 		PROJECTILE;
-		+RANDOMIZE;
+		//+RANDOMIZE;
 	}
 
 	States
@@ -158,10 +158,10 @@ extend class SGDArgentRifle
 		ACS_NamedExecute("FeatTracker",0);
 	}
 	
-	action void A_ArgentRifleLaser(double ang)
+	action void A_ArgentRifleLaser(double ang, int xoffset)
 	{
 		A_AlertMonsters();
-		SpawnPlayerMissile("ArgentRifleLaser",angle+ang);
+		SpawnPlayerMissile("ArgentRifleLaser",angle+ang,xoffset);
 		ACS_NamedExecute("FeatTracker",0);
 	}
 }
