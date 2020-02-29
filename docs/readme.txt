@@ -56,7 +56,7 @@ other IWADs is neither guaranteed nor planned.
 
 Bugs may be reported by the following means:
 
-E-mail:			H3llraich@yahoo.com
+E-mail:			mfg38thelps@aol.com
 Discord PM:		MFG38#3393
 ZDoom project thread:	http://forum.zdoom.org/viewtopic.php?f=43&t=65490
 ModDB page:		http://www.moddb.com/mods/satanic-gameshow-deluxe
