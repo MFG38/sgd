@@ -206,7 +206,7 @@ extend class SGDSuperShotgun
 			double xspread = angle + random2() * (28.0 / 256);
 			double yspread = pitch + random2() * (15.25 / 256);
 			
-			LineAttack(xspread,384,yspread,dmg,'Normal',"BulletPuff");
+			LineAttack(xspread,416,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
 	}
