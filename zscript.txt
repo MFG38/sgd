@@ -6,6 +6,8 @@ version "3.7"
 #include "zscript/effects.txt"
 #include "zscript/misc.txt"
 
+#include "zscript/event_handlers/brutaldoom.txt"
+
 #include "zscript/items/ammo.txt"
 #include "zscript/items/armor.txt"
 #include "zscript/items/artifacts.txt"
