@@ -12,6 +12,8 @@ ZScript and modified where seen fit by MFG38
 Parts of Dark Matter Cannon DECORATE code by Gothic, converted to ZScript and
 modified where seen fit by MFG38
 
+Parts of Brutal Doom event handler code by Marisa Kirisame
+
 
 ==============
 == GRAPHICS ==
@@ -55,9 +57,7 @@ Minigun firing sound: Tormentor667
 
 Minigun wind-up / wind-down sounds: source sounds by Infinity Ward, edited by MFG38
 
-Bazooka fire and explosion sounds: id Software (Quake), MagicWazard
-
-Bazooka air strike warning sound: MFG38
+Bazooka: id Software (Quake), MagicWazard
 
 Argent Rifle primary fire sounds: Raven Software
 
