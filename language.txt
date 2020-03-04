@@ -130,6 +130,7 @@ SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
 
 SGD_WRN_CANTUSEFIELDMED = "Can't use Field Med Pack right now!";
+SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom you cunt";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
