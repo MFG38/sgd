@@ -42,7 +42,7 @@ class SGDShotgun : SGDWeapon replaces Shotgun
 		DNSG A 0;
 		Goto ReadyLoop;
 	Finisher1:
-		DNSG A 3 ACS_NamedExecute("InitFinisher",0,0);
+		DNSG A 3 A_BeginFinisher(false);
 		DNSG B 1 A_ShotgunFinisher;
 		DNSG CDEDCB 1 bright;
 		DNSG A 3;
@@ -50,10 +50,10 @@ class SGDShotgun : SGDWeapon replaces Shotgun
 		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
-		DNSG A 7 ACS_NamedExecute("EndFinisher",0);
+		DNSG A 7 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
-		DNSG A 3 ACS_NamedExecute("InitFinisher",0,0);
+		DNSG A 3 A_BeginFinisher(false);
 		DNSG B 1 A_ShotgunFinisher;
 		DNSG CDEDCB 1 bright;
 		DNSG B 1 A_ShotgunFinisher;
@@ -63,10 +63,10 @@ class SGDShotgun : SGDWeapon replaces Shotgun
 		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
-		DNSG A 7 ACS_NamedExecute("EndFinisher",0);
+		DNSG A 7 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		DNSG A 3 ACS_NamedExecute("InitFinisher",0,0);
+		DNSG A 3 A_BeginFinisher(false);
 		DNSG B 1 A_ShotgunFinisher;
 		DNSG CDEDCB 1 bright;
 		DNSG B 1 A_ShotgunFinisher;
@@ -80,7 +80,7 @@ class SGDShotgun : SGDWeapon replaces Shotgun
 		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
-		DNSG A 7 ACS_NamedExecute("EndFinisher",0);
+		DNSG A 7 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }

@@ -42,22 +42,22 @@ class SGDRifle : SGDWeapon replaces Pistol
 		RGUN A 0;
 		Goto ReadyLoop;
 	Finisher1:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		RGUN BCBCBCBCBCBC 3 A_RifleFire;
 		RGUN A 8;
-		RGUN A 0 ACS_NamedExecute("EndFinisher",0);
+		RGUN A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		RGUN BCBCBCBCBCBCBCBCBCBCBCBC 3 A_RifleFire;
 		RGUN A 8;
-		RGUN A 0 ACS_NamedExecute("EndFinisher",0);
+		RGUN A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		RGUN BCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBCBC 2 A_RifleFire;
 		RGUN A 12;
-		RGUN A 0 ACS_NamedExecute("EndFinisher",0);
+		RGUN A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }

@@ -43,19 +43,19 @@ class SGDChainsaw : SGDWeapon replaces Chainsaw
 		MAGS A 0;
 		Goto ReadyLoop;
 	Finisher1:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		MAGS ABABABABABABABAB 2 A_ChainsawAttack;
-		MAGS A 0 ACS_NamedExecute("EndFinisher",0);
+		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		MAGS ABABABABABABABABABABABABABABABAB 2 A_ChainsawAttack;
-		MAGS A 0 ACS_NamedExecute("EndFinisher",0);
+		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		MAGS ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 1 A_ChainsawAttack;
-		MAGS A 0 ACS_NamedExecute("EndFinisher",0);
+		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }
