@@ -65,6 +65,8 @@ Argent Rifle primary fire sounds: Raven Software
 
 Argent Rifle laser sound: MFG38
 
+Argent Rifle bomb launch sound: base sound by Raven Software, edited by MFG38
+
 Argent Rifle overheat sound: MFG38 (reused from Deliverance 2600)
 
 Flamethrower: Eriance, Raven Software
@@ -105,7 +107,8 @@ Bazooka air strike markers: MFG38
 
 Argent Rifle: base sprites by Raven Software and Eriance, edits by MFG38
 
-Argent Rifle primary projectile: base sprites by id Sofware, edits by MFG38
+Argent Rifle primary projectile and Argent Bomb: base sprites by id Sofware, edits
+by MFG38
 
 Argent Rifle laser (Level 3 finisher): MFG38
 
