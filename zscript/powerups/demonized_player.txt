@@ -74,6 +74,12 @@ class DemonizedPlayer : PlayerPawn
 		PLAY Y -1;
 		Stop;
 	}
+	
+	override bool OnGiveSecret (bool printmsg, bool playsound)
+	{
+		A_Log(StringTable.Localize("$SGD_SECRET"));
+		return false;
+	}
 }
 
 class DemonizedFists : SGDWeapon
