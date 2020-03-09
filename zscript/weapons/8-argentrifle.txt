@@ -161,7 +161,7 @@ class ArgentBomb : Actor
 		PROJECTILE;
 		+RANDOMIZE;
 		-NOGRAVITY;
-		Gravity 0.5;
+		Gravity 0.35;
 	}
 	
 	States
@@ -172,7 +172,7 @@ class ArgentBomb : Actor
 	Death:
 		ABOM CCCDDDEEEFFFGGG 1 Bright
 		{
-			A_Explode(100,64,XF_NOTMISSILE);
+			A_Explode(225,80,XF_NOTMISSILE);
 			A_SpawnItemEx("ArgentBombExplosion",random(1,4)*48,0,0,angle:random(0,11)*30);
 		}
 		Stop;
@@ -195,7 +195,7 @@ class ArgentBombExplosion : Actor
 	States
 	{
 	Spawn:
-		ABOM CCCDDDEEEFFFGGG 1 Bright A_Explode(100,64,XF_NOTMISSILE);
+		ABOM CCCDDDEEEFFFGGG 1 Bright A_Explode(225,80,XF_NOTMISSILE);
 		Stop;
 	}
 }
