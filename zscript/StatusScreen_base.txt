@@ -1,7 +1,7 @@
 const statscr_base_width = 1920.0;
 const statscr_base_height = 1080.0;
 
-class StatusColor Abstract version("4.0")
+class StatusColor Abstract
 {
 	static clearscope float hue2rgb(float p, float q, float t)
 	{
@@ -31,7 +31,7 @@ class StatusColor Abstract version("4.0")
 	}
 }
 
-class StatusBarScreen Abstract ui version("4.0")
+class StatusBarScreen Abstract ui
 {
 	enum AlignFlags
 	{

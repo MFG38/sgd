@@ -26,7 +26,7 @@ Best played with your megawad of choice.
 2. REQUIREMENTS
 ===============
 
-Satanic Gameshow Deluxe requires GZDoom 3.7.0 at a minimum to run. It is
+Satanic Gameshow Deluxe requires GZDoom 4.0.0 at a minimum to run. It is
 designed to be played with any commercial Doom IWAD. Compatibility with any
 other IWADs is neither guaranteed nor planned.
 
