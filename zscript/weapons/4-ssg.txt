@@ -170,10 +170,24 @@ extend class SGDSuperShotgun
 		for(int i = 0; i < 24; i++)
 		{
 			int dmg = random(20,24);
-			double xspread = angle + random2() * (21.5 / 256);
-			double yspread = pitch + random2() * (15.25 / 256);
+			double xspread;
+			double yspread;
 			
-			LineAttack(xspread,288,yspread,dmg,'Normal',"BulletPuff");
+			switch(i)
+			{
+			case 0:
+			case 1:
+			case 2:
+				xspread = angle + random2() * (1.125 / 256);
+				yspread = pitch + random2() * (0.985 / 256);
+				break;
+			default:
+				xspread = angle + random2() * (21.5 / 256);
+				yspread = pitch + random2() * (15.25 / 256);
+				break;
+			}
+			
+			LineAttack(xspread,384,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
 	}
