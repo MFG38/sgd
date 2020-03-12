@@ -32,7 +32,7 @@ class SGDMedikitAlt : SGDMedikit
 {
 	Default
 	{
-		Inventory.Amount 15;
+		Inventory.Amount 20;
 		Inventory.PickupMessage "$SGD_ITEM_MEDIKITALT";
 		Health.LowMessage 25,"$SGD_ITEM_MEDIKITALT";
 	}

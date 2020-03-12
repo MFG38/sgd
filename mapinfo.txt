@@ -9,7 +9,7 @@ clearskills
 
 skill baby
 {
-	acsreturn = 1
+	//acsreturn = 1
 	name = "$SGD_SKILL_VERYEASY"
 	mustconfirm = "You're new to this whole thing.\
 		Minimal enemy spawns. Enemies deal\
@@ -25,7 +25,7 @@ skill baby
 
 skill easy
 {
-	acsreturn = 2
+	//acsreturn = 2
 	name = "$SGD_SKILL_EASY"
 	mustconfirm = "You're not completely inexperienced.\
 		Minimal enemy spawns."
@@ -37,7 +37,7 @@ skill easy
 skill normal
 {
 	defaultskill
-	acsreturn = 3
+	//acsreturn = 3
 	name = "$SGD_SKILL_MEDIUM"
 	mustconfirm = "You know what you're getting yourself\
 		into. Normal enemy spawns."
@@ -47,7 +47,7 @@ skill normal
 
 skill hard
 {
-	acsreturn = 4
+	//acsreturn = 4
 	name = "$SGD_SKILL_HARD"
 	mustconfirm = "You're a demon-slaying veteran.\
 		Maximum enemy spawns."
@@ -57,29 +57,29 @@ skill hard
 
 skill nightmare
 {
-	acsreturn = 5
+	//acsreturn = 5
 	name = "$SGD_SKILL_VERYHARD"
 	mustconfirm = "You've seen things others wouldn't believe.\
 		Maximum enemy spawns. Enemies deal\
-		200% damage."
+		150% damage."
 	aggressiveness = 0.8
 	spawnfilter = nightmare
-	damagefactor = 2.0
+	damagefactor = 1.5
 	disablecheats
 }
 
 skill whywouldyoueventrythis
 {
-	acsreturn = 6
+	//acsreturn = 6
 	name = "$SGD_SKILL_IMPOSSIBLE"
 	mustconfirm = "You're not afraid of anything.\
-		Enemies deal 200% damage and have 50%\
+		Enemies deal 150% damage and have 50%\
 		more health. Ammo pickups grant twice\
 		the ammo and some health pickups\
 		give less health."
 	aggressiveness = 1.0
 	spawnfilter = nightmare
-	damagefactor = 2.0
+	damagefactor = 1.5
 	monsterhealth = 1.5
 	ammofactor = 2.0
 	//healthfactor = 0.75

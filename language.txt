@@ -165,7 +165,7 @@ SGD_AMMO_DMCAMMO = "Dark matter cell (+1 Dark Matter Cannon ammo)";
 SGD_ITEM_STIMPACK = "Stimpack (+10 health)";
 SGD_ITEM_MEDIKIT = "Medikit (+25 health)";
 SGD_ITEM_STIMPACKALT = "Stimpack (+5 health)";
-SGD_ITEM_MEDIKITALT = "Medikit (+15 health)";
+SGD_ITEM_MEDIKITALT = "Medikit (+20 health)";
 SGD_ITEM_GREENARMOR = "Security vest (+100 armor)";
 SGD_ITEM_BLUEARMOR = "Combat armor (+200 armor)";
 
