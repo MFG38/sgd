@@ -6,6 +6,8 @@ version "3.7"
 #include "zscript/effects.txt"
 #include "zscript/misc.txt"
 
+#include "zscript/StatusScreen_base.txt"	// StatusBarScreen API by Lewisk3/FermionOutcast
+
 #include "zscript/event_handlers/brutaldoom.txt"
 
 #include "zscript/items/ammo.txt"
