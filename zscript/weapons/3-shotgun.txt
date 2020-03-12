@@ -124,17 +124,26 @@ extend class SGDShotgun
 				range = 360;
 			}
 			
-			if(FindInventory("Shotgun_Cone"))
+			switch(i)
 			{
-				xspread = angle + random2() * (11.25 / 256);
-				yspread = pitch + random2() * (8.65 / 256);
+			case 0:
+				xspread = angle;
+				yspread = pitch;
+				break;
+			default:
+				if(FindInventory("Shotgun_Cone"))
+				{
+					xspread = angle + random2() * (11.25 / 256);
+					yspread = pitch + random2() * (8.65 / 256);
+				}
+				else
+				{
+					xspread = angle + random2() * (16.65 / 256);
+					yspread = pitch + random2() * (13.5 / 256);
+				}
+				break;
 			}
-			else
-			{
-				xspread = angle + random2() * (16.65 / 256);
-				yspread = pitch + random2() * (13.5 / 256);
-			}
-			
+
 			LineAttack(xspread,range,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
