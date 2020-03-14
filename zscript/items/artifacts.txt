@@ -1,4 +1,4 @@
-class SGDSoulsphere : Soulsphere replaces Soulsphere
+class SGDSoulsphere : Soulsphere
 {
 	Default
 	{
@@ -8,7 +8,7 @@ class SGDSoulsphere : Soulsphere replaces Soulsphere
 	}
 }
 
-class SGDMegasphere : Megasphere replaces Megasphere
+class SGDMegasphere : Megasphere
 {
 	Default
 	{
@@ -40,17 +40,17 @@ class AltMegasphereArmor : BasicArmorPickup
 	Default { Armor.SavePercent 50; Armor.SaveAmount 100; }
 }
 
-class SGDAllmap : Allmap replaces Allmap
+class SGDAllmap : Allmap
 {
 	Default { Inventory.ForbiddenTo "DemonizedPlayer"; -INVENTORY.ALWAYSPICKUP; }
 }
 
-/* class SGDInfrared : Infrared replaces Infrared
+/* class SGDInfrared : Infrared
 {
 	Default { Inventory.ForbiddenTo "DemonizedPlayer"; -INVENTORY.ALWAYSPICKUP; }
 }
 
-class SGDRadSuit : RadSuit replaces RadSuit
+class SGDRadSuit : RadSuit
 {
 	Default { Inventory.ForbiddenTo "DemonizedPlayer"; -INVENTORY.ALWAYSPICKUP; }
 } */

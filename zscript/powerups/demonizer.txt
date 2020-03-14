@@ -1,7 +1,7 @@
 // This code is for stuff related to the Demonizer powerup itself. See "demonized_player.txt"
 // for the player morph and powered-up fists.
 
-class DemonizerPowerup : CustomInventory replaces InvulnerabilitySphere
+class DemonizerPowerup : CustomInventory
 {
 	Default
 	{

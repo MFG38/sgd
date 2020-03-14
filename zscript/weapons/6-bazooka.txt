@@ -1,4 +1,4 @@
-class SGDBazooka : SGDWeapon replaces RocketLauncher
+class SGDBazooka : SGDWeapon
 {
 	Default
 	{

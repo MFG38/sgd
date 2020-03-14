@@ -1,4 +1,4 @@
-class SGDFlamethrower : SGDWeapon replaces PlasmaRifle
+class SGDFlamethrower : SGDWeapon
 {
 	Default
 	{

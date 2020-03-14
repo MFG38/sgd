@@ -1,4 +1,4 @@
-class SGDChainsaw : SGDWeapon replaces Chainsaw
+class SGDChainsaw : SGDWeapon
 {
 	Default
 	{

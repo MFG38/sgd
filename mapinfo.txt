@@ -3,6 +3,7 @@ gameinfo
 	playerclasses = "SGDPlayer"
 	//drawreadthis = true
 	infopage = "HOWTO1"
+	AddEventHandlers = "SGDReplacementHandler"
 }
 
 clearskills

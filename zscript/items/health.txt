@@ -1,4 +1,4 @@
-class SGDHealthBonus : HealthBonus replaces HealthBonus
+class SGDHealthBonus : HealthBonus
 {
 	Default
 	{
@@ -8,7 +8,7 @@ class SGDHealthBonus : HealthBonus replaces HealthBonus
 	}
 }
 
-class SGDStimpack : Stimpack replaces Stimpack
+class SGDStimpack : Stimpack
 {
 	Default { Inventory.PickupMessage "$SGD_ITEM_STIMPACK"; Inventory.ForbiddenTo "DemonizedPlayer"; }
 }
@@ -18,7 +18,7 @@ class SGDStimpackAlt : SGDStimpack
 	Default { Inventory.Amount 5; Inventory.PickupMessage "$SGD_ITEM_STIMPACKALT"; }
 }
 
-class SGDMedikit : Medikit replaces Medikit
+class SGDMedikit : Medikit
 {
 	Default
 	{

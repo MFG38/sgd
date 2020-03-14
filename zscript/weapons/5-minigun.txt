@@ -1,4 +1,4 @@
-class SGDMinigun : SGDWeapon replaces Chaingun
+class SGDMinigun : SGDWeapon
 {
 	Default
 	{

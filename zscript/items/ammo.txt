@@ -8,7 +8,7 @@ class RifleAmmo : Ammo
 	}
 }
 
-class RifleMag : RifleAmmo replaces Clip
+class RifleMag : RifleAmmo
 {
 	Default
 	{
@@ -34,7 +34,7 @@ class ShellAmmo : Ammo
 	}
 }
 
-class HandfulOfShells : ShellAmmo replaces Shell
+class HandfulOfShells : ShellAmmo
 {
 	Default
 	{
@@ -50,7 +50,7 @@ class HandfulOfShells : ShellAmmo replaces Shell
 	}
 }
 
-class BoxOfShells : ShellAmmo replaces ShellBox
+class BoxOfShells : ShellAmmo
 {
 	Default
 	{
@@ -76,7 +76,7 @@ class MinigunAmmo : Ammo
 	}
 }
 
-class MinigunBulletBox : MinigunAmmo replaces ClipBox
+class MinigunBulletBox : MinigunAmmo
 {
 	Default
 	{
@@ -102,7 +102,7 @@ class BazookaAmmo : Ammo
 	}
 }
 
-class LonelyRocket : BazookaAmmo replaces RocketAmmo
+class LonelyRocket : BazookaAmmo
 {
 	Default
 	{
@@ -118,7 +118,7 @@ class LonelyRocket : BazookaAmmo replaces RocketAmmo
 	}
 }
 
-class PileOfRockets : BazookaAmmo replaces RocketBox
+class PileOfRockets : BazookaAmmo
 {
 	Default
 	{
@@ -154,7 +154,7 @@ class FTAmmo : Ammo
 	}
 }
 
-class GasCanister : FTAmmo replaces Cell
+class GasCanister : FTAmmo
 {
 	Default
 	{
@@ -170,7 +170,7 @@ class GasCanister : FTAmmo replaces Cell
 	}
 }
 
-class GasTank : FTAmmo replaces CellPack
+class GasTank : FTAmmo
 {
 	Default
 	{

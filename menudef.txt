@@ -52,6 +52,11 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_HITSCANBEHAVIOR", "sgd_hitscanbehavior", "HitscanBehavior"
 	Option "$SGD_OM_TRACERBEHAVIOR", "sgd_revrocketbehavior", "TracerBehavior"
 	StaticText ""
+	StaticText "$SGD_SUBTTL_SPAWNS", "White"
+	Option "$SGD_OM_RPLASMA", "sgd_replaceplasmagun", "ReplacePlasmaRifle"
+	Option "$SGD_OM_RBFG", "sgd_replacebfg", "ReplaceBFG"
+	Option "$SGD_OM_RBACKP", "sgd_replacebackpack", "ReplaceBackpack"
+	StaticText ""
 	Submenu "$SGD_SUBTTL_CONTROLS", "SGD_KeyConfig"
 }
 
@@ -100,6 +105,25 @@ OptionValue "TracerBehavior"
 {
 	0, "$SGD_CVAR_TRACER0"
 	1, "$SGD_CVAR_TRACER1"
+}
+
+OptionValue "ReplacePlasmaRifle"
+{
+	0, "$SGD_CVAR_RPLASMA0"
+	1, "$SGD_CVAR_RPLASMA1"
+}
+
+OptionValue "ReplaceBFG"
+{
+	0, "$SGD_CVAR_RBFG0"
+	1, "$SGD_CVAR_RBFG1"
+	2, "$SGD_CVAR_RBFG2"
+}
+
+OptionValue "ReplaceBackpack"
+{
+	0, "$SGD_CVAR_RBACKP0"
+	1, "$SGD_CVAR_RBACKP1"
 }
 
 /* AddOptionMenu "OptionsMenu"

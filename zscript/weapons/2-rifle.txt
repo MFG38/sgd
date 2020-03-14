@@ -1,4 +1,4 @@
-class SGDRifle : SGDWeapon replaces Pistol
+class SGDRifle : SGDWeapon
 {
 	Default
 	{

@@ -1,4 +1,4 @@
-class SGDFists : SGDWeapon replaces Fist
+class SGDFists : SGDWeapon
 {
 	Default
 	{

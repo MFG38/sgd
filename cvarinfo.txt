@@ -18,7 +18,12 @@ server bool sgd_worldlights = true;
 // Enemy stuff
 server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
 server int sgd_hitscanbehavior = 1;		// 0 = Hitscan, 1 = Projectile
-server int sgd_revrocketbehavior = 1;	// 0 = Original, 1 = SGD-style
+server int sgd_revrocketbehavior = 1;		// 0 = Original, 1 = SGD-style
+
+// Spawning stuff
+server int sgd_replaceplasmagun = 0;		// 0 = Flamethrower only, 1 = Flamethrower or Argent Rifle
+server int sgd_replacebfg = 0;			// 0 = Argent Rifle or DMC, 1 = DMC only, 2 = Argent Rifle only
+server int sgd_replacebackpack = 0;		// 0 = Random ammo, 1 = DMC ammo
 
 // Sound stuff
 user bool sgd_fieldmedsound = true;

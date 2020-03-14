@@ -1,4 +1,4 @@
-class FieldMedPack : CustomInventory replaces Berserk
+class FieldMedPack : CustomInventory
 {
 	Default
 	{

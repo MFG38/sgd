@@ -8,6 +8,8 @@
 - Rebalanced skills 5 and 6:
 	* Enemies deal 150% damage instead of 200% on both skills.
 	* Medikits grant 20 HP instead of 15 on skill 6.
+- Renamed TeleportFX to SGDTeleportFog.
+- Implemented 3 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg and sgd_replacebackpack.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.

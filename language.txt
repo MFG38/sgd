@@ -21,6 +21,7 @@ SGD_SUBTTL_VISUALS = "Visuals";
 SGD_SUBTTL_HUD = "HUD";
 SGD_SUBTTL_SOUNDS = "Sounds";
 SGD_SUBTTL_BEHAVIOR = "Enemy behavior";
+SGD_SUBTTL_SPAWNS = "Thing replacements";
 SGD_SUBTTL_CONTROLS = "Customize mod controls";
 SGD_SUBTTL_CONTROLS1 = "Essential controls";
 SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
@@ -46,6 +47,10 @@ SGD_OM_SPAWNBEHAVIOR = "Enemy spawn behavior (*)";
 SGD_OM_HITSCANBEHAVIOR = "Bullet attack type";
 SGD_OM_TRACERBEHAVIOR = "Revenant rocket type";
 
+SGD_OM_RPLASMA = "Plasma Rifle replacement (*)";
+SGD_OM_RBFG = "BFG9000 replacement (*)";
+SGD_OM_RBACKP = "Backpack replacement (*)";
+
 SGD_CVAR_FMSG0 = "Off";
 SGD_CVAR_FMSG1 = "No button prompt";
 SGD_CVAR_FMSG2 = "Full";
@@ -55,6 +60,13 @@ SGD_CVAR_HITSCAN0 = "Hitscan";
 SGD_CVAR_HITSCAN1 = "Projectile";
 SGD_CVAR_TRACER0 = "Original";
 SGD_CVAR_TRACER1 = "SGD-style";
+SGD_CVAR_RPLASMA0 = "Flamethrower only";
+SGD_CVAR_RPLASMA1 = "Flamethrower or Argent Rifle";
+SGD_CVAR_RBFG0 = "Argent Rifle or DMC";
+SGD_CVAR_RBFG1 = "DMC only";
+SGD_CVAR_RBFG2 = "Argent Rifle only";
+SGD_CVAR_RBACKP0 = "Random ammo";
+SGD_CVAR_RBACKP1 = "DMC ammo";
 
 SGD_KEY_ALTFIRE = "Altfire (uses finisher)";
 SGD_KEY_INVUSE = "Use inventory item";

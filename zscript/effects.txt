@@ -174,7 +174,7 @@ class HolyWaterPoolParticle : Actor
 	}
 }
 
-class TeleportFX : Actor replaces TeleportFog
+class SGDTeleportFog : Actor
 {
 	Default
 	{

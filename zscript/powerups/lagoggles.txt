@@ -1,4 +1,4 @@
-class SGDLightAmpGoggles : CustomInventory replaces Infrared
+class SGDLightAmpGoggles : CustomInventory
 {
 	Default
 	{

@@ -1,4 +1,4 @@
-class SGDZombieman : SGDMonster replaces Zombieman
+class SGDZombieman : SGDMonster replaces ZombieMan
 {
 	Default
 	{

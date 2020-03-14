@@ -1,4 +1,4 @@
-class SGDShotgun : SGDWeapon replaces Shotgun
+class SGDShotgun : SGDWeapon
 {
 	Default
 	{

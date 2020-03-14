@@ -1,0 +1,125 @@
+class SGDReplacementHandler : EventHandler
+{
+	override void CheckReplacement (ReplaceEvent e)
+	{
+		// Cvar-controlled replacements
+		cvar r_plasma = CVar.FindCVar('sgd_replaceplasmagun');
+		cvar r_bfg = CVar.FindCVar('sgd_replacebfg');
+		cvar r_backpack = CVar.FindCVar('sgd_replacebackpack');
+		
+		switch(r_plasma.GetInt())
+		{
+		case 0:
+			if(e.Replacee is 'PlasmaRifle') { e.Replacement = 'SGDFlamethrower'; }
+			break;
+		case 1:
+			if(e.Replacee is 'PlasmaRifle')
+			{
+				switch(random[Replacement](0,1))
+				{
+					case 0: e.Replacement = 'SGDFlamethrower'; break;
+					case 1: e.Replacement = 'SGDArgentRifle'; break;
+				}
+			}
+			break;
+		}
+		
+		switch(r_bfg.GetInt())
+		{
+		case 0:
+			if(e.Replacee is 'BFG9000')
+			{
+				switch(random[Replacement](0,1))
+				{
+					case 0: e.Replacement = 'SGDArgentRifle'; break;
+					case 1: e.Replacement = 'SGDDarkMatterCannon'; break;
+				}
+			}
+			break;
+		case 1:
+			if(e.Replacee is 'BFG9000') { e.Replacement = 'SGDDarkMatterCannon'; }
+			break;
+		case 2:
+			if(e.Replacee is 'BFG9000') { e.Replacement = 'SGDArgentRifle'; }
+			break;
+		}
+		
+		switch(r_backpack.GetInt())
+		{
+		case 0:
+			if(e.Replacee is 'Backpack')
+			{
+				switch(random[Replacement](0,8))
+				{
+					case 0: e.Replacement = 'RifleMag'; break;
+					case 1: e.Replacement = 'HandfulOfShells'; break;
+					case 2: e.Replacement = 'BoxOfShells'; break;
+					case 3: e.Replacement = 'MinigunBulletBox'; break;
+					case 4: e.Replacement = 'LonelyRocket'; break;
+					case 5: e.Replacement = 'PileOfRockets'; break;
+					case 6: e.Replacement = 'GasCanister'; break;
+					case 7: e.Replacement = 'GasTank'; break;
+					case 8: e.Replacement = 'DarkMatterCell'; break;
+				}
+			}
+			break;
+		case 1:
+			if(e.Replacee is 'Backpack') { e.Replacement = 'DarkMatterCell'; }
+			break;
+		}
+		
+		// Teleport fog and ammo
+		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
+		else if(e.Replacee is 'Clip') { e.Replacement = 'RifleMag'; }
+		else if(e.Replacee is 'ClipBox') { e.Replacement = 'MinigunBulletBox'; }
+		else if(e.Replacee is 'Shell') { e.Replacement = 'HandfulOfShells'; }
+		else if(e.Replacee is 'ShellBox') { e.Replacement = 'BoxOfShells'; }
+		else if(e.Replacee is 'RocketAmmo') { e.Replacement = 'LonelyRocket'; }
+		else if(e.Replacee is 'RocketBox') { e.Replacement = 'PileOfRockets'; }
+		else if(e.Replacee is 'Cell') { e.Replacement = 'GasCanister'; }
+		else if(e.Replacee is 'CellPack') { e.Replacement = 'GasTank'; }
+		// Weapons
+		else if(e.Replacee is 'Fist') { e.Replacement = 'SGDFists'; }
+		else if(e.Replacee is 'Chainsaw') { e.Replacement = 'SGDChainsaw'; }
+		else if(e.Replacee is 'Pistol') { e.Replacement = 'SGDRifle'; }
+		else if(e.Replacee is 'Shotgun') { e.Replacement = 'SGDShotgun'; }
+		else if(e.Replacee is 'SuperShotgun') { e.Replacement = 'SGDSuperShotgun'; }
+		else if(e.Replacee is 'Chaingun') { e.Replacement = 'SGDMinigun'; }
+		else if(e.Replacee is 'RocketLauncher') { e.Replacement = 'SGDBazooka'; }
+		// Health and armor
+		else if(e.Replacee is 'HealthBonus') { e.Replacement = 'SGDHealthBonus'; }
+		else if(e.Replacee is 'Stimpack') { e.Replacement = 'SGDStimpack'; }
+		else if(e.Replacee is 'Medikit') { e.Replacement = 'SGDMedikit'; }
+		else if(e.Replacee is 'ArmorBonus') { e.Replacement = 'SGDArmorBonus'; }
+		else if(e.Replacee is 'GreenArmor') { e.Replacement = 'SGDSecurityArmor'; }
+		else if(e.Replacee is 'BlueArmor') { e.Replacement = 'SGDCombatArmor'; }
+		// Powerups
+		else if(e.Replacee is 'Berserk') { e.Replacement = 'FieldMedPack'; }
+		else if(e.Replacee is 'BlurSphere') { e.Replacement = 'HolyWaterGrenadePickup'; }
+		else if(e.Replacee is 'Allmap') { e.Replacement = 'SGDAllmap'; }
+		else if(e.Replacee is 'Infrared') { e.Replacement = 'SGDLightAmpGoggles'; }
+		else if(e.Replacee is 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
+		else if(e.Replacee is 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
+		else if(e.Replacee is 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
+		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
+		// Monsters
+		/* else if(e.Replacee is 'Arachnotron') { e.Replacement = 'SGDArachnotron'; }
+		else if(e.Replacee is 'Archvile') { e.Replacement = 'SGDFlameBoi'; }
+		else if(e.Replacee is 'BaronOfHell') { e.Replacement = 'SGDBaron'; }
+		else if(e.Replacee is 'Cacodemon') { e.Replacement = 'SGDCacodemon'; }
+		else if(e.Replacee is 'ChaingunGuy') { e.Replacement = 'SGDChaingunner'; }
+		else if(e.Replacee is 'Cyberdemon') { e.Replacement = 'SGDCyberdemon'; }
+		else if(e.Replacee is 'Demon') { e.Replacement = 'SGDPinky'; }
+		else if(e.Replacee is 'DoomImp') { e.Replacement = 'SGDImp'; }
+		else if(e.Replacee is 'Fatso') { e.Replacement = 'SGDMancubus'; }
+		else if(e.Replacee is 'HellKnight') { e.Replacement = 'SGDHellKnight'; }
+		else if(e.Replacee is 'LostSoul') { e.Replacement = 'SGDLostSoul'; }
+		else if(e.Replacee is 'PainElemental') { e.Replacement = 'SGDPainElemental'; }
+		else if(e.Replacee is 'Revenant') { e.Replacement = 'SGDRevenant'; }
+		else if(e.Replacee is 'ShotgunGuy') { e.Replacement = 'SGDShotgunner'; }
+		else if(e.Replacee is 'Spectre') { e.Replacement = 'SGDSpectre'; }
+		else if(e.Replacee is 'SpiderMastermind') { e.Replacement = 'SGDSpiderMastermind'; }
+		else if(e.Replacee is 'WolfensteinSS') { e.Replacement = 'SGDNazi'; }
+		else if(e.Replacee is 'ZombieMan') { e.Replacement = 'SGDZombieman'; } */	
+	}
+}

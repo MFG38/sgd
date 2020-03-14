@@ -1,4 +1,4 @@
-class ArgentRifleOrDMCSpawner : RandomSpawner replaces BFG9000
+/* class ArgentRifleOrDMCSpawner : RandomSpawner
 {
 	Default
 	{
@@ -7,7 +7,7 @@ class ArgentRifleOrDMCSpawner : RandomSpawner replaces BFG9000
 	}
 }
 
-class RandomAmmoSpawner : RandomSpawner replaces Backpack
+class RandomAmmoSpawner : RandomSpawner
 {
 	Default
 	{
@@ -21,7 +21,7 @@ class RandomAmmoSpawner : RandomSpawner replaces Backpack
 		DropItem "GasTank";
 		DropItem "DarkMatterCell";
 	}
-}
+} */
 
 class FinisherFreeze : PowerSpeed
 {
