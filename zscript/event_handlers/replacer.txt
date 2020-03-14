@@ -2,7 +2,7 @@ class SGDReplacementHandler : EventHandler
 {
 	override void CheckReplacement (ReplaceEvent e)
 	{
-		// Cvar-controlled replacements
+		// Cvar-controlled replacements: Plasma Rifle, BFG & Backpack
 		cvar r_plasma = CVar.FindCVar('sgd_replaceplasmagun');
 		cvar r_bfg = CVar.FindCVar('sgd_replacebfg');
 		cvar r_backpack = CVar.FindCVar('sgd_replacebackpack');
@@ -68,8 +68,9 @@ class SGDReplacementHandler : EventHandler
 			break;
 		}
 		
-		// Teleport fog and ammo
+		// Misc. replacees
 		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
+		// Ammo
 		else if(e.Replacee is 'Clip') { e.Replacement = 'RifleMag'; }
 		else if(e.Replacee is 'ClipBox') { e.Replacement = 'MinigunBulletBox'; }
 		else if(e.Replacee is 'Shell') { e.Replacement = 'HandfulOfShells'; }
