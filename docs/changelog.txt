@@ -6,8 +6,8 @@
 - Slightly modified the Spider Mastermind's AltMissile state code.
 - Modified firing behavior for the Shotgun and Double-Barrel Shotgun.
 - Rebalanced skills 5 and 6:
-	* Enemies deal 150% damage instead of 200% on both skills.
-	* Medikits grant 20 HP instead of 15 on skill 6.
+	* Enemies deal 150% damage instead of 200% on skill 5.
+	* Stimpacks, Medikits and Megaspheres function normally on skill 6.
 - Renamed TeleportFX to SGDTeleportFog.
 - Implemented 3 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg and sgd_replacebackpack.
 
