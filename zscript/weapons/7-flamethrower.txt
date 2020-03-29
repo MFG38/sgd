@@ -5,7 +5,7 @@ class SGDFlamethrower : SGDWeapon
 		Weapon.SlotNumber 7;
 		Weapon.SelectionOrder 180;
 		Weapon.AmmoType "FTAmmo";
-		Weapon.AmmoGive 100;
+		Weapon.AmmoGive 90;
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_FLAMETHROWER";
 		Inventory.PickupMessage "$SGD_WEP_FLAMETHROWER";
