@@ -9,8 +9,9 @@
 	* Enemies deal 150% damage instead of 200% on skill 5.
 	* Stimpacks, Medikits and Megaspheres function normally on skill 6.
 - Renamed TeleportFX to SGDTeleportFog.
-- Implemented 3 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg and sgd_replacebackpack.
+- Implemented 4 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg, sgd_replacebackpack and sgd_classicpowerups.
 - Reduced the amount of ammo given by the Flamethrower from 100 to 90.
+- Increased the Fists' damage from random(2,5)*5 to random(3,5)*5.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.

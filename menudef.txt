@@ -56,6 +56,7 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_RPLASMA", "sgd_replaceplasmagun", "ReplacePlasmaRifle"
 	Option "$SGD_OM_RBFG", "sgd_replacebfg", "ReplaceBFG"
 	Option "$SGD_OM_RBACKP", "sgd_replacebackpack", "ReplaceBackpack"
+	Option "$SGD_OM_CLASSICPWR", "sgd_classicpowerups", "OnOff"
 	StaticText ""
 	Submenu "$SGD_SUBTTL_CONTROLS", "SGD_KeyConfig"
 }

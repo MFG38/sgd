@@ -18,7 +18,7 @@ class SGDMegasphere : Megasphere
 	}
 }
 
-class SGDMegasphereAlt : SGDMegasphere
+/* class SGDMegasphereAlt : SGDMegasphere
 {
 	Default { Inventory.PickupMessage "$SGD_ART_MEGASPHEREALT"; }
 	States
@@ -38,7 +38,7 @@ class AltMegasphereHealth : Health
 class AltMegasphereArmor : BasicArmorPickup
 {
 	Default { Armor.SavePercent 50; Armor.SaveAmount 100; }
-}
+} */
 
 class SGDAllmap : Allmap
 {

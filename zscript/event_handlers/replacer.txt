@@ -2,10 +2,11 @@ class SGDReplacementHandler : EventHandler
 {
 	override void CheckReplacement (ReplaceEvent e)
 	{
-		// Cvar-controlled replacements: Plasma Rifle, BFG & Backpack
+		// Cvar-controlled replacements
 		cvar r_plasma = CVar.FindCVar('sgd_replaceplasmagun');
 		cvar r_bfg = CVar.FindCVar('sgd_replacebfg');
 		cvar r_backpack = CVar.FindCVar('sgd_replacebackpack');
+		cvar classicpwr = CVar.FindCVar('sgd_classicpowerups');
 		
 		switch(r_plasma.GetInt())
 		{
@@ -68,6 +69,15 @@ class SGDReplacementHandler : EventHandler
 			break;
 		}
 		
+		if(classicpwr.GetBool() == false)
+		{
+			if(e.Replacee is 'Berserk') { e.Replacement = 'FieldMedPack'; }
+			else if(e.Replacee is 'BlurSphere') { e.Replacement = 'HolyWaterGrenadePickup'; }
+			else if(e.Replacee is 'Infrared') { e.Replacement = 'SGDLightAmpGoggles'; }
+			else if(e.Replacee is 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
+		}
+		else { return; }
+		
 		// Misc. replacees
 		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
 		// Ammo
@@ -95,11 +105,7 @@ class SGDReplacementHandler : EventHandler
 		else if(e.Replacee is 'GreenArmor') { e.Replacement = 'SGDSecurityArmor'; }
 		else if(e.Replacee is 'BlueArmor') { e.Replacement = 'SGDCombatArmor'; }
 		// Powerups
-		else if(e.Replacee is 'Berserk') { e.Replacement = 'FieldMedPack'; }
-		else if(e.Replacee is 'BlurSphere') { e.Replacement = 'HolyWaterGrenadePickup'; }
 		else if(e.Replacee is 'Allmap') { e.Replacement = 'SGDAllmap'; }
-		else if(e.Replacee is 'Infrared') { e.Replacement = 'SGDLightAmpGoggles'; }
-		else if(e.Replacee is 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
 		else if(e.Replacee is 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
 		else if(e.Replacee is 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
 		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
