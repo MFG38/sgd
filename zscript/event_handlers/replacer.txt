@@ -76,7 +76,6 @@ class SGDReplacementHandler : EventHandler
 			else if(e.Replacee is 'Infrared') { e.Replacement = 'SGDLightAmpGoggles'; }
 			else if(e.Replacee is 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
 		}
-		else { return; }
 		
 		// Misc. replacees
 		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
