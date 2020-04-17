@@ -14,7 +14,7 @@ modified where seen fit by MFG38
 
 Parts of Brutal Doom event handler code by Marisa Kirisame
 
-StatusBarScreen API by Lewisk3/FermionOutcast
+StatusBarScreen API by Lewisk3
 
 
 ==============

@@ -116,7 +116,7 @@ class SGDSpiderMastermind : SGDMonster replaces SpiderMastermind
 		{
 			A_GiveToTarget("SpiderMastermindsKilled");
 			A_GiveToTarget("FinisherToken",100);
-			A_SpawnItemEx("Explosion",0,0,35);
+			for(int a = 0; a < 4; a++) { A_SpawnItemEx("Explosion",random(-35,35),random(-35,35),random(48,75)); }
 			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SPID J 20
