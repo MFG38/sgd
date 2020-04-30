@@ -10,8 +10,11 @@ class SGDBrutalDoomHandler : StaticEventHandler
 			{
 				continue;
 			}
-			detected = true;
-			break;
+			else
+			{
+				detected = true;
+				break;
+			}
 		}
 	}
 }
