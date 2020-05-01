@@ -69,10 +69,10 @@ class SSGFinisherDamageScaler : Counter
 	Default { Inventory.MaxAmount 3; }
 }
 
-class MinigunFinisherBulletScaler : Counter
+/* class MinigunFinisherBulletScaler : Counter
 {
 	Default { Inventory.MaxAmount 7; }
-}
+} */
 
 class DemonizerTimer : Counter
 {
