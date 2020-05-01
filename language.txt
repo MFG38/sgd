@@ -21,7 +21,7 @@ SGD_SUBTTL_VISUALS = "Visuals";
 SGD_SUBTTL_HUD = "HUD";
 SGD_SUBTTL_SOUNDS = "Sounds";
 SGD_SUBTTL_BEHAVIOR = "Enemy behavior";
-SGD_SUBTTL_SPAWNS = "Thing replacements";
+SGD_SUBTTL_SPAWNS = "Thing replacements (*)";
 SGD_SUBTTL_CONTROLS = "Customize mod controls";
 SGD_SUBTTL_CONTROLS1 = "Essential controls";
 SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
@@ -47,10 +47,10 @@ SGD_OM_SPAWNBEHAVIOR = "Enemy spawn behavior (*)";
 SGD_OM_HITSCANBEHAVIOR = "Bullet attack type";
 SGD_OM_TRACERBEHAVIOR = "Revenant rocket type";
 
-SGD_OM_RPLASMA = "Plasma Rifle replacement (*)";
-SGD_OM_RBFG = "BFG9000 replacement (*)";
-SGD_OM_RBACKP = "Backpack replacement (*)";
-SGD_OM_CLASSICPWR = "Classic powerups (*)";
+SGD_OM_RPLASMA = "Plasma Rifle replacement";
+SGD_OM_RBFG = "BFG9000 replacement";
+SGD_OM_RBACKP = "Backpack replacement";
+SGD_OM_CLASSICPWR = "Classic powerups";
 
 SGD_CVAR_FMSG0 = "Off";
 SGD_CVAR_FMSG1 = "No button prompt";
@@ -85,7 +85,7 @@ SGD_FMSG_LVL3READY = "LEVEL 3 FINISHER READY";
 SGD_FMSG_USE1 = "PRESS ";
 SGD_FMSG_USE2 = " TO USE";
 
-SGD_SECRET = "You found a secret!";
+//SGD_SECRET = "You found a secret!";
 
 SGD_FEATACCOMPLISHED = "FEAT ACCOMPLISHED: ";
 SGD_FEAT01 = "75 zombiemen killed";

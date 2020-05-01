@@ -15,7 +15,7 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		+DONTFALL;
 		+ZDOOMTRANS;
 		-FLOORCLIP;
-		+NOBLOOD;
+		+NOBLOOD;	// Skulls shouldn't bleed.
 		AttackSound "skull/melee";
 		PainSound "skull/pain";
 		DeathSound "skull/death";
