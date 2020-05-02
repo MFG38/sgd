@@ -86,7 +86,7 @@ Finishers:		Level 1: TBD
 			Level 3: TBD
 
 A standard-issue weapon for fresh marine recruits, the Rifle is a weapon that's best used to pick off low-tier enemies
-in the distance. It doesn't boast any significant firepower, but some creative marines have found ways to improve the
+from a distance. It doesn't boast any significant firepower, but some creative marines have found ways to improve the
 otherwise "weak" armament, effectively turning it into an assault rifle.
 
 Slot 3: Shotgun
