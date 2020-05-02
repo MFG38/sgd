@@ -5,6 +5,39 @@
 
 Written by Santtu "MFG38" Pesonen
 
+====================
+= GENERAL GAMEPLAY =
+====================
+
+Satanic Gameshow Deluxe is a mod in which killing matters, especially killing a lot in quick succession.
+
+Acquiring weapon upgrades
+-------------------------
+
+In Satanic Gameshow Deluxe, there are weapon upgrades to be acquired - only instead of finding them lying about
+or buying them in a shop, you obtain them by killing large numbers of specific demons. The mod has in all 13
+different upgrades that are specific to certain weapons. Most weapons have two different upgrades, but some have
+only one upgrade or none at all. The upgrades available for each weapon are detailed in the "Weapons" section.
+
+Each upgrade can be acquired by 3 different means. For instance, to acquire the accuracy upgrade for the Rifle,
+you have to kill 50 imps, 50 cacodemons or 75 zombiemen. Note that the weapon upgrades don't stack - if you already
+have a weapon upgrade, you won't be able to obtain it again.
+
+Performing finishers
+--------------------
+
+Upon killing an enemy, you'll obtain a specific number of "finisher tokens". The number of these tokens is dependent
+on the relative threat level of the enemy you kill. A bar in the top left corner of the screen will show you how many
+finisher tokens you have. Once you have enough finisher tokens, a message will flash at the bottom of the screen,
+letting you know that a finisher is ready to use. Press the Altfire button to unleash the finisher.
+
+Note that the finisher tokens decay over time - sitting around is strongly discouraged, lest you miss an opportunity
+to rain death upon your enemies! Each weapon (with the exception of the Dark Matter Cannon) has 3 different finishers
+with varying levels of lethality. The finisher changes depending on how many finisher tokens you have upon using one.
+
+Also, in case it's somehow not obvious, your finisher tokens get reset upon using a finisher.
+
+
 ===========
 = WEAPONS =
 ===========
@@ -21,7 +54,9 @@ Finishers:		Level 1: TBD
 			Level 2: TBD
 			Level 3: TBD
 
-[add description later]
+A two-bladed chainsaw sounds quite impractical for its intended purpose, but it's more than ideal for cutting the
+flesh and bone of the demonic invaders! This battery-powered, self-recharging "tool" can quickly and efficiently down
+almost any oversized pest that gets too close for comfort. And it doesn't even need fuel!
 
 Slot 1: Fists
 -------------
@@ -35,7 +70,7 @@ Finishers:		Level 1: swift forward kick
 			Level 2: forward kick with chain exploder
 			Level 3: 5-second time stop
 
-[add description later]
+They're your hands. They're sort of puny. 'Nuff said.
 
 Slot 2: Rifle
 -------------
@@ -50,7 +85,9 @@ Finishers:		Level 1: TBD
 			Level 2: TBD
 			Level 3: TBD
 
-[add description later]
+A standard-issue weapon for fresh marine recruits, the Rifle is a weapon that's best used to pick off low-tier enemies
+in the distance. It doesn't boast any significant firepower, but some creative marines have found ways to improve the
+otherwise "weak" armament, effectively turning it into an assault rifle.
 
 Slot 3: Shotgun
 ---------------
@@ -65,7 +102,9 @@ Finishers:		Level 1: TBD
 			Level 2: TBD
 			Level 3: TBD
 
-[add description later]
+The Shotgun is the weapon of choice of many marines who favor close-quarters combat. Even the biggest and baddest demons
+flinch at the hole this boomstick makes into their chests. Many marines, however, have complained at the Shotgun's high
+spread, and some have even modified their "lovelies" to tighten their spread, as well as boost their range slightly.
 
 Slot 4: Double-Barrel Shotgun
 -----------------------------
@@ -80,7 +119,9 @@ Finishers:		Level 1: TBD
 			Level 2: TBD
 			Level 3: TBD
 
-[add description later]
+Despite its sheer firepower, the Double-Barrel Shotgun is rarely seen in the hands of UAC marines. One has to wonder why,
+considering the weapon is capable of downing even large demons with a single shot. Maybe it has something to do with the
+high spread and the recoil...
 
 Slot 5: Minigun
 ---------------
@@ -95,12 +136,16 @@ Finishers:		Level 1: 3-bullet rapid fire attack
 			Level 2: 5-bullet rapid fire attack
 			Level 3: 7-bullet rapid fire attack
 
-[add description later]
+Though cumbersome and difficult to use efficiently, the Minigun is another popular choice in the UAC's arsenal of demon-
+slaying equipment. It is quite slow to "warm up", but once it does, the stream of hot lead that this 6-barreled monster
+spits out is enough to make the most frightening hellspawn run away in fear - if it can even make it to the Gate before
+its legs get ripped to shreds. Some models come fitted with additional components to hasten the windup and increase
+accuracy.
 
 Slot 6: Bazooka
 ---------------
 
-Range:			Far
+Range:			Long
 Damage:			High
 Max. Capacity:		45
 Available Upgrades:	Fire rate increase
@@ -110,7 +155,11 @@ Finishers:		Level 1: volley of 3 homing rockets
 			Level 2: volley of 5 homing rockets
 			Level 3: air strike (works best when aimed at the ground)
 
-[add description later]
+One of the few explosive-based weapons from UAC's armory, the Bazooka fires micro-nukes powerful enough to make a
+cyberdemon flinch. Using it takes some strong legs, however, as the recoil can easily knock a less fit marine on their
+butt. Ways have been found to eliminate the recoil entirely, though, and some more tech-savvy marines have even modified
+their bazookas to turn them into almost fully automatic rocket-spitters, the usefulness of which has been strongly
+debated.
 
 Slot 7: Flamethrower
 --------------------
@@ -124,12 +173,14 @@ Finishers:		Level 1: flame wall
 			Level 2: sentient heat-seeking flame wall with "afterburner"
 			Level 3: TBD
 
-[add description later]
+What happens when you combine the tracing technology of the BFG-9000 and literal fire? This experimental flamethrower.
+What the UAC were thinking when they developed this weapon, no one will ever know - not that the marines are complaining.
+In fact, a lot of them seem to enjoy shooting sentient, heat-seeking flames at hellspawn.
 
 Slot 8: Argent Rifle
 --------------------
 
-Range:			Far
+Range:			Long
 Damage:			Medium
 Max. Capacity:		N/A
 Available Upgrades:	Faster cooldown
@@ -138,19 +189,27 @@ Finishers:		Level 1: laser beam
 			Level 2: 3 spread laser beams
 			Level 3: Argent bomb
 
-[add description later]
+An experiment by the UAC in utilizing Argent Energy in weapons, this prototype weapon is similar in its function
+to the Plasma Gun. Primarily, it fires concentrated bolts of Argent Energy at high speeds, but it can also shoot
+dealy Argent lasers or spit out large globs of Argent Energy that explode like bombs, dealing significant damage
+to anything organic in its area of impact. The Argent Rifle is a powerful and versatile weapon, but it has a
+drawback - it's quick to overheat and slow to cool down.
 
 Slot 9: Dark Matter Cannon
 --------------------------
 
-Range:			Far
+Range:			Long
 Damage:			High
 Max. Capacity:		3
 Available Upgrades:	N/A
 
 Finishers:		N/A
 
-[add description later]
+As if the BFG-9000 wasn't enough, the UAC found a way to manipulate antimatter and weaponize it. The Dark Matter
+Cannon shoots antimatter projectiles that turn into black holes upon collision with a surface, absorbing and
+evaporating anything organic that happens within its radius. If aimed well, it can even evaporate a cyberdemon
+with relative ease. However, the weapon's charge is extremely limited, allowing only a few uses before needing
+a refill.
 
 
 ============
@@ -159,20 +218,33 @@ Finishers:		N/A
 
 Demonizer Orb
 -------------
-[add description later]
+The Demonizer Orb is a demonic artifact that turns you into a near-unstoppable killing machine for 60 seconds.
+When you use the Demonizer, you become immune to almost all damage (except Holy Water), your movement speed
+increases by 20%, and your fists get supercharged to the point where you can take down a Cyberdemon with only a
+few swift punches. Unfortunately, the benefit is only temporary, and you're unable to pick up most items while
+under the effect of the Demonizer.
 
 Field Med Pack
 --------------
-[add description later]
+Similar in functionality to the Portable Medkit from Duke Nukem 3D, the Field Med Pack can provide a boost when
+you need it the most. You can use the Field Med Pack whenever your health is under 100% to boost yourself back to
+life. The appropriate amount will get subtracted from the Field Med Pack's health pool. If the points are not
+sufficient for a full boost, you'll get healed up to where the Field Med Pack runs out of juice, so to speak.
 
 Hazmat Suit
 -----------
-[add description later]
+When you need to slog through a river of acidic ooze, put on a Hazmat Suit and come out the other end (relatively)
+unscathed. 'Nuff said.
 
 Holy Water Grenade
 ------------------
-[add description later]
+Although it looks like an ordinary potion of blue liquid, the Holy Water Grenade is a rather useful armament, great
+for crowd control. Toss one of these at the feet of a group of demons and watch them get effectively stun-locked as
+the pool of water beneath kills them slowly. The Holy Water Grenade is best used in situations where groups of enemies
+are closing in from several directions - slow down one group with a pool of holy water while you pump the other full
+of hot lead!
 
 Light Amp Goggles
 -----------------
-[add description later]
+The Light Amp Goggles let you see clearly in dark areas. Put them on whenever you can't see and witness the wonder of
+clear sight! They can also be put away when they're not needed. Do note that they have limited battery, though!
