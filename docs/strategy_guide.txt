@@ -1,0 +1,178 @@
+=============================
+=  SATANIC GAMESHOW DELUXE  =
+=  OFFICIAL STRATEGY GUIDE  =
+=============================
+
+Written by Santtu "MFG38" Pesonen
+
+===========
+= WEAPONS =
+===========
+
+Slot 0: Chainsaw
+----------------
+
+Range:			Melee
+Damage:			Medium
+Max. Capacity:		N/A
+Available Upgrades:	Damage increase
+
+Finishers:		Level 1: TBD
+			Level 2: TBD
+			Level 3: TBD
+
+[add description later]
+
+Slot 1: Fists
+-------------
+
+Range:			Melee
+Damage:			Low
+Max. Capacity:		N/A
+Available Upgrades:	N/A
+
+Finishers:		Level 1: swift forward kick
+			Level 2: forward kick with chain exploder
+			Level 3: 5-second time stop
+
+[add description later]
+
+Slot 2: Rifle
+-------------
+
+Range:			Long
+Damage:			Low
+Max. Capacity:		150
+Available Upgrades:	Accuracy increase
+			Fire rate increase
+
+Finishers:		Level 1: TBD
+			Level 2: TBD
+			Level 3: TBD
+
+[add description later]
+
+Slot 3: Shotgun
+---------------
+
+Range:			Close/Medium
+Damage:			Medium
+Max. Capacity:		80 (shared with Double-Barrel Shotgun)
+Available Upgrades:	Range increase
+			Spread reduction
+
+Finishers:		Level 1: TBD
+			Level 2: TBD
+			Level 3: TBD
+
+[add description later]
+
+Slot 4: Double-Barrel Shotgun
+-----------------------------
+
+Range:			Close
+Damage:			High
+Max. Capacity:		80 (shared with Shotgun)
+Available Upgrades:	Recoil reduction
+			Reload speed increase
+
+Finishers:		Level 1: TBD
+			Level 2: TBD
+			Level 3: TBD
+
+[add description later]
+
+Slot 5: Minigun
+---------------
+
+Range:			Medium
+Damage:			Medium
+Max. Capacity:		500
+Available Upgrades:	Accuracy increase
+			Windup time reduction
+
+Finishers:		Level 1: 3-bullet rapid fire attack
+			Level 2: 5-bullet rapid fire attack
+			Level 3: 7-bullet rapid fire attack
+
+[add description later]
+
+Slot 6: Bazooka
+---------------
+
+Range:			Far
+Damage:			High
+Max. Capacity:		45
+Available Upgrades:	Fire rate increase
+			Recoil reduction
+
+Finishers:		Level 1: volley of 3 homing rockets
+			Level 2: volley of 5 homing rockets
+			Level 3: air strike (works best when aimed at the ground)
+
+[add description later]
+
+Slot 7: Flamethrower
+--------------------
+
+Range:			Medium
+Damage:			Medium
+Max. Capacity:		450
+Available Upgrades:	Lingering flames
+
+Finishers:		Level 1: flame wall
+			Level 2: sentient heat-seeking flame wall with "afterburner"
+			Level 3: TBD
+
+[add description later]
+
+Slot 8: Argent Rifle
+--------------------
+
+Range:			Far
+Damage:			Medium
+Max. Capacity:		N/A
+Available Upgrades:	Faster cooldown
+
+Finishers:		Level 1: laser beam
+			Level 2: 3 spread laser beams
+			Level 3: Argent bomb
+
+[add description later]
+
+Slot 9: Dark Matter Cannon
+--------------------------
+
+Range:			Far
+Damage:			High
+Max. Capacity:		3
+Available Upgrades:	N/A
+
+Finishers:		N/A
+
+[add description later]
+
+
+============
+= POWERUPS =
+============
+
+Demonizer Orb
+-------------
+[add description later]
+
+Field Med Pack
+--------------
+[add description later]
+
+Hazmat Suit
+-----------
+[add description later]
+
+Holy Water Grenade
+------------------
+[add description later]
+
+Light Amp Goggles
+-----------------
+[add description later]
