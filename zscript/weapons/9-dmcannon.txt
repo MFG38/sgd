@@ -72,7 +72,7 @@ class DarkMatterProjectile : Actor
 			A_RadiusThrust(-220,150);
 			A_Explode(10,90,0);
 		}
-		Goto Spawn+12;
+		Goto Spawn+24;
 	Death:
 		TNT1 A 0
 		{
