@@ -191,7 +191,7 @@ Finishers:		Level 1: laser beam
 
 An experiment by the UAC in utilizing Argent Energy in weapons, this prototype weapon is similar in its function
 to the Plasma Gun. Primarily, it fires concentrated bolts of Argent Energy at high speeds, but it can also shoot
-dealy Argent lasers or spit out large globs of Argent Energy that explode like bombs, dealing significant damage
+deadly Argent lasers or spit out large globs of Argent Energy that explode like bombs, dealing significant damage
 to anything organic in its area of impact. The Argent Rifle is a powerful and versatile weapon, but it has a
 drawback - it's quick to overheat and slow to cool down.
 
