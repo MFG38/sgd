@@ -1,23 +1,23 @@
 ListMenu "MainMenu"
 {
 	Position 95, 72
-	PatchItem "M_NGAME" ,"n", "EpisodeMenu"
+	TextItem "$MNU_NEWGAME" ,"n", "EpisodeMenu"
 	TextItem "$SGD_MENU_HOWTOPLAY", "i", "ReadThisMenu"
 	IfOption(SwapMenu)
 	{
-		PatchItem "M_LOADG", "l", "LoadGameMenu"
-		PatchItem "M_SAVEG", "s", "SaveGameMenu"
-		PatchItem "M_OPTION", "o", "OptionsMenu"
+		TextItem "$MNU_LOADGAME", "l", "LoadGameMenu"
+		TextItem "$MNU_SAVEGAME", "s", "SaveGameMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
 		TextItem "$SGD_MENU_MODSETUP", "", "SGD_Setup"
 	}
 	Else
 	{
-		PatchItem "M_OPTION", "o", "OptionsMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
 		TextItem "$SGD_MENU_MODSETUP", "", "SGD_Setup"
-		PatchItem "M_LOADG", "l", "LoadGameMenu"
-		PatchItem "M_SAVEG", "s", "SaveGameMenu"
+		TextItem "$MNU_LOADGAME", "l", "LoadGameMenu"
+		TextItem "$MNU_SAVEGAME", "s", "SaveGameMenu"
 	}
-	PatchItem "M_QUITG", "q", "QuitMenu"
+	TextItem "$MNU_QUITGAME", "q", "QuitMenu"
 }
 
 OptionMenu "SGD_Setup"
