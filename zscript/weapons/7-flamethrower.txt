@@ -180,7 +180,7 @@ class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
 	Spawn:
 		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT
 		{
-			A_SeekerMissile(8,12,SMF_LOOK,180,4);
+			A_SeekerMissile(5,8,SMF_LOOK,180,4);
 			if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }
 		}
 		Loop;
