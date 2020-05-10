@@ -168,7 +168,8 @@ class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
 	Default
 	{
 		DamageFunction (1*8);
-		+SEEKERMISSILE;
+		//+SEEKERMISSILE;
+		+SCREENSEEKER;
 		Scale 1.25;
 		Height 50;
 		Radius 10;
@@ -180,7 +181,7 @@ class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
 	Spawn:
 		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT
 		{
-			A_SeekerMissile(5,8,SMF_LOOK,180,4);
+			A_SeekerMissile(1,4,SMF_LOOK,180,4);
 			if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }
 		}
 		Loop;
