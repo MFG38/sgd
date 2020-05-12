@@ -60,9 +60,9 @@ class SGDFlamethrower : SGDWeapon
 		FLMG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		TNT1 A 0 A_BeginFinisher(true);
-		FLMG EF 2;
-		FLMG G 2;
+		TNT1 A 0 A_BeginFinisher(false);
+		FLMG EEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGG 1 A_FireCBeam;
+		FLMG HBCDBCD 2;
 		FLMG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
@@ -132,6 +132,22 @@ class FlamethrowerFire_Linger : FlamethrowerFire
 		FLME A 0 A_PlaySound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
 		Stop;
+	}
+}
+
+class FlamethrowerCBeam : FlamethrowerFire_Linger
+{
+	Default
+	{
+		Speed 32;
+		DamageFunction (1*50);
+	}
+	
+	States
+	{
+	Spawn:
+		FRFX AABB 1 BRIGHT;
+		Loop;
 	}
 }
 
@@ -304,6 +320,13 @@ extend class SGDFlamethrower
 		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-12.0);
 		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-14.0);
 		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-16.0);
+		A_AlertMonsters();
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_FireCBeam()
+	{
+		SpawnPlayerMissile("FlamethrowerCBeam");
 		A_AlertMonsters();
 		ACS_NamedExecute("FeatTracker",0);
 	}
