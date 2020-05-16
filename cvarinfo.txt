@@ -11,8 +11,8 @@ user float sgd_lowhpflash_int = 0.25;
 user int sgd_lowhpflash_thres = 25;
 
 // Visual stuff
-server bool sgd_spawntrails = true;
-server bool sgd_fancyteleport = true;
+user bool sgd_spawntrails = true;
+user bool sgd_fancyteleport = true;
 server bool sgd_worldlights = true;
 
 // Enemy stuff
