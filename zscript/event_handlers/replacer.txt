@@ -107,25 +107,6 @@ class SGDReplacementHandler : EventHandler
 		else if(e.Replacee is 'Allmap') { e.Replacement = 'SGDAllmap'; }
 		else if(e.Replacee is 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
 		else if(e.Replacee is 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
-		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
-		// Monsters - This broke Doom 2 MAP07.
-		/* else if(e.Replacee is 'Arachnotron') { e.Replacement = 'SGDArachnotron'; }
-		else if(e.Replacee is 'Archvile') { e.Replacement = 'SGDFlameBoi'; }
-		else if(e.Replacee is 'BaronOfHell') { e.Replacement = 'SGDBaron'; }
-		else if(e.Replacee is 'Cacodemon') { e.Replacement = 'SGDCacodemon'; }
-		else if(e.Replacee is 'ChaingunGuy') { e.Replacement = 'SGDChaingunner'; }
-		else if(e.Replacee is 'Cyberdemon') { e.Replacement = 'SGDCyberdemon'; }
-		else if(e.Replacee is 'Demon') { e.Replacement = 'SGDPinky'; }
-		else if(e.Replacee is 'DoomImp') { e.Replacement = 'SGDImp'; }
-		else if(e.Replacee is 'Fatso') { e.Replacement = 'SGDMancubus'; }
-		else if(e.Replacee is 'HellKnight') { e.Replacement = 'SGDHellKnight'; }
-		else if(e.Replacee is 'LostSoul') { e.Replacement = 'SGDLostSoul'; }
-		else if(e.Replacee is 'PainElemental') { e.Replacement = 'SGDPainElemental'; }
-		else if(e.Replacee is 'Revenant') { e.Replacement = 'SGDRevenant'; }
-		else if(e.Replacee is 'ShotgunGuy') { e.Replacement = 'SGDShotgunner'; }
-		else if(e.Replacee is 'Spectre') { e.Replacement = 'SGDSpectre'; }
-		else if(e.Replacee is 'SpiderMastermind') { e.Replacement = 'SGDSpiderMastermind'; }
-		else if(e.Replacee is 'WolfensteinSS') { e.Replacement = 'SGDNazi'; }
-		else if(e.Replacee is 'ZombieMan') { e.Replacement = 'SGDZombieman'; } */	
+		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }	
 	}
 }
