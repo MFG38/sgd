@@ -109,7 +109,7 @@ class ArgentRifleBall : Actor
 	States
 	{
 	Spawn:
-		PLSS AABB 1 Bright { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		PLSS AABB 1 Bright { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	Death:
 		PLSE ABCDE 3 Bright;

@@ -171,7 +171,7 @@ class FlamethrowerFlameWall : Actor
 	States
 	{
 	Spawn:
-		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }}
+		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }}
 		Loop;
 	Death:
 		TNT1 A 0;
@@ -198,7 +198,7 @@ class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
 		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT
 		{
 			A_SeekerMissile(1,4,SMF_LOOK,180,4);
-			if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }
+			if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }
 		}
 		Loop;
 	Death:
