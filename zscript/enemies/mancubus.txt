@@ -120,6 +120,6 @@ class SGDMancubusShot : FatShot replaces FatShot
 	States
 	{
 	Spawn:
-		MANF AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }}
+		MANF AAAABBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }}
 	}
 }

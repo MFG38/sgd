@@ -229,7 +229,7 @@ class SGDBaronBall : BaronBall replaces BaronBall
 	States
 	{
 	Spawn:
-		BAL7 AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		BAL7 AAAABBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	Death:
 		BAL7 CDE 6 BRIGHT;

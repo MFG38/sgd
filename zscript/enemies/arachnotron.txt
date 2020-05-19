@@ -118,7 +118,7 @@ class SGDArachnotronPlasma : ArachnotronPlasma replaces ArachnotronPlasma
 	States
 	{
 	Spawn:
-		APLS AAAAABBBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		APLS AAAAABBBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	}
 }

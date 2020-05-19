@@ -156,7 +156,7 @@ class SGDImpBall : DoomImpBall replaces DoomImpBall
 	States
 	{
 	Spawn:
-		BAL1 AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		BAL1 AAAABBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	}
 }
