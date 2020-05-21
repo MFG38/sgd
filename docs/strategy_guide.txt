@@ -259,7 +259,7 @@ appear in the SGD Settings menu. All of the settings listed below can be customi
 Spawn projectile trails (sgd_spawntrails) - default: 1
 ------------------------------------------------------
 Controls whether projectiles should spawn trails or not. If you're experiencing framerate issues, turning this off
-may help. Note that changing this setting does NOT affect "hitscan" bullet trails.
+may help. Note that changing this setting does NOT affect bullet trails.
 
 Fancy teleport effect (sgd_fancyteleport) - default: 1
 ------------------------------------------------------
@@ -270,8 +270,8 @@ Display finisher bar (sgd_displayfbar) - default: 1
 ---------------------------------------------------
 Controls whether the finisher bar should be displayed.
 
-Finisher prompt type (sgd_finisherprompt) - default: 2
-------------------------------------------------------
+Finisher message type (sgd_finisherprompt) - default: 2
+-------------------------------------------------------
 Controls how the finisher prompt message at the bottom of the screen should be displayed. Set to 2 to see the message
 with the button prompt, 1 to see it without the button prompt, or 0 to turn it off.
 
@@ -279,12 +279,12 @@ Display hazmat timer (sgd_displayhsbar) - default: 1
 ----------------------------------------------------
 Controls whether the hazmat suit timer (whenever the suit is active) should be displayed.
 
-Display light amp goggle charge (sgd_displayvisortime) - default: 1
--------------------------------------------------------------------
+Display light amp visor charge (sgd_displayvisortime) - default: 1
+------------------------------------------------------------------
 Controls whether the light amp goggle charge (whenever the goggles are active) should be displayed.
 
-Low health screen flash (sgd_lowhpflash_on) - default: 1
---------------------------------------------------------
+Enable low health screen flash (sgd_lowhpflash_on) - default: 1
+---------------------------------------------------------------
 Controls whether the screen should flash red whenever the player's health is below the threshold set by the
 sgd_lowhpflash_thres cvar.
 
@@ -304,8 +304,8 @@ Hazmat Suit warning sound (sgd_hswarningsound)  - default: 1
 ------------------------------------------------------------
 Controls whether the Hazmat Suit should play its warning sound when it's about to run out.
 
-Light Amp Goggle toggle sound (sgd_visortogglesound) - default: 1
------------------------------------------------------------------
+Light Amp Visor toggle sound (sgd_visortogglesound) - default: 1
+----------------------------------------------------------------
 Controls whether the Light Amp Goggles should play their sound upon being turned on or off.
 
 Enemy spawn behavior (sgd_spawnbehavior) - default: 0
@@ -322,14 +322,14 @@ Revenant Rocket type (sgd_tracerbehavior) - default: 1
 ------------------------------------------------------
 Controls the behavior of Revenant rockets. Set this to 0 for the original behavior.
 
-Plasma Gun replacement (sgd_replaceplasmagun) - default: 0
-----------------------------------------------------------
-Controls what should spawn in place of the Plasma Gun. 0 spawns only the Flamethrower, 1 spawns either the Flamethrower
+Plasma Rifle replacement (sgd_replaceplasmagun) - default: 0
+------------------------------------------------------------
+Controls what should spawn in place of the Plasma Rifle. 0 spawns only the Flamethrower, 1 spawns either the Flamethrower
 or the Argent Rifle.
 
-BFG replacement (sgd_replacebfg) - default: 0
----------------------------------------------
-Controls what should spawn in place of the BFG-9000. 0 spawns either the Argent Rifle or Dark Matter Cannon, 1 spawns only
+BFG9000 replacement (sgd_replacebfg) - default: 0
+-------------------------------------------------
+Controls what should spawn in place of the BFG9000. 0 spawns either the Argent Rifle or Dark Matter Cannon, 1 spawns only
 the Dark Matter Cannon, 2 spawns only the Argent Rifle.
 
 Backpack replacement (sgd_replacebackpack) - default: 0
