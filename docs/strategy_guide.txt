@@ -9,8 +9,6 @@ Written by Santtu "MFG38" Pesonen
 = GENERAL GAMEPLAY =
 ====================
 
-Satanic Gameshow Deluxe is a mod in which killing matters, especially killing a lot in quick succession.
-
 Acquiring weapon upgrades
 -------------------------
 
@@ -248,3 +246,97 @@ Light Amp Goggles
 -----------------
 The Light Amp Goggles let you see clearly in dark areas. Put them on whenever you can't see and witness the wonder of
 clear sight! They can also be put away when they're not needed. Do note that they have limited battery, though!
+
+
+=======================================
+= CUSTOMIZING THE GAMEPLAY EXPERIENCE =
+=======================================
+
+No Doom gameplay mod would be complete without a bunch of cvars to customize the experience - and SGD is no exception.
+Below is a list of the custom cvars that SGD offers, along with descriptions of what they affect and their names as they
+appear in the SGD Settings menu. All of the settings listed below can be customized through the SGD Settings menu.
+
+Spawn projectile trails (sgd_spawntrails) - default: 1
+------------------------------------------------------
+Controls whether projectiles should spawn trails or not. If you're experiencing framerate issues, turning this off
+may help. Note that changing this setting does NOT affect "hitscan" bullet trails.
+
+Fancy teleport effect (sgd_fancyteleport) - default: 1
+------------------------------------------------------
+Controls whether to display the custom teleport effect. Turn this off if you want the classic teleport effect or if
+the custom one causes framerate issues.
+
+Display finisher bar (sgd_displayfbar) - default: 1
+---------------------------------------------------
+Controls whether the finisher bar should be displayed.
+
+Finisher prompt type (sgd_finisherprompt) - default: 2
+------------------------------------------------------
+Controls how the finisher prompt message at the bottom of the screen should be displayed. Set to 2 to see the message
+with the button prompt, 1 to see it without the button prompt, or 0 to turn it off.
+
+Display hazmat timer (sgd_displayhsbar) - default: 1
+----------------------------------------------------
+Controls whether the hazmat suit timer (whenever the suit is active) should be displayed.
+
+Display light amp goggle charge (sgd_displayvisortime) - default: 1
+-------------------------------------------------------------------
+Controls whether the light amp goggle charge (whenever the goggles are active) should be displayed.
+
+Low health screen flash (sgd_lowhpflash_on) - default: 1
+--------------------------------------------------------
+Controls whether the screen should flash red whenever the player's health is below the threshold set by the
+sgd_lowhpflash_thres cvar.
+
+Low health screen flash threshold (sgd_lowhpflash_thres) - default: 25
+----------------------------------------------------------------------
+Controls the threshold of the low health screen flash.
+
+Low health screen flash intensity (sgd_lowhpflash_int) - default: 0.25
+----------------------------------------------------------------------
+Controls the intensity of the low health screen flash.
+
+Field Med Pack use sound (sgd_fieldmedsound) - default: 1
+---------------------------------------------------------
+Controls whether the Field Med Pack should play its sound upon use.
+
+Hazmat Suit warning sound (sgd_hswarningsound)  - default: 1
+------------------------------------------------------------
+Controls whether the Hazmat Suit should play its warning sound when it's about to run out.
+
+Light Amp Goggle toggle sound (sgd_visortogglesound) - default: 1
+-----------------------------------------------------------------
+Controls whether the Light Amp Goggles should play their sound upon being turned on or off.
+
+Enemy spawn behavior (sgd_spawnbehavior) - default: 0
+-----------------------------------------------------
+Controls how enemies should behave upon a new map being loaded. Set this to 0 to have them stand still or to 1 to
+have them wander around. Note that setting this to 1 may cause some maps to either not work as intended or break
+outright.
+
+Bullet attack type (sgd_hitscanbehavior) - default: 1
+-----------------------------------------------------
+Controls whether bullet attacks should be hitscan or projectile-based. Set this to 0 for the original hitscan behavior.
+
+Revenant Rocket type (sgd_tracerbehavior) - default: 1
+------------------------------------------------------
+Controls the behavior of Revenant rockets. Set this to 0 for the original behavior.
+
+Plasma Gun replacement (sgd_replaceplasmagun) - default: 0
+----------------------------------------------------------
+Controls what should spawn in place of the Plasma Gun. 0 spawns only the Flamethrower, 1 spawns either the Flamethrower
+or the Argent Rifle.
+
+BFG replacement (sgd_replacebfg) - default: 0
+---------------------------------------------
+Controls what should spawn in place of the BFG-9000. 0 spawns either the Argent Rifle or Dark Matter Cannon, 1 spawns only
+the Dark Matter Cannon, 2 spawns only the Argent Rifle.
+
+Backpack replacement (sgd_replacebackpack) - default: 0
+-------------------------------------------------------
+Controls what should spawn in place of backpacks. 0 spawns random ammo pickups, 1 spawns Dark Matter Cells.
+
+Classic powerups (sgd_classicpowerups) - default: 0
+---------------------------------------------------
+Controls whether the classic Doom powerups should be used instead of the new ones. Set this to 1 to play the mod with classic
+powerups.
