@@ -163,6 +163,7 @@ class ArgentBomb : Actor
 		PROJECTILE;
 		+RANDOMIZE;
 		-NOGRAVITY;
+		+NODAMAGETHRUST;
 		Gravity 0.35;
 	}
 	
