@@ -44,6 +44,7 @@ argentrifle/ballhit			stnrhit
 argentrifle/overheat		ohbeep
 argentrifle/laser			arlaser
 argentrifle/bomb			argbomb
+argentrifle/bombex			abombexp
 
 flamethrower/fire			FMTRFIRE
 flamethrower/hit			FMTRHIT

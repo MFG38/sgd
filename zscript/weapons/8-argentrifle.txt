@@ -158,6 +158,7 @@ class ArgentBomb : Actor
 		Speed 15;
 		Renderstyle "Translucent";
 		Alpha 0.65;
+		DeathSound "argentrifle/bombex";
 		PROJECTILE;
 		+RANDOMIZE;
 		-NOGRAVITY;

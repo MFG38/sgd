@@ -71,6 +71,9 @@ Argent Rifle laser sound: MFG38
 
 Argent Rifle bomb launch sound: base sound by Raven Software, edited by MFG38
 
+Argent Rifle bomb explosion: source sounds from freesound.org (by FlashTrauma and cydon), mixed
+and edited by MFG38
+
 Argent Rifle overheat sound: MFG38 (reused from Deliverance 2600)
 
 Flamethrower: Eriance, Raven Software
