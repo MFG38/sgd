@@ -14,6 +14,8 @@
 - Increased the Fists' damage from random(2,5)*5 to random(3,5)*5.
 - Added strategy_guide.txt.
 - Changed all visual effect cvars from server-side to clientside.
+- Increased the amount of starting Rifle ammo from 40 to 48.
+- Increased maximum Rifle ammo capacity from 150 to 160.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.

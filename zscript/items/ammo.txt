@@ -2,7 +2,7 @@ class RifleAmmo : Ammo
 {
 	Default
 	{
-		Inventory.MaxAmount 150;
+		Inventory.MaxAmount 160;
 		Inventory.Icon "ICON_ARF";
 		Inventory.ForbiddenTo "DemonizedPlayer";
 	}

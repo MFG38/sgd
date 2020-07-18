@@ -12,7 +12,7 @@ class SGDPlayer : PlayerPawn
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
 		Player.StartItem "SGDRifle";
-		Player.StartItem "RifleAmmo", 40;
+		Player.StartItem "RifleAmmo", 48;
 		Player.StartItem "SGDFists";
 		Player.WeaponSlot 1, "SGDFists";
 		Player.WeaponSlot 2, "SGDRifle";
@@ -26,7 +26,6 @@ class SGDPlayer : PlayerPawn
 		Player.WeaponSlot 0, "SGDChainsaw";
 		DamageFactor "HolyWater", 0.0;
 		DamageFactor "Sploder", 0.0;
-		DamageFactor "ArgentBomb", 0.0;
 	}
 
 	States
