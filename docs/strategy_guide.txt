@@ -75,13 +75,13 @@ Slot 2: Rifle
 
 Range:			Long
 Damage:			Low
-Max. Capacity:		150
+Max. Capacity:		160
 Available Upgrades:	Accuracy increase
 			Fire rate increase
 
 Finishers:		Level 1: TBD
 			Level 2: TBD
-			Level 3: TBD
+			Level 3: Series of 8 cluster shots
 
 A standard-issue weapon for fresh marine recruits, the Rifle is a weapon that's best used to pick off low-tier enemies
 from a distance. It doesn't boast any significant firepower, but some creative marines have found ways to improve the
