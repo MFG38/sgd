@@ -146,7 +146,7 @@ extend class SGDRifle
 			double xspread = angle + random2() * (12.875 / 256);
 			double yspread = pitch + random2() * (9.865 / 256);
 			
-			LineAttack(xspread,range,yspread,dmg,'Normal',"BulletPuff");
+			LineAttack(xspread,576,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
 	}
