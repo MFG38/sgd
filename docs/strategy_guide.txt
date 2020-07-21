@@ -279,10 +279,6 @@ Display hazmat timer (sgd_displayhsbar) - default: 1
 ----------------------------------------------------
 Controls whether the hazmat suit timer (whenever the suit is active) should be displayed.
 
-Display light amp visor charge (sgd_displayvisortime) - default: 1
-------------------------------------------------------------------
-Controls whether the light amp goggle charge (whenever the goggles are active) should be displayed.
-
 Enable low health screen flash (sgd_lowhpflash_on) - default: 1
 ---------------------------------------------------------------
 Controls whether the screen should flash red whenever the player's health is below the threshold set by the
