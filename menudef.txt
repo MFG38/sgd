@@ -36,7 +36,7 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_FINISHERBAR", "sgd_displayfbar", "OnOff"
 	Option "$SGD_OM_FMSGTYPE", "sgd_finisherprompt", "FinisherPrompt"
 	Option "$SGD_OM_HAZMATTIMER", "sgd_displayhsbar", "OnOff"
-	Option "$SGD_OM_GOGGLECHARGE", "sgd_displayvisortime", "OnOff"
+	//Option "$SGD_OM_GOGGLECHARGE", "sgd_displayvisortime", "OnOff"
 	StaticText ""
 	Option "$SGD_OM_FLASHTOGGLE", "sgd_lowhpflash_on", "YesNo"
 	Slider "$SGD_OM_FLASHTHRES", "sgd_lowhpflash_thres", 10, 30, 5

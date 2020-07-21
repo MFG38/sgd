@@ -57,14 +57,14 @@ StatusBar normal, fullscreenoffsets, forcescaled
 		}
 		
 		//Light amp visor charge counter
-		IfCVarInt "sgd_displayvisortime", 1
+		/* IfCVarInt "sgd_displayvisortime", 1
 		{
 			InInventory "GogglesActive"
 			{
 				DrawImage "VISORCNT", -29, 19;
 				DrawNumber 3, SGDHUDFONT, Gold, SGDLightAmpGoggles, Alignment(right), -32, 19;
 			}
-		}
+		} */
 	
 		// Finisher token bar
 		IfCVarInt "sgd_displayfbar", 1
@@ -138,14 +138,14 @@ StatusBar fullscreen, fullscreenoffsets, forcescaled
 		}
 		
 		//Light amp visor charge counter
-		IfCVarInt "sgd_displayvisortime", 1
+		/* IfCVarInt "sgd_displayvisortime", 1
 		{
 			InInventory "GogglesActive"
 			{
 				DrawImage "VISORCNT", -29, 19;
 				DrawNumber 3, SGDHUDFONT, Gold, SGDLightAmpGoggles, Alignment(right), -32, 19;
 			}
-		}
+		} */
 	
 		// Finisher token bar
 		IfCVarInt "sgd_displayfbar", 1
