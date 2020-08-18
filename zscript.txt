@@ -1,4 +1,4 @@
-version "4.0"
+version "4.3"
 
 #include "zscript/counts_and_bools.txt"
 #include "zscript/baseclasses.txt"

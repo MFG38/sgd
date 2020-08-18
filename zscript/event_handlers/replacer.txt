@@ -77,6 +77,10 @@ class SGDReplacementHandler : EventHandler
 			else if(e.Replacee is 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
 			else if(e.Replacee is 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
 		}
+		else if(classicpwr.GetBool() == true)
+		{
+			if(e.Replacee is 'Berserk') { e.Replacement = 'SGDBerserk'; }
+		}
 		
 		// Misc. replacees
 		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
@@ -107,6 +111,6 @@ class SGDReplacementHandler : EventHandler
 		// Powerups
 		else if(e.Replacee is 'Allmap') { e.Replacement = 'SGDAllmap'; }
 		else if(e.Replacee is 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
-		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }	
+		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
 	}
 }
