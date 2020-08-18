@@ -166,7 +166,7 @@ extend class SGDMonster
 			A_FaceTarget();
 			double ang = angle;
 			double slope = AimLineAttack(ang, MISSILERANGE);
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			ang  += Random2[PosAttack]() * (22.5/256);
 			int damage = Random[PosAttack](1, 5) * 3;
 			LineAttack(ang, MISSILERANGE, slope, damage, "Hitscan", "Bulletpuff");
@@ -177,7 +177,7 @@ extend class SGDMonster
 	{
 		if(target)
 		{
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			angle += random2() * (22.5 / 256);
 			SpawnMissileAngle("ZombiemanBullet",angle,0);
 		}
@@ -187,7 +187,7 @@ extend class SGDMonster
 	{
 		if(target)
 		{
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			
 			for(int i = 0; i < 3; i++)
 			{
@@ -201,7 +201,7 @@ extend class SGDMonster
 	{
 		if(target)
 		{
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			angle += random2() * (22.5 / 256);
 			SpawnMissileAngle("ZombiemanBullet",angle,0);
 		}
