@@ -33,7 +33,7 @@ class SGDShotgun : SGDWeapon
 		DNSG CDEDCB 1 bright;
 		DNSG A 3;
 		DNSG FGH 1;
-		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG I 2 A_StartSound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
 		DNSG A 7 A_ReFire;
@@ -47,7 +47,7 @@ class SGDShotgun : SGDWeapon
 		DNSG CDEDCB 1 bright;
 		DNSG A 3;
 		DNSG FGH 1;
-		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG I 2 A_StartSound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
 		DNSG A 7 A_EndFinisher;
@@ -60,7 +60,7 @@ class SGDShotgun : SGDWeapon
 		DNSG CDEDCB 1 bright;
 		DNSG A 3;
 		DNSG FGH 1;
-		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG I 2 A_StartSound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
 		DNSG A 7 A_EndFinisher;
@@ -77,7 +77,7 @@ class SGDShotgun : SGDWeapon
 		DNSG CDEDCB 1 bright;
 		DNSG A 3;
 		DNSG FGH 1;
-		DNSG I 2 A_PlaySound("DukeShotgun/Pump");
+		DNSG I 2 A_StartSound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
 		DNSG HGF 1;
 		DNSG A 7 A_EndFinisher;
@@ -106,7 +106,7 @@ extend class SGDShotgun
 		player.mo.PlayAttacking2 ();
 
 		A_AlertMonsters();
-		A_PlaySound("DukeShotgun/fire",CHAN_WEAPON);
+		A_StartSound("DukeShotgun/fire",CHAN_WEAPON);
 
 		for(int i = 0; i < 12; i++)
 		{
@@ -168,7 +168,7 @@ extend class SGDShotgun
 		player.mo.PlayAttacking2 ();
 
 		A_AlertMonsters();
-		A_PlaySound("DukeShotgun/fire",CHAN_WEAPON);
+		A_StartSound("DukeShotgun/fire",CHAN_WEAPON);
 
 		for(int i = 0; i < 16; i++)
 		{

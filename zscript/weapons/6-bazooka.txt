@@ -63,7 +63,7 @@ class SGDBazooka : SGDWeapon
 		Goto ReadyLoop;
 	Finisher3:
 		TNT1 A 0 A_BeginFinisher(false);
-		//HSML A 0 A_PlaySound("bazooka/airstrike");
+		//HSML A 0 A_StartSound("bazooka/airstrike");
 		HSML A 16 A_FireProjectile("AirStrikeLocator");
 		HSML A 0 A_EndFinisher;
 		Goto ReadyLoop;
@@ -215,7 +215,7 @@ extend class SGDBazooka
 		}
 		
 		A_AlertMonsters();
-		A_PlaySound("bazooka/fire",CHAN_WEAPON);
+		A_StartSound("bazooka/fire",CHAN_WEAPON);
 		SpawnPlayerMissile("BazookaRocket");
 		
 		if(!FindInventory("Bazooka_Recoil"))
@@ -229,7 +229,7 @@ extend class SGDBazooka
 	action void A_BazookaSeeker(double ang)
 	{
 		A_AlertMonsters();
-		A_PlaySound("bazooka/fire",CHAN_WEAPON);
+		A_StartSound("bazooka/fire",CHAN_WEAPON);
 		SpawnPlayerMissile("BazookaSeeker",angle+ang);
 		ACS_NamedExecute("FeatTracker",0);
 	}

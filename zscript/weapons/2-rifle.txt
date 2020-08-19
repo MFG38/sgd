@@ -168,7 +168,7 @@ extend class SGDRifle
 		}
 		player.mo.PlayAttacking2();
 
-		A_PlaySound("rifle/fire",CHAN_WEAPON);
+		A_StartSound("rifle/fire",CHAN_WEAPON);
 
 		int dmg = random(3,5) * 4;
 		double xspread;
@@ -209,7 +209,7 @@ extend class SGDRifle
 		player.mo.PlayAttacking2();
 
 		A_AlertMonsters();
-		A_PlaySound("coachgun/fire",CHAN_WEAPON);
+		A_StartSound("coachgun/fire",CHAN_WEAPON);
 		
 		for(int i = 0; i < 20; i++)
 		{

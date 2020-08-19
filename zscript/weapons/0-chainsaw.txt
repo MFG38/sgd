@@ -32,7 +32,7 @@ class SGDChainsaw : SGDWeapon
 		MAGS CD 4
 		{
 			A_WeaponReady();
-			A_PlaySound("chainsaw/idle",CHAN_WEAPON);
+			A_StartSound("chainsaw/idle",CHAN_WEAPON);
 			ACS_NamedExecute("FeatTracker",0);
 		}
 		Loop;
@@ -92,11 +92,11 @@ extend class SGDChainsaw
 		
 		if(t.linetarget)
 		{
-			A_PlaySound("chainsaw/hit",CHAN_WEAPON);
+			A_StartSound("chainsaw/hit",CHAN_WEAPON);
 		}
 		else
 		{
-			A_PlaySound("chainsaw/attack",CHAN_WEAPON);
+			A_StartSound("chainsaw/attack",CHAN_WEAPON);
 		}
 		
 		ACS_NamedExecute("FeatTracker",0);

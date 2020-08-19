@@ -36,7 +36,7 @@ class FieldMedPack : CustomInventory
 				
 				if(CVar.FindCVar('sgd_fieldmedsound').GetBool() == true)
 				{
-					A_PlaySound("fieldmed/use",CHAN_BODY);
+					A_StartSound("fieldmed/use",CHAN_BODY);
 				}
 			}
 			else

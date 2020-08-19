@@ -104,7 +104,7 @@ class DemonizedFists : SGDWeapon
 	Fire:
 		PUCH A 0 A_Jump(256,"Punch1","Punch2");
 	Punch1:
-		PUCH A 1 A_PlaySound("fist/swing",CHAN_WEAPON);
+		PUCH A 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH B 1;
 		PUCH L 1 A_DemonFistAttack;
 		PUCH C 1;
@@ -120,7 +120,7 @@ class DemonizedFists : SGDWeapon
 		} */
 		Goto ReadyLoop;
 	Punch2:
-		PUCH F 1 A_PlaySound("fist/swing",CHAN_WEAPON);
+		PUCH F 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH G 1;
 		PUCH O 1 A_DemonFistAttack;
 		PUCH H 1;
@@ -163,7 +163,7 @@ extend class DemonizedFists
 		
 		if(t.linetarget)
 		{
-			A_PlaySound("*fist",CHAN_WEAPON);
+			A_StartSound("*fist",CHAN_WEAPON);
 			A_AlertMonsters(256);
 		}
 	}

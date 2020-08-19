@@ -107,29 +107,29 @@ class FlamethrowerFire_Linger : FlamethrowerFire
 		{
 			bNOGRAVITY = false;
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			A_Explode(4,32,XF_NOTMISSILE);
 			A_FadeOut(0.018);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			A_Explode(3,32,XF_NOTMISSILE);
 			A_FadeOut(0.018);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
 		Stop;
 	}
@@ -205,48 +205,48 @@ class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
 		TNT1 A 0 { if(tracer) { SetStateLabel("Afterburn"); }}
 		Stop;
 	Afterburn:
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			bFLOORHUGGER = false;
 			if(tracer) { SetOrigin(tracer.pos,true); }
 			A_Explode(8,40,XF_NOTMISSILE);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			if(tracer) { SetOrigin(tracer.pos,true); }
 			A_Explode(8,40,XF_NOTMISSILE);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			if(tracer) { SetOrigin(tracer.pos,true); }
 			A_Explode(8,40,XF_NOTMISSILE);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			if(tracer) { SetOrigin(tracer.pos,true); }
 			A_Explode(8,40,XF_NOTMISSILE);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			if(tracer) { SetOrigin(tracer.pos,true); }
 			A_Explode(6,40,XF_NOTMISSILE);
 			A_FadeOut(0.018);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			if(tracer) { SetOrigin(tracer.pos,true); }
 			A_Explode(5,40,XF_NOTMISSILE);
 			A_FadeOut(0.018);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
 		Stop;
 	}
@@ -264,7 +264,7 @@ extend class SGDFlamethrower
 		}
 		
 		A_AlertMonsters();
-		A_PlaySound("flamethrower/fire",CHAN_WEAPON);
+		A_StartSound("flamethrower/fire",CHAN_WEAPON);
 		
 		if(FindInventory("Flamethrower_FlameLinger"))
 		{

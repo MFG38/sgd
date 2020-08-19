@@ -40,15 +40,15 @@ class SGDSuperShotgun : SGDWeapon
 		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3); }}
 		COCH A 4;
 		COCH EFG 2;
-		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH H 2 A_StartSound("coachgun/reload1");
 		COCH I 2;
 		COCH J 12;
 		COCH KLMNO 1;
-		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH P 4 A_StartSound("coachgun/reload2");
 		COCH QRSTU 1;
 		COCH V 8;
 		COCH W 2;
-		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH X 2 A_StartSound("coachgun/reload3");
 		COCH GFE 2;
 		COCH A 7 A_Refire;
 		Goto ReadyLoop;
@@ -63,15 +63,15 @@ class SGDSuperShotgun : SGDWeapon
 		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3); }}
 		COCH A 1;
 		COCH EFG 1;
-		COCH H 1 A_PlaySound("coachgun/reload1");
+		COCH H 1 A_StartSound("coachgun/reload1");
 		COCH I 1;
 		COCH J 1;
 		COCH KLMNO 1;
-		COCH P 1 A_PlaySound("coachgun/reload2");
+		COCH P 1 A_StartSound("coachgun/reload2");
 		COCH QRSTU 1;
 		COCH V 1;
 		COCH W 1;
-		COCH X 1 A_PlaySound("coachgun/reload3");
+		COCH X 1 A_StartSound("coachgun/reload3");
 		COCH GFE 1;
 		COCH A 7 A_Refire;
 		Goto ReadyLoop;
@@ -86,15 +86,15 @@ class SGDSuperShotgun : SGDWeapon
 		COCH CD 1;
 		COCH AAAAA 4;
 		COCH EFG 2;
-		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH H 2 A_StartSound("coachgun/reload1");
 		COCH I 2;
 		COCH J 12;
 		COCH KLMNO 1;
-		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH P 4 A_StartSound("coachgun/reload2");
 		COCH QRSTU 1;
 		COCH V 8;
 		COCH W 2;
-		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH X 2 A_StartSound("coachgun/reload3");
 		COCH GFE 2;
 		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
 		COCH A 7 A_EndFinisher;
@@ -107,15 +107,15 @@ class SGDSuperShotgun : SGDWeapon
 		COCH CD 1;
 		COCH AAAAAAA 4;
 		COCH EFG 2;
-		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH H 2 A_StartSound("coachgun/reload1");
 		COCH I 2;
 		COCH J 12;
 		COCH KLMNO 1;
-		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH P 4 A_StartSound("coachgun/reload2");
 		COCH QRSTU 1;
 		COCH V 8;
 		COCH W 2;
-		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH X 2 A_StartSound("coachgun/reload3");
 		COCH GFE 2;
 		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
 		COCH A 7 A_EndFinisher;
@@ -128,15 +128,15 @@ class SGDSuperShotgun : SGDWeapon
 		COCH CD 1;
 		COCH AAAAAAAAA 4;
 		COCH EFG 2;
-		COCH H 2 A_PlaySound("coachgun/reload1");
+		COCH H 2 A_StartSound("coachgun/reload1");
 		COCH I 2;
 		COCH J 12;
 		COCH KLMNO 1;
-		COCH P 4 A_PlaySound("coachgun/reload2");
+		COCH P 4 A_StartSound("coachgun/reload2");
 		COCH QRSTU 1;
 		COCH V 8;
 		COCH W 2;
-		COCH X 2 A_PlaySound("coachgun/reload3");
+		COCH X 2 A_StartSound("coachgun/reload3");
 		COCH GFE 2;
 		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
 		COCH A 7 A_EndFinisher;
@@ -165,7 +165,7 @@ extend class SGDSuperShotgun
 		player.mo.PlayAttacking2 ();
 
 		A_AlertMonsters();
-		A_PlaySound("coachgun/fire",CHAN_WEAPON);
+		A_StartSound("coachgun/fire",CHAN_WEAPON);
 
 		for(int i = 0; i < 24; i++)
 		{
@@ -211,7 +211,7 @@ extend class SGDSuperShotgun
 		player.mo.PlayAttacking2 ();
 
 		A_AlertMonsters();
-		A_PlaySound("coachgun/fire",CHAN_WEAPON);
+		A_StartSound("coachgun/fire",CHAN_WEAPON);
 		A_Recoil(CountInv("SSGFinisherDamageScaler") * 2);
 
 		for(int i = 0; i < 24; i++)

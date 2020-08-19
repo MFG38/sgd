@@ -111,13 +111,13 @@ extend class SGDMinigun
 {
 	action void A_MinigunWindup()
 	{
-		A_PlaySound("minigun/windup",CHAN_WEAPON);
+		A_StartSound("minigun/windup",CHAN_WEAPON);
 		A_AlertMonsters(384);
 	}
 	
 	action void A_MinigunWindDown()
 	{
-		A_PlaySound("minigun/winddown");	// Omitted CHAN_WEAPON here so this doesn't interrupt the firing sound.
+		A_StartSound("minigun/winddown",CHAN_AUTO);
 	}
 	
 	action void A_MinigunFire()
@@ -139,7 +139,7 @@ extend class SGDMinigun
 		player.mo.PlayAttacking2 ();
 
 		A_AlertMonsters();
-		A_PlaySound("minigun/fire",CHAN_WEAPON);
+		A_StartSound("minigun/fire",CHAN_WEAPON);
 
 		int dmg = random(12,15);
 		double xspread;
@@ -179,7 +179,7 @@ extend class SGDMinigun
 		player.mo.PlayAttacking2 ();
 
 		A_AlertMonsters();
-		A_PlaySound("minigun/fire",CHAN_WEAPON);
+		A_StartSound("minigun/fire",CHAN_WEAPON);
 
 		for(int i = 0; i < bullets; i++)
 		{
