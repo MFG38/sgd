@@ -98,7 +98,7 @@ extend class SGDFists
 		}
 
 		int dmg = random(3,5) * 5;
-		if(FindInventory("PowerStrength")) { dmg *= 6; }
+		if(FindInventory("PowerStrength")) { dmg *= 8; }
 
 		LineAttack(angle,64,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
 		ACS_NamedExecute("FeatTracker",0);
