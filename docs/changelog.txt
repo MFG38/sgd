@@ -8,6 +8,8 @@
 - Rebalanced skills 5 and 6:
 	* Enemies deal 150% damage instead of 200% on skill 5.
 	* Stimpacks, Medikits and Megaspheres function normally on skill 6.
+	* Ammo pickups give normal amounts on skill 6.
+	* Monsters have 15% more health instead of 50% on skill 6.
 - Renamed TeleportFX to SGDTeleportFog.
 - Implemented 4 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg, sgd_replacebackpack and sgd_classicpowerups.
 - Reduced the amount of ammo given by the Flamethrower from 100 to 90.

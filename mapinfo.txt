@@ -74,15 +74,14 @@ skill whywouldyoueventrythis
 	//acsreturn = 6
 	name = "$SGD_SKILL_IMPOSSIBLE"
 	mustconfirm = "You're not afraid of anything.\
-		Enemies deal 200% damage and have 50%\
-		more health. Ammo pickups grant twice\
-		the ammo."
+		Enemies deal 200% damage and have 15%\
+		more health."
 	aggressiveness = 1.0
 	spawnfilter = nightmare
 	damagefactor = 2.0
-	monsterhealth = 1.5
-	ammofactor = 2.0
-	/* healthfactor = 0.75
+	monsterhealth = 1.15
+	/* ammofactor = 2.0
+	healthfactor = 0.75
 	armorfactor = 0.75
 	replaceactor = "ArmorBonus", "SGDArmorBonus_Fix"
 	replaceactor = "Stimpack", "SGDStimpackAlt"
