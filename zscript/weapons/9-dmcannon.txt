@@ -31,11 +31,7 @@ class SGDDarkMatterCannon : SGDWeapon
 		DMAT A 0;
 		Goto ReadyLoop;
 	Fire:
-		DMAT A 45
-		{
-			A_StartSound("DMC/Charge",CHAN_WEAPON);
-			A_AlertMonsters();
-		}
+		DMAT A 45 A_DMCStart;
 		DMAT B 3 A_DMCFire;
 		DMAT C 3;
 		DMAT D 3;
@@ -145,6 +141,12 @@ class BHExplosion : Actor
 
 extend class SGDDarkMatterCannon
 {
+	action void A_DMCStart()
+	{
+		A_StartSound("DMC/Charge",CHAN_WEAPON);
+		A_AlertMonsters();
+	}
+	
 	action void A_DMCFire()
 	{
 		Weapon weap = player.ReadyWeapon;
@@ -154,7 +156,6 @@ extend class SGDDarkMatterCannon
 				return;	
 		}
 		
-		//A_AlertMonsters();
 		A_SetBlend("99 33 99",0.5,15);
 		A_StartSound("DMC/Fire",CHAN_WEAPON);
 		SpawnPlayerMissile("DarkMatterProjectile");

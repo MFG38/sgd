@@ -42,7 +42,11 @@ class HolyWaterGrenade : Actor
 		HWGR A 1;
 		Loop;
 	Death:
-		TNT1 A 7 Light("L_HolyWaterPool") A_Explode(40,80);
+		TNT1 A 7 Light("L_HolyWaterPool")
+		{
+			A_SetGravity(1.0);
+			A_Explode(40,80);
+		}
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 7 Light("L_HolyWaterPool")
 		{
 			A_Explode(18,80);
