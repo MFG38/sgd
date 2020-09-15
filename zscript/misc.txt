@@ -1,28 +1,3 @@
-/* class ArgentRifleOrDMCSpawner : RandomSpawner
-{
-	Default
-	{
-		DropItem "SGDArgentRifle";
-		DropItem "SGDDarkMatterCannon";
-	}
-}
-
-class RandomAmmoSpawner : RandomSpawner
-{
-	Default
-	{
-		DropItem "RifleMag";
-		DropItem "HandfulOfShells";
-		DropItem "BoxOfShells";
-		DropItem "MinigunBulletBox";
-		DropItem "LonelyRocket";
-		DropItem "PileOfRockets";
-		DropItem "GasCanister";
-		DropItem "GasTank";
-		DropItem "DarkMatterCell";
-	}
-} */
-
 class FinisherFreeze : PowerSpeed
 {
 	Default
@@ -40,18 +15,3 @@ class FinisherInvul : PowerInvulnerable
 		Powerup.Duration 0x7FFFFFFD;
 	}
 }
-
-/* class DemonizerTransTestDummy : Actor
-{
-	Default
-	{
-		Translation "DemonizerTrans";
-	}
-	
-	States
-	{
-	Spawn:
-		PLAY A -1;
-		Stop;
-	}
-} */

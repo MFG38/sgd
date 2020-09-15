@@ -28,8 +28,6 @@ class FinisherToken : Counter
 	Default { inventory.maxamount 1000; }
 }
 
-//class FinisherInProgress : Boolean {}
-
 class ZombiemenKilled : Counter {}
 class ShotgunnersKilled : Counter {}
 class ChaingunnersKilled : Counter {}
@@ -48,17 +46,6 @@ class ArchvilesKilled : Counter {}
 class CyberdemonsKilled : Counter {}
 class SpiderMastermindsKilled : Counter {}
 
-/* class SecretsFound : Counter {}
-
-class FistSwitcher : Boolean {}
-
-class DemonizerIsActive : Boolean {}
-
-class FistFinisherThrustScaler : Counter
-{
-	Default { Inventory.MaxAmount 3; }
-} */
-
 class FistFinisherTimer : Counter
 {
 	Default { Inventory.MaxAmount 175; }
@@ -69,10 +56,6 @@ class SSGFinisherDamageScaler : Counter
 	Default { Inventory.MaxAmount 3; }
 }
 
-/* class MinigunFinisherBulletScaler : Counter
-{
-	Default { Inventory.MaxAmount 7; }
-} */
 
 class DemonizerTimer : Counter
 {
@@ -90,5 +73,3 @@ class GoggleTimer : Counter
 }
 
 class GogglesActive : Boolean {}
-
-//class ChainExploder : Boolean {}

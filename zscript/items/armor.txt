@@ -8,12 +8,6 @@ class SGDArmorBonus : ArmorBonus
 	}
 }
 
-/* class SGDArmorBonus_Fix : SGDArmorBonus
-// Because armor bonuses would give no armor whatsoever on skill 6 otherwise.
-{
-	Default { Armor.SaveAmount 2; }
-} */
-
 class SGDSecurityArmor : GreenArmor
 {
 	Default { Inventory.PickupMessage "$SGD_ITEM_GREENARMOR"; Inventory.ForbiddenTo "DemonizedPlayer"; }

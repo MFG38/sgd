@@ -13,11 +13,6 @@ class SGDStimpack : Stimpack
 	Default { Inventory.PickupMessage "$SGD_ITEM_STIMPACK"; Inventory.ForbiddenTo "DemonizedPlayer"; }
 }
 
-/* class SGDStimpackAlt : SGDStimpack
-{
-	Default { Inventory.Amount 5; Inventory.PickupMessage "$SGD_ITEM_STIMPACKALT"; }
-} */
-
 class SGDMedikit : Medikit
 {
 	Default
@@ -27,13 +22,3 @@ class SGDMedikit : Medikit
 		Inventory.ForbiddenTo "DemonizedPlayer";
 	}
 }
-
-/* class SGDMedikitAlt : SGDMedikit
-{
-	Default
-	{
-		Inventory.Amount 20;
-		Inventory.PickupMessage "$SGD_ITEM_MEDIKITALT";
-		Health.LowMessage 25,"$SGD_ITEM_MEDIKITALT";
-	}
-} */

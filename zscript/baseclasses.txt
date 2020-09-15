@@ -76,49 +76,6 @@ extend class SGDWeapon
 	}
 }
 
-/* class SGDWeaponPickup : CustomInventory
-// This was a bad idea.
-{
-	// Custom properties
-	class<Inventory> WeaponClass;
-	class<Inventory> AmmoClass;
-	int AmmoAmount;
-	int ACSVal;
-
-	property GiveWeapon: WeaponClass;
-	property GiveAmmo: AmmoClass, AmmoAmount;
-	property ACSNumber: ACSVal;
-
-	Default
-	{
-		Inventory.MaxAmount 0;
-		Inventory.PickupSound "misc/wpnpickup";
-		Inventory.ForbiddenTo "DemonizedPlayer";
-
-		// Custom property defaults
-		SGDWeaponPickup.GiveWeapon "SGDRifle";
-		SGDWeaponPickup.GiveAmmo "RifleAmmo", 8;
-		SGDWeaponPickup.ACSNumber 2;
-	}
-
-	States
-	{
-	Pickup:
-		TNT1 A 0
-		{
-			let fuck = SGDWeaponPickup(self);
-			
-			if(fuck)
-			{
-				A_GiveInventory(fuck.WeaponClass);
-				A_GiveInventory(fuck.AmmoClass,fuck.AmmoAmount);
-				ACS_NamedExecute("",0,fuck.ACSVal);
-			}
-		}
-		Stop;
-	}
-} */
-
 class WeaponUpgrade : Inventory
 {
 	Default
