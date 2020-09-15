@@ -42,10 +42,10 @@ class HolyWaterGrenade : Actor
 		HWGR A 1;
 		Loop;
 	Death:
-		TNT1 A 3 Light("L_HolyWaterPool") A_Explode(40,80);
+		TNT1 A 7 Light("L_HolyWaterPool") A_Explode(40,80);
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 7 Light("L_HolyWaterPool")
 		{
-			A_Explode(16,80);
+			A_Explode(18,80);
 			A_SpawnItemEx("HolyWaterPoolParticle",random(-9,9)*8,0,0,angle:random(0,23)*15);
 			A_SpawnItemEx("HolyWaterPoolParticle",random(-9,9)*8,0,0,angle:random(0,23)*15);
 			A_SpawnItemEx("HolyWaterPoolParticle",random(-9,9)*8,0,0,angle:random(0,23)*15);

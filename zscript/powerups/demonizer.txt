@@ -32,7 +32,6 @@ class DemonVisionEffect : FakePowerup
 	Default
 	{
 		Powerup.Color "RedMap";
-		//Powerup.Duration -60;
 	}
 }
 
