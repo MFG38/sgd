@@ -7,7 +7,7 @@ class DemonizedPlayer : PlayerPawn
 	{
 		Speed 1.25;
 		Health 666;		// Evil.
-		Radius 15;
+		Radius 16;
 		Height 56;
 		Mass 999;
 		PainChance 255;
@@ -19,7 +19,6 @@ class DemonizedPlayer : PlayerPawn
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
 		Player.MorphWeapon "DemonizedFists";
-		//Player.WeaponSlot 0, "DemonizedFists";
 		Translation "DemonizerTrans";
 	}
 
