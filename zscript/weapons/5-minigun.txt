@@ -65,31 +65,26 @@ class SGDMinigun : SGDWeapon
 		Goto ReadyLoop;
 	Finisher1:
 		TNT1 A 0 A_BeginFinisher(false);
-		//TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",3);
 		MNGG ABABABABABABABAB 2 A_MinigunFinisher(3);
 		MNGG A 3 A_MinigunWindDown;
 		MNGG B 3;
 		MNGG AB 4;
 		MNGG AB 5;
 		MNGG AB 6;
-		//MNGG A 0 A_TakeInventory("MinigunFinisherBulletScaler",0x7FFFFFFF);
 		MNGG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
 		TNT1 A 0 A_BeginFinisher(false);
-		//TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",5);
 		MNGG ABABABABABABABABABABABABABAB 2 A_MinigunFinisher(5);
 		MNGG A 3 A_MinigunWindDown;
 		MNGG B 3;
 		MNGG AB 4;
 		MNGG AB 5;
 		MNGG AB 6;
-		//MNGG A 0 A_TakeInventory("MinigunFinisherBulletScaler",0x7FFFFFFF);
 		MNGG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
 		TNT1 A 0 A_BeginFinisher(true);
-		//TNT1 A 0 A_GiveInventory("MinigunFinisherBulletScaler",7);
 		MNGG A 6 A_MinigunWindup;
 		MNGG B 6;
 		MNGG AB 5;
@@ -101,7 +96,6 @@ class SGDMinigun : SGDWeapon
 		MNGG AB 4;
 		MNGG AB 5;
 		MNGG AB 6;
-		//MNGG A 0 A_TakeInventory("MinigunFinisherBulletScaler",0x7FFFFFFF);
 		MNGG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}

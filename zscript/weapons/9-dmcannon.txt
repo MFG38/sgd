@@ -10,8 +10,6 @@ class SGDDarkMatterCannon : SGDWeapon
 		Tag "$SGD_WEP_DMCANNON";
 		Inventory.PickupMessage "$SGD_WEP_DMCANNON";
 		+INVENTORY.IGNORESKILL;
-		//+WEAPON.NOAUTOAIM;
-		//+WEAPON.NOALERT;
 	}
 
 	States

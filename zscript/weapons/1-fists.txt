@@ -31,10 +31,6 @@ class SGDFists : SGDWeapon
 		PUCH L 2 A_FistAttack;
 		PUCH CMDNER 2;
 		PUCH K 2;
-		/* {
-			A_GiveInventory("FistSwitcher",1);
-			A_ReFire();
-		} */
 		Goto ReadyLoop;
 	Punch2:
 		PUCH F 2 A_StartSound("fist/swing",CHAN_WEAPON);
@@ -42,10 +38,6 @@ class SGDFists : SGDWeapon
 		PUCH O 2 A_FistAttack;
 		PUCH HPIQJ 2;
 		PUCH K 2;
-		/* {
-			A_TakeInventory("FistSwitcher",1);
-			A_ReFire();
-		} */
 		Goto ReadyLoop;
 	FinisherFail:
 		PUCH A 0;
