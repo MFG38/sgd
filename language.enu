@@ -138,7 +138,7 @@ SGD_UPGRADE_MINIGUNACCURACY = "Minigun accuracy increase";
 SGD_UPGRADE_MINIGUNWINDUP = "Minigun windup time reduction";
 SGD_UPGRADE_BAZOOKAFIRERATE = "Bazooka fire rate increase";
 SGD_UPGRADE_BAZOOKARECOIL = "Bazooka recoil reduction";
-SGD_UPGRADE_ARGENTCOOLDOWN = "Argent Rifle faster cooldown";
+SGD_UPGRADE_ARGENTCOOLDOWN = "Argent Rifle cooldown rate increase";
 SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
 
