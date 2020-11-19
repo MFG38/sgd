@@ -79,8 +79,8 @@ Max. Capacity:		160
 Available Upgrades:	Accuracy increase
 			Fire rate increase
 
-Finishers:		Level 1: TBD
-			Level 2: TBD
+Finishers:		Level 1: Series of 2 cluster shots
+			Level 2: Series of 4 cluster shots
 			Level 3: Series of 8 cluster shots
 
 A standard-issue weapon for fresh marine recruits, the Rifle is a weapon that's best used to pick off low-tier enemies

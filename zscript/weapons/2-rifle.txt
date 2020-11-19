@@ -43,14 +43,76 @@ class SGDRifle : SGDWeapon
 		Goto ReadyLoop;
 	Finisher1:
 		TNT1 A 0 A_BeginFinisher(false);
-		RGUN BCBCBCBCBCBC 3 A_RifleFire;
+		RGUN B 1
+		{
+			A_RifleClusterShot();
+			A_SetPitch(pitch-0.5);
+		}
+		RGUN B 1 A_SetPitch(pitch-0.3);
+		RGUN B 1 A_SetPitch(pitch-0.2);
+		RGUN C 1 A_SetPitch(pitch-0.15);
+		RGUN C 1 A_SetPitch(pitch-0.075);
+		RGUN C 1 A_SetPitch(pitch-0.038);
+		RGUN A 3;
+		RGUN B 1
+		{
+			A_RifleClusterShot();
+			A_SetPitch(pitch-0.5);
+		}
+		RGUN B 1 A_SetPitch(pitch-0.3);
+		RGUN B 1 A_SetPitch(pitch-0.2);
+		RGUN C 1 A_SetPitch(pitch-0.15);
+		RGUN C 1 A_SetPitch(pitch-0.075);
+		RGUN C 1 A_SetPitch(pitch-0.038);
 		RGUN A 8;
 		RGUN A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
 		TNT1 A 0 A_BeginFinisher(false);
-		RGUN BCBCBCBCBCBCBCBCBCBCBCBC 3 A_RifleFire;
-		RGUN A 8;
+		RGUN B 1
+		{
+			A_RifleClusterShot();
+			A_SetPitch(pitch-0.5);
+		}
+		RGUN B 1 A_SetPitch(pitch-0.3);
+		RGUN B 1 A_SetPitch(pitch-0.2);
+		RGUN C 1 A_SetPitch(pitch-0.15);
+		RGUN C 1 A_SetPitch(pitch-0.075);
+		RGUN C 1 A_SetPitch(pitch-0.038);
+		RGUN A 3;
+		RGUN B 1
+		{
+			A_RifleClusterShot();
+			A_SetPitch(pitch-0.5);
+		}
+		RGUN B 1 A_SetPitch(pitch-0.3);
+		RGUN B 1 A_SetPitch(pitch-0.2);
+		RGUN C 1 A_SetPitch(pitch-0.15);
+		RGUN C 1 A_SetPitch(pitch-0.075);
+		RGUN C 1 A_SetPitch(pitch-0.038);
+		RGUN A 3;
+		RGUN B 1
+		{
+			A_RifleClusterShot();
+			A_SetPitch(pitch-0.5);
+		}
+		RGUN B 1 A_SetPitch(pitch-0.3);
+		RGUN B 1 A_SetPitch(pitch-0.2);
+		RGUN C 1 A_SetPitch(pitch-0.15);
+		RGUN C 1 A_SetPitch(pitch-0.075);
+		RGUN C 1 A_SetPitch(pitch-0.038);
+		RGUN A 3;
+		RGUN B 1
+		{
+			A_RifleClusterShot();
+			A_SetPitch(pitch-0.5);
+		}
+		RGUN B 1 A_SetPitch(pitch-0.3);
+		RGUN B 1 A_SetPitch(pitch-0.2);
+		RGUN C 1 A_SetPitch(pitch-0.15);
+		RGUN C 1 A_SetPitch(pitch-0.075);
+		RGUN C 1 A_SetPitch(pitch-0.038);
+		RGUN A 12;
 		RGUN A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
