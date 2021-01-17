@@ -265,7 +265,7 @@ extend class SGDSuperShotgun
 		LineAttack(angle,800,pitch,1000,'Normal',"Explosion",LAF_TARGETISSOURCE,t);
 		A_Recoil(5);
 		
-		if(t.linetarget) { t.Spawn("SSGRadiusSploder",(t.pos.x,t.pos.y,t.pos.z); }
+		if(t.linetarget) { t.Spawn("SSGRadiusSploder",(t.pos.x,t.pos.y,t.pos.z)); }
 
 		ACS_NamedExecute("FeatTracker",0);
 	}
