@@ -224,6 +224,8 @@ extend class SGDSuperShotgun
 	
 	action void A_SSGSploderShot()
 	{
+		FTranslatedLineTarget t;
+		
 		if (player == null)
 		{
 			return;
@@ -243,8 +245,13 @@ extend class SGDSuperShotgun
 		A_AlertMonsters();
 		A_StartSound("coachgun/fire",CHAN_WEAPON);
 
-		LineAttack(angle,800,pitch,1000,'Normal',"Explosion");
+		LineAttack(angle,800,pitch,1000,'Normal',"Explosion",LAF_TARGETISSOURCE,t);
 		A_Recoil(5);
+		
+		if(t.linetarget)
+		{
+			t.A_Explode(250,128);
+		}
 
 		ACS_NamedExecute("FeatTracker",0);
 	}
