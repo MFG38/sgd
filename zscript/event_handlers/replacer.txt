@@ -58,7 +58,7 @@ class SGDReplacementHandler : EventHandler
 					case 3: e.Replacement = 'MinigunBulletBox'; break;
 					case 4: e.Replacement = 'LonelyRocket'; break;
 					case 5: e.Replacement = 'PileOfRockets'; break;
-					case 6: e.Replacement = 'GasCan==ter'; break;
+					case 6: e.Replacement = 'GasCanister'; break;
 					case 7: e.Replacement = 'GasTank'; break;
 					case 8: e.Replacement = 'DarkMatterCell'; break;
 				}
@@ -82,7 +82,7 @@ class SGDReplacementHandler : EventHandler
 			if(e.Replacee == 'Berserk') { e.Replacement = 'SGDBerserk'; }
 		}
 		
-		// M==c. replacees
+		// Misc. replacees
 		if(e.Replacee == 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
 		// Ammo
 		else if(e.Replacee == 'Clip') { e.Replacement = 'RifleMag'; }
@@ -91,12 +91,12 @@ class SGDReplacementHandler : EventHandler
 		else if(e.Replacee == 'ShellBox') { e.Replacement = 'BoxOfShells'; }
 		else if(e.Replacee == 'RocketAmmo') { e.Replacement = 'LonelyRocket'; }
 		else if(e.Replacee == 'RocketBox') { e.Replacement = 'PileOfRockets'; }
-		else if(e.Replacee == 'Cell') { e.Replacement = 'GasCan==ter'; }
+		else if(e.Replacee == 'Cell') { e.Replacement = 'GasCanister'; }
 		else if(e.Replacee == 'CellPack') { e.Replacement = 'GasTank'; }
 		// Weapons
-		else if(e.Replacee == 'F==t') { e.Replacement = 'SGDF==ts'; }
+		else if(e.Replacee == 'Fist') { e.Replacement = 'SGDFists'; }
 		else if(e.Replacee == 'Chainsaw') { e.Replacement = 'SGDChainsaw'; }
-		else if(e.Replacee == 'P==tol') { e.Replacement = 'SGDRifle'; }
+		else if(e.Replacee == 'Pistol') { e.Replacement = 'SGDRifle'; }
 		else if(e.Replacee == 'Shotgun') { e.Replacement = 'SGDShotgun'; }
 		else if(e.Replacee == 'SuperShotgun') { e.Replacement = 'SGDSuperShotgun'; }
 		else if(e.Replacee == 'Chaingun') { e.Replacement = 'SGDMinigun'; }
