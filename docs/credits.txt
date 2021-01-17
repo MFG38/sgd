@@ -159,6 +159,9 @@ Mars 3D Textures (WALL2_09): ENGINE Technology, Player Lin
 
 The obvious ones: id Software, the GZDoom dev team
 
+For thinking up finisher ideas when I was creatively bankrupt myself:
+InfernalMonsoon
+
 For noticing bugs I didn't:
 RonnieJamesDiner, somagu
 

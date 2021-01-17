@@ -113,7 +113,7 @@ Max. Capacity:		80 (shared with Shotgun)
 Available Upgrades:	Recoil reduction
 			Reload speed increase
 
-Finishers:		Level 1: TBD
+Finishers:		Level 1: Explosive hitscan shot
 			Level 2: TBD
 			Level 3: TBD
 

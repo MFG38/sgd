@@ -23,6 +23,7 @@ class FieldMedPack : CustomInventory
 			if(invoker.owner.Health < 100)
 			{
 				int AmtToHeal = 100 - invoker.owner.Health;
+				
 				if(AmtToHeal >= CountInv("FieldMedPack"))
 				{
 					A_GiveInventory("Health",CountInv("FieldMedPack"));
