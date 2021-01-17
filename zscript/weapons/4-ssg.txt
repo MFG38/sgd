@@ -83,17 +83,17 @@ class SGDSuperShotgun : SGDWeapon
 		COCH A 2;
 		COCH B 1 A_SSGSploderShot;
 		COCH CDAAAAAAAAAAAAAA 1;
-		COCH EFG 1;
-		COCH H 1 A_StartSound("coachgun/reload1");
-		COCH I 1;
-		COCH J 1;
+		COCH EFG 2;
+		COCH H 2 A_StartSound("coachgun/reload1");
+		COCH I 2;
+		COCH J 12;
 		COCH KLMNO 1;
-		COCH P 1 A_StartSound("coachgun/reload2");
+		COCH P 4 A_StartSound("coachgun/reload2");
 		COCH QRSTU 1;
-		COCH V 1;
-		COCH W 1;
-		COCH X 1 A_StartSound("coachgun/reload3");
-		COCH GFE 1;
+		COCH V 8;
+		COCH W 2;
+		COCH X 2 A_StartSound("coachgun/reload3");
+		COCH GFE 2;
 		COCH A 7 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
@@ -145,10 +145,13 @@ class SSGExplosiveShot : FastProjectile
 {
 	Default
 	{
-		Speed 80;
+		Radius 2;
+		Height 4;
+		Speed 90;
 		DamageFunction 1000;
 		PROJECTILE;
 		+NODAMAGETHRUST;
+		+FORCERADIUSDMG;
 	}
 	
 	States
@@ -157,7 +160,7 @@ class SSGExplosiveShot : FastProjectile
 		TNT1 A 1;
 		Loop;
 	Death:
-		TNT1 A 0 A_Explode(320,128);
+		TNT1 A 0 A_Explode(400,128);
 		FX08 AABBCCDDEEFFGGHH 1 BRIGHT A_FadeOut(0.063);
 		Stop;
 	}
