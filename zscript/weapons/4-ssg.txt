@@ -141,11 +141,12 @@ class SGDSuperShotgun : SGDWeapon
 	}
 }
 
-class SSGRadiusSploder : Actor
+class SSGExplosiveShot : FastProjectile
 {
 	Default
 	{
-		Speed 0;
+		Speed 80;
+		DamageFunction 1000;
 		PROJECTILE;
 		+NODAMAGETHRUST;
 	}
@@ -153,7 +154,11 @@ class SSGRadiusSploder : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 1 A_Explode(320,128);
+		TNT1 A 1;
+		Loop;
+	Death:
+		TNT1 A 0 A_Explode(320,128);
+		FX08 AABBCCDDEEFFGGHH 1 BRIGHT A_FadeOut(0.063);
 		Stop;
 	}
 }
@@ -262,10 +267,8 @@ extend class SGDSuperShotgun
 		A_AlertMonsters();
 		A_StartSound("coachgun/fire",CHAN_WEAPON);
 
-		LineAttack(angle,800,pitch,1000,'Normal',"Explosion",LAF_TARGETISSOURCE,t);
+		SpawnPlayerMissile("SSGExplosiveShot");
 		A_Recoil(5);
-		
-		if(t.linetarget) { Actor.Spawn("SSGRadiusSploder",(t.pos.x,t.pos.y,t.pos.z)); }
 
 		ACS_NamedExecute("FeatTracker",0);
 	}
