@@ -147,7 +147,7 @@ class SSGExplosiveShot : FastProjectile
 	{
 		Radius 2;
 		Height 4;
-		Speed 90;
+		Speed 96;
 		DamageFunction 1000;
 		PROJECTILE;
 		+NODAMAGETHRUST;
