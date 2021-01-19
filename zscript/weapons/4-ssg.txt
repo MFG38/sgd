@@ -257,12 +257,13 @@ class SSGNapalmFlame : Actor
 		Speed 0;
 		Renderstyle "Translucent";
 		Alpha 0.75;
-		XScale 0.4;
-		YScale 0.2;
+		XScale 0.5;
+		YScale 0.25;
 		PROJECTILE;
 		-NOGRAVITY;
 		+NODAMAGETHRUST;
 		+NOEXPLODEFLOOR;
+		+FORCERADIUSDMG;
 	}
 	
 	States
