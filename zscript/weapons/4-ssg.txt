@@ -231,6 +231,7 @@ class SSGNapalmFlame : Actor
 		PROJECTILE;
 		-NOGRAVITY;
 		+NODAMAGETHRUST;
+		+NOEXPLODEFLOOR;
 	}
 	
 	States
