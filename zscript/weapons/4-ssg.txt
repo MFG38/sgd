@@ -229,6 +229,7 @@ class SSGNapalmFlame : Actor
 		Alpha 0.75;
 		Scale 0.4;
 		PROJECTILE;
+		-NOGRAVITY;
 		+NODAMAGETHRUST;
 	}
 	
