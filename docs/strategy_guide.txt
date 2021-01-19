@@ -114,7 +114,7 @@ Available Upgrades:	Recoil reduction
 			Reload speed increase
 
 Finishers:		Level 1: Explosive hitscan shot
-			Level 2: TBD
+			Level 2: Napalm hitscan shot (leaves a pool of fire on the ground)
 			Level 3: TBD
 
 Despite its sheer firepower, the Double-Barrel Shotgun is rarely seen in the hands of UAC marines. One has to wonder why,
