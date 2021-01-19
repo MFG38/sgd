@@ -24,7 +24,7 @@ class SGDSpiderMastermind : SGDMonster replaces SpiderMastermind
 	States
 	{
 	Spawn:
-		SPID A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//SPID A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		SPID AB 10 A_Look;
 		Loop;
 	AltSpawn:

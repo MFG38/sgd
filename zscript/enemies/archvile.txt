@@ -21,7 +21,7 @@ class SGDFlameBoi : SGDMonster replaces Archvile
 	States
 	{
 	Spawn:
-		VILE A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//VILE A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		VILE AB 10 A_Look;
 		Loop;
 	AltSpawn:

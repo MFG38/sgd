@@ -112,6 +112,21 @@ class SGDMonster : Actor
 		+FLOORCLIP;
 		+MISSILEMORE;
 	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_spawnbehavior').GetInt())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("AltSpawn");
+			break;
+		}
+	}
 }
 
 extend class SGDMonster
