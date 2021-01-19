@@ -181,7 +181,7 @@ Slot 8: Argent Rifle
 Range:			Long
 Damage:			Medium
 Max. Capacity:		N/A
-Available Upgrades:	Faster cooldown
+Available Upgrades:	Cooldown rate increase
 
 Finishers:		Level 1: laser beam
 			Level 2: 3 spread laser beams
