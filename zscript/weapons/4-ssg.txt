@@ -257,8 +257,8 @@ class SSGNapalmFlame : Actor
 		Speed 0;
 		Renderstyle "Translucent";
 		Alpha 0.75;
-		ScaleX 0.4;
-		ScaleY 0.2;
+		XScale 0.4;
+		YScale 0.2;
 		PROJECTILE;
 		-NOGRAVITY;
 		+NODAMAGETHRUST;
