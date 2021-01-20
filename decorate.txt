@@ -11,3 +11,13 @@ actor TitlemapLight 12345
 		Goto Spawn
 	}
 }
+
+actor TitlemapStandingImp 12350
+{
+	States
+	{
+	Spawn:
+		TROO A -1
+		Stop
+	}
+}
