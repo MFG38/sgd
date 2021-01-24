@@ -116,16 +116,16 @@ class SGDSuperShotgun : SGDWeapon
 		Goto ReadyLoop;
 	Finisher3:		// Credit to InfernalMonsoon for coming up with this!
 		TNT1 A 0 A_BeginFinisher(false);
-		COCH B 1 A_SSGFire;
+		COCH B 1 A_SSGMegaShot;
 		COCH CDAAAAAAA 1;
-		COCH B 1 A_SSGFire;
+		COCH B 1 A_SSGMegaShot;
 		COCH CDAAAAAAA 1;
-		COCH B 1 A_SSGFire;
+		COCH B 1 A_SSGMegaShot;
 		COCH CDAAAAAAA 1;
-		COCH B 1 A_SSGFire;
+		COCH B 1 A_SSGMegaShot;
 		COCH CDAAAAAAA 1;
-		COCH B 1 A_SSGFire;
-		COCH CDAAAAAAA 1;
+		COCH B 1 A_SSGMegaShot;
+		COCH CDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1;
 		COCH EFG 2;
 		COCH H 2 A_StartSound("coachgun/reload1");
 		COCH I 2;
@@ -409,6 +409,39 @@ extend class SGDSuperShotgun
 		SpawnPlayerMissile("SSGNapalmShot");
 		A_Recoil(5);
 
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_SSGMegaShot()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+
+		A_AlertMonsters();
+		A_StartSound("coachgun/fire",CHAN_WEAPON);
+
+		for(int i = 0; i < 20; i++)
+		{
+			double xspread = angle + random2() * (16.875 / 256);
+			double yspread = pitch + random2() * (14.45 / 256);
+			
+			LineAttack(xspread,768,yspread,50,'Normal',"BulletPuff");
+		}
+		A_Recoil(8);
+		
 		ACS_NamedExecute("FeatTracker",0);
 	}
 }
