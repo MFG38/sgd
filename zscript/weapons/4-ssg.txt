@@ -114,13 +114,18 @@ class SGDSuperShotgun : SGDWeapon
 		COCH GFE 2;
 		COCH A 7 A_EndFinisher;
 		Goto ReadyLoop;
-	Finisher3:
+	Finisher3:		// Credit to InfernalMonsoon for coming up with this!
 		TNT1 A 0 A_BeginFinisher(false);
-		TNT1 A 0 A_GiveInventory("SSGFinisherDamageScaler",3);
-		COCH A 3;
-		COCH B 1 A_SSGFinisher;
-		COCH CD 1;
-		COCH AAAAAAAAA 4;
+		COCH B 1 A_SSGFire;
+		COCH CDAAAAAAA 1;
+		COCH B 1 A_SSGFire;
+		COCH CDAAAAAAA 1;
+		COCH B 1 A_SSGFire;
+		COCH CDAAAAAAA 1;
+		COCH B 1 A_SSGFire;
+		COCH CDAAAAAAA 1;
+		COCH B 1 A_SSGFire;
+		COCH CDAAAAAAA 1;
 		COCH EFG 2;
 		COCH H 2 A_StartSound("coachgun/reload1");
 		COCH I 2;
@@ -132,8 +137,8 @@ class SGDSuperShotgun : SGDWeapon
 		COCH W 2;
 		COCH X 2 A_StartSound("coachgun/reload3");
 		COCH GFE 2;
-		COCH A 0 A_TakeInventory("SSGFinisherDamageScaler",0x7FFFFFFF);
-		COCH A 7 A_EndFinisher;
+		COCH A 8;
+		COCH A 2 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }
@@ -345,39 +350,6 @@ extend class SGDSuperShotgun
 			}
 			
 			LineAttack(xspread,384,yspread,dmg,'Normal',"BulletPuff");
-		}
-		ACS_NamedExecute("FeatTracker",0);
-	}
-	
-	action void A_SSGFinisher()
-	{
-		if (player == null)
-		{
-			return;
-		}
-
-		Weapon weap = player.ReadyWeapon;
-		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
-		{
-			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
-			{
-				return;
-			}	
-			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
-		}
-		player.mo.PlayAttacking2 ();
-
-		A_AlertMonsters();
-		A_StartSound("coachgun/fire",CHAN_WEAPON);
-		A_Recoil(CountInv("SSGFinisherDamageScaler") * 2);
-
-		for(int i = 0; i < 24; i++)
-		{
-			int dmg = CountInv("SSGFinisherDamageScaler") * 50;
-			double xspread = angle + random2() * (28.0 / 256);
-			double yspread = pitch + random2() * (15.25 / 256);
-			
-			LineAttack(xspread,416,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
 	}

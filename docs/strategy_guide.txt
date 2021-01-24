@@ -115,7 +115,7 @@ Available Upgrades:	Recoil reduction
 
 Finishers:		Level 1: Explosive hitscan shot
 			Level 2: Napalm hitscan shot (leaves a pool of fire on the ground)
-			Level 3: TBD
+			Level 3: Series of 5 rapid-fire shots
 
 Despite its sheer firepower, the Double-Barrel Shotgun is rarely seen in the hands of UAC marines. One has to wonder why,
 considering the weapon is capable of downing even large demons with a single shot. Maybe it has something to do with the
