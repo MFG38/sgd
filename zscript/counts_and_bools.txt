@@ -7,7 +7,7 @@ class Counter : Inventory
 {
 	Default
 	{
-		inventory.maxamount 0x7FFFFFFF;
+		Inventory.MaxAmount 0x7FFFFFFF;
 		+INVENTORY.UNDROPPABLE;
 		//-INVENTORY.INVBAR;
 	}
@@ -17,7 +17,7 @@ class Boolean : Inventory
 {
 	Default
 	{
-		inventory.maxamount 1;
+		Inventory.MaxAmount 1;
 		+INVENTORY.UNDROPPABLE;
 		//-INVENTORY.INVBAR;
 	}
@@ -25,7 +25,7 @@ class Boolean : Inventory
 
 class FinisherToken : Counter
 {
-	Default { inventory.maxamount 1000; }
+	Default { Inventory.MaxAmount 1000; }
 }
 
 class ZombiemenKilled : Counter {}
