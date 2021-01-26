@@ -80,13 +80,6 @@ skill whywouldyoueventrythis
 	spawnfilter = nightmare
 	damagefactor = 2.0
 	monsterhealth = 1.15
-	/* ammofactor = 2.0
-	healthfactor = 0.75
-	armorfactor = 0.75
-	replaceactor = "ArmorBonus", "SGDArmorBonus_Fix"
-	replaceactor = "Stimpack", "SGDStimpackAlt"
-	replaceactor = "Medikit", "SGDMedikitAlt"
-	replaceactor = "Megasphere", "SGDMegasphereAlt" */
 	disablecheats
 }
 
