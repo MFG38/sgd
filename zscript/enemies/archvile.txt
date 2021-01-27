@@ -8,7 +8,8 @@ class SGDFlameBoi : SGDMonster replaces Archvile
 		Mass 500;
 		Speed 15;
 		PainChance 10;
-		PainChance "Fire", 80;
+		PainChance "Fire", 64;
+		PainChance "HolyWater", 64;
 		MaxTargetRange 896;
 		+QUICKTORETALIATE;
 		+NOTARGET;
