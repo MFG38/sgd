@@ -46,7 +46,7 @@ class SGDSpiderMastermind : SGDMonster replaces SpiderMastermind
 		SPID EFF 3 A_Chase;
 		Loop;
 	Missile:
-		SPID A 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile"); }};
+		SPID A 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile"); }}
 		SPID A 0 A_FaceTarget;
 		SPID A 30 BRIGHT A_StartSound("minigun/windup");
 		SPID G 4 BRIGHT A_SPosAttackUseAtkSound;

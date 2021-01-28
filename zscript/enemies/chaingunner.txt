@@ -31,7 +31,7 @@ class SGDChaingunner : SGDMonster replaces ChaingunGuy
 		CPOS AABBCCDD 3 A_Chase;
 		Loop;
 	Missile:
-		CPOS E 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile"); }};
+		CPOS E 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile"); }}
 		CPOS E 0 A_StartSound("minigun/windup");
 		CPOS E 24 A_FaceTarget;
 		CPOS FE 3 BRIGHT A_CPosAttack;
