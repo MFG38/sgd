@@ -1,6 +1,5 @@
 [??-??-????] v2.0:
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).
-- Improved the functionality of the Light Amp Goggles.
 - Fixed Barons giving the wrong token upon dying from Holy Water and Fire damage.
 - Slightly modified the spawning logic of the Holy Water Pool particles.
 - Slightly modified the Spider Mastermind's AltMissile state code.
@@ -21,6 +20,8 @@
 - Modified the behavior of the Light Amp Goggles.
 - Tweaked the behavior of the Holy Water Grenade.
 - Updated cvar checks to the recommended ZScript method.
+- Decreased pain chance from holy water damage for Archviles, Cyberdemons and Spider Masterminds.
+- Decreased pain chance from fire damage for Archviles.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.

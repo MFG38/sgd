@@ -30,7 +30,7 @@ class SGDZombieman : SGDMonster replaces ZombieMan
 		POSS AABBCCDD 4 A_Chase;
 		Loop;
 	Missile:
-		POSS E 0 A_JumpIf(GetCVar("sgd_hitscanbehavior") == 1,"AltMissile");
+		POSS E 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile") }};
 		POSS E 10 A_FaceTarget;
 		POSS F 8 A_PosAttackFixedSound;
 		POSS E 8;
