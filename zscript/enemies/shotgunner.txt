@@ -31,7 +31,7 @@ class SGDShotgunner : SGDMonster replaces ShotgunGuy
 		SPOS AABBCCDD 3 A_Chase;
 		Loop;
 	Missile:
-		SPOS E 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile") }};
+		SPOS E 0 { if(CVar.FindCVar('sgd_hitscanbehavior').GetInt() == 1) { SetStateLabel("AltMissile"); }};
 		SPOS E 10 A_FaceTarget;
 		SPOS F 10 BRIGHT A_SposAttackUseAtkSound;
 		SPOS E 10;

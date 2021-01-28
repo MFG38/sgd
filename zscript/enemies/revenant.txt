@@ -38,7 +38,7 @@ class SGDRevenant: SGDMonster replaces Revenant
 		SKEL I 6 A_SkelFist;
 		Goto See;
 	Missile:
-		SKEL J 0 { if(CVar.FindCVar('sgd_revrocketbehavior').GetInt() == 1) { SetStateLabel("AltMissile") }};
+		SKEL J 0 { if(CVar.FindCVar('sgd_revrocketbehavior').GetInt() == 1) { SetStateLabel("AltMissile"); }};
 		SKEL J 0 BRIGHT A_FaceTarget;
 		SKEL J 5 BRIGHT A_FaceTarget;
 		SKEL K 10 A_SkelMissile;
