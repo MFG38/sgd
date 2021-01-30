@@ -96,7 +96,7 @@ Max. Capacity:		80 (shared with Double-Barrel Shotgun)
 Available Upgrades:	Range increase
 			Spread reduction
 
-Finishers:		Level 1: TBD
+Finishers:		Level 1: Railgun-style penetrating slug
 			Level 2: TBD
 			Level 3: TBD
 

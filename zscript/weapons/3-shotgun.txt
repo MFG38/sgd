@@ -103,8 +103,11 @@ class ShotgunSlug : Actor
 	States
 	{
 	Spawn:
-		SLUG A 1 A_SpawnItemEx("ShotgunSlugTrail");
-		SLUG AAAAAAAAAA 1 A_FadeOut(0.1);
+		SLUG A 1
+		{
+			A_SpawnItemEx("ShotgunSlugTrail");
+			A_SpawnItemEx("ShotgunSlugCone");
+		}
 		Stop;
 	}
 }
@@ -113,15 +116,36 @@ class ShotgunSlugTrail : SGDProjectileTrail
 {
 	Default
 	{
-		Alpha 0.5;
+		Alpha 0.8;
 		Scale 1.0;
-		+WALLSPRITE;
+		+FLATSPRITE;
 	}
 	
 	States
 	{
 	Spawn:
-		SLGT AAAAAAAAAA 1 A_FadeOut(0.1);
+		SLUG AAAAAAAA 1 A_FadeOut(0.1);
+		Stop;
+	}
+}
+
+class ShotgunSlugCone : ShotgunSlugTrail
+{
+	Default
+	{
+		Alpha 0.64;
+		Scale 0.5;
+		-FLATSPRITE;
+	}
+	
+	States
+	{
+	Spawn:
+		SLGT AAAAAAAA 1
+		{
+			A_SetScale(scale.x+0.05,scale.y+0.05);
+			A_FadeOut(0.08);
+		}
 		Stop;
 	}
 }
