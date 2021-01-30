@@ -108,6 +108,9 @@ class ShotgunSlug : Actor
 			A_SpawnItemEx("ShotgunSlugTrail");
 			A_SpawnItemEx("ShotgunSlugCone");
 		}
+		Loop;
+	Death:
+		TNT1 A 1;
 		Stop;
 	}
 }
@@ -129,13 +132,12 @@ class ShotgunSlugTrail : SGDProjectileTrail
 	}
 }
 
-class ShotgunSlugCone : ShotgunSlugTrail
+class ShotgunSlugCone : SGDProjectileTrail
 {
 	Default
 	{
 		Alpha 0.64;
 		Scale 0.5;
-		-FLATSPRITE;
 	}
 	
 	States
