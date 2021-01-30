@@ -106,7 +106,7 @@ class ShotgunSlug : Actor
 		SLUG A 1
 		{
 			A_SpawnItemEx("ShotgunSlugTrail");
-			A_SpawnItemEx("ShotgunSlugCone",0,0,20);
+			A_SpawnItemEx("ShotgunSlugCone",0,-10,10);
 		}
 		Loop;
 	Death:
@@ -136,8 +136,8 @@ class ShotgunSlugCone : SGDProjectileTrail
 {
 	Default
 	{
-		Radius 16;
-		Height 32;
+		Radius 10;
+		Height 20;
 		Alpha 0.64;
 		Scale 0.5;
 	}
