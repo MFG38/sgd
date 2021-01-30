@@ -102,6 +102,8 @@ Rifle: id Software, Captain Toenail
 
 Shotgun: base sprites by id Software and 3D Realms, edits by JoeyTD
 
+Shotgun slug and trail: MFG38
+
 Double-Barrel Shotgun: KDiZD Team, Captain Toenail
 
 Minigun: id Software, Skulltag

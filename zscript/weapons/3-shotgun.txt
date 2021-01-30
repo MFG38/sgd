@@ -41,11 +41,11 @@ class SGDShotgun : SGDWeapon
 	FinisherFail:
 		DNSG A 0;
 		Goto ReadyLoop;
-	Finisher1:
+	Finisher1:		// Credit to InfernalMonsoon for coming up with this!
 		DNSG A 3 A_BeginFinisher(false);
-		DNSG B 1 A_ShotgunFinisher;
+		DNSG B 1 A_ShotgunSlug;
 		DNSG CDEDCB 1 bright;
-		DNSG A 3;
+		DNSG AAAAAA 3;
 		DNSG FGH 1;
 		DNSG I 2 A_StartSound("DukeShotgun/Pump");
 		DNSG JKLKJI 2;
@@ -82,6 +82,47 @@ class SGDShotgun : SGDWeapon
 		DNSG HGF 1;
 		DNSG A 7 A_EndFinisher;
 		Goto ReadyLoop;
+	}
+}
+
+class ShotgunSlug : Actor
+{
+	Default
+	{
+		Radius 4;
+		Height 8;
+		Speed 50;
+		DamageFunction 128 + (random(0,4) * 16);
+		Renderstyle "Translucent";
+		Alpha 0.8;
+		PROJECTILE;
+		+FLATSPRITE;
+		+RIPPER;
+	}
+	
+	States
+	{
+	Spawn:
+		SLUG A 1 A_SpawnItemEx("ShotgunSlugTrail");
+		SLUG AAAAAAAAAA 1 A_FadeOut(0.1);
+		Stop;
+	}
+}
+
+class ShotgunSlugTrail : SGDProjectileTrail
+{
+	Default
+	{
+		Alpha 0.5;
+		Scale 1.0;
+		+WALLSPRITE;
+	}
+	
+	States
+	{
+	Spawn:
+		SLGT AAAAAAAAAA 1 A_FadeOut(0.1);
+		Stop;
 	}
 }
 
@@ -146,6 +187,30 @@ extend class SGDShotgun
 
 			LineAttack(xspread,range,yspread,dmg,'Normal',"BulletPuff");
 		}
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_ShotgunSlug()
+	{
+		if (player == null)
+		{
+			return;
+		}
+
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+			{
+				return;
+			}	
+			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
+		}
+		player.mo.PlayAttacking2 ();
+		
+		A_AlertMonsters();
+		A_StartSound("DukeShotgun/fire",CHAN_WEAPON);
+		SpawnPlayerMissile("ShotgunSlug");
 		ACS_NamedExecute("FeatTracker",0);
 	}
 	
