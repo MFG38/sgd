@@ -106,7 +106,7 @@ class ShotgunSlug : Actor
 		SLUG A 1
 		{
 			A_SpawnItemEx("ShotgunSlugTrail");
-			A_SpawnItemEx("ShotgunSlugCone",0,-10,10);
+			A_SpawnItemEx("ShotgunSlugCone");
 		}
 		Loop;
 	Death:
