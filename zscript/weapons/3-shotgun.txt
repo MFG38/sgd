@@ -125,7 +125,7 @@ class ShotgunBouncySlug : ShotgunSlug
 		+HITOWNER;		// For a bit of extra risk.
 		DamageType "ShotgunSlug";
 		BounceCount 8;
-		ProjectileKickBack 0;
+		//ProjectileKickBack 0;
 	}
 }
 
