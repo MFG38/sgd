@@ -55,6 +55,10 @@ Rifle: id Software
 
 Shotgun: id Software and Ryan Williams
 
+Shotgun slug firing sound: original sound by Roper on freesound.org, edited by MFG38
+
+Shotgun slug bouncing sound: magnuswaker on freesound.org
+
 Double-Barrel Shotgun: Croteam
 
 Minigun firing sound: Tormentor667

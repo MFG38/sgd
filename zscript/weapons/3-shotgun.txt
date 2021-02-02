@@ -127,6 +127,7 @@ class ShotgunBouncySlug : ShotgunSlug
 		DamageType "ShotgunSlug";
 		BounceCount 8;
 		ProjectileKickBack 0;
+		BounceSound "fx/slugbounce";
 	}
 }
 
@@ -276,7 +277,7 @@ extend class SGDShotgun
 		player.mo.PlayAttacking2 ();
 		
 		A_AlertMonsters();
-		A_StartSound("DukeShotgun/fire",CHAN_WEAPON);
+		A_StartSound("DukeShotgun/slug",CHAN_WEAPON);
 		SpawnPlayerMissile("ShotgunBouncySlug",angle+ang);
 		ACS_NamedExecute("FeatTracker",0);
 	}

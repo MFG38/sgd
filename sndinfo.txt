@@ -25,6 +25,7 @@ DSSGBOO3					DSSGBOO3
 
 $random DukeShotgun/Fire	{ DSSGBOO1 DSSGBOO2 DSSGBOO3 }
 DukeShotgun/Pump			DSSGPUMP
+DukeShotgun/slug			slugfire
 
 coachgun/reload1			DSCOCHR1
 coachgun/reload2			DSCOCHR2
@@ -65,3 +66,4 @@ hwgrenade/splode			hwgrenxp
 visor/toggle				latoggle
 
 fx/fireburn					FMTRFLAM
+fx/slugbounce				slugbnc
