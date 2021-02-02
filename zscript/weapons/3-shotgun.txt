@@ -119,15 +119,17 @@ class ShotgunBouncySlug : ShotgunSlug
 {
 	Default
 	{
-		+BOUNCEONWALLS;
+		//+BOUNCEONWALLS;
 		-ALLOWBOUNCEONACTORS;
 		-BOUNCEONACTORS;
 		+HITOWNER;		// For a bit of extra risk.
 		+NODAMAGETHRUST;
 		DamageType "ShotgunSlug";
+		BounceType "Hexen";
 		BounceCount 8;
 		ProjectileKickBack 0;
 		BounceSound "fx/slugbounce";
+		BounceFactor 1.0;
 	}
 }
 
@@ -253,7 +255,7 @@ extend class SGDShotgun
 		player.mo.PlayAttacking2 ();
 		
 		A_AlertMonsters();
-		A_StartSound("DukeShotgun/fire",CHAN_WEAPON);
+		A_StartSound("DukeShotgun/slug",CHAN_WEAPON);
 		SpawnPlayerMissile("ShotgunSlug");
 		ACS_NamedExecute("FeatTracker",0);
 	}
