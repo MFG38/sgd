@@ -119,17 +119,17 @@ class ShotgunBouncySlug : ShotgunSlug
 {
 	Default
 	{
-		//+BOUNCEONWALLS;
-		-ALLOWBOUNCEONACTORS;
-		-BOUNCEONACTORS;
-		+HITOWNER;		// For a bit of extra risk.
-		+NODAMAGETHRUST;
 		DamageType "ShotgunSlug";
 		BounceType "Hexen";
 		BounceCount 8;
 		ProjectileKickBack 0;
 		BounceSound "fx/slugbounce";
 		BounceFactor 1.0;
+		WallBounceFactor 1.0;
+		-ALLOWBOUNCEONACTORS;
+		-BOUNCEONACTORS;
+		+HITOWNER;		// For a bit of extra risk.
+		+NODAMAGETHRUST;
 	}
 }
 
