@@ -1,0 +1,205 @@
+[fin]
+
+SGD_MENU_HOWTOPLAY = "Peliohjeet";
+SGD_MENU_MODSETUP = "SGD:n asetukset";
+
+SGD_OMENU_NOTICE =
+	"Tähdellä (*) merkittyihin asetuksiin tehdyt\n"
+	"muutokset astuvat voimaan vasta uuden kartan\n"
+	"tai pelin alkaessa.";
+
+SGD_OMENU_KEYBIND =
+	"Paina Enter, sitten haluttua näppäintä asettaaksesi.\n"
+	"Poista asetus painamalla askelpalautinta.";
+
+SGD_TTL_CVARS = "SGD:n asetukset";
+SGD_TTL_CONTROLS = "SGD:n näppäinasetukset";
+
+SGD_SUBTTL_VISUALS = "Visuaalinen ilme";
+SGD_SUBTTL_HUD = "HUD";
+SGD_SUBTTL_SOUNDS = "Äänet";
+SGD_SUBTTL_BEHAVIOR = "Vihollisten käytös";
+SGD_SUBTTL_SPAWNS = "Esinekorvikkeet (*)";
+SGD_SUBTTL_CONTROLS = "Muuta ohjausasetuksia";
+SGD_SUBTTL_CONTROLS1 = "Tärkeät näppäinkomennot";
+SGD_SUBTTL_CONTROLS2 = "Powerup-pikanäppäimet (vaihtoehtoinen)";
+
+SGD_OM_PROJTRAILS = "Näytä projektiilien hännät (*)";
+SGD_OM_PROJTRAILSNOTICE = "(Ei vaikuta luotien häntiin)";
+SGD_OM_FANCYTELE = "Hieno teleporttiefekti";
+
+SGD_OM_FINISHERBAR = "Näytä finisher-palkki";
+SGD_OM_FMSGTYPE = "Finisher-viestin tyyppi";
+SGD_OM_HAZMATTIMER = "Näytä hazmat-puvun ajastin";
+SGD_OM_GOGGLECHARGE = "Näytä pimeänäkölasien paristo";
+
+SGD_OM_FLASHTOGGLE = "Näytä matalan HP:n vaaravilkku";
+SGD_OM_FLASHTHRES = "Matalan HP:n vaaravilkun kynnys";
+SGD_OM_FLASHINT = "Matalan HP:n vaaravilkun intensiteetti";
+
+SGD_OM_MEDUSESOUND = "Kenttälääkintälaukun käyttöääni";
+SGD_OM_HSWARNINGSOUND = "Hazmat-puvun varoitusääni";
+SGD_OM_GOGGLETOGGLESOUND = "Pimeänäkölasien kytkemisääni";
+
+SGD_OM_SPAWNBEHAVIOR = "Vihollisten lähtökäytös (*)";
+SGD_OM_HITSCANBEHAVIOR = "Luotien tyyppi";
+SGD_OM_TRACERBEHAVIOR = "Revenantin rakettien tyyppi";
+
+SGD_OM_RPLASMA = "Plasmakiväärin korvike";
+SGD_OM_RBFG = "BFG9000:n korvike";
+SGD_OM_RBACKP = "Ammusrepun korvike";
+SGD_OM_CLASSICPWR = "Klassiset powerupit";
+
+SGD_CVAR_FMSG0 = "Pois päältä";
+SGD_CVAR_FMSG1 = "Ei näppäinohjetta";
+SGD_CVAR_FMSG2 = "Koko viesti";
+SGD_CVAR_SPAWN0 = "Seiso paikallaan";
+SGD_CVAR_SPAWN1 = "Kävele ympäriinsä";
+SGD_CVAR_HITSCAN0 = "Hitscan";
+SGD_CVAR_HITSCAN1 = "Projektiili";
+SGD_CVAR_TRACER0 = "Alkuperäinen";
+SGD_CVAR_TRACER1 = "SGD-tyylinen";
+SGD_CVAR_RPLASMA0 = "Pelkkä liekinheitin";
+SGD_CVAR_RPLASMA1 = "Liekinheitin tai Argent-kivääri";
+SGD_CVAR_RBFG0 = "Argent-kivääri tai antimateriatykki";
+SGD_CVAR_RBFG1 = "Pelkkä antimateriatykki";
+SGD_CVAR_RBFG2 = "Pelkkä Argent-kivääri";
+SGD_CVAR_RBACKP0 = "Satunnainen ammus";
+SGD_CVAR_RBACKP1 = "DMC:n ammus";
+
+SGD_KEY_ALTFIRE = "Toissijainen ampumistoiminto (käyttää finisherin)";
+SGD_KEY_INVUSE = "Käytä esine";
+SGD_KEY_INVNEXT = "Seuraava esine";
+SGD_KEY_INVPREV = "Edellinen esine";
+SGD_KEY_DEMONIZER = "Demonisoija";
+SGD_KEY_FIELDMED = "Kenttälääkintälaukku";
+SGD_KEY_GOGGLES = "Pimeänäkölasit";
+SGD_KEY_HWGRENADE = "Pyhävesikranaatti";
+SGD_KEY_RADSUIT = "Hazmat-puku";
+
+SGD_FMSG_LVL1READY = "TASON 1 FINISHER VALMIS";
+SGD_FMSG_LVL2READY = "TASON 2 FINISHER VALMIS";
+SGD_FMSG_LVL3READY = "TASON 3 FINISHER VALMIS";
+SGD_FMSG_USE1 = "PAINA ";
+SGD_FMSG_USE2 = " KÄYTTÄÄKSESI";
+
+SGD_FEATACCOMPLISHED = "SAAVUTUS SUORITETTU: ";
+SGD_FEAT01 = "75 zombia tapettu";
+SGD_FEAT02 = "50 imppiä tapettu";
+SGD_FEAT03 = "50 cacodemonia tapettu";
+SGD_FEAT04 = "150 zombia tapettu";
+SGD_FEAT05 = "100 imppiä tapettu";
+SGD_FEAT06 = "50 pinkkidemonia tapettu";
+SGD_FEAT07 = "125 haulikkozombia tapettu";
+SGD_FEAT08 = "100 pinkkidemonia tapettu";
+SGD_FEAT09 = "150 kadonnutta sielua tapettu";
+SGD_FEAT10 = "200 haulikkozombia tapettu";
+SGD_FEAT11 = "125 imppiä tapettu";
+SGD_FEAT12 = "125 pinkkidemonia tapettu";
+SGD_FEAT13 = "100 haamua tapettu";
+SGD_FEAT14 = "100 cacodemonia tapettu";
+SGD_FEAT15 = "75 Helvetin ritaria tapettu";
+SGD_FEAT16 = "125 haamua tapettu";
+SGD_FEAT17 = "150 cacodemonia tapettu";
+SGD_FEAT18 = "50 arkkipaholaista tapettu";
+SGD_FEAT19 = "50 kommandoa tapettu";
+SGD_FEAT20 = "50 Helvetin ritaria tapettu";
+SGD_FEAT21 = "25 paronia tapettu";
+SGD_FEAT22 = "100 kommandoa tapettu";
+SGD_FEAT23 = "100 Helvetin ritaria tapettu";
+SGD_FEAT24 = "75 paronia tapettu";
+SGD_FEAT25 = "100 paronia tapettu";
+SGD_FEAT26 = "150 revenanttia tapettu";
+SGD_FEAT27 = "100 mancubusta tapettu";
+SGD_FEAT28 = "50 tuskan elementaalia tapettu";
+SGD_FEAT29 = "100 revenanttia tapettu";
+SGD_FEAT30 = "75 arachnotronia tapettu";
+SGD_FEAT31 = "10 mestariaivoa tapettu";
+SGD_FEAT32 = "10 kyberdemonia tapettu";
+SGD_FEAT33 = "100 tuskan elementaalia tapettu";
+SGD_FEAT34 = "25 arkkipaholaista tapettu";
+SGD_FEAT35 = "75 mancubusta tapettu";
+SGD_FEAT36 = "50 arachnotronia tapettu";
+SGD_FEAT37 = "200 kommandoa tapettu";
+SGD_FEAT38 = "75 haamua tapettu";
+SGD_FEAT39 = "75 tuskan elementaalia tapettu";
+
+SGD_UPGRADEAWARDED = "Päivitys saatu: ";
+SGD_UPGRADEALREADYAWARDED = "Päivitys saatu jo: ";
+SGD_UPGRADE_RIFLEACCURACY = "Tarkkuuden parannus kivääriin";
+SGD_UPGRADE_RIFLEFIRERATE = "Ampumanopeuden lisäys kivääriin";
+SGD_UPGRADE_SHOTTYSPREAD = "Hajotuksen pienennys haulikkoon";
+SGD_UPGRADE_SHOTTYRANGE = "Kantaman pidennys haulikkoon";
+SGD_UPGRADE_SSGRECOIL = "Rekyylin vähennys kaksipiippuiseen haulikkoon";
+SGD_UPGRADE_SSGRELSPEED = "Latausnopeuden lisäys kaksipiippuiseen haulikkoon";
+SGD_UPGRADE_MINIGUNACCURACY = "Tarkkuuden parannus minitykkiin";
+SGD_UPGRADE_MINIGUNWINDUP = "Vauhtiinpyörimisajan vähennys minitykkiin";
+SGD_UPGRADE_BAZOOKAFIRERATE = "Ampumanopeuden lisäys sinkoon";
+SGD_UPGRADE_BAZOOKARECOIL = "Rekyylin vähennys sinkoon";
+SGD_UPGRADE_ARGENTCOOLDOWN = "Jäähtymisnopeuden lisäys Argent-kivääriin";
+SGD_UPGRADE_FLAMERLINGER = "Maassa palavat liekit liekinheittimeen";
+SGD_UPGRADE_CHAINSAWDAMAGE = "Vahingon lisäys moottorisahaan";
+
+SGD_WRN_CANTUSEFIELDMED = "Ei voi käyttää kenttälääkintälaukkua nyt!";
+SGD_WRN_BRUTAL = "lakkaa yrittämästä pelata kaikki brutal doomin kanssa mulkku";
+
+SGD_SKILL_VERYEASY = "Slayer in Training";
+SGD_SKILL_EASY = "Fresh Graduate";
+SGD_SKILL_MEDIUM = "Been There, Done That";
+SGD_SKILL_HARD = "Hell Veteran";
+SGD_SKILL_VERYHARD = "Advanced Slayer";
+SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
+
+SGD_WEP_FIST = "Nyrkki";
+SGD_WEP_RIFLE = "Kivääri";
+SGD_WEP_SHOTGUN = "Haulikko";
+SGD_WEP_SSG = "Kaksipiippuinen haulikko";
+SGD_WEP_MINIGUN = "Minitykki";
+SGD_WEP_BAZOOKA = "Sinko";
+SGD_WEP_ARGENTRIFLE = "Argent-kivääri";
+SGD_WEP_FLAMETHROWER = "Liekinheitin";
+SGD_WEP_DMCANNON = "Antimateriatykki";
+SGD_WEP_CHAINSAW = "Moottorisaha";
+
+SGD_AMMO_RIFLEAMMO = "Kiväärin lipas (+8 kiväärin ammusta)";
+SGD_AMMO_SHELLAMMO = "Kourallinen hauleja (+4 haulikon ammusta)";
+SGD_AMMO_SHELLAMMOBIG = "Haulilaatikko (+16 haulikon ammusta)";
+SGD_AMMO_MGAMMO = "Luotilaatikko (+100 minitykin ammusta)";
+SGD_AMMO_BAZOOKAAMMO = "Raketti (+1 singon ammus)";
+SGD_AMMO_BAZOOKAAMMOBIG = "Rakettikasa (+3 singon ammusta)";
+SGD_AMMO_GASAMMO = "Polttoainekanisteri (+30 liekinheittimen ammusta)";
+SGD_AMMO_GASAMMOBIG = "Polttoainetankki (+120 liekinheittimen ammusta)";
+SGD_AMMO_DMCAMMO = "Antimateriakenno (+1 antimateriatykin ammus)";
+
+SGD_ITEM_STIMPACK = "Stim-pakkaus (+10 HP)";
+SGD_ITEM_MEDIKIT = "Lääkintälaukku (+25 HP)";
+SGD_ITEM_GREENARMOR = "Turvaliivi (+100 panssaria)";
+SGD_ITEM_BLUEARMOR = "Sotapanssari (+200 panssaria)";
+
+SGD_ART_HEALTHBONUS = "HP-bonus (+1 HP)";
+SGD_ART_ARMORBONUS = "Panssaribonus (+1 panssaria)";
+SGD_ART_SOULSPHERE = "Soulsphere (+100 HP)";
+SGD_ART_MEGASPHERE = "Megasphere (+200 HP ja panssaria)";
+
+SGD_PU_FIELDMED =
+	"Kenttälääkintälaukku - Kannettava haavojen paikkaus heti tarvittaessa.\n"
+	"Paina 'Käytä esine' -näppäintä käyttääksesi.";
+SGD_PU_HWGRENADE =
+	"Pyhävesikranaatti - Se on kranaatti. Eipä siinä muuta.\n"
+	"Paina 'Käytä esine' -näppäintä käyttääksesi.";
+SGD_PU_DEMONIZER =
+	"Demonisoija - Muutu pysäyttämättömäksi tappokoneeksi minuutin ajaksi!\n"
+	"Paina 'Käytä esine' -näppäintä käyttääksesi.";
+SGD_PU_RADSUIT =
+	"Hazmat-puku - Hyödyntää turvallisen radioaktiivisen jätteen läpi kahlauksen.\n"
+	"Paina 'Käytä esine' -näppäintä käyttääksesi.";
+SGD_PU_LAGOGGLES =
+	"Pimeänäkölasit - Auttavat sinua näkemään pimeässä.\n"
+	"Paina 'Käytä esine' -näppäintä kytkeäksesi päälle tai pois.";
+	
+GOTBLUECARD = "Sininen avainkortti";
+GOTYELWCARD = "Keltainen avainkortti";
+GOTREDCARD = "Punainen avainkortti";
+GOTBLUESKUL = "Sininen pääkalloavain";
+GOTYELWSKUL = "Keltainen pääkalloavain";
+GOTREDSKUL = "Punainen pääkalloavain";
