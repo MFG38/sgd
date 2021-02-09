@@ -108,7 +108,6 @@ class SGDRevenant: SGDMonster replaces Revenant
 			A_GiveToTarget("RevenantsKilled");
 			A_GiveToTarget("FinisherToken",25);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SKEL M 7;
 		SKEL N 7

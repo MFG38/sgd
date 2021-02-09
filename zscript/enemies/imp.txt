@@ -127,7 +127,6 @@ class SGDImp : SGDMonster replaces DoomImp
 			A_GiveToTarget("ImpsKilled");
 			A_GiveToTarget("FinisherToken",12);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		TROO O 5
 		{

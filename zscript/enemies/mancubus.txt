@@ -92,7 +92,6 @@ class SGDMancubus : SGDMonster replaces Fatso
 			A_GiveToTarget("MancubiKilled");
 			A_GiveToTarget("FinisherToken",40);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		FATT L 6
 		{

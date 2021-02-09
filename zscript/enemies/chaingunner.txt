@@ -134,7 +134,6 @@ class SGDChaingunner : SGDMonster replaces ChaingunGuy
 			A_GiveToTarget("ChaingunnersKilled");
 			A_GiveToTarget("FinisherToken",12);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		CPOS P 5
 		{

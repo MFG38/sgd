@@ -131,7 +131,6 @@ class SGDZombieman : SGDMonster replaces ZombieMan
 			A_GiveToTarget("ZombiemenKilled");
 			A_GiveToTarget("FinisherToken",8);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		POSS N 5
 		{

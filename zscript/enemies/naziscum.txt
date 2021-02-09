@@ -124,7 +124,6 @@ class SGDNazi : SGDMonster replaces WolfensteinSS
 		{
 			A_GiveToTarget("FinisherToken",12);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SSWV O 5
 		{

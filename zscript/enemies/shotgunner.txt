@@ -132,7 +132,6 @@ class SGDShotgunner : SGDMonster replaces ShotgunGuy
 			A_GiveToTarget("ShotgunnersKilled");
 			A_GiveToTarget("FinisherToken",8);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		SPOS N 5
 		{

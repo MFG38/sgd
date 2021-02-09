@@ -95,7 +95,6 @@ class SGDArachnotron : SGDMonster replaces Arachnotron
 			A_GiveToTarget("ArachnotronsKilled");
 			A_GiveToTarget("FinisherToken",65);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		BSPI J 20
 		{

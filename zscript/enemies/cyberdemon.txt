@@ -107,8 +107,11 @@ class SGDCyberdemon : SGDMonster replaces Cyberdemon
 		{
 			A_GiveToTarget("CyberdemonsKilled");
 			A_GiveToTarget("FinisherToken",100);
-			for(int a = 0; a < 4; a++) { A_SpawnItemEx("Explosion",random(-16,16),random(-16,16),random(52,80)); }
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
+			
+			for(int a = 0; a < 4; a++)
+			{
+				A_SpawnItemEx("Explosion",random(-16,16),random(-16,16),random(52,80));
+			}
 		}
 		CYBR I 10
 		{

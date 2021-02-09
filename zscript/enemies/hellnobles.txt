@@ -92,7 +92,6 @@ class SGDHellKnight : SGDMonster replaces HellKnight
 			A_GiveToTarget("HellKnightsKilled");
 			A_GiveToTarget("FinisherToken",25);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		BOS2 J  8
 		{
@@ -200,7 +199,6 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 			A_GiveToTarget("BaronsKilled");
 			A_GiveToTarget("FinisherToken",25);
 			A_SpawnItemEx("Explosion",0,0,35);
-			//if(FindInventory("ChainExploder")) { A_RadiusGive("ChainExploder",192,RGF_MONSTERS); }
 		}
 		BOSS J  8
 		{
