@@ -158,7 +158,7 @@ SGD_WEP_MINIGUN = "Minitykki";
 SGD_WEP_BAZOOKA = "Sinko";
 SGD_WEP_ARGENTRIFLE = "Argent-kivääri";
 SGD_WEP_FLAMETHROWER = "Liekinheitin";
-SGD_WEP_DMCANNON = "Antimateriatykki";
+SGD_WEP_DMCANNON = "Pimeäainetykki";
 SGD_WEP_CHAINSAW = "Moottorisaha";
 
 SGD_AMMO_RIFLEAMMO = "Kiväärin lipas (+8 kiväärin ammusta)";
@@ -169,7 +169,7 @@ SGD_AMMO_BAZOOKAAMMO = "Raketti (+1 singon ammus)";
 SGD_AMMO_BAZOOKAAMMOBIG = "Rakettikasa (+3 singon ammusta)";
 SGD_AMMO_GASAMMO = "Polttoainekanisteri (+30 liekinheittimen ammusta)";
 SGD_AMMO_GASAMMOBIG = "Polttoainetankki (+120 liekinheittimen ammusta)";
-SGD_AMMO_DMCAMMO = "Antimateriakenno (+1 antimateriatykin ammus)";
+SGD_AMMO_DMCAMMO = "Pimeäainekenno (+1 pimeäainetykin ammus)";
 
 SGD_ITEM_STIMPACK = "Stim-pakkaus (+10 HP)";
 SGD_ITEM_MEDIKIT = "Lääkintälaukku (+25 HP)";
