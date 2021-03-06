@@ -26,7 +26,7 @@ class SGDPlayer : PlayerPawn
 		DamageFactor "HolyWater", 0.0;
 		DamageFactor "Sploder", 0.0;
 		DamageFactor "ArgentBomb", 0.0;
-		DamageFactor "ShotgunSlug", 0.1;
+		DamageFactor "ShotgunSlug", 0.05;
 	}
 
 	States

@@ -1,4 +1,4 @@
-//#define BLACK_AND_WHITE
+#define BLACK_AND_WHITE
 #define LINES_AND_FLICKER
 #define BLOTCHES
 #define GRAIN
