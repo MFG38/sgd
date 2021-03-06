@@ -140,8 +140,8 @@ SGD_UPGRADE_ARGENTCOOLDOWN = "Jäähtymisnopeuden lisäys Argent-kivääriin";
 SGD_UPGRADE_FLAMERLINGER = "Maassa palavat liekit liekinheittimeen";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Vahingon lisäys moottorisahaan";
 
-SGD_WRN_CANTUSEFIELDMED = "Ei voi käyttää kenttälääkintälaukkua nyt!";
-SGD_WRN_BRUTAL = "lakkaa yrittämästä pelata kaikki brutal doomin kanssa mulkku";
+SGD_WRN_CANTUSEFIELDMED = "Et voi käyttää kenttälääkintälaukkua nyt!";
+SGD_WRN_BRUTAL = "lakkaa yrittämästä ladata kaikki brutal doomin kanssa senkin mulkku";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
