@@ -59,6 +59,10 @@ $limit DMBall/Impact 0
 $limit BHole/Suck 0
 $limit BHole/Explosion 0
 
+drone/spawn					DRONSND
+drone/death					DRONDIE
+drone/explosion				DRONFIRE
+
 fieldmed/use				s_health
 hazmat/warning				hs_rout
 $volume hazmat/warning 0.8

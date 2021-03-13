@@ -95,6 +95,8 @@ by MFG38
 
 Light Amp Visor toggle sound: id Software (Quake III Arena)
 
+Drone sounds: Railbot
+
 
 =============
 == SPRITES ==
@@ -148,6 +150,8 @@ Demonizer morph and Holy Water Pool particle effects: MFG38
 Custom teleport particle effect: MFG38
 
 Light Amp Visor: base sprites by id Software, edited by MFG38
+
+Drone: base sprites by Raven Software, Shadesmaster and Dreadopp, edits by MFG38
 
 
 =========================
