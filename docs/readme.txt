@@ -56,10 +56,10 @@ other IWADs is neither guaranteed nor planned.
 
 Bugs may be reported by the following means:
 
-E-mail:					mfg38thelps@aol.com
-Discord PM:				MFG38#3393
+E-mail:			mfg38thelps@aol.com
+Discord PM:		MFG38#3393
 ZDoom project thread:	http://forum.zdoom.org/viewtopic.php?f=43&t=65490
-ModDB page:				http://www.moddb.com/mods/satanic-gameshow-deluxe
+ModDB page:		http://www.moddb.com/mods/satanic-gameshow-deluxe
 
 If you are sending a bug report by e-mail, please clearly state that you are
 doing so in the e-mail subject line. Make sure to add any relevant attachments,
@@ -101,7 +101,7 @@ See credits.txt for a full credits list.
 7. LINKS
 ========
 
-ModDB page:				http://www.moddb.com/mods/satanic-gameshow-deluxe
-Dropbox folder:			http://www.dropbox.com/sh/l9z06sduajl15b4/AADrbci3mGPdi0SAztq7mRM2a?dl=0
+ModDB page:		http://www.moddb.com/mods/satanic-gameshow-deluxe
+Dropbox folder:		http://www.dropbox.com/sh/l9z06sduajl15b4/AADrbci3mGPdi0SAztq7mRM2a?dl=0
 Google Drive folder:	https://drive.google.com/drive/u/0/folders/1cprX5ZNKHkS_0yT9jBGuLCRdcEf3WNYv
-GitHub repo:			http://github.com/MFG38/sgd
+GitHub repo:		http://github.com/MFG38/sgd
