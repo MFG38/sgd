@@ -56,7 +56,7 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 		}
 		PAIN I 8 BRIGHT A_Scream;
 		PAIN JK 8 BRIGHT;
-		PAIN L 8 BRIGHT; //A_PainDie;
+		PAIN L 8 BRIGHT A_PainDie;
 		PAIN M 8 BRIGHT;
 		Stop;
 	Death.HolyWater:
@@ -68,7 +68,7 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 		}
 		PAIN I 8 BRIGHT A_Scream;
 		PAIN JK 8 BRIGHT;
-		PAIN L 8 BRIGHT; //A_PainDie;
+		PAIN L 8 BRIGHT A_PainDie;
 		PAIN M 8 BRIGHT;
 		Stop;
 	Death.Fire:
@@ -80,7 +80,7 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 		}
 		PAIN I 8 BRIGHT A_Scream;
 		PAIN JK 8 BRIGHT;
-		PAIN L 8 BRIGHT; //A_PainDie;
+		PAIN L 8 BRIGHT A_PainDie;
 		PAIN M 8 BRIGHT;
 		Stop;
 	Death.Sploder:
@@ -98,7 +98,7 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 			A_Explode(666,192,XF_NOTMISSILE);
 		}
 		PAIN JK 8 BRIGHT;
-		PAIN L 8 BRIGHT; //A_PainDie;
+		PAIN L 8 BRIGHT A_PainDie;
 		PAIN M 8 BRIGHT;
 		Stop;
 	Raise:

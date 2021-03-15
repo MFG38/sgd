@@ -23,7 +23,6 @@
 - Decreased pain chance from holy water damage for Archviles, Cyberdemons and Spider Masterminds.
 - Decreased pain chance from fire damage for Archviles.
 - Added Finnish translation.
-- Removed calls to A_PainDie from the Pain Elemental's Death states.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.
