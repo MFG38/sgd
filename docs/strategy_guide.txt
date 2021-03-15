@@ -98,7 +98,7 @@ Available Upgrades:	Range increase
 
 Finishers:		Level 1: Railgun-style penetrating slug
 			Level 2: 3 bouncy penetrating slugs
-			Level 3: TBD
+			Level 3: Deploys a slug-shooting defense drone
 
 The Shotgun is the weapon of choice of many marines who favor close-quarters combat. Even the biggest and baddest demons
 flinch at the hole this boomstick makes into their chests. Many marines, however, have complained at the Shotgun's high
