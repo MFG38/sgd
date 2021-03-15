@@ -64,8 +64,8 @@ Damage:			Low
 Max. Capacity:		N/A
 Available Upgrades:	N/A
 
-Finishers:		Level 1: swift forward kick
-			Level 2: forward kick with chain exploder
+Finishers:		Level 1: Swift forward kick
+			Level 2: Forward kick with chain exploder
 			Level 3: 5-second time stop
 
 They're your hands. They're sort of puny. 'Nuff said.
@@ -149,9 +149,9 @@ Max. Capacity:		45
 Available Upgrades:	Fire rate increase
 			Recoil reduction
 
-Finishers:		Level 1: volley of 3 homing rockets
-			Level 2: volley of 5 homing rockets
-			Level 3: air strike (works best when aimed at the ground)
+Finishers:		Level 1: Volley of 3 homing rockets
+			Level 2: Volley of 5 homing rockets
+			Level 3: Air strike (works best when aimed at the ground)
 
 One of the few explosive-based weapons from UAC's armory, the Bazooka fires micro-nukes powerful enough to make a
 cyberdemon flinch. Using it takes some strong legs, however, as the recoil can easily knock a less fit marine on their
@@ -167,9 +167,9 @@ Damage:			Medium
 Max. Capacity:		450
 Available Upgrades:	Lingering flames
 
-Finishers:		Level 1: flame wall
-			Level 2: sentient heat-seeking flame wall with "afterburner"
-			Level 3: concentrated fire beam
+Finishers:		Level 1: Flame wall
+			Level 2: Sentient heat-seeking flame wall with "afterburner"
+			Level 3: Concentrated fire beam
 
 What happens when you combine the tracing technology of the BFG-9000 and literal fire? This experimental flamethrower.
 What the UAC were thinking when they developed this weapon, no one will ever know - not that the marines are complaining.
@@ -183,7 +183,7 @@ Damage:			Medium
 Max. Capacity:		N/A
 Available Upgrades:	Cooldown rate increase
 
-Finishers:		Level 1: laser beam
+Finishers:		Level 1: Laser beam
 			Level 2: 3 spread laser beams
 			Level 3: Argent bomb
 
