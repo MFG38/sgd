@@ -172,7 +172,7 @@ class HelperDrone : Actor
 		Radius 13;
 		Height 22;
 		Speed 15;
-		Mass 500;
+		Mass 5000;
 		DeathSound "drone/explosion";
 		+SOLID;
 		+SHOOTABLE;
@@ -183,7 +183,7 @@ class HelperDrone : Actor
 		+FRIENDLY;
 		+DONTFALL;
 		+NOBLOOD;
-		+NOTELEPORT;
+		+NOTELEPORT;	// Because we don't want the drones to disappear "mysteriously".
 	}
 	
 	States
