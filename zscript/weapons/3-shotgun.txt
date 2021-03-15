@@ -168,7 +168,7 @@ class HelperDrone : Actor
 {
 	Default
 	{
-		Health 300;
+		Health 450;
 		Radius 13;
 		Height 22;
 		Speed 15;
@@ -183,6 +183,7 @@ class HelperDrone : Actor
 		+FRIENDLY;
 		+DONTFALL;
 		+NOBLOOD;
+		+NOTELEPORT;
 	}
 	
 	States
@@ -216,7 +217,7 @@ class HelperDrone : Actor
 		TNT1 A 1
 		{
 			A_ScreamAndUnblock();
-			A_SpawnItemEx("Explosion");
+			A_SpawnItemEx("Explosion",0,0,30);
 			A_Explode(320,128);
 		}
 		Stop;
