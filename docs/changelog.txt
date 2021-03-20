@@ -20,8 +20,8 @@
 - Modified the behavior of the Light Amp Goggles.
 - Tweaked the behavior of the Holy Water Grenade.
 - Updated cvar checks to the recommended ZScript method.
-- Decreased pain chance from holy water damage for Archviles, Cyberdemons and Spider Masterminds.
-- Decreased pain chance from fire damage for Archviles.
+- Decreased pain chance from Holy Water damage for Archviles, Cyberdemons and Spider Masterminds.
+- Decreased pain chance from Fire damage for Archviles.
 - Added Finnish translation.
 
 [09-01-2020] v1.4:
