@@ -16,7 +16,8 @@ Parts of Brutal Doom event handler code by Marisa Kirisame
 
 StatusBarScreen API by Lewisk3
 
-Old Video shader originally by jmpep, ported to GZDoom by Nash Muhandes
+Old Video shader originally by jmpep, ported to GZDoom by Nash Muhandes, modified where
+seen fit by MFG38
 
 
 ==============
@@ -25,8 +26,8 @@ Old Video shader originally by jmpep, ported to GZDoom by Nash Muhandes
 
 HUD font: id Software, randi, Jimmy
 
-All other graphics: MFG38 (some inventory icons are edited from sprites: see the
-"SPRITES" section for sprite credits)
+All other graphics: MFG38 (Some inventory icons are edited from sprites: see the
+"SPRITES" section for sprite credits.)
 
 
 =============
