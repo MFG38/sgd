@@ -335,36 +335,4 @@ extend class SGDShotgun
 		SpawnPlayerMissile("ShotgunBouncySlug",angle+ang);
 		ACS_NamedExecute("FeatTracker",0);
 	}
-	
-	action void A_ShotgunFinisher()
-	{
-		if (player == null)
-		{
-			return;
-		}
-
-		Weapon weap = player.ReadyWeapon;
-		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
-		{
-			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
-			{
-				return;
-			}	
-			player.SetPsprite(PSP_FLASH, weap.FindState('Flash'), true);
-		}
-		player.mo.PlayAttacking2 ();
-
-		A_AlertMonsters();
-		A_StartSound("DukeShotgun/fire",CHAN_WEAPON);
-
-		for(int i = 0; i < 16; i++)
-		{
-			int dmg = 20;
-			double xspread = angle + random2() * (21.75 / 256);
-			double yspread = pitch + random2() * (6.875 / 256);
-			
-			LineAttack(xspread,512,yspread,dmg,'Normal',"BulletPuff");
-		}
-		ACS_NamedExecute("FeatTracker",0);
-	}
 }
