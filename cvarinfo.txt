@@ -4,7 +4,7 @@ user noarchive bool sgd_debugmode = false;
 user int sgd_finisherprompt = 2;		// 0 = Off, 1 = No button prompt, 2 = Full
 user bool sgd_displayfbar = true;
 user bool sgd_displayhsbar = true;
-user bool sgd_displayvisortime = true;		// Unused, but keeping this around just in case.
+user bool sgd_displayvisortime = true;		// Unused atm, but keeping this around just in case.
 
 user bool sgd_lowhpflash_on = true;
 user float sgd_lowhpflash_int = 0.25;
@@ -13,7 +13,7 @@ user int sgd_lowhpflash_thres = 25;
 // Visual stuff
 user bool sgd_spawntrails = true;
 user bool sgd_fancyteleport = true;
-server bool sgd_propdynlights = true;
+user bool sgd_propdynlights = true;
 
 // Enemy stuff
 server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
