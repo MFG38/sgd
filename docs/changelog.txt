@@ -23,6 +23,8 @@
 - Decreased pain chance from Holy Water damage for Archviles, Cyberdemons and Spider Masterminds.
 - Decreased pain chance from Fire damage for Archviles.
 - Added Finnish translation.
+- Made dynamic lights emitted by light source props togglable (via the sgd_propdynlights cvar).
+- Removed flat glows.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.

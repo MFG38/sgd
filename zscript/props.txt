@@ -1,0 +1,274 @@
+class SGDTechLamp : TechLamp replaces TechLamp
+{
+	States
+	{
+	SpawnDynL:
+		TLMP ABCD 4 Light("L_TechLamp");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDTechLamp2 : TechLamp2 replaces TechLamp2
+{
+	States
+	{
+	SpawnDynL:
+		TLP2 ABCD 4 Light("L_TechLamp2");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDColumn : Column replaces Column
+{
+	States
+	{
+	SpawnDynL:
+		COLU A -1 Light("L_Column");
+		Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDCandlestick : Candlestick replaces Candlestick
+{
+	States
+	{
+	SpawnDynL:
+		CAND A -1 Light("L_Candlestick");
+		Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDCandelabra : Candelabra replaces Candelabra
+{
+	States
+	{
+	SpawnDynL:
+		CBRA A -1 Light("L_Candelabra");
+		Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDBlueTorch : BlueTorch replaces BlueTorch
+{
+	States
+	{
+	SpawnDynL:
+		TBLU ABCD 4 Light("L_BlueTorch");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDGreenTorch : GreenTorch replaces GreenTorch
+{
+	States
+	{
+	SpawnDynL:
+		TGRN ABCD 4 Light("L_GreenTorch");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDRedTorch : RedTorch replaces RedTorch
+{
+	States
+	{
+	SpawnDynL:
+		TRED ABCD 4 Light("L_RedTorch");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDShortBlueTorch : ShortBlueTorch replaces ShortBlueTorch
+{
+	States
+	{
+	SpawnDynL:
+		SMBT ABCD 4 Light("L_ShortBlueTorch");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDShortGreenTorch : ShortGreenTorch replaces ShortGreenTorch
+{
+	States
+	{
+	SpawnDynL:
+		SMGT ABCD 4 Light("L_ShortGreenTorch");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
+
+class SGDShortRedTorch : ShortRedTorch replaces ShortRedTorch
+{
+	States
+	{
+	SpawnDynL:
+		SMRT ABCD 4 Light("L_ShortRedTorch");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}

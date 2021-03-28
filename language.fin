@@ -27,6 +27,7 @@ SGD_SUBTTL_CONTROLS2 = "Powerup-pikanäppäimet (vaihtoehtoinen)";
 SGD_OM_PROJTRAILS = "Näytä projektiilien hännät (*)";
 SGD_OM_PROJTRAILSNOTICE = "(Ei vaikuta luotien häntiin)";
 SGD_OM_FANCYTELE = "Hieno teleporttiefekti";
+SGD_OM_PROPLIGHTS = "Dynaamiset valot valonlähteistä";
 
 SGD_OM_FINISHERBAR = "Näytä finisher-palkki";
 SGD_OM_FMSGTYPE = "Finisher-viestin tyyppi";

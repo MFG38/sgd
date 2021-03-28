@@ -85,8 +85,6 @@ flickerlight2 L_BlueTorch
 	attenuate 1
 }
 
-object BlueTorch { frame TBLU { light L_BlueTorch }}
-
 flickerlight2 L_GreenTorch
 {
 	color 0.0 1.0 0.1
@@ -96,8 +94,6 @@ flickerlight2 L_GreenTorch
 	offset 0 60 0
 	attenuate 1
 }
-
-object GreenTorch { frame TGRN { light L_GreenTorch }}
 
 flickerlight2 L_RedTorch
 {
@@ -109,8 +105,6 @@ flickerlight2 L_RedTorch
 	attenuate 1
 }
 
-object RedTorch { frame TRED { light L_RedTorch }}
-
 flickerlight2 L_ShortBlueTorch
 {
 	color 0.0 0.25 1.0
@@ -120,8 +114,6 @@ flickerlight2 L_ShortBlueTorch
 	offset 0 35 0
 	attenuate 1
 }
-
-object ShortBlueTorch { frame SMBT { light L_ShortBlueTorch }}
 
 flickerlight2 L_ShortGreenTorch
 {
@@ -133,8 +125,6 @@ flickerlight2 L_ShortGreenTorch
 	attenuate 1
 }
 
-object ShortGreenTorch { frame SMGT { light L_ShortGreenTorch }}
-
 flickerlight2 L_ShortRedTorch
 {
 	color 1.0 0.5 0.0
@@ -145,8 +135,6 @@ flickerlight2 L_ShortRedTorch
 	attenuate 1
 }
 
-object ShortRedTorch { frame SMRT { light L_ShortRedTorch }}
-
 pointlight L_Column
 {
 	color 1.0 1.0 0.85
@@ -154,8 +142,6 @@ pointlight L_Column
 	offset 0 44 0
 	attenuate 1
 }
-
-object Column { frame COLU { light L_Column }}
 
 pointlight L_TechLamp
 {
@@ -165,8 +151,6 @@ pointlight L_TechLamp
 	attenuate 1
 }
 
-object TechLamp { frame TLMP { light L_TechLamp }}
-
 pointlight L_TechLamp2
 {
 	color 0.85 0.85 1.0
@@ -174,8 +158,6 @@ pointlight L_TechLamp2
 	offset 0 44 0
 	attenuate 1
 }
-
-object TechLamp2 { frame TLP2 { light L_TechLamp2 }}
 
 pointlight L_Candlestick
 {
@@ -185,8 +167,6 @@ pointlight L_Candlestick
 	attenuate 1
 }
 
-object Candlestick { frame CAND { light L_Candlestick }}
-
 flickerlight2 L_Candelabra
 {
 	color 1.0 1.0 0.25
@@ -195,25 +175,4 @@ flickerlight2 L_Candelabra
 	interval 0.1
 	offset 0 50 0
 	attenuate 1
-}
-
-object Candelabra { frame CBRA { light L_Candelabra }}
-
-
-//////////////////////
-// VANILLA TEXTURES //
-//////////////////////
-
-glow
-{
-	texture "BLOOD1", FF0000, 12, fullbright
-	texture "BLOOD2", FF0000, 12, fullbright
-	texture "BLOOD3", FF0000, 12, fullbright
-	texture "LAVA1", CC5F00, 28, fullbright
-	texture "LAVA2", CC5F00, 28, fullbright
-	texture "LAVA3", CC5F00, 28, fullbright
-	texture "LAVA4", CC5F00, 28, fullbright
-	texture "NUKAGE1", 008800, 16, fullbright
-	texture "NUKAGE2", 008800, 16, fullbright
-	texture "NUKAGE3", 008800, 16, fullbright
 }

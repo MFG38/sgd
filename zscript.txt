@@ -5,6 +5,7 @@ version "4.3"
 #include "zscript/player.txt"
 #include "zscript/effects.txt"
 #include "zscript/misc.txt"
+#include "zscript/props.txt"
 
 #include "zscript/StatusScreen_base.txt"	// StatusBarScreen API by Lewisk3
 

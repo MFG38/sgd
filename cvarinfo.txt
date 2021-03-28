@@ -13,6 +13,7 @@ user int sgd_lowhpflash_thres = 25;
 // Visual stuff
 user bool sgd_spawntrails = true;
 user bool sgd_fancyteleport = true;
+server bool sgd_propdynlights = true;
 
 // Enemy stuff
 server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
