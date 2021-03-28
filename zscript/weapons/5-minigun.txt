@@ -108,12 +108,12 @@ extend class SGDMinigun
 		A_StartSound("minigun/windup",CHAN_WEAPON);
 		A_AlertMonsters(384);
 	}
-	
+
 	action void A_MinigunWindDown()
 	{
-		A_StartSound("minigun/winddown",CHAN_AUTO);
+		A_StartSound("minigun/winddown",CHAN_5);
 	}
-	
+
 	action void A_MinigunFire()
 	{
 		if (player == null)
@@ -153,7 +153,7 @@ extend class SGDMinigun
 		LineAttack(xspread,768,yspread,dmg,'Normal',"BulletPuff");
 		ACS_NamedExecute("FeatTracker",0);
 	}
-	
+
 	action void A_MinigunFinisher(int bullets)
 	{
 		if (player == null)

@@ -48,7 +48,7 @@ Damage:			Medium
 Max. Capacity:		N/A
 Available Upgrades:	Damage increase
 
-Finishers:		Level 1: TBD
+Finishers:		Level 1: Rapid-fire volley of nails
 			Level 2: TBD
 			Level 3: TBD
 
