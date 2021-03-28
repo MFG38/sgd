@@ -27,7 +27,7 @@ SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
 SGD_OM_PROJTRAILS = "Spawn projectile trails (*)";
 SGD_OM_PROJTRAILSNOTICE = "(Does not affect bullet trails)";
 SGD_OM_FANCYTELE = "Fancy teleport effect";
-SGD_OM_PROPLIGHTS = "Light source dynamic lights";
+SGD_OM_PROPLIGHTS = "Light source dynamic lights (*)";
 
 SGD_OM_FINISHERBAR = "Display finisher bar";
 SGD_OM_FMSGTYPE = "Finisher message type";
