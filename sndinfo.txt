@@ -9,6 +9,7 @@ chainsaw/up					MAGSREA1
 chainsaw/idle				MAGSREA2
 chainsaw/attack				MAGSATT1
 chainsaw/hit				MAGSATT2
+chainsaw/nailfire			NAILFIRE
 chainsaw/nailhit			NAILHIT
 
 DSMGUN1						DSMGUN1

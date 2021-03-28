@@ -72,8 +72,9 @@ class ChainsawNail : Actor
 		Radius 3;
 		Height 3;
 		Speed 45;
-		DamageFunction (4);
-		Scale 0.5;
+		DamageFunction (20 + (random(0,2) * 2));
+		Scale 0.75;
+		DeathSound "chainsaw/nailhit";
 	}
 
 	States
@@ -83,7 +84,6 @@ class ChainsawNail : Actor
 		Loop;
 	Crash:
 	Death:
-		NLPJ B 0 A_StartSound("chainsaw/nailhit");
 		NLPJ BCDEFG 2;
 		Stop;
   }
@@ -133,6 +133,7 @@ extend class SGDChainsaw
 	
 	action void A_FireNail()
 	{
+		A_StartSound("chainsaw/nailfire",CHAN_5);
 		SpawnPlayerMissile("ChainsawNail");
 	}
 }
