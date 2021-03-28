@@ -66,12 +66,15 @@ class SGDChainsaw : SGDWeapon
 
 class ChainsawNail : Actor
 {
-	PROJECTILE;
-	Radius 3;
-	Height 3;
-	Speed 45;
-	DamageFunction (4);
-	Scale 0.5;
+	Default
+	{
+		PROJECTILE;
+		Radius 3;
+		Height 3;
+		Speed 45;
+		DamageFunction (4);
+		Scale 0.5;
+	}
 
 	States
 	{
