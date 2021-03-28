@@ -12,6 +12,9 @@ ZScript and modified where seen fit by MFG38
 Parts of Dark Matter Cannon DECORATE code by Gothic, converted to ZScript and
 modified where seen fit by MFG38
 
+Chainsaw nail DECORATE code by TheShooter7 and Mechadon, converted to ZScript and
+modified where seen fit by MFG38
+
 Parts of Brutal Doom event handler code by Marisa Kirisame
 
 StatusBarScreen API by Lewisk3
@@ -98,6 +101,8 @@ Light Amp Visor toggle sound: id Software (Quake III Arena)
 
 Drone sounds: Railbot
 
+Chainsaw nail hit sound: id Software, Raven Software
+
 
 =============
 == SPRITES ==
@@ -153,6 +158,8 @@ Custom teleport particle effect: MFG38
 Light Amp Visor: base sprites by id Software, edited by MFG38
 
 Drone: base sprites by Raven Software, Shadesmaster and Dreadopp, edits by MFG38
+
+Chainsaw nails: Mechadon
 
 
 =========================
