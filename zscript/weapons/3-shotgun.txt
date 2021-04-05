@@ -85,6 +85,7 @@ class ShotgunSlug : Actor
 		Height 8;
 		Speed 50;
 		DamageFunction 128 + (random(0,4) * 16);
+		DamageType "ShotgunSlug";
 		Renderstyle "Translucent";
 		Alpha 0.8;
 		PROJECTILE;
