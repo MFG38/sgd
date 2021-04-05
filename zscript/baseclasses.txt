@@ -96,6 +96,7 @@ class FakePowerup : PowerDamage
 		DamageFactor "HolyWater", 1.0;
 		DamageFactor "Sploder", 1.0;
 		DamageFactor "ArgentBomb", 1.0;
+		DamageFactor "ShotgunSlug", 1.0;
 		Powerup.Duration 0x7FFFFFFD;
 	}
 }
@@ -105,6 +106,7 @@ class SGDMonster : Actor
 	Default
 	{
 		PainChance "HolyWater", 255;
+		PainChance "ShotgunSlug", 255;
 		PainChance "Fire", 200;
 		PainChance "Sploder", 200;
 		PainChance "ArgentBomb", 200;
