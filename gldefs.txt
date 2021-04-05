@@ -176,3 +176,13 @@ flickerlight2 L_Candelabra
 	offset 0 50 0
 	attenuate 1
 }
+
+flickerlight2 L_HeadCandles
+{
+    color 1.0 1.0 0.3
+    size 48
+    secondarySize 51
+    interval 0.1
+    offset 0 24 0
+	attenuate 1
+}

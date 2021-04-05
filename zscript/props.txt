@@ -272,3 +272,28 @@ class SGDShortRedTorch : ShortRedTorch replaces ShortRedTorch
 		}
 	}
 }
+
+class SGDHeadCandles : HeadCandles replaces HeadCandles
+{
+	States
+	{
+	SpawnDynL:
+		POL3 AB 6 Light("L_HeadCandles");
+		Loop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_propdynlights').GetBool())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("SpawnDynL");
+			break;
+		}
+	}
+}
