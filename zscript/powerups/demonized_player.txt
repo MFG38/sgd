@@ -114,10 +114,6 @@ class DemonizedFists : SGDWeapon
 		PUCH E 1;
 		PUCH R 1;
 		PUCH K 1;
-		/* {
-			A_GiveInventory("FistSwitcher",1);
-			A_ReFire();
-		} */
 		Goto ReadyLoop;
 	Punch2:
 		PUCH F 1 A_StartSound("fist/swing",CHAN_WEAPON);
@@ -129,10 +125,6 @@ class DemonizedFists : SGDWeapon
 		PUCH Q 1;
 		PUCH J 1;
 		PUCH K 1;
-		/* {
-			A_TakeInventory("FistSwitcher",1);
-			A_ReFire();
-		} */
 		Goto ReadyLoop;
 	AltFire:	// Overriding since finishers are unnecessary for this weapon.
 		PUCH A 0;
