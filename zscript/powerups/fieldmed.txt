@@ -9,7 +9,6 @@ class FieldMedPack : CustomInventory
 		Inventory.ForbiddenTo "DemonizedPlayer";
 		+INVENTORY.INVBAR;
 		+INVENTORY.UNDROPPABLE;
-		//+INVENTORY.IGNORESKILL;
 	}
 
 	States
@@ -44,7 +43,6 @@ class FieldMedPack : CustomInventory
 			{
 				A_Log(StringTable.Localize("$SGD_WRN_CANTUSEFIELDMED"));
 			}
-			//ACS_NamedExecute("FieldMedHeal",0);
 		}
 		Fail;
 	}
