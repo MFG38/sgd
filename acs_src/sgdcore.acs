@@ -185,7 +185,7 @@ script "FTokenDecay" ENTER
 	Restart;
 }
 
-script "FieldMedHeal" (void)
+/* script "FieldMedHeal" (void)
 {
 	int CurHealth = GetActorProperty(PL_TIDSTART+PlayerNumber(),APROP_HEALTH);
 	int MaxHealth = GetActorProperty(PL_TIDSTART+PlayerNumber(),APROP_SPAWNHEALTH);
@@ -197,7 +197,7 @@ script "FieldMedHeal" (void)
 		
 		if(CheckInventory("FieldMedPack") <= AmtToHeal)
 		{
-			/* if(GameSkill() == 6)	// Jesus, what a workaround. Still not perfect, but close enough.
+			if(GameSkill() == 6)	// Jesus, what a workaround. Still not perfect, but close enough.
 			{
 				GiveInventory("Health",CheckInventory("FieldMedPack") + (CheckInventory("FieldMedPack") / 3));
 				TakeInventory("FieldMedPack",CheckInventory("FieldMedPack"));
@@ -206,13 +206,13 @@ script "FieldMedHeal" (void)
 			{
 				GiveInventory("Health",CheckInventory("FieldMedPack"));
 				TakeInventory("FieldMedPack",CheckInventory("FieldMedPack"));
-			} */
+			}
 			GiveInventory("Health",CheckInventory("FieldMedPack"));
 			TakeInventory("FieldMedPack",CheckInventory("FieldMedPack"));
 		}
 		else
 		{
-			/* if(GameSkill() == 6)
+			if(GameSkill() == 6)
 			{
 				GiveInventory("Health",AmtToHeal + (AmtToHeal / 3));
 				TakeInventory("FieldMedPack",AmtToHeal);
@@ -221,18 +221,18 @@ script "FieldMedHeal" (void)
 			{
 				GiveInventory("Health",AmtToHeal);
 				TakeInventory("FieldMedPack",AmtToHeal);
-			} */
+			}
 			GiveInventory("Health",AmtToHeal);
 			TakeInventory("FieldMedPack",AmtToHeal);
 		}
 	}
-}
+} */
 
 ///////////
 // MISC. //
 ///////////
 
-script "InitFinisher" (int freeze)	// Why can't booleans work in these?
+/* script "InitFinisher" (int freeze)	// Why can't booleans work in these?
 {
 	GiveInventory("FinisherInvul",1);
 	TakeInventory("FinisherToken",ALL);
@@ -247,6 +247,18 @@ script "EndFinisher" (void)
 {
 	TakeInventory("FinisherInvul",1);
 	SetPlayerProperty(0,0,PROP_FROZEN);
+} */
+
+script "FistFinisher3Timer" (void)
+{
+	while(CheckInventory("FistFinisherTimer") > 0)
+	{
+		TakeInventory("FistFinisherTimer",1);
+		Delay(1);
+	}
+	
+	TakeInventory("FinisherInvul",1);
+	TakeInventory("FistFinisherTimeFreeze",1);
 }
 
 script "Demonizer_SoundAndVision" (void)
@@ -292,11 +304,19 @@ script "GoggleTaker" (void)
 {
 	while(CheckInventory("GogglesActive"))
 	{
-		TakeInventory("SGDLightAmpGoggles",1);
-		Delay(42);
+		TakeInventory("GoggleTimer",1);
+		if(CheckInventory("GoggleTimer") % 42 == 0)
+		{
+			TakeInventory("SGDLightAmpGoggles",1);
+		}
+		Delay(1);
+		
+		if(CheckInventory("GoggleTimer") == 0)
+		{
+			TakeInventory("LightAmpGogglesGiver",1);
+			TakeInventory("GogglesActive",1);
+		}
 	}
-	TakeInventory("LightAmpGogglesGiver",1);
-	TakeInventory("GogglesActive",1);
 }
 
 script "LowHealthFlash" ENTER

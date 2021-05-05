@@ -1,4 +1,4 @@
-// These used to be in DECORATE, but I decided to convert them over to ZSCript in
+// These used to be in DECORATE, but I decided to convert them over to ZScript in
 // case of problems caused by mixing the two.
 
 class Counter : Inventory
@@ -7,7 +7,7 @@ class Counter : Inventory
 {
 	Default
 	{
-		inventory.maxamount 0x7FFFFFFF;
+		Inventory.MaxAmount 0x7FFFFFFF;
 		+INVENTORY.UNDROPPABLE;
 		//-INVENTORY.INVBAR;
 	}
@@ -17,7 +17,7 @@ class Boolean : Inventory
 {
 	Default
 	{
-		inventory.maxamount 1;
+		Inventory.MaxAmount 1;
 		+INVENTORY.UNDROPPABLE;
 		//-INVENTORY.INVBAR;
 	}
@@ -25,10 +25,8 @@ class Boolean : Inventory
 
 class FinisherToken : Counter
 {
-	Default { inventory.maxamount 1000; }
+	Default { Inventory.MaxAmount 1000; }
 }
-
-//class FinisherInProgress : Boolean {}
 
 class ZombiemenKilled : Counter {}
 class ShotgunnersKilled : Counter {}
@@ -48,25 +46,9 @@ class ArchvilesKilled : Counter {}
 class CyberdemonsKilled : Counter {}
 class SpiderMastermindsKilled : Counter {}
 
-//class SecretsFound : Counter {}
-
-//class FistSwitcher : Boolean {}
-
-//class DemonizerIsActive : Boolean {}
-
-class FistFinisherThrustScaler : Counter
+class FistFinisherTimer : Counter
 {
-	Default { Inventory.MaxAmount 3; }
-}
-
-class SSGFinisherDamageScaler : Counter
-{
-	Default { Inventory.MaxAmount 3; }
-}
-
-class MinigunFinisherBulletScaler : Counter
-{
-	Default { Inventory.MaxAmount 6; }
+	Default { Inventory.MaxAmount 175; }
 }
 
 class DemonizerTimer : Counter
@@ -77,6 +59,11 @@ class DemonizerTimer : Counter
 class RadSuitTimer : Counter
 {
 	Default { Inventory.MaxAmount 2100; }
+}
+
+class GoggleTimer : Counter
+{
+	Default { Inventory.MaxAmount 4200; }
 }
 
 class GogglesActive : Boolean {}

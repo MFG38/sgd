@@ -53,48 +53,28 @@ class SGDWeapon : Weapon
 	}
 }
 
-/* class SGDWeaponPickup : CustomInventory
-// This was a bad idea.
+extend class SGDWeapon
 {
-	// Custom properties
-	class<Inventory> WeaponClass;
-	class<Inventory> AmmoClass;
-	int AmmoAmount;
-	int ACSVal;
-
-	property GiveWeapon: WeaponClass;
-	property GiveAmmo: AmmoClass, AmmoAmount;
-	property ACSNumber: ACSVal;
-
-	Default
+	action void A_BeginFinisher(bool freeze)
 	{
-		Inventory.MaxAmount 0;
-		Inventory.PickupSound "misc/wpnpickup";
-		Inventory.ForbiddenTo "DemonizedPlayer";
-
-		// Custom property defaults
-		SGDWeaponPickup.GiveWeapon "SGDRifle";
-		SGDWeaponPickup.GiveAmmo "RifleAmmo", 8;
-		SGDWeaponPickup.ACSNumber 2;
-	}
-
-	States
-	{
-	Pickup:
-		TNT1 A 0
+		A_TakeInventory("FinisherToken",0x7FFFFFFF);
+		A_GiveInventory("FinisherInvul",1);
+		if(freeze)
 		{
-			let fuck = SGDWeaponPickup(self);
-			
-			if(fuck)
-			{
-				A_GiveInventory(fuck.WeaponClass);
-				A_GiveInventory(fuck.AmmoClass,fuck.AmmoAmount);
-				ACS_NamedExecute("",0,fuck.ACSVal);
-			}
+			A_Stop();
+			A_GiveInventory("FinisherFreeze",1);
 		}
-		Stop;
 	}
-} */
+	
+	action void A_EndFinisher()
+	{
+		A_TakeInventory("FinisherInvul",1);
+		if(FindInventory("FinisherFreeze"))
+		{
+			A_TakeInventory("FinisherFreeze",1);
+		}
+	}
+}
 
 class WeaponUpgrade : Inventory
 {
@@ -114,6 +94,9 @@ class FakePowerup : PowerDamage
 		DamageFactor "Normal", 1.0;
 		DamageFactor "Fire", 1.0;
 		DamageFactor "HolyWater", 1.0;
+		DamageFactor "Sploder", 1.0;
+		DamageFactor "ArgentBomb", 1.0;
+		DamageFactor "ShotgunSlug", 1.0;
 		Powerup.Duration 0x7FFFFFFD;
 	}
 }
@@ -123,10 +106,28 @@ class SGDMonster : Actor
 	Default
 	{
 		PainChance "HolyWater", 255;
+		PainChance "ShotgunSlug", 255;
 		PainChance "Fire", 200;
+		PainChance "Sploder", 200;
+		PainChance "ArgentBomb", 200;
 		MONSTER;
 		+FLOORCLIP;
 		+MISSILEMORE;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		switch(CVar.FindCVar('sgd_spawnbehavior').GetInt())
+		{
+		case 0:
+			SetStateLabel("Spawn");
+			break;
+		case 1:
+			SetStateLabel("AltSpawn");
+			break;
+		}
 	}
 }
 
@@ -139,7 +140,7 @@ extend class SGDMonster
 			A_FaceTarget();
 			double ang = angle;
 			double slope = AimLineAttack(ang, MISSILERANGE);
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			ang  += Random2[PosAttack]() * (22.5/256);
 			int damage = Random[PosAttack](1, 5) * 3;
 			LineAttack(ang, MISSILERANGE, slope, damage, "Hitscan", "Bulletpuff");
@@ -150,7 +151,7 @@ extend class SGDMonster
 	{
 		if(target)
 		{
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			angle += random2() * (22.5 / 256);
 			SpawnMissileAngle("ZombiemanBullet",angle,0);
 		}
@@ -160,7 +161,7 @@ extend class SGDMonster
 	{
 		if(target)
 		{
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			
 			for(int i = 0; i < 3; i++)
 			{
@@ -174,7 +175,7 @@ extend class SGDMonster
 	{
 		if(target)
 		{
-			A_PlaySound(AttackSound);
+			A_StartSound(AttackSound);
 			angle += random2() * (22.5 / 256);
 			SpawnMissileAngle("ZombiemanBullet",angle,0);
 		}

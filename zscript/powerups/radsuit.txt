@@ -1,4 +1,4 @@
-class SGDRadSuit : CustomInventory replaces RadSuit
+class SGDRadSuit : CustomInventory
 {
 	Default
 	{

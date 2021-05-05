@@ -1,4 +1,4 @@
-class SGDBazooka : SGDWeapon replaces RocketLauncher
+class SGDBazooka : SGDWeapon
 {
 	Default
 	{
@@ -42,16 +42,16 @@ class SGDBazooka : SGDWeapon replaces RocketLauncher
 		HSML A 0;
 		Goto ReadyLoop;
 	Finisher1:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		HSML B 0 A_BazookaSeeker(-4.0);
 		HSML B 0 A_BazookaSeeker(0.0);
 		HSML B 4 A_BazookaSeeker(4.0);
 		HSML CD 4;
 		HSML A 10;
-		HSML A 0 ACS_NamedExecute("EndFinisher",0);
+		HSML A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		HSML B 0 A_BazookaSeeker(-8.0);
 		HSML B 0 A_BazookaSeeker(-4.0);
 		HSML B 0 A_BazookaSeeker(0.0);
@@ -59,14 +59,13 @@ class SGDBazooka : SGDWeapon replaces RocketLauncher
 		HSML B 4 A_BazookaSeeker(8.0);
 		HSML CD 4;
 		HSML A 10;
-		HSML A 0 ACS_NamedExecute("EndFinisher",0);
+		HSML A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,1);
-		HSML A 16 A_SpawnItemEx("AirStrikeDummyMarker",320,0,0);
-		HSML AAAAAAAAAAAAAAAAAAAA 3 A_SpawnItemEx("BazookaAirStrikeRocket",320+(random(-8,8)*8),random(-8,8)*8,96,0,0,-24);
-		HSML A 5;
-		HSML A 0 ACS_NamedExecute("EndFinisher",0);
+		TNT1 A 0 A_BeginFinisher(false);
+		//HSML A 0 A_StartSound("bazooka/airstrike");
+		HSML A 16 A_FireProjectile("AirStrikeLocator");
+		HSML A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }
@@ -86,7 +85,7 @@ class BazookaRocket : Actor
 	States
 	{
 	Spawn:
-		HRKT A 1 { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }}
+		HRKT A 1 { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }}
 		Loop;
 	Death:
 		FX08 A 0 A_Explode(150,112);
@@ -109,7 +108,7 @@ class BazookaSeeker : BazookaRocket
 		HRKT A 1
 		{
 			A_SeekerMissile(15,20,SMF_LOOK|SMF_PRECISE,128,8);
-			if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }
+			if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-24,0,-vel.z); }
 		}
 		Loop;
 	}
@@ -122,29 +121,45 @@ class BazookaAirStrikeRocket : BazookaRocket
 		Height 24;
 		Radius 5;
 		Speed 0;
+		Alpha 0.0;
 	}
 	
 	States
 	{
 	Spawn:
+		ASRK AAAA 1 A_FadeIn(0.25);
 		ASRK A 1;
 		Loop;
 	}
 }
 
-class AirStrikeDummyMarker : Actor
+class AirStrikeLocator : FastProjectile
 {
+	int addang;
+	
+	Default
+	{
+		Speed 80;
+		DamageFunction 0;
+		Height 8;
+		Radius 4;
+		DeathSound "bazooka/airstrike";
+	}
+	
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",64,64,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",64,-64,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",-64,64,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",-64,-64,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",0,64,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",0,-64,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",64,0,0);
-		TNT1 A 0 A_SpawnItemEx("AirStrikeMarker",-64,0,0);
+		TNT1 A 1;
+		Loop;
+	Death:
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2
+		{
+			A_SpawnItemEx("AirStrikeMarker",104,0,0,angle:0+addang);
+			A_SpawnItemEx("AirStrikeMarker",104,0,0,angle:120+addang);
+			A_SpawnItemEx("AirStrikeMarker",104,0,0,angle:240+addang);
+			addang += 8;
+		}
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 3 A_SpawnItemEx("BazookaAirStrikeRocket",(random(-8,8)*12),0,ceilingz-floorz-64,0,0,-24,random(0,11)*30);
 		Stop;
 	}
 }
@@ -183,7 +198,7 @@ extend class SGDBazooka
 		}
 		
 		A_AlertMonsters();
-		A_PlaySound("bazooka/fire",CHAN_WEAPON);
+		A_StartSound("bazooka/fire",CHAN_WEAPON);
 		SpawnPlayerMissile("BazookaRocket");
 		
 		if(!FindInventory("Bazooka_Recoil"))
@@ -197,7 +212,7 @@ extend class SGDBazooka
 	action void A_BazookaSeeker(double ang)
 	{
 		A_AlertMonsters();
-		A_PlaySound("bazooka/fire",CHAN_WEAPON);
+		A_StartSound("bazooka/fire",CHAN_WEAPON);
 		SpawnPlayerMissile("BazookaSeeker",angle+ang);
 		ACS_NamedExecute("FeatTracker",0);
 	}

@@ -12,6 +12,16 @@ ZScript and modified where seen fit by MFG38
 Parts of Dark Matter Cannon DECORATE code by Gothic, converted to ZScript and
 modified where seen fit by MFG38
 
+Chainsaw nail DECORATE code by TheShooter7 and Mechadon, converted to ZScript and
+modified where seen fit by MFG38
+
+Parts of Brutal Doom event handler code by Marisa Kirisame
+
+StatusBarScreen API by Lewisk3
+
+Old Video shader originally by jmpep, ported to GZDoom by Nash Muhandes, modified where
+seen fit by MFG38
+
 
 ==============
 == GRAPHICS ==
@@ -19,8 +29,8 @@ modified where seen fit by MFG38
 
 HUD font: id Software, randi, Jimmy
 
-All other graphics: MFG38 (some inventory icons are edited from sprites: see the
-"SPRITES" section for sprite credits)
+All other graphics: MFG38 (Some inventory icons are edited from sprites: see the
+"SPRITES" section for sprite credits.)
 
 
 =============
@@ -49,17 +59,28 @@ Rifle: id Software
 
 Shotgun: id Software and Ryan Williams
 
+Shotgun slug firing sound: original sound by Roper on freesound.org, edited by MFG38
+
+Shotgun slug bouncing sound: magnuswaker on freesound.org
+
 Double-Barrel Shotgun: Croteam
 
 Minigun firing sound: Tormentor667
 
 Minigun wind-up / wind-down sounds: source sounds by Infinity Ward, edited by MFG38
 
-Bazooka: id Software (Quake), MagicWazard
+Bazooka firing and explosion sounds: id Software (Quake), MagicWazard
+
+Bazooka air strike warning sound: MFG38
 
 Argent Rifle primary fire sounds: Raven Software
 
 Argent Rifle laser sound: MFG38
+
+Argent Rifle bomb launch sound: base sound by Raven Software, edited by MFG38
+
+Argent Rifle bomb explosion: source sounds from freesound.org (by FlashTrauma and cydon), mixed
+and edited by MFG38
 
 Argent Rifle overheat sound: MFG38 (reused from Deliverance 2600)
 
@@ -78,6 +99,10 @@ by MFG38
 
 Light Amp Visor toggle sound: id Software (Quake III Arena)
 
+Drone sounds: Railbot
+
+Chainsaw nail firing and hit sounds: id Software, Raven Software
+
 
 =============
 == SPRITES ==
@@ -88,6 +113,8 @@ Fists: id Software, Banjo Software, That_One_Doom_Mod
 Rifle: id Software, Captain Toenail
 
 Shotgun: base sprites by id Software and 3D Realms, edits by JoeyTD
+
+Shotgun slug and trail: MFG38
 
 Double-Barrel Shotgun: KDiZD Team, Captain Toenail
 
@@ -101,7 +128,8 @@ Bazooka air strike markers: MFG38
 
 Argent Rifle: base sprites by Raven Software and Eriance, edits by MFG38
 
-Argent Rifle primary projectile: base sprites by id Sofware, edits by MFG38
+Argent Rifle primary projectile and Argent Bomb: base sprites by id Sofware, edits
+by MFG38
 
 Argent Rifle laser (Level 3 finisher): MFG38
 
@@ -129,6 +157,10 @@ Custom teleport particle effect: MFG38
 
 Light Amp Visor: base sprites by id Software, edited by MFG38
 
+Drone: base sprites by Raven Software, Shadesmaster and Dreadopp, edits by MFG38
+
+Chainsaw nails: Mechadon
+
 
 =========================
 == TEXTURES (TITLEMAP) ==
@@ -144,6 +176,9 @@ Mars 3D Textures (WALL2_09): ENGINE Technology, Player Lin
 ====================
 
 The obvious ones: id Software, the GZDoom dev team
+
+For thinking up finisher ideas when I was creatively bankrupt myself:
+InfernalMonsoon
 
 For noticing bugs I didn't:
 RonnieJamesDiner, somagu

@@ -1,4 +1,4 @@
-class SGDChainsaw : SGDWeapon replaces Chainsaw
+class SGDChainsaw : SGDWeapon
 {
 	Default
 	{
@@ -32,7 +32,7 @@ class SGDChainsaw : SGDWeapon replaces Chainsaw
 		MAGS CD 4
 		{
 			A_WeaponReady();
-			A_PlaySound("chainsaw/idle",CHAN_WEAPON);
+			A_StartSound("chainsaw/idle",CHAN_WEAPON);
 			ACS_NamedExecute("FeatTracker",0);
 		}
 		Loop;
@@ -42,22 +42,51 @@ class SGDChainsaw : SGDWeapon replaces Chainsaw
 	FinisherFail:
 		MAGS A 0;
 		Goto ReadyLoop;
-	Finisher1:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
-		MAGS ABABABABABABABAB 2 A_ChainsawAttack;
-		MAGS A 0 ACS_NamedExecute("EndFinisher",0);
+	Finisher1:		// A slightly modified version of an idea by InfernalMonsoon.
+		TNT1 A 0 A_BeginFinisher(false);
+		MAGS ABABABABABABABABABABABABABABABABABABABABABABABABABABAB 2
+		{
+			A_ChainsawAttack();
+			A_FireNail();
+		}
+		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		MAGS ABABABABABABABABABABABABABABABAB 2 A_ChainsawAttack;
-		MAGS A 0 ACS_NamedExecute("EndFinisher",0);
+		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		MAGS ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 1 A_ChainsawAttack;
-		MAGS A 0 ACS_NamedExecute("EndFinisher",0);
+		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
+}
+
+class ChainsawNail : Actor
+{
+	Default
+	{
+		PROJECTILE;
+		Radius 3;
+		Height 3;
+		Speed 45;
+		DamageFunction (24 + (random(0,4) * 3));
+		Scale 0.75;
+		DeathSound "chainsaw/nailhit";
+	}
+
+	States
+	{
+	Spawn:
+		NLPJ A 1;
+		Loop;
+	Crash:
+	Death:
+		NLPJ BCDEFG 2;
+		Stop;
+  }
 }
 
 extend class SGDChainsaw
@@ -92,13 +121,19 @@ extend class SGDChainsaw
 		
 		if(t.linetarget)
 		{
-			A_PlaySound("chainsaw/hit",CHAN_WEAPON);
+			A_StartSound("chainsaw/hit",CHAN_WEAPON);
 		}
 		else
 		{
-			A_PlaySound("chainsaw/attack",CHAN_WEAPON);
+			A_StartSound("chainsaw/attack",CHAN_WEAPON);
 		}
 		
 		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_FireNail()
+	{
+		A_StartSound("chainsaw/nailfire",CHAN_5);
+		SpawnPlayerMissile("ChainsawNail");
 	}
 }

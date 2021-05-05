@@ -1,11 +1,11 @@
-class SGDFlamethrower : SGDWeapon replaces PlasmaRifle
+class SGDFlamethrower : SGDWeapon
 {
 	Default
 	{
 		Weapon.SlotNumber 7;
 		Weapon.SelectionOrder 180;
 		Weapon.AmmoType "FTAmmo";
-		Weapon.AmmoGive 100;
+		Weapon.AmmoGive 90;
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_FLAMETHROWER";
 		Inventory.PickupMessage "$SGD_WEP_FLAMETHROWER";
@@ -46,58 +46,24 @@ class SGDFlamethrower : SGDWeapon replaces PlasmaRifle
 		FLMG A 0;
 		Goto ReadyLoop;
 	Finisher1:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		FLMG EF 2;
-		FLMG G 0 A_FlamerFinisher(-12.0);
-		FLMG G 0 A_FlamerFinisher(-8.0);
-		FLMG G 0 A_FlamerFinisher(-4.0);
-		FLMG G 0 A_FlamerFinisher(0.0);
-		FLMG G 0 A_FlamerFinisher(4.0);
-		FLMG G 0 A_FlamerFinisher(8.0);
-		FLMG G 2 A_FlamerFinisher(12.0);
+		FLMG G 2 A_SpitFlameWall;
 		FLMG HBCD 2;
-		FLMG A 0 ACS_NamedExecute("EndFinisher",0);
+		FLMG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher2:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,0);
+		TNT1 A 0 A_BeginFinisher(false);
 		FLMG EF 2;
-		FLMG G 0 A_FlamerFinisher(-15.0);
-		FLMG G 0 A_FlamerFinisher(-12.0);
-		FLMG G 0 A_FlamerFinisher(-9.0);
-		FLMG G 0 A_FlamerFinisher(-6.0);
-		FLMG G 0 A_FlamerFinisher(-3.0);
-		FLMG G 0 A_FlamerFinisher(0.0);
-		FLMG G 0 A_FlamerFinisher(3.0);
-		FLMG G 0 A_FlamerFinisher(6.0);
-		FLMG G 0 A_FlamerFinisher(9.0);
-		FLMG G 0 A_FlamerFinisher(12.0);
-		FLMG G 2 A_FlamerFinisher(15.0);
+		FLMG G 2 A_SpitABFlameWall;
 		FLMG HBCDBCD 2;
-		FLMG A 0 ACS_NamedExecute("EndFinisher",0);
+		FLMG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
-		TNT1 A 0 ACS_NamedExecute("InitFinisher",0,1);
-		FLMG EF 2;
-		FLMG G 2 A_FlamerFinisher(0.0);
-		FLMG H 2 A_FlamerFinisher(0.0);
-		FLMG E 2 A_FlamerFinisher(0.0);
-		FLMG F 2 A_FlamerFinisher(0.0);
-		FLMG G 2 A_FlamerFinisher(0.0);
-		FLMG H 2 A_FlamerFinisher(0.0);
-		FLMG E 2 A_FlamerFinisher(0.0);
-		FLMG F 2 A_FlamerFinisher(0.0);
-		FLMG G 2 A_FlamerFinisher(0.0);
-		FLMG H 2 A_FlamerFinisher(0.0);
-		FLMG E 2 A_FlamerFinisher(0.0);
-		FLMG F 2 A_FlamerFinisher(0.0);
-		FLMG G 2 A_FlamerFinisher(0.0);
-		FLMG H 2 A_FlamerFinisher(0.0);
-		FLMG E 2 A_FlamerFinisher(0.0);
-		FLMG F 2 A_FlamerFinisher(0.0);
-		FLMG G 2 A_FlamerFinisher(0.0);
-		FLMG H 2 A_FlamerFinisher(0.0);
-		FLMG BCDBCDBCDBCD 2;
-		FLMG A 0 ACS_NamedExecute("EndFinisher",0);
+		TNT1 A 0 A_BeginFinisher(false);
+		FLMG EEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGGEEFFGG 1 A_FireCBeam;
+		FLMG HBCDBCD 2;
+		FLMG A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }
@@ -141,42 +107,58 @@ class FlamethrowerFire_Linger : FlamethrowerFire
 		{
 			bNOGRAVITY = false;
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_Explode(5,32,XF_NOTMISSILE);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			A_Explode(4,32,XF_NOTMISSILE);
 			A_FadeOut(0.018);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2
 		{
 			A_Explode(3,32,XF_NOTMISSILE);
 			A_FadeOut(0.018);
 		}
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
-		FLME A 0 A_PlaySound("fx/fireburn");
+		FLME A 0 A_StartSound("fx/fireburn");
 		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
 		Stop;
 	}
 }
 
-class FlamethrowerFinisherFlame : Actor
+class FlamethrowerCBeam : FlamethrowerFire_Linger
+{
+	Default
+	{
+		Speed 32;
+		DamageFunction (1*50);
+	}
+	
+	States
+	{
+	Spawn:
+		FRFX AABB 1 BRIGHT;
+		Loop;
+	}
+}
+
+class FlamethrowerFlameWall : Actor
 {
 	Default
 	{
 		Height 40;
 		Radius 8;
 		DamageFunction (20 + (random(0,5) * 4));
-		Speed 15;
+		Speed 16;
 		RenderStyle "Translucent";
 		Alpha 0.8;
 		DeathSound "flamethrower/hit";
@@ -189,10 +171,83 @@ class FlamethrowerFinisherFlame : Actor
 	States
 	{
 	Spawn:
-		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }}
+		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }}
 		Loop;
 	Death:
 		TNT1 A 0;
+		Stop;
+	}
+}
+
+class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
+{	
+	Default
+	{
+		DamageFunction (1*8);
+		//+SEEKERMISSILE;
+		+SCREENSEEKER;
+		Scale 1.25;
+		Height 50;
+		Radius 10;
+		MaxTargetRange 4;
+	}
+	
+	States
+	{
+	Spawn:
+		FLME AABBCCDDEEFFGGHHIIJJKKLLMMNN 1 BRIGHT
+		{
+			A_SeekerMissile(1,4,SMF_LOOK,180,4);
+			if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("FlamethrowerFinisherFlameTrail"); }
+		}
+		Loop;
+	Death:
+		TNT1 A 0 { if(tracer) { SetStateLabel("Afterburn"); }}
+		Stop;
+	Afterburn:
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2
+		{
+			bFLOORHUGGER = false;
+			if(tracer) { SetOrigin(tracer.pos,true); }
+			A_Explode(8,40,XF_NOTMISSILE);
+		}
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2
+		{
+			if(tracer) { SetOrigin(tracer.pos,true); }
+			A_Explode(8,40,XF_NOTMISSILE);
+		}
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2
+		{
+			if(tracer) { SetOrigin(tracer.pos,true); }
+			A_Explode(8,40,XF_NOTMISSILE);
+		}
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2
+		{
+			if(tracer) { SetOrigin(tracer.pos,true); }
+			A_Explode(8,40,XF_NOTMISSILE);
+		}
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2
+		{
+			if(tracer) { SetOrigin(tracer.pos,true); }
+			A_Explode(6,40,XF_NOTMISSILE);
+			A_FadeOut(0.018);
+		}
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2
+		{
+			if(tracer) { SetOrigin(tracer.pos,true); }
+			A_Explode(5,40,XF_NOTMISSILE);
+			A_FadeOut(0.018);
+		}
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
+		FLME A 0 A_StartSound("fx/fireburn");
+		FLME ABCDEFGHIJKLMN 2 A_FadeOut(0.018);
 		Stop;
 	}
 }
@@ -209,7 +264,7 @@ extend class SGDFlamethrower
 		}
 		
 		A_AlertMonsters();
-		A_PlaySound("flamethrower/fire",CHAN_WEAPON);
+		A_StartSound("flamethrower/fire",CHAN_WEAPON);
 		
 		if(FindInventory("Flamethrower_FlameLinger"))
 		{
@@ -223,18 +278,56 @@ extend class SGDFlamethrower
 		ACS_NamedExecute("FeatTracker",0);
 	}
 	
-	action void A_FlamerFinisher(double ang)
+	action void A_SpitFlameWall()
 	{
-		Weapon weap = player.ReadyWeapon;
-		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
-		{
-			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
-				return;	
-		}
-		
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+2.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+4.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+6.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+8.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+10.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+12.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+14.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle+16.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-2.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-4.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-6.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-8.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-10.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-12.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-14.0);
+		SpawnPlayerMissile("FlamethrowerFlameWall",angle-16.0);
 		A_AlertMonsters();
-		A_PlaySound("flamethrower/fire",CHAN_WEAPON);
-		SpawnPlayerMissile("FlamethrowerFinisherFlame",angle+ang);
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_SpitABFlameWall()
+	{
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+2.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+4.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+6.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+8.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+10.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+12.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+14.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle+16.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-2.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-4.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-6.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-8.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-10.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-12.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-14.0);
+		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-16.0);
+		A_AlertMonsters();
+		ACS_NamedExecute("FeatTracker",0);
+	}
+	
+	action void A_FireCBeam()
+	{
+		SpawnPlayerMissile("FlamethrowerCBeam");
+		A_AlertMonsters();
 		ACS_NamedExecute("FeatTracker",0);
 	}
 }

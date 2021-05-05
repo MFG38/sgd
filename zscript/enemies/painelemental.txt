@@ -20,7 +20,7 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 	States
 	{
 	Spawn:
-		PAIN A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//PAIN A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		PAIN A 10 A_Look;
 		Loop;
 	AltSpawn:
@@ -79,6 +79,24 @@ class SGDPainElemental : SGDMonster replaces PainElemental
 			A_GiveToTarget("FinisherToken",40);
 		}
 		PAIN I 8 BRIGHT A_Scream;
+		PAIN JK 8 BRIGHT;
+		PAIN L 8 BRIGHT A_PainDie;
+		PAIN M 8 BRIGHT;
+		Stop;
+	Death.Sploder:
+		PAIN G 2 A_Pain;
+		PAIN GGGGGGGGGG 5;
+		PAIN H 8 BRIGHT
+		{
+			A_GiveToTarget("PainElementalsKilled");
+			A_GiveToTarget("FinisherToken",40);
+			A_SpawnItemEx("Explosion",0,0,35);
+		}
+		PAIN I 8 BRIGHT
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
 		PAIN JK 8 BRIGHT;
 		PAIN L 8 BRIGHT A_PainDie;
 		PAIN M 8 BRIGHT;

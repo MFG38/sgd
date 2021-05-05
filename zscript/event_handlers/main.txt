@@ -1,0 +1,9 @@
+class SGDStaticHandler : StaticEventHandler
+{
+	override void OnRegister()
+	{
+		Console.Printf("\crSatanic Gameshow Deluxe %s\c-",StringTable.Localize("$SGD_VERSIONNUM"));
+	}
+}
+
+class SGDMainHandler : EventHandler {}

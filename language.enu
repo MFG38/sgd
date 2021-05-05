@@ -1,9 +1,7 @@
 [enu default]
 
-SGD_VERSIONNUM = "v1.4";
-
 SGD_MENU_HOWTOPLAY = "How to play";
-SGD_MENU_MODSETUP = "Mod settings";
+SGD_MENU_MODSETUP = "SGD settings";
 
 SGD_OMENU_NOTICE =
 	"Options marked with (*) will only take effect\n"
@@ -21,6 +19,7 @@ SGD_SUBTTL_VISUALS = "Visuals";
 SGD_SUBTTL_HUD = "HUD";
 SGD_SUBTTL_SOUNDS = "Sounds";
 SGD_SUBTTL_BEHAVIOR = "Enemy behavior";
+SGD_SUBTTL_SPAWNS = "Thing replacements (*)";
 SGD_SUBTTL_CONTROLS = "Customize mod controls";
 SGD_SUBTTL_CONTROLS1 = "Essential controls";
 SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
@@ -28,6 +27,7 @@ SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
 SGD_OM_PROJTRAILS = "Spawn projectile trails (*)";
 SGD_OM_PROJTRAILSNOTICE = "(Does not affect bullet trails)";
 SGD_OM_FANCYTELE = "Fancy teleport effect";
+SGD_OM_PROPLIGHTS = "Light source dynamic lights (*)";
 
 SGD_OM_FINISHERBAR = "Display finisher bar";
 SGD_OM_FMSGTYPE = "Finisher message type";
@@ -46,6 +46,11 @@ SGD_OM_SPAWNBEHAVIOR = "Enemy spawn behavior (*)";
 SGD_OM_HITSCANBEHAVIOR = "Bullet attack type";
 SGD_OM_TRACERBEHAVIOR = "Revenant rocket type";
 
+SGD_OM_RPLASMA = "Plasma Rifle replacement";
+SGD_OM_RBFG = "BFG9000 replacement";
+SGD_OM_RBACKP = "Backpack replacement";
+SGD_OM_CLASSICPWR = "Classic powerups";
+
 SGD_CVAR_FMSG0 = "Off";
 SGD_CVAR_FMSG1 = "No button prompt";
 SGD_CVAR_FMSG2 = "Full";
@@ -55,6 +60,13 @@ SGD_CVAR_HITSCAN0 = "Hitscan";
 SGD_CVAR_HITSCAN1 = "Projectile";
 SGD_CVAR_TRACER0 = "Original";
 SGD_CVAR_TRACER1 = "SGD-style";
+SGD_CVAR_RPLASMA0 = "Flamethrower only";
+SGD_CVAR_RPLASMA1 = "Flamethrower or Argent Rifle";
+SGD_CVAR_RBFG0 = "Argent Rifle or DMC";
+SGD_CVAR_RBFG1 = "DMC only";
+SGD_CVAR_RBFG2 = "Argent Rifle only";
+SGD_CVAR_RBACKP0 = "Random ammo";
+SGD_CVAR_RBACKP1 = "DMC ammo";
 
 SGD_KEY_ALTFIRE = "Altfire (uses finisher)";
 SGD_KEY_INVUSE = "Use inventory item";
@@ -125,9 +137,12 @@ SGD_UPGRADE_MINIGUNACCURACY = "Minigun accuracy increase";
 SGD_UPGRADE_MINIGUNWINDUP = "Minigun windup time reduction";
 SGD_UPGRADE_BAZOOKAFIRERATE = "Bazooka fire rate increase";
 SGD_UPGRADE_BAZOOKARECOIL = "Bazooka recoil reduction";
-SGD_UPGRADE_ARGENTCOOLDOWN = "Argent Rifle faster cooldown";
+SGD_UPGRADE_ARGENTCOOLDOWN = "Argent Rifle cooldown rate increase";
 SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
+
+SGD_WRN_CANTUSEFIELDMED = "Can't use Field Med Pack right now!";
+SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom you cunt";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
@@ -159,8 +174,6 @@ SGD_AMMO_DMCAMMO = "Dark matter cell (+1 Dark Matter Cannon ammo)";
 
 SGD_ITEM_STIMPACK = "Stimpack (+10 health)";
 SGD_ITEM_MEDIKIT = "Medikit (+25 health)";
-SGD_ITEM_STIMPACKALT = "Stimpack (+5 health)";
-SGD_ITEM_MEDIKITALT = "Medikit (+15 health)";
 SGD_ITEM_GREENARMOR = "Security vest (+100 armor)";
 SGD_ITEM_BLUEARMOR = "Combat armor (+200 armor)";
 
@@ -168,7 +181,6 @@ SGD_ART_HEALTHBONUS = "Health bonus (+1 health)";
 SGD_ART_ARMORBONUS = "Armor bonus (+1 armor)";
 SGD_ART_SOULSPHERE = "Soulsphere (+100 health)";
 SGD_ART_MEGASPHERE = "Megasphere (+200 health and armor)";
-SGD_ART_MEGASPHEREALT = "Megasphere (+100 health and armor)";
 
 SGD_PU_FIELDMED =
 	"Field Med Pack - A portable chunk of health, ready to go in a pinch.\n"

@@ -7,17 +7,19 @@ class DemonizedPlayer : PlayerPawn
 	{
 		Speed 1.25;
 		Health 666;		// Evil.
-		Radius 15;
+		Radius 16;
 		Height 56;
 		Mass 999;
 		PainChance 255;
 		DamageFactor "Normal", 0.0;
 		DamageFactor "Fire", 0.0;
+		DamageFactor "Sploder", 0.0;
+		DamageFactor "ArgentBomb", 0.0;
+		DamageFactor "ShotgunSlug", 0.0;
 		DamageFactor "HolyWater", 1.1;
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
 		Player.MorphWeapon "DemonizedFists";
-		//Player.WeaponSlot 0, "DemonizedFists";
 		Translation "DemonizerTrans";
 	}
 
@@ -102,7 +104,7 @@ class DemonizedFists : SGDWeapon
 	Fire:
 		PUCH A 0 A_Jump(256,"Punch1","Punch2");
 	Punch1:
-		PUCH A 1 A_PlaySound("fist/swing",CHAN_WEAPON);
+		PUCH A 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH B 1;
 		PUCH L 1 A_DemonFistAttack;
 		PUCH C 1;
@@ -112,13 +114,9 @@ class DemonizedFists : SGDWeapon
 		PUCH E 1;
 		PUCH R 1;
 		PUCH K 1;
-		/* {
-			A_GiveInventory("FistSwitcher",1);
-			A_ReFire();
-		} */
 		Goto ReadyLoop;
 	Punch2:
-		PUCH F 1 A_PlaySound("fist/swing",CHAN_WEAPON);
+		PUCH F 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH G 1;
 		PUCH O 1 A_DemonFistAttack;
 		PUCH H 1;
@@ -127,10 +125,6 @@ class DemonizedFists : SGDWeapon
 		PUCH Q 1;
 		PUCH J 1;
 		PUCH K 1;
-		/* {
-			A_TakeInventory("FistSwitcher",1);
-			A_ReFire();
-		} */
 		Goto ReadyLoop;
 	AltFire:	// Overriding since finishers are unnecessary for this weapon.
 		PUCH A 0;
@@ -161,7 +155,7 @@ extend class DemonizedFists
 		
 		if(t.linetarget)
 		{
-			A_PlaySound("*fist",CHAN_WEAPON);
+			A_StartSound("*fist",CHAN_WEAPON);
 			A_AlertMonsters(256);
 		}
 	}

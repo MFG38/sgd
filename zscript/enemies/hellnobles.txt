@@ -19,7 +19,7 @@ class SGDHellKnight : SGDMonster replaces HellKnight
 	States
 	{
 	Spawn:
-		BOS2 A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//BOS2 A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		BOS2 AB 10 A_Look;
 		Loop;
 	AltSpawn:
@@ -84,6 +84,25 @@ class SGDHellKnight : SGDMonster replaces HellKnight
 		BOS2 MN 8;
 		BOS2 O -1;
 		Stop;
+	Death.Sploder:
+		BOS2 H  2 A_Pain;
+		BOS2 HHHHHHHHHH 5;
+		BOS2 I  8
+		{
+			A_GiveToTarget("HellKnightsKilled");
+			A_GiveToTarget("FinisherToken",25);
+			A_SpawnItemEx("Explosion",0,0,35);
+		}
+		BOS2 J  8
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		BOS2 K  8;
+		BOS2 L  8 A_NoBlocking;
+		BOS2 MN 8;
+		BOS2 O -1;
+		Stop;
 	Raise:
 		BOS2 O 8 A_SetTranslation("ResetTrans");
 		BOS2 NMLKJI  8;
@@ -107,7 +126,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 	States
 	{
 	Spawn:
-		BOSS A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//BOSS A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		BOSS AB 10 A_Look;
 		Loop;
 	AltSpawn:
@@ -150,7 +169,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS I  8
 		{
 			A_SetTranslation("HolyWaterTrans");
-			A_GiveToTarget("HellKnightsKilled");
+			A_GiveToTarget("BaronsKilled");
 			A_GiveToTarget("FinisherToken",40);
 		}
 		BOSS J  8 A_Scream;
@@ -163,10 +182,29 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS I  8
 		{
 			A_SetTranslation("CharredTrans");
-			A_GiveToTarget("HellKnightsKilled");
+			A_GiveToTarget("BaronsKilled");
 			A_GiveToTarget("FinisherToken",40);
 		}
 		BOSS J  8 A_Scream;
+		BOSS K  8;
+		BOSS L  8 A_NoBlocking;
+		BOSS MN 8;
+		BOSS O -1;
+		Stop;
+	Death.Sploder:
+		BOSS H  2 A_Pain;
+		BOSS HHHHHHHHHH 5;
+		BOSS I  8
+		{
+			A_GiveToTarget("BaronsKilled");
+			A_GiveToTarget("FinisherToken",25);
+			A_SpawnItemEx("Explosion",0,0,35);
+		}
+		BOSS J  8
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
 		BOSS K  8;
 		BOSS L  8 A_NoBlocking;
 		BOSS MN 8;
@@ -189,7 +227,7 @@ class SGDBaronBall : BaronBall replaces BaronBall
 	States
 	{
 	Spawn:
-		BAL7 AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		BAL7 AAAABBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	Death:
 		BAL7 CDE 6 BRIGHT;

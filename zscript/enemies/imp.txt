@@ -18,7 +18,7 @@ class SGDImp : SGDMonster replaces DoomImp
 	States
 	{
 	Spawn:
-		TROO A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//TROO A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		TROO AB 10 A_Look;
 		Loop;
 	AltSpawn:
@@ -118,6 +118,26 @@ class SGDImp : SGDMonster replaces DoomImp
 		TROO RST 5;
 		TROO U -1;
 		Stop;
+	Death.Sploder:
+	XDeath.Sploder:
+		TROO H 2 A_Pain;
+		TROO HHHHHHHHHH 5;
+		TROO N 5
+		{
+			A_GiveToTarget("ImpsKilled");
+			A_GiveToTarget("FinisherToken",12);
+			A_SpawnItemEx("Explosion",0,0,35);
+		}
+		TROO O 5
+		{
+			A_XScream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		TROO P 5;
+		TROO Q 5 A_NoBlocking;
+		TROO RST 5;
+		TROO U -1;
+		Stop;
 	Raise:
 		TROO ML 8 A_SetTranslation("ResetTrans");
 		TROO KJI 6;
@@ -135,7 +155,7 @@ class SGDImpBall : DoomImpBall replaces DoomImpBall
 	States
 	{
 	Spawn:
-		BAL1 AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		BAL1 AAAABBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	}
 }

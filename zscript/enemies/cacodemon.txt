@@ -22,7 +22,7 @@ class SGDCacodemon : SGDMonster replaces Cacodemon
 	States
 	{
 	Spawn:
-		HEAD A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
+		//HEAD A 0 A_JumpIf(GetCVar("sgd_spawnbehavior") == 1,"AltSpawn");
 		HEAD A 10 A_Look;
 		Loop;
 	AltSpawn:
@@ -90,6 +90,25 @@ class SGDCacodemon : SGDMonster replaces Cacodemon
 		HEAD K 8 A_NoBlocking;
 		HEAD L -1 A_SetFloorClip;
 		Stop;
+	Death.Sploder:
+		HEAD E 3 A_Pain;
+		HEAD EEEEEEEEEE 5;
+		HEAD G 8
+		{
+			A_GiveToTarget("CacodemonsKilled");
+			A_GiveToTarget("FinisherToken",25);
+			A_SpawnItemEx("Explosion",0,0,35);
+		}
+		HEAD H 8
+		{
+			A_Scream();
+			A_Explode(666,192,XF_NOTMISSILE);
+		}
+		HEAD I 8;
+		HEAD J 8;
+		HEAD K 8 A_NoBlocking;
+		HEAD L -1 A_SetFloorClip;
+		Stop;
 	Raise:
 		HEAD L 8
 		{
@@ -111,7 +130,7 @@ class SGDCacodemonBall : CacodemonBall replaces CacodemonBall
 	States
 	{
 	Spawn:
-		BAL2 AAAABBBB 1 BRIGHT { if(GetCVar("sgd_spawntrails") == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
+		BAL2 AAAABBBB 1 BRIGHT { if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1) { A_SpawnItemEx("SGDProjectileTrail",-20,0,-vel.z); }}
 		Loop;
 	}
 }

@@ -1,3 +1,31 @@
+[??-??-????] v2.0:
+- Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).
+- Fixed Barons giving the wrong token upon dying from Holy Water and Fire damage.
+- Slightly modified the spawning logic of the Holy Water Pool particles.
+- Slightly modified the Spider Mastermind's AltMissile state code.
+- Modified firing behavior for the Shotgun and Double-Barrel Shotgun.
+- Rebalanced skills 5 and 6:
+	* Enemies deal 150% damage instead of 200% on skill 5.
+	* Stimpacks, Medikits and Megaspheres function normally on skill 6.
+	* Ammo pickups give normal amounts on skill 6.
+	* Monsters have 15% more health instead of 50% on skill 6.
+- Renamed TeleportFX to SGDTeleportFog.
+- Implemented 4 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg, sgd_replacebackpack and sgd_classicpowerups.
+- Reduced the amount of ammo given by the Flamethrower from 100 to 90.
+- Increased the Fists' damage from random(2,5)*5 to random(3,5)*5.
+- Added strategy_guide.txt.
+- Changed all visual effect cvars from server-side to clientside.
+- Increased the amount of starting Rifle ammo from 40 to 48.
+- Increased maximum Rifle ammo capacity from 150 to 160.
+- Modified the behavior of the Light Amp Goggles.
+- Tweaked the behavior of the Holy Water Grenade.
+- Updated cvar checks to the recommended ZScript method.
+- Decreased pain chance from Holy Water damage for Archviles, Cyberdemons and Spider Masterminds.
+- Decreased pain chance from Fire damage for Archviles.
+- Added Finnish translation.
+- Made dynamic lights emitted by light source props togglable (via the sgd_propdynlights cvar).
+- Removed flat glows.
+
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.
 - Increased the translucency of SGDProjectileTrail.

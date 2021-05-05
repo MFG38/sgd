@@ -1,0 +1,116 @@
+class SGDReplacementHandler : EventHandler
+{
+	override void CheckReplacement (ReplaceEvent e)
+	{
+		// Cvar-controlled replacements
+		cvar r_plasma = CVar.FindCVar('sgd_replaceplasmagun');
+		cvar r_bfg = CVar.FindCVar('sgd_replacebfg');
+		cvar r_backpack = CVar.FindCVar('sgd_replacebackpack');
+		cvar classicpwr = CVar.FindCVar('sgd_classicpowerups');
+		
+		switch(r_plasma.GetInt())
+		{
+		case 0:
+			if(e.Replacee == 'PlasmaRifle') { e.Replacement = 'SGDFlamethrower'; }
+			break;
+		case 1:
+			if(e.Replacee == 'PlasmaRifle')
+			{
+				switch(random[Replacement](0,1))
+				{
+					case 0: e.Replacement = 'SGDFlamethrower'; break;
+					case 1: e.Replacement = 'SGDArgentRifle'; break;
+				}
+			}
+			break;
+		}
+		
+		switch(r_bfg.GetInt())
+		{
+		case 0:
+			if(e.Replacee == 'BFG9000')
+			{
+				switch(random[Replacement](0,1))
+				{
+					case 0: e.Replacement = 'SGDArgentRifle'; break;
+					case 1: e.Replacement = 'SGDDarkMatterCannon'; break;
+				}
+			}
+			break;
+		case 1:
+			if(e.Replacee == 'BFG9000') { e.Replacement = 'SGDDarkMatterCannon'; }
+			break;
+		case 2:
+			if(e.Replacee == 'BFG9000') { e.Replacement = 'SGDArgentRifle'; }
+			break;
+		}
+		
+		switch(r_backpack.GetInt())
+		{
+		case 0:
+			if(e.Replacee == 'Backpack')
+			{
+				switch(random[Replacement](0,8))
+				{
+					case 0: e.Replacement = 'RifleMag'; break;
+					case 1: e.Replacement = 'HandfulOfShells'; break;
+					case 2: e.Replacement = 'BoxOfShells'; break;
+					case 3: e.Replacement = 'MinigunBulletBox'; break;
+					case 4: e.Replacement = 'LonelyRocket'; break;
+					case 5: e.Replacement = 'PileOfRockets'; break;
+					case 6: e.Replacement = 'GasCanister'; break;
+					case 7: e.Replacement = 'GasTank'; break;
+					case 8: e.Replacement = 'DarkMatterCell'; break;
+				}
+			}
+			break;
+		case 1:
+			if(e.Replacee == 'Backpack') { e.Replacement = 'DarkMatterCell'; }
+			break;
+		}
+		
+		if(classicpwr.GetBool() == false)
+		{
+			if(e.Replacee == 'Berserk') { e.Replacement = 'FieldMedPack'; }
+			else if(e.Replacee == 'BlurSphere') { e.Replacement = 'HolyWaterGrenadePickup'; }
+			else if(e.Replacee == 'Infrared') { e.Replacement = 'SGDLightAmpGoggles'; }
+			else if(e.Replacee == 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
+			else if(e.Replacee == 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
+		}
+		else if(classicpwr.GetBool() == true)
+		{
+			if(e.Replacee == 'Berserk') { e.Replacement = 'SGDBerserk'; }
+		}
+		
+		// Misc. replacees
+		if(e.Replacee == 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
+		// Ammo
+		else if(e.Replacee == 'Clip') { e.Replacement = 'RifleMag'; }
+		else if(e.Replacee == 'ClipBox') { e.Replacement = 'MinigunBulletBox'; }
+		else if(e.Replacee == 'Shell') { e.Replacement = 'HandfulOfShells'; }
+		else if(e.Replacee == 'ShellBox') { e.Replacement = 'BoxOfShells'; }
+		else if(e.Replacee == 'RocketAmmo') { e.Replacement = 'LonelyRocket'; }
+		else if(e.Replacee == 'RocketBox') { e.Replacement = 'PileOfRockets'; }
+		else if(e.Replacee == 'Cell') { e.Replacement = 'GasCanister'; }
+		else if(e.Replacee == 'CellPack') { e.Replacement = 'GasTank'; }
+		// Weapons
+		else if(e.Replacee == 'Fist') { e.Replacement = 'SGDFists'; }
+		else if(e.Replacee == 'Chainsaw') { e.Replacement = 'SGDChainsaw'; }
+		else if(e.Replacee == 'Pistol') { e.Replacement = 'SGDRifle'; }
+		else if(e.Replacee == 'Shotgun') { e.Replacement = 'SGDShotgun'; }
+		else if(e.Replacee == 'SuperShotgun') { e.Replacement = 'SGDSuperShotgun'; }
+		else if(e.Replacee == 'Chaingun') { e.Replacement = 'SGDMinigun'; }
+		else if(e.Replacee == 'RocketLauncher') { e.Replacement = 'SGDBazooka'; }
+		// Health and armor
+		else if(e.Replacee == 'HealthBonus') { e.Replacement = 'SGDHealthBonus'; }
+		else if(e.Replacee == 'Stimpack') { e.Replacement = 'SGDStimpack'; }
+		else if(e.Replacee == 'Medikit') { e.Replacement = 'SGDMedikit'; }
+		else if(e.Replacee == 'ArmorBonus') { e.Replacement = 'SGDArmorBonus'; }
+		else if(e.Replacee == 'GreenArmor') { e.Replacement = 'SGDSecurityArmor'; }
+		else if(e.Replacee == 'BlueArmor') { e.Replacement = 'SGDCombatArmor'; }
+		// Powerups
+		else if(e.Replacee == 'Allmap') { e.Replacement = 'SGDAllmap'; }
+		else if(e.Replacee == 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
+		else if(e.Replacee == 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
+	}
+}

@@ -4,14 +4,14 @@ class SGDPlayer : PlayerPawn
 	{
 		Speed 1;
 		Health 100;
-		Radius 15;
+		Radius 16;
 		Height 56;
 		Mass 100;
 		PainChance 255;
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
 		Player.StartItem "SGDRifle";
-		Player.StartItem "RifleAmmo", 40;
+		Player.StartItem "RifleAmmo", 48;
 		Player.StartItem "SGDFists";
 		Player.WeaponSlot 1, "SGDFists";
 		Player.WeaponSlot 2, "SGDRifle";
@@ -24,6 +24,9 @@ class SGDPlayer : PlayerPawn
 		Player.WeaponSlot 9, "SGDDarkMatterCannon";
 		Player.WeaponSlot 0, "SGDChainsaw";
 		DamageFactor "HolyWater", 0.0;
+		DamageFactor "Sploder", 0.0;
+		DamageFactor "ArgentBomb", 0.0;
+		DamageFactor "ShotgunSlug", 0.05;
 	}
 
 	States

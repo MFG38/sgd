@@ -1,23 +1,23 @@
 ListMenu "MainMenu"
 {
 	Position 95, 72
-	PatchItem "M_NGAME" ,"n", "EpisodeMenu"
+	TextItem "$MNU_NEWGAME" ,"n", "EpisodeMenu"
 	TextItem "$SGD_MENU_HOWTOPLAY", "i", "ReadThisMenu"
 	IfOption(SwapMenu)
 	{
-		PatchItem "M_LOADG", "l", "LoadGameMenu"
-		PatchItem "M_SAVEG", "s", "SaveGameMenu"
-		PatchItem "M_OPTION", "o", "OptionsMenu"
+		TextItem "$MNU_LOADGAME", "l", "LoadGameMenu"
+		TextItem "$MNU_SAVEGAME", "s", "SaveGameMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
 		TextItem "$SGD_MENU_MODSETUP", "", "SGD_Setup"
 	}
 	Else
 	{
-		PatchItem "M_OPTION", "o", "OptionsMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
 		TextItem "$SGD_MENU_MODSETUP", "", "SGD_Setup"
-		PatchItem "M_LOADG", "l", "LoadGameMenu"
-		PatchItem "M_SAVEG", "s", "SaveGameMenu"
+		TextItem "$MNU_LOADGAME", "l", "LoadGameMenu"
+		TextItem "$MNU_SAVEGAME", "s", "SaveGameMenu"
 	}
-	PatchItem "M_QUITG", "q", "QuitMenu"
+	TextItem "$MNU_QUITGAME", "q", "QuitMenu"
 }
 
 OptionMenu "SGD_Setup"
@@ -31,12 +31,13 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_PROJTRAILS", "sgd_spawntrails", "OnOff"
 	StaticText "$SGD_OM_PROJTRAILSNOTICE", "Red"
 	Option "$SGD_OM_FANCYTELE", "sgd_fancyteleport", "OnOff"
+	Option "$SGD_OM_PROPLIGHTS", "sgd_propdynlights", "OnOff"
 	StaticText ""
 	StaticText "$SGD_SUBTTL_HUD", "White"
 	Option "$SGD_OM_FINISHERBAR", "sgd_displayfbar", "OnOff"
 	Option "$SGD_OM_FMSGTYPE", "sgd_finisherprompt", "FinisherPrompt"
 	Option "$SGD_OM_HAZMATTIMER", "sgd_displayhsbar", "OnOff"
-	Option "$SGD_OM_GOGGLECHARGE", "sgd_displayvisortime", "OnOff"
+	//Option "$SGD_OM_GOGGLECHARGE", "sgd_displayvisortime", "OnOff"
 	StaticText ""
 	Option "$SGD_OM_FLASHTOGGLE", "sgd_lowhpflash_on", "YesNo"
 	Slider "$SGD_OM_FLASHTHRES", "sgd_lowhpflash_thres", 10, 30, 5
@@ -51,6 +52,12 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_SPAWNBEHAVIOR", "sgd_spawnbehavior", "SpawnBehavior"
 	Option "$SGD_OM_HITSCANBEHAVIOR", "sgd_hitscanbehavior", "HitscanBehavior"
 	Option "$SGD_OM_TRACERBEHAVIOR", "sgd_revrocketbehavior", "TracerBehavior"
+	StaticText ""
+	StaticText "$SGD_SUBTTL_SPAWNS", "White"
+	Option "$SGD_OM_RPLASMA", "sgd_replaceplasmagun", "ReplacePlasmaRifle"
+	Option "$SGD_OM_RBFG", "sgd_replacebfg", "ReplaceBFG"
+	Option "$SGD_OM_RBACKP", "sgd_replacebackpack", "ReplaceBackpack"
+	Option "$SGD_OM_CLASSICPWR", "sgd_classicpowerups", "OnOff"
 	StaticText ""
 	Submenu "$SGD_SUBTTL_CONTROLS", "SGD_KeyConfig"
 }
@@ -100,6 +107,25 @@ OptionValue "TracerBehavior"
 {
 	0, "$SGD_CVAR_TRACER0"
 	1, "$SGD_CVAR_TRACER1"
+}
+
+OptionValue "ReplacePlasmaRifle"
+{
+	0, "$SGD_CVAR_RPLASMA0"
+	1, "$SGD_CVAR_RPLASMA1"
+}
+
+OptionValue "ReplaceBFG"
+{
+	0, "$SGD_CVAR_RBFG0"
+	1, "$SGD_CVAR_RBFG1"
+	2, "$SGD_CVAR_RBFG2"
+}
+
+OptionValue "ReplaceBackpack"
+{
+	0, "$SGD_CVAR_RBACKP0"
+	1, "$SGD_CVAR_RBACKP1"
 }
 
 /* AddOptionMenu "OptionsMenu"

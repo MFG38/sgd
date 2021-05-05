@@ -8,6 +8,16 @@ actor TitlemapLight 12345
 		TNT1 A 7 Light("L_Titlemap2")
 		TNT1 A 7 Light("L_Titlemap3")
 		TNT1 A 7 Light("L_Titlemap4")
-		Goto Spawn+1
+		Goto Spawn
+	}
+}
+
+actor TitlemapStandingImp 12350
+{
+	States
+	{
+	Spawn:
+		TROO A -1
+		Stop
 	}
 }

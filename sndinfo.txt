@@ -9,6 +9,8 @@ chainsaw/up					MAGSREA1
 chainsaw/idle				MAGSREA2
 chainsaw/attack				MAGSATT1
 chainsaw/hit				MAGSATT2
+chainsaw/nailfire			NAILFIRE
+chainsaw/nailhit			NAILHIT
 
 DSMGUN1						DSMGUN1
 DSMGUN2						DSMGUN2
@@ -25,6 +27,7 @@ DSSGBOO3					DSSGBOO3
 
 $random DukeShotgun/Fire	{ DSSGBOO1 DSSGBOO2 DSSGBOO3 }
 DukeShotgun/Pump			DSSGPUMP
+DukeShotgun/slug			slugfire
 
 coachgun/reload1			DSCOCHR1
 coachgun/reload2			DSCOCHR2
@@ -37,11 +40,14 @@ minigun/winddown			mgunwdn
 
 bazooka/fire				SEEKFIRE
 bazooka/explosion			SEEKXPLD
+bazooka/airstrike			airstrk
 
 argentrifle/fire			stnrfire
 argentrifle/ballhit			stnrhit
 argentrifle/overheat		ohbeep
 argentrifle/laser			arlaser
+argentrifle/bomb			argbomb
+argentrifle/bombex			abombexp
 
 flamethrower/fire			FMTRFIRE
 flamethrower/hit			FMTRHIT
@@ -55,6 +61,10 @@ $limit DMBall/Impact 0
 $limit BHole/Suck 0
 $limit BHole/Explosion 0
 
+drone/spawn					DRONSND
+drone/death					DRONDIE
+drone/explosion				DRONFIRE
+
 fieldmed/use				s_health
 hazmat/warning				hs_rout
 $volume hazmat/warning 0.8
@@ -62,3 +72,4 @@ hwgrenade/splode			hwgrenxp
 visor/toggle				latoggle
 
 fx/fireburn					FMTRFLAM
+fx/slugbounce				slugbnc

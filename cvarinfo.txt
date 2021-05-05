@@ -4,20 +4,27 @@ user noarchive bool sgd_debugmode = false;
 user int sgd_finisherprompt = 2;		// 0 = Off, 1 = No button prompt, 2 = Full
 user bool sgd_displayfbar = true;
 user bool sgd_displayhsbar = true;
-user bool sgd_displayvisortime = true;
+user bool sgd_displayvisortime = true;		// Unused atm, but keeping this around just in case.
 
 user bool sgd_lowhpflash_on = true;
 user float sgd_lowhpflash_int = 0.25;
 user int sgd_lowhpflash_thres = 25;
 
 // Visual stuff
-server bool sgd_spawntrails = true;
-server bool sgd_fancyteleport = true;
+user bool sgd_spawntrails = true;
+user bool sgd_fancyteleport = true;
+server bool sgd_propdynlights = true;
 
 // Enemy stuff
 server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
 server int sgd_hitscanbehavior = 1;		// 0 = Hitscan, 1 = Projectile
-server int sgd_revrocketbehavior = 1;	// 0 = Original, 1 = SGD-style
+server int sgd_revrocketbehavior = 1;		// 0 = Original, 1 = SGD-style
+
+// Spawning stuff
+server int sgd_replaceplasmagun = 0;		// 0 = Flamethrower only, 1 = Flamethrower or Argent Rifle
+server int sgd_replacebfg = 0;			// 0 = Argent Rifle or DMC, 1 = DMC only, 2 = Argent Rifle only
+server int sgd_replacebackpack = 0;		// 0 = Random ammo, 1 = DMC ammo
+server bool sgd_classicpowerups = false;
 
 // Sound stuff
 user bool sgd_fieldmedsound = true;
