@@ -44,7 +44,7 @@ class SGDChainsaw : SGDWeapon
 		Goto ReadyLoop;
 	Finisher1:		// A slightly modified version of an idea by InfernalMonsoon.
 		TNT1 A 0 A_BeginFinisher(false);
-		MAGS ABABABABABABABABABABABABABABABABABABABABABABABABAB 2
+		MAGS ABABABABABABABABABABABABABABABABABABABABABABABABABABAB 2
 		{
 			A_ChainsawAttack();
 			A_FireNail();
