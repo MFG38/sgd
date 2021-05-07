@@ -161,6 +161,8 @@ Drone: base sprites by Raven Software, Shadesmaster and Dreadopp, edits by MFG38
 
 Chainsaw nails: Mechadon
 
+Chainsaw circular blade: author unknown (taken from hiclipart.com), edited by MFG38
+
 
 =========================
 == TEXTURES (TITLEMAP) ==
