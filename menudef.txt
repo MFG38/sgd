@@ -80,8 +80,6 @@ OptionMenu "SGD_KeyConfig"
 	Control "$SGD_KEY_HWGRENADE", "quick_hwgrenade"
 	Control "$SGD_KEY_GOGGLES", "quick_goggles"
 	Control "$SGD_KEY_RADSUIT", "quick_radsuit"
-	//StaticText ""
-	//Submenu "Back", "SGD_Setup"
 }
 
 OptionValue "FinisherPrompt"
