@@ -140,7 +140,7 @@ class FlamethrowerCBeam : FlamethrowerFire_Linger
 	Default
 	{
 		Speed 32;
-		DamageFunction (1*50);
+		DamageFunction 50;
 	}
 	
 	States
