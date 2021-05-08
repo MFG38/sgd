@@ -21,7 +21,7 @@ class SGDSpiderMastermind : SGDMonster replaces SpiderMastermind
 		Obituary "$OB_SPIDER";
 		PainChance "Fire", 50;
 		PainChance "HolyWater", 64;
-		DamageFactor "Sawblade", 2.5;
+		DamageFactor "Sawblade", 2.5;	// To prevent excessive life leeching with the Chainsaw Level 2 finisher.
 	}
 	States
 	{

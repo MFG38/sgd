@@ -112,7 +112,7 @@ class ChainsawHomingCBlade : Actor
 		CSWB AAAAAA 1
 		{
 			A_SeekerMissile(12,15,SMF_LOOK);
-			A_SetAngle(angle-60);
+			A_SetAngle(angle-120);
 		}
 		Loop;
 	Death:
@@ -125,7 +125,7 @@ class ChainsawHomingCBlade : Actor
 	Grinder:
 		CSWB A 1
 		{
-			A_SetAngle(angle-60);
+			A_SetAngle(angle-120);
 			
 			if(tracer && tracer.health > 0)
 			{
@@ -136,7 +136,7 @@ class ChainsawHomingCBlade : Actor
 		}
 		CSWB AAAAAAAAAAA 1
 		{
-			A_SetAngle(angle-60);
+			A_SetAngle(angle-120);
 			
 			if(tracer && tracer.health > 0)
 			{
