@@ -20,6 +20,7 @@ class SGDCyberdemon : SGDMonster replaces Cyberdemon
 		Obituary "$OB_CYBORG";
 		PainChance "Fire", 40;
 		PainChance "HolyWater", 64;
+		DamageFactor "Sawblade", 2.5;
 	}
 	States
 	{

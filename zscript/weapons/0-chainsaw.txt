@@ -102,7 +102,7 @@ class ChainsawHomingCBlade : Actor
 		DamageType "Sawblade";
 		PROJECTILE;
 		+SEEKERMISSILE;
-		+RIPPER;
+		//+RIPPER;
 		+FLATSPRITE;
 	}
 	
@@ -134,7 +134,7 @@ class ChainsawHomingCBlade : Actor
 				A_GiveToTarget("SGDHealthBonus");
 			}
 		}
-		CSWB AAAAA 1
+		CSWB AAAAAAAAAAA 1
 		{
 			A_SetAngle(angle-60);
 			
