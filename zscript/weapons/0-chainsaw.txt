@@ -53,7 +53,7 @@ class SGDChainsaw : SGDWeapon
 		Goto ReadyLoop;
 	Finisher2:
 		TNT1 A 0 A_BeginFinisher(false);
-		MAGS ABABABABABABABABABABABABABABABAB 2 A_ChainsawAttack;
+		MAGS ABAB 3 SpawnPlayerMissile("ChainsawHomingCBlade");
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
@@ -87,6 +87,60 @@ class ChainsawNail : Actor
 		NLPJ BCDEFG 2;
 		Stop;
   }
+}
+
+class ChainsawHomingCBlade : Actor
+{
+	Default
+	{
+		Height 2;
+		Radius 15;
+		Speed 25;
+		Scale 0.5;
+		DamageFunction 4;
+		DamageType "Sawblade";
+		PROJECTILE;
+		+SEEKERMISSILE;
+		+RIPPER;
+		+FLATSPRITE;
+	}
+	
+	States
+	{
+	Spawn:
+		CSWB AAAAAA 1
+		{
+			A_SeekerMissile(20,30,SMF_LOOK);
+			A_SetAngle(angle-60);
+		}
+		Loop;
+	Death:
+		CSWB A 0 { if(tracer) { SetStateLabel("Grinder"); }}
+		Stop;
+	Grinder:
+		CSWB AAAAAA 1
+		{
+			A_SetAngle(angle-60);
+			
+			if(tracer && tracer.health > 0)
+			{
+				SetOrigin(tracer.pos,true);
+				A_DamageTracer(4,"Sawblade");
+			}
+		}
+		CSWB A 0
+		{
+			if(tracer.health > 0)
+			{
+				SetStateLabel("Grinder");
+			}
+			else { SetStateLabel("AbsDeath"); }
+		}
+		Stop;
+	AbsDeath:
+		TNT1 A 0;
+		Stop;
+	}
 }
 
 extend class SGDChainsaw
