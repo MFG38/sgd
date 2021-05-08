@@ -49,7 +49,7 @@ Max. Capacity:		N/A
 Available Upgrades:	Damage increase
 
 Finishers:		Level 1: Rapid-fire volley of nails
-			Level 2: TBD
+			Level 2: Homing life-leeching circular blade
 			Level 3: TBD
 
 A two-bladed chainsaw sounds quite impractical for its intended purpose, but it's more than ideal for cutting the
