@@ -183,7 +183,7 @@ class FlamethrowerFlameWallAfterburner : FlamethrowerFlameWall
 {	
 	Default
 	{
-		DamageFunction (1*8);
+		DamageFunction 8;
 		//+SEEKERMISSILE;
 		+SCREENSEEKER;
 		Scale 1.25;
