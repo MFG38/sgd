@@ -129,7 +129,7 @@ class ChainsawHomingCBlade : Actor
 			
 			if(tracer && tracer.health > 0)
 			{
-				SetOrigin(tracer.pos,true);
+				SetOrigin(tracer.pos+(0,0,tracer.height*0.5),true);
 				A_DamageTracer(4,"Sawblade");
 				A_GiveToTarget("SGDHealthBonus");
 			}
@@ -140,7 +140,7 @@ class ChainsawHomingCBlade : Actor
 			
 			if(tracer && tracer.health > 0)
 			{
-				SetOrigin(tracer.pos,true);
+				SetOrigin(tracer.pos+(0,0,tracer.height*0.5),true);
 				A_DamageTracer(4,"Sawblade");
 			}
 		}
