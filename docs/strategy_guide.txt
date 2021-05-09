@@ -266,6 +266,12 @@ Fancy teleport effect (sgd_fancyteleport) - default: 1
 Controls whether to display the custom teleport effect. Turn this off if you want the classic teleport effect or if
 the custom one causes framerate issues.
 
+Light source dynamic lights (sgd_propdynlights) - default: 1
+------------------------------------------------------------
+Controls whether light source decorations should emit dynamic lights or not. If you run into performance issues with
+lots of light sources in certain areas, turning this off will likely help. Note that the current map has to be reloaded
+for the change to take effect.
+
 Display finisher bar (sgd_displayfbar) - default: 1
 ---------------------------------------------------
 Controls whether the finisher bar should be displayed.
