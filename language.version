@@ -1,4 +1,4 @@
 // Version number doesn't need to be localized.
 
 [default]
-SGD_VERSIONNUM = "v2.0-pre-r259";
+SGD_VERSIONNUM = "v2.0-pre-r260";
