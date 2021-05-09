@@ -113,6 +113,11 @@ class ChainsawHomingCBlade : Actor
 		{
 			A_SeekerMissile(12,15,SMF_LOOK);
 			A_SetAngle(angle-120);
+			
+			if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1)
+			{
+				A_SpawnItemEx("ChainsawCBladeTrail");
+			}
 		}
 		Loop;
 	Death:

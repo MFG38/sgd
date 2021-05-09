@@ -88,6 +88,23 @@ class DMBTrail : SGDProjectileTrail
 	}
 }
 
+class ChainsawCBladeTrail : SGDProjectileTrail
+{
+	Default
+	{
+		Scale 0.5;
+		Alpha 0.4;
+		+FLATSPRITE;
+	}
+	
+	States
+	{
+	Spawn:
+		CSWB AAAAAAAA 1 A_FadeOut(0.05);
+		Stop;
+	}
+}
+
 class DemonizerMorphFX : Actor
 {
 	States
