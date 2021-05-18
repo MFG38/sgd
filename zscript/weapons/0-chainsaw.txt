@@ -96,7 +96,7 @@ class ChainsawHomingCBlade : Actor
 	{
 		Height 2;
 		Radius 15;
-		Speed 25;
+		Speed 30;
 		Scale 0.5;
 		DamageFunction 4;
 		DamageType "Sawblade";
