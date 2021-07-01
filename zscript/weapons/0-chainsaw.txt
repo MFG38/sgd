@@ -189,7 +189,7 @@ class ChainsawOrbitingCBlade : ChainsawHomingCBlade
 	Spawn:
 		CSWB AAAAAA 1
 		{
-			SetOrigin(target.pos+(sin(angle),cos(angle),27),true);
+			SetOrigin(target.pos+(sin(angle)*96,cos(angle)*96,27),true);
 			A_DamageSelf(1);
 			A_SetAngle(angle-120);
 			
