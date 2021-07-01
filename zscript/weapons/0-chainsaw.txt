@@ -181,7 +181,7 @@ class ChainsawOrbitingCBladeSpawner : Actor
 		}
 		Goto Spawn2;
 	Spawn2:
-		TNT1 A 1 SetOrigin(master.pos);
+		TNT1 A 1 SetOrigin(master.pos,true);
 		Loop;
 	}
 }
