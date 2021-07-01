@@ -57,7 +57,7 @@ class SGDChainsaw : SGDWeapon
 		MAGS BAB 3;
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
-	Finisher3:
+	Finisher3:		// A modified version of an idea by InfernalMonsoon.
 		TNT1 A 0 A_BeginFinisher(false);
 		MAGS A 3
 		{
