@@ -53,20 +53,16 @@ class SGDChainsaw : SGDWeapon
 		Goto ReadyLoop;
 	Finisher2:		// Credit to InfernalMonsoon for coming up with this!
 		TNT1 A 0 A_BeginFinisher(false);
-		MAGS A 3 SpawnPlayerMissile("ChainsawHomingCBlade");
+		MAGS A 3 A_FireHomingCBlade(0.0);
 		MAGS BAB 3;
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
-	Finisher3:		// A modified version of an idea by InfernalMonsoon.
+	Finisher3:
 		TNT1 A 0 A_BeginFinisher(false);
-		MAGS A 3
-		{
-			A_SpawnItemEx("ChainsawOrbitingCBlade",64,0,27,angle:0);
-			A_SpawnItemEx("ChainsawOrbitingCBlade",64,0,27,angle:90);
-			A_SpawnItemEx("ChainsawOrbitingCBlade",64,0,27,angle:180);
-			A_SpawnItemEx("ChainsawOrbitingCBlade",64,0,27,angle:270);
-		}
-		MAGS BAB 3;
+		MAGS A 0 A_FireHomingCBlade(-15.0);
+		MAGS A 0 A_FireHomingCBlade(0.0);
+		MAGS A 3 A_FireHomingCBlade(15.0);
+		MAGS BABAB 3;
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
@@ -250,5 +246,11 @@ extend class SGDChainsaw
 	{
 		A_StartSound("chainsaw/nailfire",CHAN_5);
 		SpawnPlayerMissile("ChainsawNail");
+	}
+	
+	action void A_FireHomingCBlade(double ang)
+	{
+		A_AlertMonsters();
+		SpawnPlayerMissile("ChainsawHomingCBlade",angle+ang);
 	}
 }
