@@ -188,6 +188,7 @@ class ChainsawOrbitingCBlade : ChainsawHomingCBlade
 	Spawn:
 		CSWB AAAAAA 1
 		{
+			SetOrigin(target.pos,true);
 			A_DamageSelf(1);
 			A_SeekerMissile(12,15,SMF_LOOK);
 			A_SetAngle(angle-120);
