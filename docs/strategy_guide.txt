@@ -49,8 +49,8 @@ Max. Capacity:		N/A
 Available Upgrades:	Damage increase
 
 Finishers:		Level 1: Rapid-fire volley of nails
-			Level 2: TBD
-			Level 3: TBD
+			Level 2: Homing life-leeching circular blade
+			Level 3: 3 homing life-leeching circular blades
 
 A two-bladed chainsaw sounds quite impractical for its intended purpose, but it's more than ideal for cutting the
 flesh and bone of the demonic invaders! This battery-powered, self-recharging "tool" can quickly and efficiently down
@@ -265,6 +265,12 @@ Fancy teleport effect (sgd_fancyteleport) - default: 1
 ------------------------------------------------------
 Controls whether to display the custom teleport effect. Turn this off if you want the classic teleport effect or if
 the custom one causes framerate issues.
+
+Light source dynamic lights (sgd_propdynlights) - default: 1
+------------------------------------------------------------
+Controls whether light source decorations should emit dynamic lights or not. If you run into performance issues with
+lots of light sources in certain areas, turning this off will likely help. Note that the current map has to be reloaded
+for the change to take effect.
 
 Display finisher bar (sgd_displayfbar) - default: 1
 ---------------------------------------------------

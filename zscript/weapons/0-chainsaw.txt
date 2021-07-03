@@ -51,14 +51,18 @@ class SGDChainsaw : SGDWeapon
 		}
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
-	Finisher2:
+	Finisher2:		// Credit to InfernalMonsoon for coming up with this!
 		TNT1 A 0 A_BeginFinisher(false);
-		MAGS ABABABABABABABABABABABABABABABAB 2 A_ChainsawAttack;
+		MAGS A 3 A_FireHomingCBlade(0.0);
+		MAGS BAB 3;
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	Finisher3:
 		TNT1 A 0 A_BeginFinisher(false);
-		MAGS ABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB 1 A_ChainsawAttack;
+		MAGS A 0 A_FireHomingCBlade(-15.0);
+		MAGS A 0 A_FireHomingCBlade(0.0);
+		MAGS A 3 A_FireHomingCBlade(15.0);
+		MAGS BABAB 3;
 		MAGS A 0 A_EndFinisher;
 		Goto ReadyLoop;
 	}
@@ -87,6 +91,113 @@ class ChainsawNail : Actor
 		NLPJ BCDEFG 2;
 		Stop;
   }
+}
+
+class ChainsawHomingCBlade : Actor
+{
+	Default
+	{
+		Height 2;
+		Radius 15;
+		Speed 30;
+		Scale 0.5;
+		DamageFunction 4;
+		DamageType "Sawblade";
+		PROJECTILE;
+		//+SEEKERMISSILE;
+		+SCREENSEEKER;
+		+FLATSPRITE;
+	}
+	
+	States
+	{
+	Spawn:
+		CSWB AAAAAA 1
+		{
+			A_SeekerMissile(12,15,SMF_LOOK);
+			A_SetAngle(angle-120);
+			
+			if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1)
+			{
+				A_SpawnItemEx("ChainsawCBladeTrail");
+			}
+		}
+		Loop;
+	Death:
+		CSWB A 0
+		{
+			if(tracer) { SetStateLabel("Grinder"); }
+			else { SetStateLabel("AbsDeath"); }
+		}
+		Stop;
+	Grinder:
+		CSWB A 1
+		{
+			A_SetAngle(angle-120);
+			
+			if(tracer && tracer.health > 0)
+			{
+				SetOrigin(tracer.pos+(0,0,tracer.height*0.5),true);
+				A_DamageTracer(4,"Sawblade");
+				A_GiveToTarget("SGDHealthBonus");
+			}
+		}
+		CSWB AAAAAAAAAAA 1
+		{
+			A_SetAngle(angle-120);
+			
+			if(tracer && tracer.health > 0)
+			{
+				SetOrigin(tracer.pos+(0,0,tracer.height*0.5),true);
+				A_DamageTracer(4,"Sawblade");
+			}
+		}
+		CSWB A 0
+		{
+			if(tracer.health > 0)
+			{
+				SetStateLabel("Grinder");
+			}
+			else { SetStateLabel("AbsDeath"); }
+		}
+		Stop;
+	AbsDeath:
+		TNT1 A 0;
+		Stop;
+	}
+}
+
+class ChainsawOrbitingCBlade : ChainsawHomingCBlade
+{
+	Default
+	{
+		Health 666;
+		Speed 0;
+		DamageFunction 12;
+		-SCREENSEEKER;
+		+RIPPER;
+	}
+	
+	States
+	{
+	Spawn:
+		CSWB AAAAAA 1
+		{
+			A_DamageSelf(1);
+			A_SetAngle(angle-120);
+			
+			if(CVar.FindCVar('sgd_spawntrails').GetBool() == 1)
+			{
+				A_SpawnItemEx("ChainsawCBladeTrail");
+			}
+			
+			SetOrigin(target.pos+(sin(angle)*64,cos(angle)*64,27),true);
+		}
+		Loop;
+	Death:
+		TNT1 A 0;
+		Stop;
+	}
 }
 
 extend class SGDChainsaw
@@ -135,5 +246,11 @@ extend class SGDChainsaw
 	{
 		A_StartSound("chainsaw/nailfire",CHAN_5);
 		SpawnPlayerMissile("ChainsawNail");
+	}
+	
+	action void A_FireHomingCBlade(double ang)
+	{
+		A_AlertMonsters();
+		SpawnPlayerMissile("ChainsawHomingCBlade",angle+ang);
 	}
 }
