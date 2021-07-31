@@ -4,7 +4,6 @@ class SGDWeapon : Weapon
 	{
 		Weapon.Kickback 80;
 		Inventory.PickupSound "misc/wpnpickup";
-		//Inventory.ForbiddenTo "DemonizedPlayer";
 		+WEAPON.ALT_AMMO_OPTIONAL;
 		+WEAPON.NOALERT;
 		+WEAPON.NOAUTOAIM;
@@ -97,6 +96,7 @@ class FakePowerup : PowerDamage
 		DamageFactor "Sploder", 1.0;
 		DamageFactor "ArgentBomb", 1.0;
 		DamageFactor "ShotgunSlug", 1.0;
+		DamageFactor "Sawblade", 1.0;
 		Powerup.Duration 0x7FFFFFFD;
 	}
 }
