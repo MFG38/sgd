@@ -7,6 +7,8 @@ version "4.3"
 #include "zscript/misc.txt"
 #include "zscript/props.txt"
 
+#include "zscript/StatusScreen_base.txt"	// StatusBarScreen API by Lewisk3
+
 #include "zscript/event_handlers/brutaldoom.txt"
 #include "zscript/event_handlers/main.txt"
 #include "zscript/event_handlers/replacer.txt"
