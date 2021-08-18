@@ -125,9 +125,3 @@ OptionValue "ReplaceBackpack"
 	0, "$SGD_CVAR_RBACKP0"
 	1, "$SGD_CVAR_RBACKP1"
 }
-
-/* AddOptionMenu "OptionsMenu"
-{
-	StaticText ""
-	Submenu "SGD Options", "SGD_Setup"
-} */
