@@ -58,6 +58,7 @@ extend class SGDWeapon
 	{
 		A_TakeInventory("FinisherToken",0x7FFFFFFF);
 		A_GiveInventory("FinisherInvul",1);
+		
 		if(freeze)
 		{
 			A_Stop();
@@ -68,6 +69,7 @@ extend class SGDWeapon
 	action void A_EndFinisher()
 	{
 		A_TakeInventory("FinisherInvul",1);
+		
 		if(FindInventory("FinisherFreeze"))
 		{
 			A_TakeInventory("FinisherFreeze",1);
