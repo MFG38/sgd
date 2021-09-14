@@ -44,7 +44,7 @@ class RadSuitGiver : PowerIronFeet
 		CountInv("RadSuitTimer") == 140 ||
 		CountInv("RadSuitTimer") == 175))
 		{
-			A_StartSound("hazmat/warning",flags:CHANF_UI|CHANF_LOCAL);
+			owner.A_StartSound("hazmat/warning",flags:CHANF_UI|CHANF_LOCAL);
 		}
 	}
 	
