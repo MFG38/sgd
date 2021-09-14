@@ -36,6 +36,16 @@ class RadSuitGiver : PowerIronFeet
 	{
 		super.DoEffect();
 		owner.A_TakeInventory("RadSuitTimer",1);
+		
+		if(CVar.FindCVar('sgd_hswarningsound').GetBool() == true &&
+		(CountInv("RadSuitTimer") == 35 ||
+		CountInv("RadSuitTimer") == 70 ||
+		CountInv("RadSuitTimer") == 105 ||
+		CountInv("RadSuitTimer") == 140 ||
+		CountInv("RadSuitTimer") == 175))
+		{
+			A_StartSound("hazmat/warning",flags:CHANF_UI|CHANF_LOCAL);
+		}
 	}
 	
 	override void EndEffect()
