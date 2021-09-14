@@ -53,7 +53,7 @@ class FistFinisherTimer : Counter
 
 class DemonizerTimer : Counter
 {
-	Default { Inventory.MaxAmount 2099; }
+	Default { Inventory.MaxAmount 2100; }
 }
 
 class RadSuitTimer : Counter
