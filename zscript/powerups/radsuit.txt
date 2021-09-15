@@ -23,12 +23,15 @@ class SGDRadSuit : CustomInventory
 
 class RadSuitGiver : PowerIronFeet
 {
-	Default { Powerup.Duration -60; Powerup.Color "000000", 0.0; }
+	Default
+	{
+		Powerup.Duration -60;
+		Powerup.Color "00FF00", 0.1;
+	}
 	
 	override void InitEffect()
 	{
 		super.InitEffect();
-		owner.A_GiveInventory("RadSuitColorSetter",1);
 		owner.A_GiveInventory("RadSuitTimer",2100);
 	}
 	
@@ -52,12 +55,11 @@ class RadSuitGiver : PowerIronFeet
 	override void EndEffect()
 	{
 		super.EndEffect();
-		owner.A_TakeInventory("RadSuitColorSetter",1);
 		owner.A_TakeInventory("RadSuitTimer",1);
 	}
-}
-
-class RadSuitColorSetter : FakePowerup
-{
-	Default { Powerup.Color "00FF00", 0.1; }
+	
+	override bool IsBlinking()
+	{
+		return false;
+	}
 }
