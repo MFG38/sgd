@@ -86,23 +86,6 @@ class WeaponUpgrade : Inventory
 	}
 }
 
-
-class FakePowerup : PowerDamage
-// Base class for powerup color setters.
-{
-	Default
-	{
-		DamageFactor "Normal", 1.0;
-		DamageFactor "Fire", 1.0;
-		DamageFactor "HolyWater", 1.0;
-		DamageFactor "Sploder", 1.0;
-		DamageFactor "ArgentBomb", 1.0;
-		DamageFactor "ShotgunSlug", 1.0;
-		DamageFactor "Sawblade", 1.0;
-		Powerup.Duration 0x7FFFFFFD;
-	}
-}
-
 class SGDMonster : Actor
 {
 	Default
