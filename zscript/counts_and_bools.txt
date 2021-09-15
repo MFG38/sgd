@@ -46,11 +46,6 @@ class ArchvilesKilled : Counter {}
 class CyberdemonsKilled : Counter {}
 class SpiderMastermindsKilled : Counter {}
 
-class FistFinisherTimer : Counter
-{
-	Default { Inventory.MaxAmount 175; }
-}
-
 class DemonizerTimer : Counter
 {
 	Default { Inventory.MaxAmount 2100; }
