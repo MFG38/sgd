@@ -16,6 +16,7 @@ class DemonizedPlayer : PlayerPawn
 		DamageFactor "Sploder", 0.0;
 		DamageFactor "ArgentBomb", 0.0;
 		DamageFactor "ShotgunSlug", 0.0;
+		DamageFactor "Sawblade", 0.0;
 		DamageFactor "HolyWater", 1.1;
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
