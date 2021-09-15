@@ -62,8 +62,8 @@ class DemonizerMorph : PowerMorph
 	override void EndEffect()
 	{
 		super.EndEffect();
-		owner.A_TakeInventory("DemonizerTimer",1);
 		owner.A_TakeInventory("DemonVisionEffect",1);
+		owner.A_TakeInventory("DemonizerTimer",1);
 		
 		S_ChangeMusic("*");
 	}
