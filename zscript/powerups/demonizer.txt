@@ -41,13 +41,14 @@ class DemonizerMorph : PowerMorph
 		PowerMorph.MorphStyle MRF_FULLHEALTH;
 		PowerMorph.MorphFlash "DemonizerMorphFX";
 		PowerMorph.UnMorphFlash "DemonizerMorphFX";
+		Powerup.Color "RedMap";
 		Powerup.Duration -60;
 	}
 	
 	override void InitEffect()
 	{
 		super.InitEffect();
-		owner.A_GiveInventory("DemonVisionEffect",1);
+		//owner.A_GiveInventory("DemonVisionEffect",1);
 		owner.A_GiveInventory("DemonizerTimer",2100);
 		
 		S_ChangeMusic("BFG_DIV");
@@ -59,10 +60,15 @@ class DemonizerMorph : PowerMorph
 		owner.A_TakeInventory("DemonizerTimer",1);
 	}
 	
+	override bool IsBlinking()
+	{
+		return false;
+	}
+	
 	override void EndEffect()
 	{
 		super.EndEffect();
-		owner.A_TakeInventory("DemonVisionEffect",1);
+		//owner.A_TakeInventory("DemonVisionEffect",1);
 		owner.A_TakeInventory("DemonizerTimer",1);
 		
 		S_ChangeMusic("*");
