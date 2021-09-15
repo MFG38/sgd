@@ -25,14 +25,6 @@ class DemonizerPowerup : CustomInventory
 	}
 }
 
-class DemonVisionEffect : FakePowerup
-{
-	Default
-	{
-		Powerup.Color "RedMap";
-	}
-}
-
 class DemonizerMorph : PowerMorph
 {
 	Default
@@ -48,7 +40,6 @@ class DemonizerMorph : PowerMorph
 	override void InitEffect()
 	{
 		super.InitEffect();
-		//owner.A_GiveInventory("DemonVisionEffect",1);
 		owner.A_GiveInventory("DemonizerTimer",2100);
 		
 		S_ChangeMusic("BFG_DIV");
@@ -68,7 +59,6 @@ class DemonizerMorph : PowerMorph
 	override void EndEffect()
 	{
 		super.EndEffect();
-		//owner.A_TakeInventory("DemonVisionEffect",1);
 		owner.A_TakeInventory("DemonizerTimer",1);
 		
 		S_ChangeMusic("*");
