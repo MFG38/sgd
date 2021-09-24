@@ -132,10 +132,8 @@ extend class SGDFists
 			}
 		}
 
-		int dmg = 100;
-
 		A_Recoil(-10);
-		LineAttack(angle,64,pitch,dmg,damagetype,"BulletPuff",LAF_ISMELEEATTACK,t);
+		LineAttack(angle,64,pitch,100,damagetype,"BulletPuff",LAF_ISMELEEATTACK,t);
 		//A_RadiusThrust(CountInv("FistFinisherThrustScaler") * 2000,64,RTF_NOTMISSILE);
 		ACS_NamedExecute("FeatTracker",0);
 		
