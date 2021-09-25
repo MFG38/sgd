@@ -81,4 +81,13 @@ class SGDPlayer : PlayerPawn
 		PLAY Y -1;
 		Stop;
 	}
+	
+	override bool OnGiveSecret(bool printmsg, bool playsound)
+	{
+		if(CVar.FindCVar('sgd_secretmsgoverride').GetBool() == false)
+		{
+			return false;
+		}
+		else { return true; }
+	}
 }

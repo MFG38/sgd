@@ -23,6 +23,7 @@ SGD_SUBTTL_SPAWNS = "Esinekorvikkeet (*)";
 SGD_SUBTTL_CONTROLS = "Muuta ohjausasetuksia";
 SGD_SUBTTL_CONTROLS1 = "Tärkeät näppäinkomennot";
 SGD_SUBTTL_CONTROLS2 = "Powerup-pikanäppäimet (vaihtoehtoinen)";
+SGD_SUBTTL_MISC = "Sekalaiset";
 
 SGD_OM_PROJTRAILS = "Näytä projektiilien hännät (*)";
 SGD_OM_PROJTRAILSNOTICE = "(Ei vaikuta luotien häntiin)";
@@ -50,6 +51,8 @@ SGD_OM_RPLASMA = "Plasmakiväärin korvike";
 SGD_OM_RBFG = "BFG9000:n korvike";
 SGD_OM_RBACKP = "Ammusrepun korvike";
 SGD_OM_CLASSICPWR = "Klassiset powerupit";
+
+SGD_OM_SECRETMSG = "Poista GZDoomin sala-alueviesti";
 
 SGD_CVAR_FMSG0 = "Pois päältä";
 SGD_CVAR_FMSG1 = "Ei näppäinohjetta";

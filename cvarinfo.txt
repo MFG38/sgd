@@ -30,3 +30,6 @@ server bool sgd_classicpowerups = false;
 user bool sgd_fieldmedsound = true;
 user bool sgd_hswarningsound = true;
 user bool sgd_visortogglesound = true;
+
+// Misc.
+user bool sgd_secretmsgoverride = false;
