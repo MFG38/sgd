@@ -61,6 +61,7 @@ OptionMenu "SGD_Setup"
 	StaticText ""
 	StaticText "$SGD_SUBTTL_MISC", "White"
 	Option "$SGD_OM_SECRETMSG", "sgd_secretmsgoverride", "OnOff"
+	StaticText ""
 	Submenu "$SGD_SUBTTL_CONTROLS", "SGD_KeyConfig"
 }
 

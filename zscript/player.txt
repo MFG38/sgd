@@ -84,7 +84,7 @@ class SGDPlayer : PlayerPawn
 	
 	override bool OnGiveSecret(bool printmsg, bool playsound)
 	{
-		if(CVar.FindCVar('sgd_secretmsgoverride').GetBool() == false)
+		if(CVar.FindCVar('sgd_secretmsgoverride').GetBool() == true)
 		{
 			return false;
 		}
