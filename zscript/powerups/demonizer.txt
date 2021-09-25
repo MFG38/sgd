@@ -19,7 +19,6 @@ class DemonizerPowerup : CustomInventory
 		INSS ABCD 6 Light("L_DemonizerPickup");
 		Loop;
 	Use:
-		//TNT1 A 0 ACS_NamedExecute("Demonizer_SoundAndVision",0);
 		TNT1 A 0 A_GiveInventory("DemonizerMorph",1);
 		Stop;
 	}
