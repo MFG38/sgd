@@ -61,8 +61,8 @@ class SGDFists : SGDWeapon
 		Goto ReadyLoop;
 	Finisher3:
 		TNT1 A 0 A_BeginFinisher(false);
-		PUCH A 0 A_GiveInventory("FistFinisherTimeFreeze",1);
-		//PUCH A 0 ACS_NamedExecute("FistFinisher3Timer",0);
+		PUCH A 2 A_GiveInventory("FistFinisherTimeFreeze",1);
+		PUCH A 2 A_EndFinisher;
 		Goto ReadyLoop;
 	}
 }
