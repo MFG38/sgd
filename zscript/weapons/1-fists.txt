@@ -76,7 +76,6 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 		super.InitEffect();
 		
 		PlayerInfo p = players[consoleplayer];
-		Shader.SetUniform1f(p,"OldVideo","timer",gametic+e.FracTic);
 		Shader.SetEnabled(p,"OldVideo",true);
 	}
 	

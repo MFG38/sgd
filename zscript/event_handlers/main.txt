@@ -4,6 +4,13 @@ class SGDStaticHandler : StaticEventHandler
 	{
 		Console.Printf("\crSatanic Gameshow Deluxe %s\c-",StringTable.Localize("$SGD_VERSIONNUM"));
 	}
+	
+	override void RenderOverlay(RenderEvent e)
+	{
+		PlayerInfo p = players[consoleplayer];
+		
+		Shader.SetUniform1f(p,"OldVideo","timer",gametic+e.FracTic);
+	}
 }
 
 class SGDMainHandler : EventHandler {}
