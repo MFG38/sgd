@@ -194,6 +194,6 @@ flickerlight2 L_HeadCandles
 HardwareShader PostProcess scene
 {
 	name "OldVideo"
-	shader "shaders/Oldvideo.fp" 330
+	shader "shaders/OldVideo.fp" 330
 	Uniform float timer
 }
