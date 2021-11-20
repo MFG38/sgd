@@ -87,10 +87,10 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 		Shader.SetEnabled(p,"OldVideo",false);
 	}
 	
-	override bool IsBlinking()
+	/* override bool IsBlinking()
 	{
 		return false;
-	}
+	} */
 }
 
 extend class SGDFists
