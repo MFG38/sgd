@@ -74,7 +74,7 @@ class SGDReplacementHandler : EventHandler
 			if(e.Replacee == 'Berserk') { e.Replacement = 'FieldMedPack'; }
 			else if(e.Replacee == 'BlurSphere') { e.Replacement = 'HolyWaterGrenadePickup'; }
 			else if(e.Replacee == 'Infrared') { e.Replacement = 'SGDLightAmpGoggles'; }
-			else if(e.Replacee == 'InvulnerabilitySphere') { e.Replacement = 'DemonizerPowerup'; }
+			else if(e.Replacee == 'InvulnerabilitySphere') { e.Replacement = 'DemonizerOrb'; }
 			else if(e.Replacee == 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
 		}
 		else if(classicpwr.GetBool() == true)
