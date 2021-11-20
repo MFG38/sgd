@@ -74,13 +74,18 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 	override void InitEffect()
 	{
 		super.InitEffect();
-		// Shader stuff to come later
+		
+		PlayerInfo p = players[consoleplayer];
+		Shader.SetUniform1f(p,"OldVideo","timer",gametic+e.FracTic);
+		Shader.SetEnabled(p,"OldVideo",true);
 	}
 	
 	override void EndEffect()
 	{
 		super.EndEffect();
-		// Shader stuff to come later
+		
+		PlayerInfo p = players[consoleplayer];
+		Shader.SetEnabled(p,"OldVideo",true);
 	}
 	
 	override bool IsBlinking()
