@@ -84,7 +84,7 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 		super.EndEffect();
 		
 		PlayerInfo p = players[consoleplayer];
-		Shader.SetEnabled(p,"OldVideo",true);
+		Shader.SetEnabled(p,"OldVideo",false);
 	}
 	
 	override bool IsBlinking()
