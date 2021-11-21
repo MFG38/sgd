@@ -5,6 +5,8 @@ class SGDStaticHandler : StaticEventHandler
 		Console.Printf("\crSatanic Gameshow Deluxe %s\c-",StringTable.Localize("$SGD_VERSIONNUM"));
 	}
 	
+	// This is just here to set the uniform for the shader used
+	// by the Fists' Level 3 finisher.
 	override void RenderOverlay(RenderEvent e)
 	{
 		PlayerInfo p = players[consoleplayer];
