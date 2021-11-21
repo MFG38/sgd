@@ -81,7 +81,7 @@ function void DisplayFeatMsg (int index)
 function void GiveFeatReward (int index)
 {	
 	SetHudSize(HUDSIZE_X,HUDSIZE_Y,0);
-	if(!CheckActorInventory(ActivatorTID(),Rewards[index]))
+	if(!CheckInventory(Rewards[index]))
 	{
 		SetFont("SMALLFONT");
 		HudMessage(l:"SGD_UPGRADEAWARDED",l:UpgradeName[index];
@@ -94,15 +94,15 @@ function void GiveFeatReward (int index)
 			HUDMSG_TYPEON,201,CR_RED,CENTER_X,75.0,4.0,FRAME,2.0);
 	}
 	
-	if(!CheckActorInventory(ActivatorTID(),Rewards[index]))
+	if(!CheckInventory(Rewards[index]))
 	{
-		GiveActorInventory(ActivatorTID(),Rewards[index],1);
+		GiveInventory(Rewards[index],1);
 	}
 }
 
 function bool CheckForFeatCompletion (int index, str tokencheck, int amountcheck)
 {
-	if(CheckActorInventory(ActivatorTID(),tokencheck) >= amountcheck && FeatStatus[index] == 0)
+	if(CheckInventory(tokencheck) >= amountcheck && FeatStatus[index] == 0)
 	{
 		return true;
 	}
