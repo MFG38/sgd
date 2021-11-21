@@ -49,14 +49,6 @@ str Rewards[NUM_UPGRADES] =
 	"Minigun_Accuracy","Minigun_Windup","Bazooka_FireRate","Bazooka_Recoil","ArgentRifle_Cooldown",
 	"Flamethrower_FlameLinger","Chainsaw_Damage"};
 
-/* str TokenCheck[NUM_ENEMIES] =
-	{"ZombiemenKilled","ShotgunnersKilled","ChaingunnersKilled","ImpsKilled",
-	"LostSoulsKilled","PinkiesKilled","SpectresKilled","CacodemonsKilled",
-	"PainElementalsKilled","HellKnightsKilled","BaronsKilled","RevenantsKilled",
-	"ArachnotronsKilled","MancubiKilled","ArchvilesKilled",
-	"CyberdemonsKilled","SpiderMastermindsKilled"};
-int AmountCheck; */
-
 str UpgradeName[NUM_UPGRADES] =
 	// Rifle
 	{"SGD_UPGRADE_RIFLEACCURACY","SGD_UPGRADE_RIFLEFIRERATE",
@@ -89,7 +81,7 @@ function void DisplayFeatMsg (int index)
 function void GiveFeatReward (int index)
 {	
 	SetHudSize(HUDSIZE_X,HUDSIZE_Y,0);
-	if(!CheckActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index]))
+	if(!CheckActorInventory(0,Rewards[index]))
 	{
 		SetFont("SMALLFONT");
 		HudMessage(l:"SGD_UPGRADEAWARDED",l:UpgradeName[index];
@@ -102,15 +94,15 @@ function void GiveFeatReward (int index)
 			HUDMSG_TYPEON,201,CR_RED,CENTER_X,75.0,4.0,FRAME,2.0);
 	}
 	
-	if(!CheckActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index]))
+	if(!CheckActorInventory(0,Rewards[index]))
 	{
-		GiveActorInventory(PL_TIDSTART+PlayerNumber(),Rewards[index],1);
+		GiveActorInventory(0,Rewards[index],1);
 	}
 }
 
 function bool CheckForFeatCompletion (int index, str tokencheck, int amountcheck)
 {
-	if(CheckActorInventory(PL_TIDSTART+PlayerNumber(),tokencheck) >= amountcheck && FeatStatus[index] == 0)
+	if(CheckActorInventory(0,tokencheck) >= amountcheck && FeatStatus[index] == 0)
 	{
 		return true;
 	}
