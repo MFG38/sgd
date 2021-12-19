@@ -30,5 +30,5 @@ user bool sgd_hswarningsound = true;
 user bool sgd_visortogglesound = true;
 
 // Misc.
-user bool sgd_secretmsgoverride = false;
+//user bool sgd_secretmsgoverride = false;
 user noarchive bool sgd_debugmode = false;	// Unused, but keeping just in case.

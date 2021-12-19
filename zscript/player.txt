@@ -82,12 +82,12 @@ class SGDPlayer : PlayerPawn
 		Stop;
 	}
 	
-	override bool OnGiveSecret(bool printmsg, bool playsound)
+	/* override bool OnGiveSecret(bool printmsg, bool playsound)
 	{
 		if(CVar.FindCVar('sgd_secretmsgoverride').GetBool() == true)
 		{
 			return false;
 		}
 		else { return true; }
-	}
+	} */
 }
