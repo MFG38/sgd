@@ -36,7 +36,7 @@ class SGDFists : SGDWeapon
 		PUCH F 2 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH G 2;
 		PUCH O 2 A_FistAttack;
-		PUCH HPIQJ 2;
+		PUCH HPIQJK 2;
 		PUCH K 2;
 		Goto ReadyLoop;
 	FinisherFail:
