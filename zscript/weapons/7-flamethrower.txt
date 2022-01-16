@@ -263,16 +263,18 @@ extend class SGDFlamethrower
 				return;	
 		}
 		
+		ang = angle + frandom[FlamerAttack](1.2);
+		
 		A_AlertMonsters();
 		A_StartSound("flamethrower/fire",CHAN_WEAPON);
 		
 		if(FindInventory("Flamethrower_FlameLinger"))
 		{
-			SpawnPlayerMissile("FlamethrowerFire_Linger");
+			SpawnPlayerMissile("FlamethrowerFire_Linger",ang);
 		}
 		else
 		{
-			SpawnPlayerMissile("FlamethrowerFire");
+			SpawnPlayerMissile("FlamethrowerFire",ang);
 		}
 		
 		ACS_NamedExecute("FeatTracker",0);
