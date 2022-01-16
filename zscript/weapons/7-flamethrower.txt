@@ -263,7 +263,7 @@ extend class SGDFlamethrower
 				return;	
 		}
 		
-		float ang = angle + frandom[FlamerAttack](1.2);
+		float ang = angle + ((random2[FlamerAttack]() * 1.2) / 256);
 		
 		A_AlertMonsters();
 		A_StartSound("flamethrower/fire",CHAN_WEAPON);
