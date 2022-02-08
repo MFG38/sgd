@@ -90,6 +90,8 @@ class SGDPlayer : PlayerPawn
 			return;
 		}
 		
+		super.Tick();
+		
 		int timer;
 		int cooldown;
 		
