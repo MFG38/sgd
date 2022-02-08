@@ -98,7 +98,7 @@ class SGDPlayer : PlayerPawn
 		
 		if(CountInv("ArgentRifleHeat") > 0 &&
 		(timer % cooldown) == 0 && 
-		player.ReadyWeapon != "SGDArgentRifle")
+		self.player.ReadyWeapon.GetClassName() != "SGDArgentRifle")
 		{
 			TakeInventory("ArgentRifleHeat",1);
 		}
