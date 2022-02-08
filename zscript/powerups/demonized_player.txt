@@ -108,24 +108,13 @@ class DemonizedFists : SGDWeapon
 		PUCH A 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH B 1;
 		PUCH L 1 A_DemonFistAttack;
-		PUCH C 1;
-		PUCH M 1;
-		PUCH D 1;
-		PUCH N 1;
-		PUCH E 1;
-		PUCH R 1;
-		PUCH K 1;
+		PUCH CMDNERK 1;
 		Goto ReadyLoop;
 	Punch2:
 		PUCH F 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH G 1;
 		PUCH O 1 A_DemonFistAttack;
-		PUCH H 1;
-		PUCH P 1;
-		PUCH I 1;
-		PUCH Q 1;
-		PUCH J 1;
-		PUCH K 1;
+		PUCH HPIQJKK 1;
 		Goto ReadyLoop;
 	AltFire:	// Overriding since finishers are unnecessary for this weapon.
 		PUCH A 0;
