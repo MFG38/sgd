@@ -98,10 +98,12 @@ class SGDPlayer : PlayerPawn
 		
 		if(CountInv("ArgentRifleHeat") > 0 &&
 		(timer % cooldown) == 0 && 
-		player.mo.SelectedWeapon != "SGDArgentRifle")
+		player.ReadyWeapon != "SGDArgentRifle")
 		{
 			TakeInventory("ArgentRifleHeat",1);
 		}
+		
+		timer++;
 	}
 	
 	/* override bool OnGiveSecret(bool printmsg, bool playsound)
