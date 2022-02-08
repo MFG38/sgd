@@ -82,6 +82,28 @@ class SGDPlayer : PlayerPawn
 		Stop;
 	}
 	
+	override void Tick()
+	{
+		if (!player || !player.mo || player.mo != self)
+		{
+			Super.Tick();
+			return;
+		}
+		
+		int timer;
+		int cooldown;
+		
+		if(CheckInventory("ArgentRifle_Cooldown")) { cooldown = 18; }
+		else { cooldown = 24; }
+		
+		if(CheckInventory("ArgentRifleHeat") > 0 &&
+		(timer % cooldown) == 0 && 
+		player.mo.GetWeapon() != "SGDArgentRifle")
+		{
+			TakeInventory("ArgentRifleHeat",1);
+		}
+	}
+	
 	/* override bool OnGiveSecret(bool printmsg, bool playsound)
 	{
 		if(CVar.FindCVar('sgd_secretmsgoverride').GetBool() == true)
