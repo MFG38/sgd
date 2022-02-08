@@ -93,12 +93,12 @@ class SGDPlayer : PlayerPawn
 		int timer;
 		int cooldown;
 		
-		if(CheckInventory("ArgentRifle_Cooldown")) { cooldown = 18; }
+		if(CheckInventory("ArgentRifle_Cooldown",1)) { cooldown = 18; }
 		else { cooldown = 24; }
 		
-		if(CheckInventory("ArgentRifleHeat") > 0 &&
+		if(CountInv("ArgentRifleHeat") > 0 &&
 		(timer % cooldown) == 0 && 
-		player.mo.GetWeapon() != "SGDArgentRifle")
+		player.mo.SelectedWeapon != "SGDArgentRifle")
 		{
 			TakeInventory("ArgentRifleHeat",1);
 		}
