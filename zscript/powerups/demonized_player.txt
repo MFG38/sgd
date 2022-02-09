@@ -76,6 +76,30 @@ class DemonizedPlayer : PlayerPawn
 		PLAY Y -1;
 		Stop;
 	}
+	
+	override void Tick()
+	{
+		if (!player || !player.mo || player.mo != self)
+		{
+			Super.Tick();
+			return;
+		}
+		
+		super.Tick();
+		
+		//int timer;
+		int cooldown;
+		
+		if(CheckInventory("ArgentRifle_Cooldown",1)) { cooldown = 18; }
+		else { cooldown = 24; }
+		
+		if(CountInv("ArgentRifleHeat") > 0 &&
+		level.maptime % cooldown == 0 && 
+		self.player.ReadyWeapon.GetClassName() != "SGDArgentRifle")
+		{
+			TakeInventory("ArgentRifleHeat",1);
+		}
+	}
 }
 
 class DemonizedFists : SGDWeapon
