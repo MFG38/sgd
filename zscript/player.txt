@@ -98,14 +98,14 @@ class SGDPlayer : PlayerPawn
 		if(CheckInventory("ArgentRifle_Cooldown",1)) { cooldown = 18; }
 		else { cooldown = 24; }
 		
+		timer++;
+		
 		if(CountInv("ArgentRifleHeat") > 0 &&
 		(timer % cooldown) == 0 && 
 		self.player.ReadyWeapon.GetClassName() != "SGDArgentRifle")
 		{
 			TakeInventory("ArgentRifleHeat",1);
 		}
-		
-		timer++;
 	}
 	
 	/* override bool OnGiveSecret(bool printmsg, bool playsound)
