@@ -162,9 +162,7 @@ extend class DemonizedFists
 			}
 		}
 
-		int dmg = 500;
-
-		LineAttack(angle,64,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
+		LineAttack(angle,64,pitch,500,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
 		ACS_NamedExecute("FeatTracker",0);
 		
 		if(t.linetarget)
