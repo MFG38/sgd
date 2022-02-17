@@ -11,14 +11,15 @@ class SGDWeapon : Weapon
 
 	States
 	{
+	LoadSprite:	// "Precache" the sprite to be used for Select and Deselect
+				// states, need to do less state overriding that way.
+		"####" "#" 0;
 	Select:
-		TNT1 AAA 0 A_Raise;
-		"####" "#" 1 A_Raise;
-		Goto Select+2;
+		"####" "#" 1 A_FastRaise;
+		Goto Select;
 	Deselect:
-		TNT1 AAA 0 A_Lower;
-		"####" "#" 1 A_Lower;
-		Goto Deselect+2;
+		"####" "#" 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		TNT1 A 0;
 		Goto ReadyLoop;
@@ -54,6 +55,20 @@ class SGDWeapon : Weapon
 
 extend class SGDWeapon
 {
+	action void A_FastRaise()
+	{
+		A_Raise();
+		A_Raise();
+		A_Raise();
+	}
+	
+	action void A_FastLower()
+	{
+		A_Lower();
+		A_Lower();
+		A_Lower();
+	}
+	
 	action void A_BeginFinisher(bool freeze)
 	{
 		A_TakeInventory("FinisherToken",0x7FFFFFFF);

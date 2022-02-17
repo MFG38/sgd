@@ -12,14 +12,8 @@ class SGDFists : SGDWeapon
 
 	States
 	{
-	Select:
-		TNT1 AAA 0 A_Raise;
-		PUCH A 1 A_Raise;
-		Goto Select+2;
-	Deselect:
-		TNT1 AAA 0 A_Lower;
-		PUCH A 1 A_Lower;
-		Goto Deselect+2;
+	LoadSprite:
+		PUCH A 0;
 	Ready:
 		PUCH A 0;
 		Goto ReadyLoop;

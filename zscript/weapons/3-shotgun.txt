@@ -16,14 +16,8 @@ class SGDShotgun : SGDWeapon
 	Spawn:
 		DNSP A -1;
 		Stop;
-	Select:
-		TNT1 AAA 0 A_Raise;
-		DNSG A 1 A_Raise;
-		Goto Select+2;
-	Deselect:
-		TNT1 AAA 0 A_Lower;
-		DNSG A 1 A_Lower;
-		Goto Deselect+2;
+	LoadSprite:
+		DNSG A 0;
 	Ready:
 		DNSG A 0;
 		Goto ReadyLoop;
