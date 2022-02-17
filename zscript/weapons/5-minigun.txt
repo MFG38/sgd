@@ -16,8 +16,12 @@ class SGDMinigun : SGDWeapon
 	Spawn:
 		MNGN A -1;
 		Loop;
-	LoadSprite:
-		MNGG A 0;
+	Select:
+		MNGG A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		MNGG A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		MNGG A 0;
 		Goto ReadyLoop;

@@ -16,8 +16,12 @@ class SGDFlamethrower : SGDWeapon
 	Spawn:
 		WFLM A -1;
 		Stop;
-	LoadSprite:
-		FLMG A 0;
+	Select:
+		FLMG A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		FLMG A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		FLMG A 0;
 		Goto ReadyLoop;

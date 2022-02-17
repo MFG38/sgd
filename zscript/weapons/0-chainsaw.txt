@@ -17,8 +17,12 @@ class SGDChainsaw : SGDWeapon
 	Spawn:
 		MAGS E -1;
 		Stop;
-	LoadSprite:
-		MAGS A 0;
+	Select:
+		MAGS A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		MAGS A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		MAGS C 0;
 		Goto ReadyLoop;

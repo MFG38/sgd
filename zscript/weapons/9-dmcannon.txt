@@ -17,8 +17,12 @@ class SGDDarkMatterCannon : SGDWeapon
 	Spawn:
 		DCAN A -1;
 		Stop;
-	LoadSprite:
-		DMAT A 0;
+	Select:
+		DMAT A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		DMAT A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		DMAT A 0;
 		Goto ReadyLoop;

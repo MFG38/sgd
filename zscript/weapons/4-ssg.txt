@@ -17,8 +17,12 @@ class SGDSuperShotgun : SGDWeapon
 	Spawn:
 		COCP A -1;
 		Stop;
-	LoadSprite:
-		COCH A 0;
+	Select:
+		COCH A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		COCH A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		COCH A 0;
 		Goto ReadyLoop;

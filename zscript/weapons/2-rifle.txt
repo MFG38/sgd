@@ -16,8 +16,12 @@ class SGDRifle : SGDWeapon
 	Spawn:
 		RGUP A -1;
 		Stop;
-	LoadSprite:
-		RGUN A 0;
+	Select:
+		RGUN A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		RGUN A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		RGUN A 0;
 		Goto ReadyLoop;

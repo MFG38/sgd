@@ -16,8 +16,12 @@ class SGDArgentRifle : SGDWeapon
 	Spawn:
 		STPP A -1;
 		Stop;
-	LoadSPrite:
-		STPO E 0;
+	Select:
+		STPO E 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		STPO E 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		STPO A 0;
 		Goto ReadyLoop;

@@ -11,9 +11,6 @@ class SGDWeapon : Weapon
 
 	States
 	{
-	LoadSprite:	// "Precache" the sprite to be used for Select and Deselect
-				// states, need to do less state overriding that way.
-		"####" "#" 0;
 	Select:
 		"####" "#" 1 A_FastRaise;
 		Goto Select;

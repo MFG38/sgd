@@ -16,8 +16,12 @@ class SGDShotgun : SGDWeapon
 	Spawn:
 		DNSP A -1;
 		Stop;
-	LoadSprite:
-		DNSG A 0;
+	Select:
+		DNSG A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		DNSG A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		DNSG A 0;
 		Goto ReadyLoop;

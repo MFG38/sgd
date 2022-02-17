@@ -16,8 +16,12 @@ class SGDBazooka : SGDWeapon
 	Spawn:
 		HSGN A -1;
 		Stop;
-	LoadSprite:
-		HSML A 0;
+	Select:
+		HSML A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		HSML A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		HSML A 0;
 		Goto ReadyLoop;

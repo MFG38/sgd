@@ -12,8 +12,12 @@ class SGDFists : SGDWeapon
 
 	States
 	{
-	LoadSprite:
-		PUCH A 0;
+	Select:
+		PUCH A 1 A_FastRaise;
+		Goto Select;
+	Deselect:
+		PUCH A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		PUCH A 0;
 		Goto ReadyLoop;
