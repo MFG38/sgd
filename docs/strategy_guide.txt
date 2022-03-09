@@ -168,7 +168,7 @@ Max. Capacity:		450
 Available Upgrades:	Lingering flames
 
 Finishers:		Level 1: Flame wall
-			Level 2: Sentient heat-seeking flame wall with "afterburner"
+			Level 2: Heat-seeking flame wall with "afterburner"
 			Level 3: Concentrated fire beam
 
 What happens when you combine the tracing technology of the BFG-9000 and literal fire? This experimental flamethrower.
