@@ -10,7 +10,6 @@ class SGDStaticHandler : StaticEventHandler
 	override void RenderOverlay(RenderEvent e)
 	{
 		PlayerInfo p = players[consoleplayer];
-		
 		Shader.SetUniform1f(p,"OldVideo","timer",gametic+e.FracTic);
 	}
 }
