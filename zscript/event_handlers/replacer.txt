@@ -1,9 +1,7 @@
-class SGDReplacementHandler : EventHandler
+class SGDReplacementHandler : StaticEventHandler
 {
 	override void CheckReplacement (ReplaceEvent e)
 	{
-		e.IsFinal = true; 
-		
 		// Cvar-controlled replacements
 		cvar r_plasma = CVar.FindCVar('sgd_replaceplasmagun');
 		cvar r_bfg = CVar.FindCVar('sgd_replacebfg');
@@ -114,5 +112,7 @@ class SGDReplacementHandler : EventHandler
 		else if(e.Replacee is 'Allmap') { e.Replacement = 'SGDAllmap'; }
 		else if(e.Replacee is 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
 		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
+
+		e.IsFinal = true;
 	}
 }
