@@ -2,6 +2,8 @@ class SGDReplacementHandler : StaticEventHandler
 {
 	override void CheckReplacement (ReplaceEvent e)
 	{
+		e.IsFinal = true;
+
 		// Cvar-controlled replacements
 		cvar r_plasma = CVar.FindCVar('sgd_replaceplasmagun');
 		cvar r_bfg = CVar.FindCVar('sgd_replacebfg');
@@ -86,13 +88,13 @@ class SGDReplacementHandler : StaticEventHandler
 		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
 		// Ammo
 		else if(e.Replacee is 'Clip') { e.Replacement = 'RifleMag'; }
-		else if(e.Replacee is 'ClipBox') { e.Replacement = 'MinigunBulletBox'; }
+		else if(e.Replacee == 'ClipBox') { e.Replacement = 'MinigunBulletBox'; }
 		else if(e.Replacee is 'Shell') { e.Replacement = 'HandfulOfShells'; }
-		else if(e.Replacee is 'ShellBox') { e.Replacement = 'BoxOfShells'; }
+		else if(e.Replacee == 'ShellBox') { e.Replacement = 'BoxOfShells'; }
 		else if(e.Replacee is 'RocketAmmo') { e.Replacement = 'LonelyRocket'; }
-		else if(e.Replacee is 'RocketBox') { e.Replacement = 'PileOfRockets'; }
+		else if(e.Replacee == 'RocketBox') { e.Replacement = 'PileOfRockets'; }
 		else if(e.Replacee is 'Cell') { e.Replacement = 'GasCanister'; }
-		else if(e.Replacee is 'CellPack') { e.Replacement = 'GasTank'; }
+		else if(e.Replacee == 'CellPack') { e.Replacement = 'GasTank'; }
 		// Weapons
 		else if(e.Replacee is 'Fist') { e.Replacement = 'SGDFists'; }
 		else if(e.Replacee is 'Chainsaw') { e.Replacement = 'SGDChainsaw'; }
@@ -112,7 +114,5 @@ class SGDReplacementHandler : StaticEventHandler
 		else if(e.Replacee is 'Allmap') { e.Replacement = 'SGDAllmap'; }
 		else if(e.Replacee is 'Soulsphere') { e.Replacement = 'SGDSoulsphere'; }
 		else if(e.Replacee is 'Megasphere') { e.Replacement = 'SGDMegasphere'; }
-
-		e.IsFinal = true;
 	}
 }
