@@ -71,7 +71,7 @@ class SGDReplacementHandler : EventHandler
 			break;
 		}
 		
-		if(classicpwr.GetBool() is false)
+		if(classicpwr.GetBool() == false)
 		{
 			if(e.Replacee is 'Berserk') { e.Replacement = 'FieldMedPack'; }
 			else if(e.Replacee is 'BlurSphere') { e.Replacement = 'HolyWaterGrenadePickup'; }
