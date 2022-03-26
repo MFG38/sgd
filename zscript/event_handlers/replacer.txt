@@ -87,13 +87,13 @@ class SGDReplacementHandler : StaticEventHandler
 		// Misc. replacees
 		if(e.Replacee is 'TeleportFog') { e.Replacement = 'SGDTeleportFog'; }
 		// Ammo
-		else if(e.Replacee is 'Clip') { e.Replacement = 'RifleMag'; }
+		else if(e.Replacee == 'Clip') { e.Replacement = 'RifleMag'; }
 		else if(e.Replacee == 'ClipBox') { e.Replacement = 'MinigunBulletBox'; }
-		else if(e.Replacee is 'Shell') { e.Replacement = 'HandfulOfShells'; }
+		else if(e.Replacee == 'Shell') { e.Replacement = 'HandfulOfShells'; }
 		else if(e.Replacee == 'ShellBox') { e.Replacement = 'BoxOfShells'; }
-		else if(e.Replacee is 'RocketAmmo') { e.Replacement = 'LonelyRocket'; }
+		else if(e.Replacee == 'RocketAmmo') { e.Replacement = 'LonelyRocket'; }
 		else if(e.Replacee == 'RocketBox') { e.Replacement = 'PileOfRockets'; }
-		else if(e.Replacee is 'Cell') { e.Replacement = 'GasCanister'; }
+		else if(e.Replacee == 'Cell') { e.Replacement = 'GasCanister'; }
 		else if(e.Replacee == 'CellPack') { e.Replacement = 'GasTank'; }
 		// Weapons
 		else if(e.Replacee is 'Fist') { e.Replacement = 'SGDFists'; }
