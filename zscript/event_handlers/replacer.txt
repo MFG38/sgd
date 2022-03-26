@@ -79,7 +79,7 @@ class SGDReplacementHandler : EventHandler
 			else if(e.Replacee is 'InvulnerabilitySphere') { e.Replacement = 'DemonizerOrb'; }
 			else if(e.Replacee is 'RadSuit') { e.Replacement = 'SGDRadSuit'; }
 		}
-		else if(classicpwr.GetBool() is true)
+		else if(classicpwr.GetBool() == true)
 		{
 			if(e.Replacee is 'Berserk') { e.Replacement = 'SGDBerserk'; }
 		}
