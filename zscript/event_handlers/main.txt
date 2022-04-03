@@ -14,4 +14,35 @@ class SGDStaticHandler : StaticEventHandler
 	}
 }
 
-class SGDMainHandler : EventHandler {}
+class SGDMainHandler : EventHandler
+{
+	override void WorldLinePreActivated(WorldEvent e)
+	{
+		if(e.ActivatedLine.Special == 243 || e.ActivatedLine.Special == 244)
+		{
+			e.ShouldActivate = 1;
+			PlayerInfo p = players[consoleplayer];
+
+			if(player && player.mo)
+			{
+				// Tokens
+				p.mo.TakeInventory("FinisherToken",0x7FFFFFFF);
+				p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF);
+				p.mo.TakeInventory("RadSuitTimer",0x7FFFFFFF);
+				p.mo.TakeInventory("GogglesActive",0x7FFFFFFF);
+
+				// Powerups
+				p.mo.TakeInventory("FieldMedPack",0x7FFFFFFF);
+				p.mo.TakeInventory("DemonizerOrb",0x7FFFFFFF);
+				p.mo.TakeInventory("HolyWaterGrenadePickup",0x7FFFFFFF);
+				p.mo.TakeInventory("SGDRadSuit",0x7FFFFFFF);
+				p.mo.TakeInventory("SGDLightAmpGoggles",0x7FFFFFFF);
+
+				// Powerup givers
+				p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
+				p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
+				p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
+			}
+		}
+	}
+}
