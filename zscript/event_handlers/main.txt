@@ -40,6 +40,9 @@ class SGDMainHandler : EventHandler
 			p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
 			p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
 			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
+			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherFreeze",0x7FFFFFFF);
 		}
 	}
 
@@ -68,6 +71,9 @@ class SGDMainHandler : EventHandler
 			p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
 			p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
 			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
+			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherFreeze",0x7FFFFFFF);
 		}
 	}
 }
