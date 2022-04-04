@@ -19,7 +19,7 @@ class SGDMainHandler : EventHandler
 	override void WorldThingDied(WorldEvent e)
 	{
 		// Inventory reset if the player or an Icon of Sin dies
-		if(e.Thing == "SGDPlayer" || e.Thing == "BossBrain")
+		if(e.Thing.GetClassName() == "SGDPlayer" || e.Thing.GetClassName() == "BossBrain")
 		{
 			PlayerInfo p = players[consoleplayer];
 
