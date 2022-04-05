@@ -45,9 +45,11 @@ other IWADs is neither guaranteed nor planned.
 
 3.2 If you downloaded a ZIP of the source from GitHub:
 ------------------------------------------------------
-1.	Move sgd-master.zip to your folder of choice. DO NOT UNZIP THE ARCHIVE.
-2.	Click on and drag sgd-master.zip over gzdoom.exe or use your launcher of
-	choice to run the mod. If you want to load sgd-master.zip alongside other
+1.	Move sgd-master.zip to your folder of choice and unzip it.
+2.  Run the build.bat utility and follow the prompts therein to generate a .pk3
+    file in the _build folder.
+3.	Click on and drag the generated .pk3 over gzdoom.exe or use your launcher of
+	choice to run the mod. If you want to load the .pk3 alongside other
 	PWADs, using a launcher is highly recommended.
 
 
@@ -56,10 +58,10 @@ other IWADs is neither guaranteed nor planned.
 
 Bugs may be reported by the following means:
 
-E-mail:			mfg38thelps@aol.com
-Discord PM:		MFG38#3393
-ZDoom project thread:	http://forum.zdoom.org/viewtopic.php?f=43&t=65490
-ModDB page:		http://www.moddb.com/mods/satanic-gameshow-deluxe
+E-mail:                 mfg38thelps@aol.com
+Discord PM:             MFG38#3393
+ZDoom project thread:   http://forum.zdoom.org/viewtopic.php?f=43&t=65490
+ModDB page:             http://www.moddb.com/mods/satanic-gameshow-deluxe
 
 If you are sending a bug report by e-mail, please clearly state that you are
 doing so in the e-mail subject line. Make sure to add any relevant attachments,
@@ -101,5 +103,5 @@ See credits.txt for a full credits list.
 7. LINKS
 ========
 
-ModDB page:		http://www.moddb.com/mods/satanic-gameshow-deluxe
-GitHub repo:		http://github.com/MFG38/sgd
+ModDB page:	        http://www.moddb.com/mods/satanic-gameshow-deluxe
+GitHub repo:        http://github.com/MFG38/sgd
