@@ -5,8 +5,8 @@
 1. Introduction
 2. Requirements
 3. Building/running the mod
-	3.1 If you downloaded the mod from ModDB, Google Drive or Dropbox
-	3.2 If you downloaded a ZIP of the source from GitHub
+    3.1 If you downloaded the mod from ModDB, Google Drive or Dropbox
+    3.2 If you downloaded a ZIP of the source from GitHub
 4. Reporting bugs
 5. License information
 6. Credits
@@ -36,21 +36,21 @@ other IWADs is neither guaranteed nor planned.
 
 3.1 If you downloaded the mod from ModDB, Google Drive or Dropbox:
 ------------------------------------------------------------------
-1.	Open sgd_*.zip with your archive manager of choice and extract sgd_v*.pk3
-	into a folder of your choice. You may also extract any of the .txt files
-	if you wish, but they are not necessary for running the mod.
-2.	Click on and drag sgd_v*.pk3 over gzdoom.exe or use your launcher of choice
-	to run the mod. If you want to load sgd_v*.pk3 alongside other PWADs, using
-	a launcher is highly recommended.
+1.  Open sgd_*.zip with your archive manager of choice and extract sgd_v*.pk3
+    into a folder of your choice. You may also extract any of the .txt files
+    if you wish, but they are not necessary for running the mod.
+2.  Click on and drag sgd_v*.pk3 over gzdoom.exe or use your launcher of choice
+    to run the mod. If you want to load sgd_v*.pk3 alongside other PWADs, using
+    a launcher is highly recommended.
 
 3.2 If you downloaded a ZIP of the source from GitHub:
 ------------------------------------------------------
-1.	Move sgd-master.zip to your folder of choice and unzip it.
+1.  Move sgd-master.zip to your folder of choice and unzip it.
 2.  Run the build.bat utility and follow the prompts therein to generate a .pk3
     file in the _build folder.
-3.	Click on and drag the generated .pk3 over gzdoom.exe or use your launcher of
-	choice to run the mod. If you want to load the .pk3 alongside other
-	PWADs, using a launcher is highly recommended.
+3.  Click on and drag the generated .pk3 over gzdoom.exe or use your launcher of
+    choice to run the mod. If you want to load the .pk3 alongside other
+    PWADs, using a launcher is highly recommended.
 
 
 4. REPORTING BUGS
