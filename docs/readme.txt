@@ -103,5 +103,5 @@ See credits.txt for a full credits list.
 7. LINKS
 ========
 
-ModDB page:	        http://www.moddb.com/mods/satanic-gameshow-deluxe
+ModDB page:         http://www.moddb.com/mods/satanic-gameshow-deluxe
 GitHub repo:        http://github.com/MFG38/sgd
