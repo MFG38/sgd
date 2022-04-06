@@ -84,6 +84,11 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 		PlayerInfo p = players[consoleplayer];
 		Shader.SetEnabled(p,"OldVideo",false);
 	}
+
+	override bool IsBlinking()
+	{
+		return false;
+	}
 }
 
 extend class SGDFists
