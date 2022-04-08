@@ -17,13 +17,11 @@ class SGDMinigun : SGDWeapon
 		MNGN A -1;
 		Loop;
 	Select:
-		TNT1 AAA 0 A_Raise;
-		MNGG A 1 A_Raise;
-		Goto Select+2;
+		MNGG A 1 A_FastRaise;
+		Goto Select;
 	Deselect:
-		TNT1 AAA 0 A_Lower;
-		MNGG A 1 A_Lower;
-		Goto Deselect+2;
+		MNGG A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		MNGG A 0;
 		Goto ReadyLoop;

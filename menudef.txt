@@ -59,6 +59,9 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_RBACKP", "sgd_replacebackpack", "ReplaceBackpack"
 	Option "$SGD_OM_CLASSICPWR", "sgd_classicpowerups", "OnOff"
 	StaticText ""
+	/* StaticText "$SGD_SUBTTL_MISC", "White"
+	Option "$SGD_OM_SECRETMSG", "sgd_secretmsgoverride", "OnOff"
+	StaticText "" */
 	Submenu "$SGD_SUBTTL_CONTROLS", "SGD_KeyConfig"
 }
 
@@ -125,9 +128,3 @@ OptionValue "ReplaceBackpack"
 	0, "$SGD_CVAR_RBACKP0"
 	1, "$SGD_CVAR_RBACKP1"
 }
-
-/* AddOptionMenu "OptionsMenu"
-{
-	StaticText ""
-	Submenu "SGD Options", "SGD_Setup"
-} */

@@ -186,3 +186,14 @@ flickerlight2 L_HeadCandles
     offset 0 24 0
 	attenuate 1
 }
+
+/////////////
+// SHADERS //
+/////////////
+
+HardwareShader PostProcess scene
+{
+	name "OldVideo"
+	shader "shaders/OldVideo.fp" 330
+	Uniform float timer
+}

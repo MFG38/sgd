@@ -4,6 +4,76 @@ class SGDStaticHandler : StaticEventHandler
 	{
 		Console.Printf("\crSatanic Gameshow Deluxe %s\c-",StringTable.Localize("$SGD_VERSIONNUM"));
 	}
+	
+	// This is just here to set the uniform for the shader used
+	// by the Fists' Level 3 finisher.
+	override void RenderOverlay(RenderEvent e)
+	{
+		PlayerInfo p = players[consoleplayer];
+		Shader.SetUniform1f(p,"OldVideo","timer",gametic+e.FracTic);
+	}
 }
 
-class SGDMainHandler : EventHandler {}
+class SGDMainHandler : EventHandler
+{
+	override void WorldThingDied(WorldEvent e)
+	{
+		// Inventory reset if the player or an Icon of Sin dies
+		if(e.Thing.GetClassName() == "SGDPlayer" || e.Thing.GetClassName() == "BossBrain")
+		{
+			PlayerInfo p = players[consoleplayer];
+
+			// Tokens
+			p.mo.TakeInventory("FinisherToken",0x7FFFFFFF);
+			p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF);
+			p.mo.TakeInventory("RadSuitTimer",0x7FFFFFFF);
+			p.mo.TakeInventory("GogglesActive",0x7FFFFFFF);
+
+			// Powerups
+			p.mo.TakeInventory("FieldMedPack",0x7FFFFFFF);
+			p.mo.TakeInventory("DemonizerOrb",0x7FFFFFFF);
+			p.mo.TakeInventory("HolyWaterGrenadePickup",0x7FFFFFFF);
+			p.mo.TakeInventory("SGDRadSuit",0x7FFFFFFF);
+			p.mo.TakeInventory("SGDLightAmpGoggles",0x7FFFFFFF);
+
+			// Powerup givers
+			p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
+			p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
+			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
+			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherFreeze",0x7FFFFFFF);
+		}
+	}
+
+	override void WorldLinePreActivated(WorldEvent e)
+	{
+		// Inventory reset on exit
+		if(e.ActivatedLine.Special == 243 || e.ActivatedLine.Special == 244)
+		{
+			e.ShouldActivate = 1;
+			PlayerInfo p = players[consoleplayer];
+
+			// Tokens
+			p.mo.TakeInventory("FinisherToken",0x7FFFFFFF);
+			p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF);
+			p.mo.TakeInventory("RadSuitTimer",0x7FFFFFFF);
+			p.mo.TakeInventory("GogglesActive",0x7FFFFFFF);
+
+			// Powerups
+			p.mo.TakeInventory("FieldMedPack",0x7FFFFFFF);
+			p.mo.TakeInventory("DemonizerOrb",0x7FFFFFFF);
+			p.mo.TakeInventory("HolyWaterGrenadePickup",0x7FFFFFFF);
+			p.mo.TakeInventory("SGDRadSuit",0x7FFFFFFF);
+			p.mo.TakeInventory("SGDLightAmpGoggles",0x7FFFFFFF);
+
+			// Powerup givers
+			p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
+			p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
+			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
+			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherFreeze",0x7FFFFFFF);
+		}
+	}
+}

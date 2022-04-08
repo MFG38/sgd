@@ -18,13 +18,11 @@ class SGDDarkMatterCannon : SGDWeapon
 		DCAN A -1;
 		Stop;
 	Select:
-		TNT1 AAA 0 A_Raise;
-		DMAT A 1 A_Raise;
-		Goto Select+2;
+		DMAT A 1 A_FastRaise;
+		Goto Select;
 	Deselect:
-		TNT1 AAA 0 A_Lower;
-		DMAT A 1 A_Lower;
-		Goto Deselect+2;
+		DMAT A 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		DMAT A 0;
 		Goto ReadyLoop;

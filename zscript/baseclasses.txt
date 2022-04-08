@@ -4,7 +4,6 @@ class SGDWeapon : Weapon
 	{
 		Weapon.Kickback 80;
 		Inventory.PickupSound "misc/wpnpickup";
-		//Inventory.ForbiddenTo "DemonizedPlayer";
 		+WEAPON.ALT_AMMO_OPTIONAL;
 		+WEAPON.NOALERT;
 		+WEAPON.NOAUTOAIM;
@@ -13,13 +12,11 @@ class SGDWeapon : Weapon
 	States
 	{
 	Select:
-		TNT1 AAA 0 A_Raise;
-		"####" "#" 1 A_Raise;
-		Goto Select+2;
+		"####" "#" 1 A_FastRaise;
+		Goto Select;
 	Deselect:
-		TNT1 AAA 0 A_Lower;
-		"####" "#" 1 A_Lower;
-		Goto Deselect+2;
+		"####" "#" 1 A_FastLower;
+		Goto Deselect;
 	Ready:
 		TNT1 A 0;
 		Goto ReadyLoop;
@@ -55,10 +52,25 @@ class SGDWeapon : Weapon
 
 extend class SGDWeapon
 {
+	action void A_FastRaise()
+	{
+		A_Raise();
+		A_Raise();
+		A_Raise();
+	}
+	
+	action void A_FastLower()
+	{
+		A_Lower();
+		A_Lower();
+		A_Lower();
+	}
+	
 	action void A_BeginFinisher(bool freeze)
 	{
 		A_TakeInventory("FinisherToken",0x7FFFFFFF);
 		A_GiveInventory("FinisherInvul",1);
+		
 		if(freeze)
 		{
 			A_Stop();
@@ -69,6 +81,7 @@ extend class SGDWeapon
 	action void A_EndFinisher()
 	{
 		A_TakeInventory("FinisherInvul",1);
+		
 		if(FindInventory("FinisherFreeze"))
 		{
 			A_TakeInventory("FinisherFreeze",1);
@@ -82,22 +95,6 @@ class WeaponUpgrade : Inventory
 	{
 		Inventory.MaxAmount 1;
 		-INVENTORY.INVBAR;
-	}
-}
-
-
-class FakePowerup : PowerDamage
-// Base class for powerup color setters.
-{
-	Default
-	{
-		DamageFactor "Normal", 1.0;
-		DamageFactor "Fire", 1.0;
-		DamageFactor "HolyWater", 1.0;
-		DamageFactor "Sploder", 1.0;
-		DamageFactor "ArgentBomb", 1.0;
-		DamageFactor "ShotgunSlug", 1.0;
-		Powerup.Duration 0x7FFFFFFD;
 	}
 }
 

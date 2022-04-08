@@ -1,5 +1,3 @@
-user noarchive bool sgd_debugmode = false;
-
 // HUD stuff
 user int sgd_finisherprompt = 2;		// 0 = Off, 1 = No button prompt, 2 = Full
 user bool sgd_displayfbar = true;
@@ -30,3 +28,7 @@ server bool sgd_classicpowerups = false;
 user bool sgd_fieldmedsound = true;
 user bool sgd_hswarningsound = true;
 user bool sgd_visortogglesound = true;
+
+// Misc.
+//user bool sgd_secretmsgoverride = false;
+user noarchive bool sgd_debugmode = false;	// Unused, but keeping just in case.

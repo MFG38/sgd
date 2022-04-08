@@ -15,8 +15,6 @@ modified where seen fit by MFG38
 Chainsaw nail DECORATE code by TheShooter7 and Mechadon, converted to ZScript and
 modified where seen fit by MFG38
 
-Parts of Brutal Doom event handler code by Marisa Kirisame
-
 StatusBarScreen API by Lewisk3
 
 Old Video shader originally by jmpep, ported to GZDoom by Nash Muhandes, modified where

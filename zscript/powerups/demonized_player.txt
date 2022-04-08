@@ -16,6 +16,7 @@ class DemonizedPlayer : PlayerPawn
 		DamageFactor "Sploder", 0.0;
 		DamageFactor "ArgentBomb", 0.0;
 		DamageFactor "ShotgunSlug", 0.0;
+		DamageFactor "Sawblade", 0.0;
 		DamageFactor "HolyWater", 1.1;
 		Player.DisplayName "Satan's Arch-Nemesis";
 		Player.CrouchSprite "PLYC";
@@ -75,6 +76,44 @@ class DemonizedPlayer : PlayerPawn
 		PLAY Y -1;
 		Stop;
 	}
+	
+	void DoFinisherDecay()
+	{
+		if(CountInv("FinisherToken") > 0 &&
+		level.maptime % 35 == 0)
+		{
+			TakeInventory("FinisherToken",1);
+		}
+	}
+
+	void DoArgentCooldown()
+	{
+		int cooldown;
+		
+		if(CheckInventory("ArgentRifle_Cooldown",1)) { cooldown = 18; }
+		else { cooldown = 24; }
+		
+		if(CountInv("ArgentRifleHeat") > 0 &&
+		level.maptime % cooldown == 0 && 
+		self.player.ReadyWeapon.GetClassName() != "SGDArgentRifle")
+		{
+			TakeInventory("ArgentRifleHeat",1);
+		}
+	}
+
+	override void Tick()
+	{
+		if (!player || !player.mo || player.mo != self)
+		{
+			Super.Tick();
+			return;
+		}
+		
+		super.Tick();
+		
+		DoFinisherDecay();
+		DoArgentCooldown();
+	}
 }
 
 class DemonizedFists : SGDWeapon
@@ -107,24 +146,13 @@ class DemonizedFists : SGDWeapon
 		PUCH A 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH B 1;
 		PUCH L 1 A_DemonFistAttack;
-		PUCH C 1;
-		PUCH M 1;
-		PUCH D 1;
-		PUCH N 1;
-		PUCH E 1;
-		PUCH R 1;
-		PUCH K 1;
+		PUCH CMDNERK 1;
 		Goto ReadyLoop;
 	Punch2:
 		PUCH F 1 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH G 1;
 		PUCH O 1 A_DemonFistAttack;
-		PUCH H 1;
-		PUCH P 1;
-		PUCH I 1;
-		PUCH Q 1;
-		PUCH J 1;
-		PUCH K 1;
+		PUCH HPIQJKK 1;
 		Goto ReadyLoop;
 	AltFire:	// Overriding since finishers are unnecessary for this weapon.
 		PUCH A 0;
@@ -148,9 +176,7 @@ extend class DemonizedFists
 			}
 		}
 
-		int dmg = 500;
-
-		LineAttack(angle,64,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
+		LineAttack(angle,64,pitch,500,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
 		ACS_NamedExecute("FeatTracker",0);
 		
 		if(t.linetarget)

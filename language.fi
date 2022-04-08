@@ -23,6 +23,7 @@ SGD_SUBTTL_SPAWNS = "Esinekorvikkeet (*)";
 SGD_SUBTTL_CONTROLS = "Muuta ohjausasetuksia";
 SGD_SUBTTL_CONTROLS1 = "Tärkeät näppäinkomennot";
 SGD_SUBTTL_CONTROLS2 = "Powerup-pikanäppäimet (vaihtoehtoinen)";
+SGD_SUBTTL_MISC = "Sekalaiset";
 
 SGD_OM_PROJTRAILS = "Näytä projektiilien hännät (*)";
 SGD_OM_PROJTRAILSNOTICE = "(Ei vaikuta luotien häntiin)";
@@ -50,6 +51,8 @@ SGD_OM_RPLASMA = "Plasmakiväärin korvike";
 SGD_OM_RBFG = "BFG9000:n korvike";
 SGD_OM_RBACKP = "Ammusrepun korvike";
 SGD_OM_CLASSICPWR = "Klassiset powerupit";
+
+SGD_OM_SECRETMSG = "Poista GZDoomin sala-alueviesti";
 
 SGD_CVAR_FMSG0 = "Pois päältä";
 SGD_CVAR_FMSG1 = "Ei näppäinohjetta";
@@ -81,8 +84,9 @@ SGD_KEY_RADSUIT = "Hazmat-puku";
 SGD_FMSG_LVL1READY = "TASON 1 FINISHER VALMIS";
 SGD_FMSG_LVL2READY = "TASON 2 FINISHER VALMIS";
 SGD_FMSG_LVL3READY = "TASON 3 FINISHER VALMIS";
-SGD_FMSG_USE1 = "PAINA ";
-SGD_FMSG_USE2 = " KÄYTTÄÄKSESI";
+SGD_FMSG_USE = "TOISSIJ. TULITUS KÄYTTÄÄKSESI";
+//SGD_FMSG_USE1 = "PAINA ";
+//SGD_FMSG_USE2 = " KÄYTTÄÄKSESI";
 
 SGD_FEATACCOMPLISHED = "SAAVUTUS SUORITETTU: ";
 SGD_FEAT01 = "75 zombia tapettu";

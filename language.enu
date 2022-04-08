@@ -23,6 +23,7 @@ SGD_SUBTTL_SPAWNS = "Thing replacements (*)";
 SGD_SUBTTL_CONTROLS = "Customize mod controls";
 SGD_SUBTTL_CONTROLS1 = "Essential controls";
 SGD_SUBTTL_CONTROLS2 = "Powerup hotkeys (optional)";
+SGD_SUBTTL_MISC = "Miscellaneous";
 
 SGD_OM_PROJTRAILS = "Spawn projectile trails (*)";
 SGD_OM_PROJTRAILSNOTICE = "(Does not affect bullet trails)";
@@ -50,6 +51,8 @@ SGD_OM_RPLASMA = "Plasma Rifle replacement";
 SGD_OM_RBFG = "BFG9000 replacement";
 SGD_OM_RBACKP = "Backpack replacement";
 SGD_OM_CLASSICPWR = "Classic powerups";
+
+SGD_OM_SECRETMSG = "Disable GZDoom secret message";
 
 SGD_CVAR_FMSG0 = "Off";
 SGD_CVAR_FMSG1 = "No button prompt";
@@ -81,8 +84,9 @@ SGD_KEY_RADSUIT = "Hazmat Suit";
 SGD_FMSG_LVL1READY = "LEVEL 1 FINISHER READY";
 SGD_FMSG_LVL2READY = "LEVEL 2 FINISHER READY";
 SGD_FMSG_LVL3READY = "LEVEL 3 FINISHER READY";
-SGD_FMSG_USE1 = "PRESS ";
-SGD_FMSG_USE2 = " TO USE";
+SGD_FMSG_USE = "ALTFIRE TO USE";
+//SGD_FMSG_USE1 = "PRESS ";
+//SGD_FMSG_USE2 = " TO USE";
 
 SGD_FEATACCOMPLISHED = "FEAT ACCOMPLISHED: ";
 SGD_FEAT01 = "75 zombiemen killed";

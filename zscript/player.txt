@@ -81,4 +81,51 @@ class SGDPlayer : PlayerPawn
 		PLAY Y -1;
 		Stop;
 	}
+
+	void DoFinisherDecay()
+	{
+		if(CountInv("FinisherToken") > 0 &&
+		level.maptime % 35 == 0)
+		{
+			TakeInventory("FinisherToken",1);
+		}
+	}
+
+	void DoArgentCooldown()
+	{
+		int cooldown;
+		
+		if(CheckInventory("ArgentRifle_Cooldown",1)) { cooldown = 18; }
+		else { cooldown = 24; }
+		
+		if(CountInv("ArgentRifleHeat") > 0 &&
+		level.maptime % cooldown == 0 && 
+		self.player.ReadyWeapon.GetClassName() != "SGDArgentRifle")
+		{
+			TakeInventory("ArgentRifleHeat",1);
+		}
+	}
+	
+	override void Tick()
+	{
+		if (!player || !player.mo || player.mo != self)
+		{
+			Super.Tick();
+			return;
+		}
+		
+		super.Tick();
+
+		DoFinisherDecay();
+		DoArgentCooldown();
+	}
+	
+	/* override bool OnGiveSecret(bool printmsg, bool playsound)
+	{
+		if(CVar.FindCVar('sgd_secretmsgoverride').GetBool() == true)
+		{
+			return false;
+		}
+		else { return true; }
+	} */
 }
