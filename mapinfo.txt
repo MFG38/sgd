@@ -66,11 +66,11 @@ skill ultranightmare
 {
 	name = "$SGD_SKILL_IMPOSSIBLE"
 	mustconfirm = "You're not afraid of anything.\
-		Enemies deal 200% damage and have 15%\
+		Enemies deal 175% damage and have 15%\
 		more health."
 	aggressiveness = 1.0
 	spawnfilter = nightmare
-	damagefactor = 2.0
+	damagefactor = 1.75
 	monsterhealth = 1.15
 }
 

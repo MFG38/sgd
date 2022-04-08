@@ -122,7 +122,7 @@ class PileOfRockets : BazookaAmmo
 {
 	Default
 	{
-		Inventory.Amount 3;
+		Inventory.Amount 4;
 		Inventory.PickupMessage "$SGD_AMMO_BAZOOKAAMMOBIG";
 	}
 
