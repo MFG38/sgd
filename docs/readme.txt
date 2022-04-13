@@ -46,7 +46,8 @@ other IWADs is neither guaranteed nor planned.
 3.2 If you downloaded a ZIP of the source from GitHub:
 ------------------------------------------------------
 1.  Move sgd-master.zip to your folder of choice and unzip it.
-2.  Run the build.bat utility to generate a .pk3 file in the _build folder.
+2.  Run the _build.bat (Windows) or _build.sh (Linux) utility to generate a .pk3
+    file in the _build folder.
 3.  Click on and drag the generated .pk3 over gzdoom.exe or use your launcher of
     choice to run the mod. If you want to load the .pk3 alongside other
     PWADs, using a launcher is highly recommended.
