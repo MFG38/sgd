@@ -71,7 +71,7 @@ skill ultranightmare
 	aggressiveness = 1.0
 	spawnfilter = nightmare
 	damagefactor = 1.75
-	monsterhealth = 1.15
+	monsterhealth = 1.2
 }
 
 map TITLEMAP "SGD Title"
