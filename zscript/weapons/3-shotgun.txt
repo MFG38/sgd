@@ -89,6 +89,7 @@ class ShotgunSlug : Actor
 		PROJECTILE;
 		+FLATSPRITE;
 		+RIPPER;
+		Obituary "$SGD_OB_SGSLUG";
 	}
 	
 	States

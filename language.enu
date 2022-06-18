@@ -148,6 +148,9 @@ SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
 SGD_WRN_CANTUSEFIELDMED = "Can't use Field Med Pack right now!";
 SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom you cunt";
 
+SGD_OB_DMC = "%o was swallowed by a black hole.";
+SGD_OB_SGSLUG = "%o was penetrated by a rail slug.";
+
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
 SGD_SKILL_MEDIUM = "Been There, Done That";

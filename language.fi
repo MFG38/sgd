@@ -148,6 +148,9 @@ SGD_UPGRADE_CHAINSAWDAMAGE = "Vahingon lisäys moottorisahaan";
 SGD_WRN_CANTUSEFIELDMED = "Et voi käyttää kenttälääkintälaukkua nyt!";
 SGD_WRN_BRUTAL = "lakkaa yrittämästä ladata kaikki brutal doomin kanssa senkin mulkku";
 
+SGD_OB_DMC = "%o joutui mustan aukon nielaisemaksi.";
+SGD_OB_SGSLUG = "%o joutui raideammuksen puhkaisemaksi.";
+
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
 SGD_SKILL_MEDIUM = "Been There, Done That";

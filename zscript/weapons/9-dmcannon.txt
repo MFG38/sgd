@@ -52,6 +52,7 @@ class DarkMatterProjectile : Actor
 		+RIPPER;
 		+NODAMAGETHRUST;
 		+FORCERADIUSDMG;
+		Obituary "$SGD_OB_DMC";
 	}
 
 	States
