@@ -42,7 +42,7 @@ class SGDMainHandler : EventHandler
 			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
 			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
 			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
-			p.mo.TakeInventory("FinisherFreeze",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF);
 		}
 	}
 
@@ -73,7 +73,29 @@ class SGDMainHandler : EventHandler
 			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
 			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
 			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
-			p.mo.TakeInventory("FinisherFreeze",0x7FFFFFFF);
+			p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF);
 		}
+	}
+
+	override void PlayerSpawned(PlayerEvent e)
+	{
+		// Workaround for maps with exits like those in E1M8 and Plutonia MAP11.
+		PlayerInfo p = players[consoleplayer];
+
+		if(p.mo.FindInventory("FinisherToken"))				{ p.mo.TakeInventory("FinisherToken",0x7FFFFFFF); }
+		if(p.mo.FindInventory("DemonizerTimer"))			{ p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF); }
+		if(p.mo.FindInventory("RadSuitTimer"))				{ p.mo.TakeInventory("RadSuitTimer",0x7FFFFFFF); }
+		if(p.mo.FindInventory("GogglesActive"))				{ p.mo.TakeInventory("GogglesActive",0x7FFFFFFF); }
+		if(p.mo.FindInventory("FieldMedPack"))				{ p.mo.TakeInventory("FieldMedPack",0x7FFFFFFF); }
+		if(p.mo.FindInventory("DemonizerOrb"))				{ p.mo.TakeInventory("DemonizerOrb",0x7FFFFFFF); }
+		if(p.mo.FindInventory("HolyWaterGrenadePickup"))	{ p.mo.TakeInventory("HolyWaterGrenadePickup",0x7FFFFFFF); }
+		if(p.mo.FindInventory("SGDRadSuit"))				{ p.mo.TakeInventory("SGDRadSuit",0x7FFFFFFF); }
+		if(p.mo.FindInventory("SGDLightAmpGoggles"))		{ p.mo.TakeInventory("SGDLightAmpGoggles",0x7FFFFFFF); }
+		if(p.mo.FindInventory("LightAmpGogglesGiver"))		{ p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF); }
+		if(p.mo.FindInventory("RadSuitGiver"))				{ p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF); }
+		if(p.mo.FindInventory("DemonizerMorph"))			{ p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF); }
+		if(p.mo.FindInventory("FistFinisherTimeFreeze"))	{ p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF); }
+		if(p.mo.FindInventory("FinisherInvul"))				{ p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF); }
+		if(p.mo.FindInventory("FinisherSpeed"))				{ p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF); }
 	}
 }
