@@ -80,6 +80,7 @@ class FlamethrowerFire : Actor
 		DamageType "Fire";
 		PROJECTILE;
 		+NODAMAGETHRUST;
+		Obituary "$SGD_OB_FLAME";
 	}
 	
 	States

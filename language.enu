@@ -150,6 +150,8 @@ SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom you cunt";
 
 SGD_OB_DMC = "%o was swallowed by a black hole.";
 SGD_OB_SGSLUG = "%o was penetrated by a rail slug.";
+SGD_OB_NAPALM = "%o stepped into napalm.";
+SGD_OB_FLAME = "%o was burned by flames.";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";

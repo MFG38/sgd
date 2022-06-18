@@ -267,6 +267,7 @@ class SSGNapalmFlame : Actor
 		+NODAMAGETHRUST;
 		+NOEXPLODEFLOOR;
 		+FORCERADIUSDMG;
+		Obituary "$SGD_OB_NAPALM";
 	}
 	
 	States
