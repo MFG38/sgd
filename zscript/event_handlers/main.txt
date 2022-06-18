@@ -77,10 +77,10 @@ class SGDMainHandler : EventHandler
 		}
 	}
 
-	override void PlayerSpawned(PlayerEvent e)
+	override void PlayerEntered(PlayerEvent e)
 	{
 		// Workaround for maps with exits like those in E1M8 and Plutonia MAP11.
-		PlayerInfo p = players[consoleplayer];
+		PlayerInfo p = players[e.PlayerNumber];
 
 		if(p.mo.FindInventory("FinisherToken"))				{ p.mo.TakeInventory("FinisherToken",0x7FFFFFFF); }
 		if(p.mo.FindInventory("DemonizerTimer"))			{ p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF); }
