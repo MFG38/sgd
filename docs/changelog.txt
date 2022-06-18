@@ -29,7 +29,7 @@
 - Renamed DemonizerPickup to DemonizerOrb.
 - Migrated ACS-based functionality to ZScript (except the feat system).
 - Piles of rockets now give 4 rockets instead of 3.
-- Modified behavior of FinisherFreeze (it now halves player's speed during some finishers instead of freezing them entirely) and renamed to FinisherSpeed.
+- Modified behavior of FinisherFreeze (it now reduces player's speed during some finishers instead of freezing them entirely) and renamed to FinisherSpeed.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.
