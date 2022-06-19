@@ -30,8 +30,8 @@ class SGDMinigun : SGDWeapon
 		Goto Windup;
 	Windup:
 		MNGG A 0 A_JumpIfInventory("Minigun_Windup",1,"WindupUpgraded");
-		MNGG A 7 A_MinigunWindup;
-		MNGG B 7;
+		//MNGG A 7 A_MinigunWindup;
+		MNGG B 7 A_MinigunWindup;
 		MNGG AB 6;
 		MNGG AB 5;
 		MNGG AB 4;
