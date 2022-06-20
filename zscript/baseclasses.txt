@@ -73,7 +73,6 @@ extend class SGDWeapon
 		
 		if(slowdown)
 		{
-			A_Stop();
 			A_GiveInventory("FinisherSpeed",1);
 		}
 	}

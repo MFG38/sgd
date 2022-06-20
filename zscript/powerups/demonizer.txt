@@ -19,8 +19,22 @@ class DemonizerOrb : CustomInventory
 		INSS ABCD 6 Light("L_DemonizerPickup");
 		Loop;
 	Use:
-		TNT1 A 0 A_GiveInventory("DemonizerMorph",1);
-		Stop;
+		TNT1 A 0
+		{
+			if(invoker.owner.FindInventory("RadSuitGiver") ||
+				invoker.owner.FindInventory("LightAmpGogglesGiver") ||
+				invoker.owner.FindInventory("FinisherInvul")
+			)
+			{
+				A_Log(StringTable.Localize("$SGD_WRN_CANTUSEDEMONIZER"));
+			}
+			else
+			{
+				A_TakeInventory("DemonizerOrb",0x7FFFFFFF);
+				A_GiveInventory("DemonizerMorph",1);
+			}
+		}
+		Fail;
 	}
 }
 

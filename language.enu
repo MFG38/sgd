@@ -146,6 +146,7 @@ SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
 
 SGD_WRN_CANTUSEFIELDMED = "Can't use Field Med Pack right now!";
+SGD_WRN_CANTUSEDEMONIZER = "Can't use Demonizer Orb right now!";
 SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom you cunt";
 
 SGD_OB_DMC = "%o was swallowed by a black hole.";
