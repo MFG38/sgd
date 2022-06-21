@@ -67,7 +67,7 @@ class SGDFists : SGDWeapon
 
 class FistFinisherTimeFreeze : PowerTimeFreezer
 {
-	Default { Powerup.Duration 175; }
+	Default { Powerup.Duration 192; }
 	
 	override void InitEffect()
 	{
