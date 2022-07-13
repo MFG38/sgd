@@ -1,1 +1,14 @@
-//
+class SGDStatusBar : BaseStatusBar
+{
+    HUDFont sfont;
+    InventoryBarState diparms;
+
+    override void Init()
+    {
+        super.Init();
+
+        Font fnt = "SGDHUDFONT";
+        sfont = HUDFont.Create(fnt,1,Mono_Off,1,1);
+        diparms = InventoryBarState.Create();
+    }
+}
