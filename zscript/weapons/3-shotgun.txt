@@ -260,7 +260,7 @@ extend class SGDShotgun
 			}
 			else
 			{
-				range = 360;
+				range = 384;
 			}
 			
 			switch(i)
