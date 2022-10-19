@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 VERNUM="v20-pre-r392"
 
 echo Building...
