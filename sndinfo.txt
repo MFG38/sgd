@@ -1,7 +1,7 @@
 misc/wpnpickup				DSSGPUMP
 // Defined separately so I can just change this here in case I want to change the weapon pickup sound later.
 
-$volume misc/wpnpickup 0.7
+$volume misc/wpnpickup 0.6
 
 fist/swing					dsfistgo
 
