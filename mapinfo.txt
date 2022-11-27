@@ -2,7 +2,7 @@ gameinfo
 {
 	playerclasses = "SGDPlayer"
 	infopage = "HOWTO1"
-	AddEventHandlers = "SGDMainHandler", "SGDStaticHandler", "SGDReplacementHandler"
+	AddEventHandlers = "SGDMainHandler", "SGDStaticHandler", "SGDReplacementHandler", "DootalHandler"
 }
 
 clearskills

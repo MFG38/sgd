@@ -6,22 +6,21 @@ class DootalHandler : StaticEventHandler
     {
         for(int i = 0; i < AllActorClasses.size(); i++)
         {
-            if( AllActorClasses[i].GetClassName() == "BDoomer" ||
-                AllActorClasses[i].GetClassName() == "BrutalDoomer"
-            )
+            if(AllActorClasses[i].GetClassName() == "BrutalWeapon")
             {
                 BDDetected = true;
             }
+            if(BDDetected) { break; }
         }
-        if(BDDetected) { break; }
+        if(!BDDetected) { return; }
     }
-    if(!BDDetected) { return; }
+    
 
     override void WorldTick()
     {
         if(!BDDetected) { return; }
 
         S_StartSound("skeleton/sight",999,CHANF_UI|CHANF_OVERLAP,1.0);
-        Console.Log(StringTable.Localize("$SGD_WRN_BRUTAL"));
+        Console.Printf(StringTable.Localize("$SGD_WRN_BRUTAL"));
     }
 }
