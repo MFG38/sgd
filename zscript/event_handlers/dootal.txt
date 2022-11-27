@@ -19,8 +19,30 @@ class DootalHandler : StaticEventHandler
     override void WorldTick()
     {
         if(!BDDetected) { return; }
+        
+        if(gamestate == GS_LEVEL)
+        {
+            S_StartSound("skeleton/sight",999,CHANF_UI|CHANF_OVERLAP,1.0);
+        }
+    }
 
-        S_StartSound("skeleton/sight",999,CHANF_UI|CHANF_OVERLAP,1.0);
-        Console.Printf(StringTable.Localize("$SGD_WRN_BRUTAL"));
+    override void RenderOverlay(RenderEvent e)
+    {
+        if(!BDDetected) { return; }
+
+        int tcminx = Screen.GetWidth() * 0.02;
+        int tcmaxx = Screen.GetWidth() * 0.82;
+        int tcminy = Screen.GetHeight() * 0.05;
+        int tcmaxy = Screen.GetHeight() * 0.95;
+
+        if(gamestate == GS_LEVEL)
+        {
+            Screen.Dim("Black",0.75,0,0,Screen.GetWidth(),Screen.GetHeight());
+
+            for(int i = 0; i < 32; i++)
+            {
+                Screen.DrawText("DBIGFONT",0,random(tcminx,tcmaxx),random(tcminy,tcmaxy),StringTable.Localize("$SGD_WRN_BRUTAL"));
+            }
+        }
     }
 }
