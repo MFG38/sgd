@@ -25,7 +25,6 @@ class SGDLightAmpGoggles : CustomInventory
 			A_GiveInventory("LightAmpGogglesGiver");
 			if(CVar.FindCVar('sgd_visortogglesound').GetBool() == true) { A_StartSound("visor/toggle"); }
 		}
-		//TNT1 A 0 ACS_NamedExecute("GoggleTaker",0);
 		Fail;
 	ToggleOff:
 		TNT1 A 0
