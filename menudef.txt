@@ -39,10 +39,6 @@ OptionMenu "SGD_Setup"
 	Option "$SGD_OM_HAZMATTIMER", "sgd_displayhsbar", "OnOff"
 	//Option "$SGD_OM_GOGGLECHARGE", "sgd_displayvisortime", "OnOff"
 	StaticText ""
-	Option "$SGD_OM_FLASHTOGGLE", "sgd_lowhpflash_on", "YesNo"
-	Slider "$SGD_OM_FLASHTHRES", "sgd_lowhpflash_thres", 10, 30, 5
-	Slider "$SGD_OM_FLASHINT", "sgd_lowhpflash_int", 0.05, 0.25, 0.05, 2
-	StaticText ""
 	StaticText "$SGD_SUBTTL_SOUNDS", "White"
 	Option "$SGD_OM_MEDUSESOUND", "sgd_fieldmedsound", "OnOff"
 	Option "$SGD_OM_HSWARNINGSOUND", "sgd_hswarningsound", "OnOff"
