@@ -6,9 +6,23 @@ class SGDStatusBar : BaseStatusBar
     override void Init()
     {
         super.Init();
+        SetSize(0,320,240);
 
         Font fnt = "SGDHUDFONT";
         sfont = HUDFont.Create(fnt,1,Mono_Off,1,1);
         diparms = InventoryBarState.Create();
+    }
+
+    void DrawFinisherBar()
+    {
+        DrawImage("FTBARFRM",(4,4),DI_ITEM_OFFSETS);
+        DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0);
+    }
+
+    void DrawDemonizerTimers()
+    {
+        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(55,221),0,0);
+        DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(165,221),0,0);
+        DrawShader(SHADER_HORZ|SHADER_REVERSE,(165,221),(100,12));
     }
 }
