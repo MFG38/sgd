@@ -241,8 +241,8 @@ extend class SGDRifle
 		}
 		else
 		{
-			xspread = angle + random2() * (3.2 / 256);
-			yspread = pitch + random2() * (2.4 / 256);
+			xspread = angle + random2() * (3.625 / 256);
+			yspread = pitch + random2() * (2.75 / 256);
 		}
 		
 		A_AlertMonsters();
