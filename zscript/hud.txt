@@ -1,7 +1,11 @@
 class SGDStatusBar : BaseStatusBar
 {
-    HUDFont sfont;
+    HUDFont sfont, invfont, msgfont;
     InventoryBarState diparms;
+
+    transient cvar finisherbar;
+    transient cvar finisherprompt;
+    transient cvar hazmatbar;
 
     override void Init()
     {
@@ -10,13 +14,93 @@ class SGDStatusBar : BaseStatusBar
 
         Font fnt = "SGDHUDFONT";
         sfont = HUDFont.Create(fnt,1,Mono_Off,1,1);
+        fnt = "SMALLFONT";
+        invfont = HUDFont.Create(fnt,0,Mono_Off,0,0);
+        msgfont = HUDFont.Create(fnt,1,Mono_Off,0,0);
         diparms = InventoryBarState.Create();
+    }
+
+    void DrawHealthAndArmor()
+    {
+        DrawImage("HAFRAME",(52,208),DI_ITEM_OFFSETS);
+        DrawString(sfont,FormatNumber(CPlayer.health,3),(85,211),DI_TEXT_ALIGN_LEFT);
+        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(121,211),DI_TEXT_ALIGN_LEFT);
+    }
+
+    void DrawWeaponsAndAmmo()
+    {
+        DrawImage("AMMFRAME",(288,186),DI_ITEM_OFFSETS);
+        DrawImage("WEPFRAME",(196,208),DI_ITEM_OFFSETS);
+
+        Inventory ammo = GetCurrentAmmo();
+        DrawString(sfont,FormatNumber(ammo.Amount,3),(232,211),DI_TEXT_ALIGN_CENTER);
+
+        let selweap = CPlayer.mo.ReadyWeapon.GetClassName();
+        str ammoicon;
+
+        switch(selweap)
+        {
+        case "SGDRifle":
+            ammoicon = "ICON_ARF";
+            break;
+        case "SGDShotgun":
+        case "SGDSuperShotgun":
+            ammoicon = "ICON_SHL";
+            break;
+        case "SGDMinigun":
+            ammoicon = "ICON_MNG";
+            break;
+        case "SGDBazooka":
+            ammoicon = "ICON_BAZ";
+            break;
+        case "SGDFlamethrower":
+            ammoicon = "ICON_FLM";
+            break;
+        case "SGDArgentRifle":
+            ammoicon = "ICON_AOH";
+            break;
+        case "SGDDarkMatterCannon":
+            ammoicon = "ICON_DMC";
+            break;
+        default:
+            ammoicon = null;
+            break;
+        }
+
+        DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS);
+
+        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT",(203,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT",(209,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT",(215,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT",(221,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT",(227,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT",(233,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT",(239,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT",(245,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT",(251,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT",(257,226),DI_ITEM_OFFSETS);
     }
 
     void DrawFinisherBar()
     {
-        DrawImage("FTBARFRM",(4,4),DI_ITEM_OFFSETS);
-        DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0);
+        finisherbar = CVar.FindCVar('sgd_displayfbar');
+
+        if(finisherbar.GetBool() == true)
+        {
+            DrawImage("FTBARFRM",(4,4),DI_ITEM_OFFSETS);
+            DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0);
+        }
+    }
+
+    void DrawInvItem()
+    {
+        DrawImage("INVFRAME",(4,186),DI_ITEM_OFFSETS);
+
+        if(CPlayer.mo.InvSel != null)
+        {
+            DrawInventoryIcon(CPlayer.mo.InvSel,(10,192),DI_DIMDEPLETED);
+            DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(12,194),DI_TEXT_ALIGN_LEFT);
+        }
     }
 
     void DrawDemonizerTimers()
