@@ -20,6 +20,12 @@ class SGDStatusBar : BaseStatusBar
         diparms = InventoryBarState.Create();
     }
 
+    override void Draw(int state, double TicFrac)
+    {
+        super.Draw(state,TicFrac);
+        DrawHUD();
+    }
+
     void DrawHealthAndArmor()
     {
         DrawImage("HAFRAME",(52,208),DI_ITEM_OFFSETS);
@@ -69,26 +75,64 @@ class SGDStatusBar : BaseStatusBar
 
         DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS);
 
-        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT",(203,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT",(209,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT",(215,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT",(221,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT",(227,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT",(233,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT",(239,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT",(245,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT",(251,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT",(257,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT" : "",(209,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT" : "",(215,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT" : "",(221,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT" : "",(227,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT" : "",(233,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT" : "",(239,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT" : "",(245,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT" : "",(251,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_OFFSETS);
     }
 
     void DrawFinisherBar()
     {
         finisherbar = CVar.FindCVar('sgd_displayfbar');
+        bool drawfbar = finisherbar.GetBool();
 
-        if(finisherbar.GetBool() == true)
+        if(drawfbar)
         {
             DrawImage("FTBARFRM",(4,4),DI_ITEM_OFFSETS);
             DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0);
+        }
+    }
+
+    void DrawFinisherPrompt()
+    {
+        finisherprompt = CVar.FindCVar('sgd_finisherprompt');
+        int prompttype = finisherprompt.GetInt();
+
+        if(prompttype > 0)
+        {
+            if(CPlayer.mo.CountInv("FinisherToken") >= 300 && CPlayer.mo.CountInv("FinisherToken") < 600)
+            {
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(27,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+
+                if(prompttype == 2)
+                {
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(36,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                }
+            }
+            else if(CPlayer.mo.CountInv("FinisherToken") >= 600 && CPlayer.mo.CountInv("FinisherToken") < 900)
+            {
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(27,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+
+                if(prompttype == 2)
+                {
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(36,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                }
+            }
+            else if(CPlayer.mo.CountInv("FinisherToken") >= 900)
+            {
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(27,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+
+                if(prompttype == 2)
+                {
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(36,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                }
+            }
         }
     }
 
@@ -99,7 +143,23 @@ class SGDStatusBar : BaseStatusBar
         if(CPlayer.mo.InvSel != null)
         {
             DrawInventoryIcon(CPlayer.mo.InvSel,(10,192),DI_DIMDEPLETED);
-            DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(12,194),DI_TEXT_ALIGN_LEFT);
+
+            if(CPlayer.mo.InvSel.Amount > 1)
+            {
+                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(12,194),DI_TEXT_ALIGN_LEFT);
+            }
+        }
+    }
+
+    void DrawHazmatTimer()
+    {
+        hazmatbar = CVar.FindCVar('sgd_displayhsbar');
+        bool drawhsbar = hazmatbar.GetBool();
+
+        if(drawhsbar && CPlayer.mo.ChecInventory("RadSuitTimer"))
+        {
+            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(231,8),0,0);
+            DrawShader(SHADER_HORZ|SHADER_REVERSE,(231,8),(80,6));
         }
     }
 
@@ -108,5 +168,22 @@ class SGDStatusBar : BaseStatusBar
         DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(55,221),0,0);
         DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(165,221),0,0);
         DrawShader(SHADER_HORZ|SHADER_REVERSE,(165,221),(100,12));
+    }
+
+    void DrawHUD()
+    {
+        if(CPlayer.mo.CheckInventory("DemonizerTimer"))
+        {
+            DrawDemonizerTimers();
+        }
+        else
+        {
+            DrawHealthAndArmor();
+            DrawWeaponsAndAmmo();
+            DrawFinisherBar();
+            DrawFinisherPrompt();
+            DrawInvItem();
+            DrawHazmatTimer();
+        }
     }
 }

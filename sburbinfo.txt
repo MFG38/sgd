@@ -1,3 +1,6 @@
+// Pre-ZScript-rewrite HUD that I wrote in SBARINFO. Keeping around mostly
+// for historical purposes.
+
 Height 0;
 Resolution 320, 240;
 

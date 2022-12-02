@@ -1,5 +1,5 @@
 @echo off
-set VERNUM=v20-pre-r404
+set VERNUM=v20-pre-r405
 
 echo Building...
 _tools\7za a -tzip sgd_%VERNUM%.pk3 *.* * -x!.gitignore -x!_build.bat -x!_build.sh -xr!.git -xr!_build -xr!_tools
