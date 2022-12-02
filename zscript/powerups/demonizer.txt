@@ -23,7 +23,8 @@ class DemonizerOrb : CustomInventory
 		{
 			if(invoker.owner.FindInventory("RadSuitGiver") ||
 				invoker.owner.FindInventory("LightAmpGogglesGiver") ||
-				invoker.owner.FindInventory("FinisherInvul")
+				invoker.owner.FindInventory("FinisherInvul") ||
+				invoker.owner.FindInventory("FistFinisherTimeFreeze")
 			)
 			{
 				A_Log(StringTable.Localize("$SGD_WRN_CANTUSEDEMONIZER"));
