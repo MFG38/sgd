@@ -47,29 +47,29 @@ class SGDStatusBar : BaseStatusBar
         switch(selweap)
         {
         case "SGDRifle":
-            ammoicon = "ICON_ARF";
+            ammoicon = 'ICON_ARF';
             break;
         case "SGDShotgun":
         case "SGDSuperShotgun":
-            ammoicon = "ICON_SHL";
+            ammoicon = 'ICON_SHL';
             break;
         case "SGDMinigun":
-            ammoicon = "ICON_MNG";
+            ammoicon = 'ICON_MNG';
             break;
         case "SGDBazooka":
-            ammoicon = "ICON_BAZ";
+            ammoicon = 'ICON_BAZ';
             break;
         case "SGDFlamethrower":
-            ammoicon = "ICON_FLM";
+            ammoicon = 'ICON_FLM';
             break;
         case "SGDArgentRifle":
-            ammoicon = "ICON_AOH";
+            ammoicon = 'ICON_AOH';
             break;
         case "SGDDarkMatterCannon":
-            ammoicon = "ICON_DMC";
+            ammoicon = 'ICON_DMC';
             break;
         default:
-            ammoicon = null;
+            ammoicon = '';
             break;
         }
 
@@ -156,7 +156,7 @@ class SGDStatusBar : BaseStatusBar
         hazmatbar = CVar.FindCVar('sgd_displayhsbar');
         bool drawhsbar = hazmatbar.GetBool();
 
-        if(drawhsbar && CPlayer.mo.ChecInventory("RadSuitTimer"))
+        if(drawhsbar && CPlayer.mo.CheckInventory("RadSuitTimer"))
         {
             DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(231,8),0,0);
             DrawShader(SHADER_HORZ|SHADER_REVERSE,(231,8),(80,6));
