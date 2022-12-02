@@ -29,8 +29,8 @@ class SGDStatusBar : BaseStatusBar
     void DrawHealthAndArmor()
     {
         DrawImage("HAFRAME",(52,208),DI_ITEM_OFFSETS);
-        DrawString(sfont,FormatNumber(CPlayer.health,3),(85,211),DI_TEXT_ALIGN_LEFT);
-        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(121,211),DI_TEXT_ALIGN_LEFT);
+        DrawString(sfont,FormatNumber(CPlayer.health,3),(85,211),DI_TEXT_ALIGN_LEFT,Font.CR_RED);
+        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(121,211),DI_TEXT_ALIGN_LEFT,Font.CR_RED);
     }
 
     void DrawWeaponsAndAmmo()
@@ -39,9 +39,12 @@ class SGDStatusBar : BaseStatusBar
         DrawImage("WEPFRAME",(196,208),DI_ITEM_OFFSETS);
 
         Inventory ammo = GetCurrentAmmo();
-        DrawString(sfont,FormatNumber(ammo.Amount,3),(232,211),DI_TEXT_ALIGN_CENTER);
+        if(ammo != null)
+        {
+            DrawString(sfont,FormatNumber(ammo.Amount,3),(232,211),DI_TEXT_ALIGN_CENTER,Font.CR_RED);
+        }
 
-        let selweap = CPlayer.mo.ReadyWeapon.GetClassName();
+        /* let selweap = CPlayer.mo.ReadyWeapon.GetClassName();
         str ammoicon;
 
         switch(selweap)
@@ -73,8 +76,9 @@ class SGDStatusBar : BaseStatusBar
             break;
         }
 
-        DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS);
+        DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS); */
 
+        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT" : "",(209,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT" : "",(215,226),DI_ITEM_OFFSETS);
@@ -84,7 +88,6 @@ class SGDStatusBar : BaseStatusBar
         DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT" : "",(239,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT" : "",(245,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT" : "",(251,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_OFFSETS);
     }
 
     void DrawFinisherBar()
@@ -156,23 +159,21 @@ class SGDStatusBar : BaseStatusBar
         hazmatbar = CVar.FindCVar('sgd_displayhsbar');
         bool drawhsbar = hazmatbar.GetBool();
 
-        if(drawhsbar && CPlayer.mo.CheckInventory("RadSuitTimer"))
+        if(drawhsbar && CPlayer.mo.CountInv("RadSuitTimer") > 0)
         {
-            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(231,8),0,0);
-            DrawShader(SHADER_HORZ|SHADER_REVERSE,(231,8),(80,6));
+            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(231,8),0,1);
         }
     }
 
     void DrawDemonizerTimers()
     {
-        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(55,221),0,0);
+        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(55,221),0,1);
         DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(165,221),0,0);
-        DrawShader(SHADER_HORZ|SHADER_REVERSE,(165,221),(100,12));
     }
 
     void DrawHUD()
     {
-        if(CPlayer.mo.CheckInventory("DemonizerTimer"))
+        if(CPlayer.mo.CountInv("DemonizerTimer") > 0)
         {
             DrawDemonizerTimers();
         }
