@@ -13,7 +13,7 @@ class SGDStatusBar : BaseStatusBar
         SetSize(0,320,240);
 
         Font fnt = "SGDHUDFONT";
-        sfont = HUDFont.Create(fnt,1,Mono_Off,1,1);
+        sfont = HUDFont.Create(fnt,1,Mono_Off,0,0);
         fnt = "SMALLFONT";
         invfont = HUDFont.Create(fnt,0,Mono_Off,0,0);
         msgfont = HUDFont.Create(fnt,1,Mono_Off,0,0);
@@ -33,6 +33,42 @@ class SGDStatusBar : BaseStatusBar
         DrawString(sfont,FormatNumber(GetArmorAmount(),3),(121,211),DI_TEXT_ALIGN_LEFT,Font.CR_RED);
     }
 
+    /* private static TextureID GetAmmoIcon(class<Inventory> weap)
+    {
+        string ammoicon;
+
+        switch(weap.GetClassName())
+        {
+        case 'SGDRifle':
+            ammoicon = "ICON_ARF";
+            break;
+        case 'SGDShotgun':
+        case 'SGDSuperShotgun':
+            ammoicon = "ICON_SHL";
+            break;
+        case 'SGDMinigun':
+            ammoicon = "ICON_MNG";
+            break;
+        case 'SGDBazooka':
+            ammoicon = "ICON_BAZ";
+            break;
+        case 'SGDFlamethrower':
+            ammoicon = "ICON_FLM";
+            break;
+        case 'SGDArgentRifle':
+            ammoicon = "ICON_AOH";
+            break;
+        case 'SGDDarkMatterCannon':
+            ammoicon = "ICON_DMC";
+            break;
+        default:
+            ammoicon = "";
+            break;
+        }
+
+        return TexMan.CheckForTexture(ammoicon);
+    } */
+
     void DrawWeaponsAndAmmo()
     {
         DrawImage("AMMFRAME",(288,186),DI_ITEM_OFFSETS);
@@ -44,39 +80,7 @@ class SGDStatusBar : BaseStatusBar
             DrawString(sfont,FormatNumber(ammo.Amount,3),(232,211),DI_TEXT_ALIGN_CENTER,Font.CR_RED);
         }
 
-        let selweap = CPlayer.mo.ReadyWeapon.GetClassName();
-        String ammoicon;
-
-        switch(selweap)
-        {
-        case "SGDRifle":
-            ammoicon = 'ICON_ARF';
-            break;
-        case "SGDShotgun":
-        case "SGDSuperShotgun":
-            ammoicon = 'ICON_SHL';
-            break;
-        case "SGDMinigun":
-            ammoicon = 'ICON_MNG';
-            break;
-        case "SGDBazooka":
-            ammoicon = 'ICON_BAZ';
-            break;
-        case "SGDFlamethrower":
-            ammoicon = 'ICON_FLM';
-            break;
-        case "SGDArgentRifle":
-            ammoicon = 'ICON_AOH';
-            break;
-        case "SGDDarkMatterCannon":
-            ammoicon = 'ICON_DMC';
-            break;
-        default:
-            ammoicon = '';
-            break;
-        }
-
-        DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS);
+        DrawImage(GetInventoryIcon(CPlayer.ReadyWeapon,ITYPE_WEAPON),(278,192),DI_ITEM_OFFSETS);
 
         DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_OFFSETS);

@@ -9,6 +9,7 @@ class SGDDarkMatterCannon : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_DMCANNON";
 		Inventory.PickupMessage "$SGD_WEP_DMCANNON";
+		Inventory.Icon "ICON_DMC";
 		+INVENTORY.IGNORESKILL;
 	}
 

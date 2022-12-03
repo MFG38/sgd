@@ -9,6 +9,7 @@ class SGDBazooka : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_BAZOOKA";
 		Inventory.PickupMessage "$SGD_WEP_BAZOOKA";
+		Inventory.Icon "ICON_BAZ";
 	}
 
 	States

@@ -9,6 +9,7 @@ class SGDArgentRifle : SGDWeapon
 		Weapon.AmmoUse 0;
 		Tag "$SGD_WEP_ARGENTRIFLE";
 		Inventory.PickupMessage "$SGD_WEP_ARGENTRIFLE";
+		Inventory.Icon "ICON_AOH";
 	}
 
 	States

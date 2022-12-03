@@ -9,6 +9,7 @@ class SGDMinigun : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_MINIGUN";
 		Inventory.PickupMessage "$SGD_WEP_MINIGUN";
+		Inventory.Icon "ICON_MNG";
 	}
 
 	States

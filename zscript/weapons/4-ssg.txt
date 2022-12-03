@@ -10,6 +10,7 @@ class SGDSuperShotgun : SGDWeapon
 		Weapon.Kickback 200;
 		Tag "$SGD_WEP_SSG";
 		Inventory.PickupMessage "$SGD_WEP_SSG";
+		Inventory.Icon "ICON_SHL";
 	}
 
 	States

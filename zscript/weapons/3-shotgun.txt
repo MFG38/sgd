@@ -9,6 +9,7 @@ class SGDShotgun : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_SHOTGUN";
 		Inventory.PickupMessage "$SGD_WEP_SHOTGUN";
+		Inventory.Icon "ICON_SHL";
 	}
 
 	States

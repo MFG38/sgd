@@ -9,6 +9,7 @@ class SGDRifle : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_RIFLE";
 		Inventory.PickupMessage "$SGD_WEP_RIFLE";
+		Inventory.Icon "ICON_ARF";
 	}
 
 	States
