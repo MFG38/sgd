@@ -51,13 +51,13 @@ class SGDArgentRifle : SGDWeapon
 		STPO H 0 A_ReFire;
 		Goto ReadyLoop;
 	OverheatLoop:
-		STPO E 1
+		STPO E 4
 		{
 			A_StartSound("argentrifle/overheat",CHAN_WEAPON);
 			A_TakeInventory("ArgentRifleHeat",1);
 		}
-		STPO EEEEEEE 1 A_TakeInventory("ArgentRifleHeat",1);
-		STPO E 0 A_JumpIfInventory("ArgentRifleHeat",65,"OverheatLoop");
+		STPO E 4 A_TakeInventory("ArgentRifleHeat",1);
+		STPO E 0 A_JumpIfInventory("ArgentRifleHeat",80,"OverheatLoop");
 		Goto ReadyLoop;
 	FinisherFail:
 		STPO A 0;

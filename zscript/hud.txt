@@ -170,6 +170,9 @@ class SGDStatusBar : BaseStatusBar
         }
     }
 
+    // Only thing missing still.
+    // void DrawKeyIcons() {}
+
     void DrawDemonizerTimers()
     {
         DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(145,224),0,1,DI_ITEM_RIGHT_BOTTOM);
