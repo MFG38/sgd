@@ -44,8 +44,8 @@ class SGDStatusBar : BaseStatusBar
             DrawString(sfont,FormatNumber(ammo.Amount,3),(232,211),DI_TEXT_ALIGN_CENTER,Font.CR_RED);
         }
 
-        /* let selweap = CPlayer.mo.ReadyWeapon.GetClassName();
-        str ammoicon;
+        let selweap = CPlayer.mo.ReadyWeapon.GetClassName();
+        String ammoicon;
 
         switch(selweap)
         {
@@ -76,7 +76,7 @@ class SGDStatusBar : BaseStatusBar
             break;
         }
 
-        DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS); */
+        DrawImage(ammoicon,(278,192),DI_ITEM_OFFSETS);
 
         DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_OFFSETS);
         DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_OFFSETS);
