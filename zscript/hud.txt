@@ -10,13 +10,14 @@ class SGDStatusBar : BaseStatusBar
     override void Init()
     {
         super.Init();
+        // TODO: Widescreen resolution support. Shouldn't be too hard.
         SetSize(0,320,240);
 
         Font fnt = "SGDHUDFONT";
-        sfont = HUDFont.Create(fnt,1,Mono_Off,0,0);
+        sfont = HUDFont.Create(fnt,0,Mono_Off,0,0);
         fnt = "SMALLFONT";
         invfont = HUDFont.Create(fnt,0,Mono_Off,0,0);
-        msgfont = HUDFont.Create(fnt,1,Mono_Off,0,0);
+        msgfont = HUDFont.Create(fnt,0,Mono_Off,0,0);
         diparms = InventoryBarState.Create();
     }
 
@@ -28,9 +29,9 @@ class SGDStatusBar : BaseStatusBar
 
     void DrawHealthAndArmor()
     {
-        DrawImage("HAFRAME",(52,208),DI_ITEM_OFFSETS);
-        DrawString(sfont,FormatNumber(CPlayer.health,3),(85,211),DI_TEXT_ALIGN_LEFT,Font.CR_RED);
-        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(121,211),DI_TEXT_ALIGN_LEFT,Font.CR_RED);
+        DrawImage("HAFRAME",(52,232),DI_ITEM_LEFT_BOTTOM);
+        DrawString(sfont,FormatNumber(CPlayer.health,3),(53,211),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
+        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(89,211),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
     }
 
     /* private static TextureID GetAmmoIcon(class<Inventory> weap)
@@ -71,27 +72,27 @@ class SGDStatusBar : BaseStatusBar
 
     void DrawWeaponsAndAmmo()
     {
-        DrawImage("AMMFRAME",(288,186),DI_ITEM_OFFSETS);
-        DrawImage("WEPFRAME",(196,208),DI_ITEM_OFFSETS);
+        DrawImage("AMMFRAME",(316,236),DI_ITEM_RIGHT_BOTTOM);
+        DrawImage("WEPFRAME",(268,232),DI_ITEM_RIGHT_BOTTOM);
 
         Inventory ammo = GetCurrentAmmo();
         if(ammo != null)
         {
-            DrawString(sfont,FormatNumber(ammo.Amount,3),(232,211),DI_TEXT_ALIGN_CENTER,Font.CR_RED);
+            DrawString(sfont,FormatNumber(ammo.Amount,3),(231,211),DI_ITEM_TOP|DI_TEXT_ALIGN_CENTER,Font.CR_RED);
         }
 
-        DrawImage(GetInventoryIcon(CPlayer.ReadyWeapon,ITYPE_WEAPON),(278,192),DI_ITEM_OFFSETS);
+        //DrawImage(GetInventoryIcon(CPlayer.ReadyWeapon,ITYPE_WEAPON),(278,192),DI_ITEM_OFFSETS);
 
-        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT" : "",(209,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT" : "",(215,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT" : "",(221,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT" : "",(227,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT" : "",(233,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT" : "",(239,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT" : "",(245,226),DI_ITEM_OFFSETS);
-        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT" : "",(251,226),DI_ITEM_OFFSETS);
+        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT" : "",(209,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT" : "",(215,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT" : "",(221,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT" : "",(227,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT" : "",(233,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT" : "",(239,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT" : "",(245,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT" : "",(251,226),DI_ITEM_LEFT_TOP);
     }
 
     void DrawFinisherBar()
@@ -101,8 +102,8 @@ class SGDStatusBar : BaseStatusBar
 
         if(drawfbar)
         {
-            DrawImage("FTBARFRM",(4,4),DI_ITEM_OFFSETS);
-            DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0);
+            DrawImage("FTBARFRM",(4,4),DI_ITEM_LEFT_TOP);
+            DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0,DI_ITEM_LEFT_TOP);
         }
     }
 
@@ -115,29 +116,29 @@ class SGDStatusBar : BaseStatusBar
         {
             if(CPlayer.mo.CountInv("FinisherToken") >= 300 && CPlayer.mo.CountInv("FinisherToken") < 600)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(27,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(36,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
                 }
             }
             else if(CPlayer.mo.CountInv("FinisherToken") >= 600 && CPlayer.mo.CountInv("FinisherToken") < 900)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(27,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(36,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
                 }
             }
             else if(CPlayer.mo.CountInv("FinisherToken") >= 900)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(27,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(36,8),DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
                 }
             }
         }
@@ -145,15 +146,15 @@ class SGDStatusBar : BaseStatusBar
 
     void DrawInvItem()
     {
-        DrawImage("INVFRAME",(4,186),DI_ITEM_OFFSETS);
+        DrawImage("INVFRAME",(4,236),DI_ITEM_LEFT_BOTTOM);
 
         if(CPlayer.mo.InvSel != null)
         {
-            DrawInventoryIcon(CPlayer.mo.InvSel,(10,192),DI_DIMDEPLETED);
+            DrawInventoryIcon(CPlayer.mo.InvSel,(10,224),DI_ITEM_LEFT_BOTTOM|DI_DIMDEPLETED);
 
             if(CPlayer.mo.InvSel.Amount > 1)
             {
-                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(12,194),DI_TEXT_ALIGN_LEFT);
+                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(11,194),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT);
             }
         }
     }
@@ -165,14 +166,14 @@ class SGDStatusBar : BaseStatusBar
 
         if(drawhsbar && CPlayer.mo.CountInv("RadSuitTimer") > 0)
         {
-            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(231,8),0,1);
+            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(312,8),0,1,DI_ITEM_RIGHT_TOP);
         }
     }
 
     void DrawDemonizerTimers()
     {
-        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(55,221),0,1);
-        DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(165,221),0,0);
+        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(145,224),0,1,DI_ITEM_RIGHT_BOTTOM);
+        DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(175,224),0,0,DI_ITEM_LEFT_BOTTOM);
     }
 
     void DrawHUD()
