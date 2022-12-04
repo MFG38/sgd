@@ -57,7 +57,7 @@ class SGDArgentRifle : SGDWeapon
 			A_TakeInventory("ArgentRifleHeat",1);
 		}
 		STPO E 4 A_TakeInventory("ArgentRifleHeat",1);
-		STPO E 0 A_JumpIfInventory("ArgentRifleHeat",80,"OverheatLoop");
+		STPO E 0 A_JumpIfInventory("ArgentRifleHeat",85,"OverheatLoop");
 		Goto ReadyLoop;
 	FinisherFail:
 		STPO A 0;
