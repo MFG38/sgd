@@ -3,7 +3,7 @@
 ============
 
 1. Introduction
-2. Requirements
+2. Requirements and compatibility
 3. Building/running the mod
     3.1 If you downloaded the mod from ModDB, Google Drive or Dropbox
     3.2 If you downloaded a ZIP of the source from GitHub
@@ -23,12 +23,19 @@ arsenal, a "feat"-based weapon upgrade system and finishers a la Wrack.
 Best played with your megawad of choice.
 
 
-2. REQUIREMENTS
-===============
+2. REQUIREMENTS AND COMPATIBILITY
+=================================
 
 Satanic Gameshow Deluxe requires GZDoom 4.5.0 at a minimum to run. It is
 designed to be played with any commercial Doom IWAD. Compatibility with any
 other IWADs is neither guaranteed nor planned.
+
+While SGD may work with certain types of additional gameplay mods, I would
+advise against using mods that modify the weapon arsenal, as SGD already comes
+with its own custom weapon set. Monster mods are likely to work best when
+combined with SGD.
+
+Load SGD with Brutal Doom for a cool easter egg. Trust me, it's worth it.
 
 
 3. BUILDING/RUNNING THE MOD
