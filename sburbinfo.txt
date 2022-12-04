@@ -1,4 +1,4 @@
-// Pre-ZScript-rewrite HUD that I wrote in SBARINFO. Keeping around mostly
+// Pre-ZScript-rewrite HUD that was used up until v1.4. Keeping around mostly
 // for historical purposes.
 
 Height 0;

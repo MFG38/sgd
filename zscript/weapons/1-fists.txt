@@ -6,6 +6,7 @@ class SGDFists : SGDWeapon
 		Weapon.SelectionOrder 800;
 		Weapon.Kickback 10;
 		Tag "$SGD_WEP_FIST";
+		Inventory.Icon "";
 		+WEAPON.MELEEWEAPON;
 		+WEAPON.AMMO_OPTIONAL;
 	}

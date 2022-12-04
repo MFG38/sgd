@@ -24,7 +24,11 @@ class SGDStatusBar : BaseStatusBar
     override void Draw(int state, double TicFrac)
     {
         super.Draw(state,TicFrac);
-        DrawHUD();
+
+        if(!automapactive)
+        {
+            DrawHUD();
+        }
     }
 
     void DrawHealthAndArmor()
@@ -33,42 +37,6 @@ class SGDStatusBar : BaseStatusBar
         DrawString(sfont,FormatNumber(CPlayer.health,3),(53,211),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
         DrawString(sfont,FormatNumber(GetArmorAmount(),3),(89,211),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
     }
-
-    /* private static TextureID GetAmmoIcon(class<Inventory> weap)
-    {
-        string ammoicon;
-
-        switch(weap.GetClassName())
-        {
-        case 'SGDRifle':
-            ammoicon = "ICON_ARF";
-            break;
-        case 'SGDShotgun':
-        case 'SGDSuperShotgun':
-            ammoicon = "ICON_SHL";
-            break;
-        case 'SGDMinigun':
-            ammoicon = "ICON_MNG";
-            break;
-        case 'SGDBazooka':
-            ammoicon = "ICON_BAZ";
-            break;
-        case 'SGDFlamethrower':
-            ammoicon = "ICON_FLM";
-            break;
-        case 'SGDArgentRifle':
-            ammoicon = "ICON_AOH";
-            break;
-        case 'SGDDarkMatterCannon':
-            ammoicon = "ICON_DMC";
-            break;
-        default:
-            ammoicon = "";
-            break;
-        }
-
-        return TexMan.CheckForTexture(ammoicon);
-    } */
 
     void DrawWeaponsAndAmmo()
     {
@@ -79,9 +47,13 @@ class SGDStatusBar : BaseStatusBar
         if(ammo != null)
         {
             DrawString(sfont,FormatNumber(ammo.Amount,3),(231,211),DI_ITEM_TOP|DI_TEXT_ALIGN_CENTER,Font.CR_RED);
-        }
 
-        //DrawImage(GetInventoryIcon(CPlayer.ReadyWeapon,ITYPE_WEAPON),(278,192),DI_ITEM_OFFSETS);
+            // Well, this is embarrassing. I spent three entire days wracking my brain with different ways to
+            // render the ammo icons, all of which produced fatal errors, and the solution that finally works
+            // is the simplest one possible. I tried to needlessly overcomplicate the method when *this* was
+            // all I had to do. Credit goes to Jarewill for pointing me to this direction.
+            DrawInventoryIcon(CPlayer.ReadyWeapon,(309,224),DI_ITEM_RIGHT_BOTTOM);
+        }
 
         DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_LEFT_TOP);
         DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_LEFT_TOP);

@@ -8,6 +8,7 @@ class SGDChainsaw : SGDWeapon
 		Weapon.UpSound "chainsaw/up";
 		Tag "$SGD_WEP_CHAINSAW";
 		Inventory.PickupMessage "$SGD_WEP_CHAINSAW";
+		Inventory.Icon "";
 		+WEAPON.MELEEWEAPON;
 		+WEAPON.AMMO_OPTIONAL;
 	}
