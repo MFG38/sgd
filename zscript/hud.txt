@@ -6,11 +6,11 @@ class SGDStatusBar : BaseStatusBar
     transient cvar finisherbar;
     transient cvar finisherprompt;
     transient cvar hazmatbar;
+    //transient cvar debug;
 
     override void Init()
     {
         super.Init();
-        // TODO: Widescreen resolution support. Shouldn't be too hard.
         SetSize(0,320,240);
 
         Font fnt = "SGDHUDFONT";
@@ -142,8 +142,22 @@ class SGDStatusBar : BaseStatusBar
         }
     }
 
-    // Only thing missing still.
-    // void DrawKeyIcons() {}
+    void DrawKeyIcons()
+    {
+        bool locks[6];
+
+        for(int i = 0; i < 6; i++)
+        {
+            locks[i] = CPlayer.mo.CheckKeys(i+1,false,true);
+        }
+
+        if(locks[0]) { DrawImage("STKEYS2",(230,206),DI_ITEM_RIGHT_BOTTOM); }
+        if(locks[1]) { DrawImage("STKEYS0",(214,206),DI_ITEM_RIGHT_BOTTOM); }
+        if(locks[2]) { DrawImage("STKEYS1",(222,206),DI_ITEM_RIGHT_BOTTOM); }
+        if(locks[3]) { DrawImage("STKEYS5",(254,206),DI_ITEM_RIGHT_BOTTOM); }
+        if(locks[4]) { DrawImage("STKEYS3",(238,206),DI_ITEM_RIGHT_BOTTOM); }
+        if(locks[5]) { DrawImage("STKEYS4",(246,206),DI_ITEM_RIGHT_BOTTOM); }
+    }
 
     void DrawDemonizerTimers()
     {
@@ -165,6 +179,7 @@ class SGDStatusBar : BaseStatusBar
             DrawFinisherPrompt();
             DrawInvItem();
             DrawHazmatTimer();
+            DrawKeyIcons();
         }
     }
 }
