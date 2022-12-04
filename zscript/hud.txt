@@ -88,29 +88,29 @@ class SGDStatusBar : BaseStatusBar
         {
             if(CPlayer.mo.CountInv("FinisherToken") >= 300 && CPlayer.mo.CountInv("FinisherToken") < 600)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
                 }
             }
             else if(CPlayer.mo.CountInv("FinisherToken") >= 600 && CPlayer.mo.CountInv("FinisherToken") < 900)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
                 }
             }
             else if(CPlayer.mo.CountInv("FinisherToken") >= 900)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN);
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
                 }
             }
         }
