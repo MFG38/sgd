@@ -1,4 +1,4 @@
-[??-??-????] v2.0:
+[05-12-2022] v2.0:
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).
 - Fixed Barons giving the wrong token upon dying from Holy Water and Fire damage.
 - Slightly modified the spawning logic of the Holy Water Pool particles.

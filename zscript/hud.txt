@@ -126,7 +126,7 @@ class SGDStatusBar : BaseStatusBar
 
             if(CPlayer.mo.InvSel.Amount > 1)
             {
-                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(11,194),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT);
+                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(39,193),DI_ITEM_RIGHT_TOP|DI_TEXT_ALIGN_RIGHT,Font.CR_GOLD);
             }
         }
     }

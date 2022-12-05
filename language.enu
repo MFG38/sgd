@@ -161,7 +161,7 @@ SGD_SKILL_HARD = "Hell Veteran";
 SGD_SKILL_VERYHARD = "Advanced Slayer";
 SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
 
-SGD_WEP_FIST = "Fist";
+SGD_WEP_FIST = "Fists";
 SGD_WEP_RIFLE = "Rifle";
 SGD_WEP_SHOTGUN = "Shotgun";
 SGD_WEP_SSG = "Double-Barrel Shotgun";

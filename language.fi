@@ -161,7 +161,7 @@ SGD_SKILL_HARD = "Hell Veteran";
 SGD_SKILL_VERYHARD = "Advanced Slayer";
 SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
 
-SGD_WEP_FIST = "Nyrkki";
+SGD_WEP_FIST = "Nyrkit";
 SGD_WEP_RIFLE = "Kivääri";
 SGD_WEP_SHOTGUN = "Haulikko";
 SGD_WEP_SSG = "Kaksipiippuinen haulikko";
