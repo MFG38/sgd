@@ -146,7 +146,13 @@ SGD_UPGRADE_FLAMERLINGER = "Flamethrower flame linger";
 SGD_UPGRADE_CHAINSAWDAMAGE = "Chainsaw damage increase";
 
 SGD_WRN_CANTUSEFIELDMED = "Can't use Field Med Pack right now!";
-SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom you cunt";
+SGD_WRN_CANTUSEDEMONIZER = "Can't use Demonizer Orb right now!";
+SGD_WRN_BRUTAL = "stop trying to load everything with brutal doom fuckface";
+
+SGD_OB_DMC = "%o was swallowed by a black hole.";
+SGD_OB_SGSLUG = "%o was penetrated by a rail slug.";
+SGD_OB_NAPALM = "%o stepped into napalm.";
+SGD_OB_FLAME = "%o was burned by flames.";
 
 SGD_SKILL_VERYEASY = "Slayer in Training";
 SGD_SKILL_EASY = "Fresh Graduate";
@@ -155,7 +161,7 @@ SGD_SKILL_HARD = "Hell Veteran";
 SGD_SKILL_VERYHARD = "Advanced Slayer";
 SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
 
-SGD_WEP_FIST = "Fist";
+SGD_WEP_FIST = "Fists";
 SGD_WEP_RIFLE = "Rifle";
 SGD_WEP_SHOTGUN = "Shotgun";
 SGD_WEP_SSG = "Double-Barrel Shotgun";
@@ -171,7 +177,7 @@ SGD_AMMO_SHELLAMMO = "Handful of shells (+4 Shotgun ammo)";
 SGD_AMMO_SHELLAMMOBIG = "Shell box (+16 Shotgun ammo)";
 SGD_AMMO_MGAMMO = "Bullet box (+100 Minigun ammo)";
 SGD_AMMO_BAZOOKAAMMO = "Rocket (+1 Bazooka ammo)";
-SGD_AMMO_BAZOOKAAMMOBIG = "Pile of rockets (+3 Bazooka ammo)";
+SGD_AMMO_BAZOOKAAMMOBIG = "Pile of rockets (+4 Bazooka ammo)";
 SGD_AMMO_GASAMMO = "Gas canister (+30 Flamethrower ammo)";
 SGD_AMMO_GASAMMOBIG = "Gas tank (+120 Flamethrower ammo)";
 SGD_AMMO_DMCAMMO = "Dark matter cell (+1 Dark Matter Cannon ammo)";

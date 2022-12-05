@@ -9,6 +9,7 @@ class SGDFlamethrower : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_FLAMETHROWER";
 		Inventory.PickupMessage "$SGD_WEP_FLAMETHROWER";
+		Inventory.Icon "ICON_FLM";
 	}
 	
 	States
@@ -80,6 +81,7 @@ class FlamethrowerFire : Actor
 		DamageType "Fire";
 		PROJECTILE;
 		+NODAMAGETHRUST;
+		Obituary "$SGD_OB_FLAME";
 	}
 	
 	States

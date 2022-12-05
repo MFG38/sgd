@@ -4,10 +4,6 @@ user bool sgd_displayfbar = true;
 user bool sgd_displayhsbar = true;
 user bool sgd_displayvisortime = true;		// Unused atm, but keeping this around just in case.
 
-user bool sgd_lowhpflash_on = true;
-user float sgd_lowhpflash_int = 0.25;
-user int sgd_lowhpflash_thres = 25;
-
 // Visual stuff
 user bool sgd_spawntrails = true;
 user bool sgd_fancyteleport = true;
@@ -31,4 +27,4 @@ user bool sgd_visortogglesound = true;
 
 // Misc.
 //user bool sgd_secretmsgoverride = false;
-user noarchive bool sgd_debugmode = false;	// Unused, but keeping just in case.
+user noarchive bool sgd_debugmode = false;

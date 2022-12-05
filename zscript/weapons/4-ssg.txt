@@ -10,6 +10,7 @@ class SGDSuperShotgun : SGDWeapon
 		Weapon.Kickback 200;
 		Tag "$SGD_WEP_SSG";
 		Inventory.PickupMessage "$SGD_WEP_SSG";
+		Inventory.Icon "ICON_SHL";
 	}
 
 	States
@@ -30,12 +31,12 @@ class SGDSuperShotgun : SGDWeapon
 		COCH A 0 A_JumpIfInventory("SSG_ReloadSpeed",1,"FireUpgraded");
 		COCH A 3;
 		COCH B 1 A_SSGFire;
-		COCH C 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-2.0); }}
-		COCH D 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.6); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.2); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.9); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.6); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3); }}
+		COCH C 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-2.0,SPF_INTERPOLATE); }}
+		COCH D 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.6,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.2,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.9,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.6,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3,SPF_INTERPOLATE); }}
 		COCH A 4;
 		COCH EFG 2;
 		COCH H 2 A_StartSound("coachgun/reload1");
@@ -53,12 +54,12 @@ class SGDSuperShotgun : SGDWeapon
 	FireUpgraded:
 		COCH A 3;
 		COCH B 1 A_SSGFire;
-		COCH C 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-2.0); }}
-		COCH D 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.6); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.2); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.9); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.6); }}
-		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3); }}
+		COCH C 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-2.0,SPF_INTERPOLATE); }}
+		COCH D 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.6,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-1.2,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.9,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.6,SPF_INTERPOLATE); }}
+		COCH A 1 { if(!FindInventory("SSG_Recoil")) { A_SetPitch(pitch-0.3,SPF_INTERPOLATE); }}
 		COCH A 1;
 		COCH EFG 1;
 		COCH H 1 A_StartSound("coachgun/reload1");
@@ -267,6 +268,7 @@ class SSGNapalmFlame : Actor
 		+NODAMAGETHRUST;
 		+NOEXPLODEFLOOR;
 		+FORCERADIUSDMG;
+		Obituary "$SGD_OB_NAPALM";
 	}
 	
 	States

@@ -1,3 +1,6 @@
+// Pre-ZScript-rewrite HUD that was used up until v1.4. Keeping around mostly
+// for historical purposes.
+
 Height 0;
 Resolution 320, 240;
 

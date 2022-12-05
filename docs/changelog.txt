@@ -1,14 +1,14 @@
-[??-??-????] v2.0:
+[05-12-2022] v2.0:
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).
 - Fixed Barons giving the wrong token upon dying from Holy Water and Fire damage.
 - Slightly modified the spawning logic of the Holy Water Pool particles.
 - Slightly modified the Spider Mastermind's AltMissile state code.
 - Modified firing behavior for the Shotgun and Double-Barrel Shotgun.
 - Rebalanced skills 5 and 6:
-	* Enemies deal 150% damage instead of 200% on skill 5 and 175% damage on skill 6.
+	* Enemies deal 130% damage instead of 200% on skill 5 and 170% damage on skill 6.
 	* Stimpacks, Medikits and Megaspheres function normally on skill 6.
 	* Ammo pickups give normal amounts on skill 6.
-	* Monsters have 15% more health instead of 50% on skill 6.
+	* Monsters have 20% more health instead of 50% on skill 6.
 - Renamed TeleportFX to SGDTeleportFog.
 - Implemented 4 new cvars to affect thing replacements: sgd_replaceplasmagun, sgd_replacebfg, sgd_replacebackpack and sgd_classicpowerups.
 - Reduced the amount of ammo given by the Flamethrower from 100 to 90.
@@ -29,6 +29,13 @@
 - Renamed DemonizerPickup to DemonizerOrb.
 - Migrated ACS-based functionality to ZScript (except the feat system).
 - Piles of rockets now give 4 rockets instead of 3.
+- Modified behavior of FinisherFreeze (it now reduces player's speed during some finishers instead of freezing them entirely) and renamed to FinisherSpeed.
+- Reduced the Minigun's windup time slightly.
+- Added pitch interpolation for the Double-Barrel Shotgun's recoil.
+- Renamed the Light Amp Goggle sprites.
+- Removed the low health screen flash effect.
+- Re-implemented the HUD in ZScript.
+- Decreased the speed of the Argent Rifle's cooldown in the OverheatLoop state.
 
 [09-01-2020] v1.4:
 - Reduced the Chaingunner's attack windup time by 6 tics.

@@ -66,15 +66,14 @@ extend class SGDWeapon
 		A_Lower();
 	}
 	
-	action void A_BeginFinisher(bool freeze)
+	action void A_BeginFinisher(bool slowdown)
 	{
 		A_TakeInventory("FinisherToken",0x7FFFFFFF);
 		A_GiveInventory("FinisherInvul",1);
 		
-		if(freeze)
+		if(slowdown)
 		{
-			A_Stop();
-			A_GiveInventory("FinisherFreeze",1);
+			A_GiveInventory("FinisherSpeed",1);
 		}
 	}
 	
@@ -82,9 +81,9 @@ extend class SGDWeapon
 	{
 		A_TakeInventory("FinisherInvul",1);
 		
-		if(FindInventory("FinisherFreeze"))
+		if(FindInventory("FinisherSpeed"))
 		{
-			A_TakeInventory("FinisherFreeze",1);
+			A_TakeInventory("FinisherSpeed",1);
 		}
 	}
 }

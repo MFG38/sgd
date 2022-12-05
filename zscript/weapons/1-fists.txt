@@ -6,6 +6,7 @@ class SGDFists : SGDWeapon
 		Weapon.SelectionOrder 800;
 		Weapon.Kickback 10;
 		Tag "$SGD_WEP_FIST";
+		Inventory.Icon "";
 		+WEAPON.MELEEWEAPON;
 		+WEAPON.AMMO_OPTIONAL;
 	}
@@ -27,15 +28,13 @@ class SGDFists : SGDWeapon
 		PUCH A 2 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH B 2;
 		PUCH L 2 A_FistAttack;
-		PUCH CMDNER 2;
-		PUCH K 2;
+		PUCH CMDNERK 2;
 		Goto ReadyLoop;
 	Punch2:
 		PUCH F 2 A_StartSound("fist/swing",CHAN_WEAPON);
 		PUCH G 2;
 		PUCH O 2 A_FistAttack;
-		PUCH HPIQJK 2;
-		PUCH K 2;
+		PUCH HPIQJKK 2;
 		Goto ReadyLoop;
 	FinisherFail:
 		PUCH A 0;
@@ -67,7 +66,7 @@ class SGDFists : SGDWeapon
 
 class FistFinisherTimeFreeze : PowerTimeFreezer
 {
-	Default { Powerup.Duration 175; }
+	Default { Powerup.Duration 192; }
 	
 	override void InitEffect()
 	{

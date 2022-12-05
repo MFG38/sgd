@@ -1,8 +1,8 @@
-class FinisherFreeze : PowerSpeed
+class FinisherSpeed : PowerSpeed
 {
 	Default
 	{
-		Speed 0.0;
+		Speed 0.65;
 		Powerup.Duration 0x7FFFFFFD;
 		+POWERSPEED.NOTRAIL;
 	}

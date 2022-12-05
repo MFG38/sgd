@@ -9,6 +9,7 @@ class SGDShotgun : SGDWeapon
 		Weapon.AmmoUse 1;
 		Tag "$SGD_WEP_SHOTGUN";
 		Inventory.PickupMessage "$SGD_WEP_SHOTGUN";
+		Inventory.Icon "ICON_SHL";
 	}
 
 	States
@@ -89,6 +90,7 @@ class ShotgunSlug : Actor
 		PROJECTILE;
 		+FLATSPRITE;
 		+RIPPER;
+		Obituary "$SGD_OB_SGSLUG";
 	}
 	
 	States
@@ -259,7 +261,7 @@ extend class SGDShotgun
 			}
 			else
 			{
-				range = 360;
+				range = 384;
 			}
 			
 			switch(i)

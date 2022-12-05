@@ -2,7 +2,8 @@ gameinfo
 {
 	playerclasses = "SGDPlayer"
 	infopage = "HOWTO1"
-	AddEventHandlers = "SGDMainHandler", "SGDStaticHandler", "SGDReplacementHandler"
+	AddEventHandlers = "SGDMainHandler", "SGDStaticHandler", "SGDReplacementHandler", "DootalHandler"
+	StatusBarClass = "SGDStatusBar"
 }
 
 clearskills
@@ -56,22 +57,22 @@ skill nightmare
 	name = "$SGD_SKILL_VERYHARD"
 	mustconfirm = "You've seen things others wouldn't believe.\
 		Maximum enemy spawns. Enemies deal\
-		150% damage."
+		130% damage."
 	aggressiveness = 0.8
 	spawnfilter = nightmare
-	damagefactor = 1.5
+	damagefactor = 1.3
 }
 
 skill ultranightmare
 {
 	name = "$SGD_SKILL_IMPOSSIBLE"
 	mustconfirm = "You're not afraid of anything.\
-		Enemies deal 175% damage and have 15%\
+		Enemies deal 170% damage and have 20%\
 		more health."
 	aggressiveness = 1.0
 	spawnfilter = nightmare
-	damagefactor = 1.75
-	monsterhealth = 1.15
+	damagefactor = 1.7
+	monsterhealth = 1.2
 }
 
 map TITLEMAP "SGD Title"
