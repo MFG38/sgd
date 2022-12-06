@@ -1,3 +1,6 @@
+[??-??-????] v2.0.1:
+- Fixed missing A_BossDeath calls from the Baron's special Death states. 
+
 [05-12-2022] v2.0:
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).
 - Fixed Barons giving the wrong token upon dying from Holy Water and Fire damage.

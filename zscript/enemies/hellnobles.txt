@@ -176,7 +176,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS K  8;
 		BOSS L  8 A_NoBlocking;
 		BOSS MN 8;
-		BOSS O -1;
+		BOSS O -1 A_BossDeath;
 		Stop;
 	Death.Fire:
 		BOSS I  8
@@ -189,7 +189,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS K  8;
 		BOSS L  8 A_NoBlocking;
 		BOSS MN 8;
-		BOSS O -1;
+		BOSS O -1 A_BossDeath;
 		Stop;
 	Death.Sploder:
 		BOSS H  2 A_Pain;
@@ -208,7 +208,7 @@ class SGDBaron : SGDHellKnight replaces BaronOfHell
 		BOSS K  8;
 		BOSS L  8 A_NoBlocking;
 		BOSS MN 8;
-		BOSS O -1;
+		BOSS O -1 A_BossDeath;
 		Stop;
 	Raise:
 		BOSS O 8 A_SetTranslation("ResetTrans");
