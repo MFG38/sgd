@@ -65,11 +65,11 @@ SGD_CVAR_TRACER0 = "Alkuperäinen";
 SGD_CVAR_TRACER1 = "SGD-tyylinen";
 SGD_CVAR_RPLASMA0 = "Pelkkä liekinheitin";
 SGD_CVAR_RPLASMA1 = "Liekinheitin tai Argent-kivääri";
-SGD_CVAR_RBFG0 = "Argent-kivääri tai antimateriatykki";
-SGD_CVAR_RBFG1 = "Pelkkä antimateriatykki";
+SGD_CVAR_RBFG0 = "Argent-kivääri tai pimeäainetykki";
+SGD_CVAR_RBFG1 = "Pelkkä pimeäainetykki";
 SGD_CVAR_RBFG2 = "Pelkkä Argent-kivääri";
 SGD_CVAR_RBACKP0 = "Satunnainen ammus";
-SGD_CVAR_RBACKP1 = "DMC:n ammus";
+SGD_CVAR_RBACKP1 = "Pimeäainetykin ammus";
 
 SGD_KEY_ALTFIRE = "Toissijainen ampumistoiminto (käyttää finisherin)";
 SGD_KEY_INVUSE = "Käytä esine";
