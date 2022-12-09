@@ -18,6 +18,8 @@ modified where seen fit by MFG38
 Old Video shader originally by jmpep, ported to GZDoom by Nash Muhandes, modified where
 seen fit by MFG38
 
+libtooltipmenu by ToxicFrog
+
 
 ==============
 == GRAPHICS ==
