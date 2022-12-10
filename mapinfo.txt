@@ -11,10 +11,10 @@ clearskills
 skill baby
 {
 	name = "$SGD_SKILL_VERYEASY"
-	mustconfirm = "You're new to this whole thing.\
+	/* mustconfirm = "You're new to this whole thing.\
 		Minimal enemy spawns. Enemies deal\
 		half the damage and ammo pickups grant\
-		50% more ammo."
+		50% more ammo." */
 	aggressiveness = 0.1
 	spawnfilter = baby
 	damagefactor = 0.5
@@ -26,8 +26,8 @@ skill baby
 skill easy
 {
 	name = "$SGD_SKILL_EASY"
-	mustconfirm = "You're not completely inexperienced.\
-		Minimal enemy spawns."
+	/* mustconfirm = "You're not completely inexperienced.\
+		Minimal enemy spawns." */
 	aggressiveness = 0.5
 	spawnfilter = easy
 	easybossbrain
@@ -37,8 +37,8 @@ skill normal
 {
 	defaultskill
 	name = "$SGD_SKILL_MEDIUM"
-	mustconfirm = "You know what you're getting yourself\
-		into. Normal enemy spawns."
+	/* mustconfirm = "You know what you're getting yourself\
+		into. Normal enemy spawns." */
 	aggressiveness = 0.5
 	spawnfilter = normal
 }
@@ -46,8 +46,8 @@ skill normal
 skill hard
 {
 	name = "$SGD_SKILL_HARD"
-	mustconfirm = "You're a demon-slaying veteran.\
-		Maximum enemy spawns."
+	/* mustconfirm = "You're a demon-slaying veteran.\
+		Maximum enemy spawns." */
 	aggressiveness = 0.5
 	spawnfilter = hard
 }
@@ -55,9 +55,9 @@ skill hard
 skill nightmare
 {
 	name = "$SGD_SKILL_VERYHARD"
-	mustconfirm = "You've seen things others wouldn't believe.\
+	/* mustconfirm = "You've seen things others wouldn't believe.\
 		Maximum enemy spawns. Enemies deal\
-		130% damage."
+		130% damage." */
 	aggressiveness = 0.8
 	spawnfilter = nightmare
 	damagefactor = 1.3
@@ -66,9 +66,9 @@ skill nightmare
 skill ultranightmare
 {
 	name = "$SGD_SKILL_IMPOSSIBLE"
-	mustconfirm = "You're not afraid of anything.\
+	/* mustconfirm = "You're not afraid of anything.\
 		Enemies deal 170% damage and have 20%\
-		more health."
+		more health." */
 	aggressiveness = 1.0
 	spawnfilter = nightmare
 	damagefactor = 1.7
