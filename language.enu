@@ -3,12 +3,12 @@
 SGD_MENU_HOWTOPLAY = "How to play";
 SGD_MENU_MODSETUP = "SGD settings";
 
-SGD_OMENU_NOTICE =
+SGD_TOOLTIP_SETUP =
 	"Options marked with (*) will only take effect\n"
 	"when either a new game is started or the current\n"
 	"map is restarted.";
 
-SGD_OMENU_KEYBIND =
+SGD_TOOLTIP_KEYBINDS =
 	"Press Enter, then any key to bind.\n"
 	"Press Backspace to unbind.";
 

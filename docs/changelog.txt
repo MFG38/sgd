@@ -1,5 +1,7 @@
 [??-??-????] v2.1:
 - Fixed missing A_BossDeath calls from the Baron's special Death states.
+- Localized the difficulty setting descriptions.
+- Added tooltips (courtesy of libtooltipmenu by ToxicFrog).
 
 [05-12-2022] v2.0:
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).

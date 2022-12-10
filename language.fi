@@ -3,12 +3,12 @@
 SGD_MENU_HOWTOPLAY = "Peliohjeet";
 SGD_MENU_MODSETUP = "SGD:n asetukset";
 
-SGD_OMENU_NOTICE =
+SGD_TOOLTIP_SETUP =
 	"Tähdellä (*) merkittyihin asetuksiin tehdyt\n"
 	"muutokset astuvat voimaan vasta uuden kartan\n"
 	"tai pelin alkaessa.";
 
-SGD_OMENU_KEYBIND =
+SGD_TOOLTIP_KEYBINDS =
 	"Paina Enter, sitten haluttua näppäintä asettaaksesi.\n"
 	"Poista asetus painamalla askelpalautinta.";
 
