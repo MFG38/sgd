@@ -161,21 +161,13 @@ SGD_SKILL_HARD = "Hell Veteran";
 SGD_SKILL_VERYHARD = "Advanced Slayer";
 SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
 
-SGD_TOOLTIP_VERYEASY =
-	"Olet uusi tälle koko hommalle. Vähemmän vihollisia ilmestyy. Viholliset\n"
-	"tekevät 50% vahingosta ja ammuslaatikot antavat 50% lisää ammuksia.";
-SGD_TOOLTIP_EASY =
-	"Et ole täysin kokematon. Vähemmän vihollisia ilmestyy.";
-SGD_TOOLTIP_MEDIUM =
-	"Tiedät mitä olet tekemässä. Normaalit viholliset ilmestyvät.";
-SGD_TOOLTIP_HARD =
-	"Olet demonintappoveteraani. Enemmän vihollisia ilmestyy.";
-SGD_TOOLTIP_VERYHARD =
-	"Olet nähnyt asioita joihin muut eivät uskoisi. Enemmän vihollisia\n"
-	"ilmestyy ja viholliset tekevät 130% vahinkoa.";
-SGD_TOOLTIP_IMPOSSIBLE =
-	"Et pelkää mitään. Viholliset tekevät 170% vahinkoa ja ovat 20%\n"
-	"kestävämpiä.";
+// These messages get word-wrapped automatically, so they can be kept into single lines.
+SGD_TOOLTIP_VERYEASY = "Olet uusi tälle koko hommalle. Vähemmän vihollisia ilmestyy. Viholliset tekevät 50% vahingosta ja ammuslaatikot antavat 50% lisää ammuksia.";
+SGD_TOOLTIP_EASY = "Et ole täysin kokematon. Vähemmän vihollisia ilmestyy.";
+SGD_TOOLTIP_MEDIUM = "Tiedät mitä olet tekemässä. Normaalit viholliset ilmestyvät.";
+SGD_TOOLTIP_HARD = "Olet demonintappoveteraani. Enemmän vihollisia ilmestyy.";
+SGD_TOOLTIP_VERYHARD = "Olet nähnyt asioita joihin muut eivät uskoisi. Enemmän vihollisia ilmestyy ja viholliset tekevät 130% vahinkoa.";
+SGD_TOOLTIP_IMPOSSIBLE = "Et pelkää mitään. Viholliset tekevät 170% vahinkoa ja ovat 20% kestävämpiä.";
 
 SGD_WEP_FIST = "Nyrkit";
 SGD_WEP_RIFLE = "Kivääri";
