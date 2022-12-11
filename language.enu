@@ -162,7 +162,7 @@ SGD_SKILL_VERYHARD = "Advanced Slayer";
 SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
 
 // These messages get word-wrapped automatically, so they can be kept into single lines.
-SGD_TOOLTIP_VERYEASY = "You're new to this whole thing. Minimal enemy spawns. Enemies deal half the damage and ammo pickups grant 50% more ammo.";
+SGD_TOOLTIP_VERYEASY = "You're new to this whole thing. Minimal enemy spawns. Enemies deal half the damage.";
 SGD_TOOLTIP_EASY = "You're not completely inexperienced. Minimal enemy spawns.";
 SGD_TOOLTIP_MEDIUM = "You know what you're getting yourself into. Normal enemy spawns.";
 SGD_TOOLTIP_HARD = "You're a demon-slaying veteran. Maximum enemy spawns.";

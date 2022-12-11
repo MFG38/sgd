@@ -162,7 +162,7 @@ SGD_SKILL_VERYHARD = "Advanced Slayer";
 SGD_SKILL_IMPOSSIBLE = "Satan's Arch-Nemesis";
 
 // These messages get word-wrapped automatically, so they can be kept into single lines.
-SGD_TOOLTIP_VERYEASY = "Olet uusi tälle koko hommalle. Vähemmän vihollisia ilmestyy. Viholliset tekevät 50% vahingosta ja ammuslaatikot antavat 50% lisää ammuksia.";
+SGD_TOOLTIP_VERYEASY = "Olet uusi tälle koko hommalle. Vähemmän vihollisia ilmestyy. Viholliset tekevät puolet vahingosta.";
 SGD_TOOLTIP_EASY = "Et ole täysin kokematon. Vähemmän vihollisia ilmestyy.";
 SGD_TOOLTIP_MEDIUM = "Tiedät mitä olet tekemässä. Normaalit viholliset ilmestyvät.";
 SGD_TOOLTIP_HARD = "Olet demonintappoveteraani. Enemmän vihollisia ilmestyy.";

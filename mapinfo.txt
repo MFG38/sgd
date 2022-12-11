@@ -15,7 +15,7 @@ skill baby
 	aggressiveness = 0.1
 	spawnfilter = baby
 	damagefactor = 0.5
-	ammofactor = 1.5
+	//ammofactor = 1.5
 	autousehealth
 	easybossbrain
 }
