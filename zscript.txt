@@ -9,9 +9,9 @@ version "4.5"
 
 #include "zscript/hud.txt"
 
-#include "zscript/Tooltips.txt"
-#include "zscript/TooltipListMenu.txt"
-#include "zscript/TooltipOptionMenu.txt"
+#include "zscript/libtooltipmenu/Tooltips.txt"
+#include "zscript/libtooltipmenu/TooltipListMenu.txt"
+#include "zscript/libtooltipmenu/TooltipOptionMenu.txt"
 
 #include "zscript/event_handlers/main.txt"
 #include "zscript/event_handlers/replacer.txt"
