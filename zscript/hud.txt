@@ -25,46 +25,47 @@ class SGDStatusBar : BaseStatusBar
     {
         super.Draw(state,TicFrac);
 
-        if(!automapactive)
+        if(state == HUD_StatusBar || state == HUD_Fullscreen)
         {
+            BeginHUD();
             DrawHUD();
         }
     }
 
     void DrawHealthAndArmor()
     {
-        DrawImage("HAFRAME",(52,232),DI_ITEM_LEFT_BOTTOM);
-        DrawString(sfont,FormatNumber(CPlayer.health,3),(53,211),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
-        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(89,211),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
+        DrawImage("HAFRAME",(52,-8),DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT_BOTTOM);
+        DrawString(sfont,FormatNumber(CPlayer.health,3),(53,-29),DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
+        DrawString(sfont,FormatNumber(GetArmorAmount(),3),(89,-29),DI_SCREEN_LEFT_BOTTOM|DI_TEXT_ALIGN_LEFT,Font.CR_RED);
     }
 
     void DrawWeaponsAndAmmo()
     {
-        DrawImage("AMMFRAME",(316,236),DI_ITEM_RIGHT_BOTTOM);
-        DrawImage("WEPFRAME",(268,232),DI_ITEM_RIGHT_BOTTOM);
+        DrawImage("AMMFRAME",(-4,-4),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_RIGHT_BOTTOM);
+        DrawImage("WEPFRAME",(-52,-8),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_RIGHT_BOTTOM);
 
         Inventory ammo = GetCurrentAmmo();
         if(ammo != null)
         {
-            DrawString(sfont,FormatNumber(ammo.Amount,3),(231,211),DI_ITEM_TOP|DI_TEXT_ALIGN_CENTER,Font.CR_RED);
+            DrawString(sfont,FormatNumber(ammo.Amount,3),(-88,-29),DI_SCREEN_RIGHT_BOTTOM|DI_TEXT_ALIGN_CENTER,Font.CR_RED);
 
             // Well, this is embarrassing. I spent three entire days wracking my brain with different ways to
             // render the ammo icons, all of which produced fatal errors, and the solution that finally works
             // is the simplest one possible. I tried to needlessly overcomplicate the method when *this* was
             // all I had to do. Credit goes to Jarewill for pointing me to this direction.
-            DrawInventoryIcon(CPlayer.ReadyWeapon,(309,224),DI_ITEM_RIGHT_BOTTOM);
+            DrawInventoryIcon(CPlayer.ReadyWeapon,(-10,-16),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_RIGHT_BOTTOM);
         }
 
-        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(257,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(203,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT" : "",(209,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT" : "",(215,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT" : "",(221,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT" : "",(227,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT" : "",(233,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT" : "",(239,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT" : "",(245,226),DI_ITEM_LEFT_TOP);
-        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT" : "",(251,226),DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(0)? "WEPLIGHT" : "",(-63,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(1)? "WEPLIGHT" : "",(-117,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(2)? "WEPLIGHT" : "",(-111,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(3)? "WEPLIGHT" : "",(-105,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(4)? "WEPLIGHT" : "",(-99,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(5)? "WEPLIGHT" : "",(-93,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(6)? "WEPLIGHT" : "",(-87,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(7)? "WEPLIGHT" : "",(-81,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(8)? "WEPLIGHT" : "",(-75,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
+        DrawImage(CPlayer.HasWeaponsInSlot(9)? "WEPLIGHT" : "",(-69,-14),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP);
     }
 
     void DrawFinisherBar()
@@ -74,8 +75,8 @@ class SGDStatusBar : BaseStatusBar
 
         if(drawfbar)
         {
-            DrawImage("FTBARFRM",(4,4),DI_ITEM_LEFT_TOP);
-            DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0,DI_ITEM_LEFT_TOP);
+            DrawImage("FTBARFRM",(4,4),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP);
+            DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0,DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP);
         }
     }
 
@@ -88,29 +89,29 @@ class SGDStatusBar : BaseStatusBar
         {
             if(CPlayer.mo.CountInv("FinisherToken") >= 300 && CPlayer.mo.CountInv("FinisherToken") < 600)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL1READY"),(8,27),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
                 }
             }
             else if(CPlayer.mo.CountInv("FinisherToken") >= 600 && CPlayer.mo.CountInv("FinisherToken") < 900)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL2READY"),(8,27),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
                 }
             }
             else if(CPlayer.mo.CountInv("FinisherToken") >= 900)
             {
-                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(8,27),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
+                DrawString(msgfont,StringTable.Localize("$SGD_FMSG_LVL3READY"),(8,27),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
 
                 if(prompttype == 2)
                 {
-                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
+                    DrawString(msgfont,StringTable.Localize("$SGD_FMSG_USE"),(8,35),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP|DI_TEXT_ALIGN_LEFT,Font.CR_GREEN,(1.0-((level.maptime%16)*0.04)));
                 }
             }
         }
@@ -118,15 +119,15 @@ class SGDStatusBar : BaseStatusBar
 
     void DrawInvItem()
     {
-        DrawImage("INVFRAME",(4,236),DI_ITEM_LEFT_BOTTOM);
+        DrawImage("INVFRAME",(4,-4),DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT_BOTTOM);
 
         if(CPlayer.mo.InvSel != null)
         {
-            DrawInventoryIcon(CPlayer.mo.InvSel,(10,224),DI_ITEM_LEFT_BOTTOM|DI_DIMDEPLETED);
+            DrawInventoryIcon(CPlayer.mo.InvSel,(10,-16),DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT_BOTTOM|DI_DIMDEPLETED);
 
             if(CPlayer.mo.InvSel.Amount > 1)
             {
-                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(39,193),DI_ITEM_RIGHT_TOP|DI_TEXT_ALIGN_RIGHT,Font.CR_GOLD);
+                DrawString(invfont,FormatNumber(CPlayer.mo.InvSel.Amount,3),(39,-47),DI_SCREEN_LEFT_BOTTOM|DI_ITEM_RIGHT_TOP|DI_TEXT_ALIGN_RIGHT,Font.CR_GOLD);
             }
         }
     }
@@ -138,7 +139,7 @@ class SGDStatusBar : BaseStatusBar
 
         if(drawhsbar && CPlayer.mo.CountInv("RadSuitTimer") > 0)
         {
-            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(312,8),0,1,DI_ITEM_RIGHT_TOP);
+            DrawBar("HSBAR_FG","HSBAR_BG",GetAmount("RadSuitTimer"),GetMaxAmount("RadSuitTimer"),(-8,8),0,1,DI_SCREEN_RIGHT_TOP|DI_ITEM_RIGHT_TOP);
         }
     }
 
@@ -151,18 +152,18 @@ class SGDStatusBar : BaseStatusBar
             locks[i] = CPlayer.mo.CheckKeys(i+1,false,true);
         }
 
-        if(locks[0]) { DrawImage("STKEYS2",(230,206),DI_ITEM_RIGHT_BOTTOM); }
-        if(locks[1]) { DrawImage("STKEYS0",(214,206),DI_ITEM_RIGHT_BOTTOM); }
-        if(locks[2]) { DrawImage("STKEYS1",(222,206),DI_ITEM_RIGHT_BOTTOM); }
-        if(locks[3]) { DrawImage("STKEYS5",(254,206),DI_ITEM_RIGHT_BOTTOM); }
-        if(locks[4]) { DrawImage("STKEYS3",(238,206),DI_ITEM_RIGHT_BOTTOM); }
-        if(locks[5]) { DrawImage("STKEYS4",(246,206),DI_ITEM_RIGHT_BOTTOM); }
+        if(locks[0]) { DrawImage("STKEYS2",(-95,-39),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP); }
+        if(locks[1]) { DrawImage("STKEYS0",(-111,-39),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP); }
+        if(locks[2]) { DrawImage("STKEYS1",(-103,-39),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP); }
+        if(locks[3]) { DrawImage("STKEYS5",(-71,-40),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP); }
+        if(locks[4]) { DrawImage("STKEYS3",(-87,-40),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP); }
+        if(locks[5]) { DrawImage("STKEYS4",(-79,-40),DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_TOP); }
     }
 
     void DrawDemonizerTimers()
     {
-        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(145,224),0,1,DI_ITEM_RIGHT_BOTTOM);
-        DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(175,224),0,0,DI_ITEM_LEFT_BOTTOM);
+        DrawBar("DBARL_FG","DBARL_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(155,-8),0,1,DI_SCREEN_LEFT_BOTTOM|DI_ITEM_RIGHT_BOTTOM);
+        DrawBar("DBARR_FG","DBARR_BG",GetAmount("DemonizerTimer"),GetMaxAmount("DemonizerTimer"),(-155,-8),0,0,DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_LEFT_BOTTOM);
     }
 
     void DrawHUD()
