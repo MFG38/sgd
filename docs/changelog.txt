@@ -3,6 +3,7 @@
 - Localized the difficulty setting descriptions.
 - Added tooltips (courtesy of libtooltipmenu by ToxicFrog).
 - Rebalanced skill 1 (ammo pickups give normal ammo amounts instead of 50% more).
+- Updated the HUD to use fullscreen coordinates.
 
 [05-12-2022] v2.0:
 - Increased the "warmup" time for the Dark Matter Cannon projectile (i.e. it does not begin to absorb things as quickly).

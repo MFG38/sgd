@@ -67,6 +67,7 @@ Bugs may be reported by the following means:
 
 E-mail:                 mfg38thelps@aol.com
 Discord PM:             MFG38#3393
+GitHub issues:          https://github.com/MFG38/sgd/issues
 ZDoom project thread:   http://forum.zdoom.org/viewtopic.php?f=43&t=65490
 ModDB page:             http://www.moddb.com/mods/satanic-gameshow-deluxe
 
