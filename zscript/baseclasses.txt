@@ -112,7 +112,7 @@ class SGDMonster : Actor
 		+MISSILEMORE;
 	}
 	
-	override void PostBeginPlay()
+	/* override void PostBeginPlay()
 	{
 		super.PostBeginPlay();
 		
@@ -125,7 +125,7 @@ class SGDMonster : Actor
 			SetStateLabel("AltSpawn");
 			break;
 		}
-	}
+	} */
 }
 
 extend class SGDMonster

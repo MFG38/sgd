@@ -297,12 +297,6 @@ Light Amp Visor toggle sound (sgd_visortogglesound) - default: 1
 ----------------------------------------------------------------
 Controls whether the Light Amp Goggles should play their sound upon being turned on or off.
 
-Enemy spawn behavior (sgd_spawnbehavior) - default: 0
------------------------------------------------------
-Controls how enemies should behave upon a new map being loaded. Set this to 0 to have them stand still or to 1 to
-have them wander around. Note that setting this to 1 may cause some maps to either not work as intended or break
-outright.
-
 Bullet attack type (sgd_hitscanbehavior) - default: 1
 -----------------------------------------------------
 Controls whether bullet attacks should be hitscan or projectile-based. Set this to 0 for the original hitscan behavior.

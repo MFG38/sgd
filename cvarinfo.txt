@@ -10,7 +10,7 @@ user bool sgd_fancyteleport = true;
 server bool sgd_propdynlights = true;
 
 // Enemy stuff
-server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
+//server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
 server int sgd_hitscanbehavior = 1;		// 0 = Hitscan, 1 = Projectile
 server int sgd_revrocketbehavior = 1;		// 0 = Original, 1 = SGD-style
 
