@@ -22,7 +22,7 @@ ListMenu "MainMenu"
 
 OptionMenu "SGD_Setup"
 {
-	class TF_TooltipOptionMenu
+	class SGD_TooltipOptionMenu
 
 	Title "$SGD_TTL_CVARS"
 	/* StaticText "$SGD_OMENU_NOTICE", "Gold"
@@ -62,14 +62,14 @@ OptionMenu "SGD_Setup"
 	StaticText "" */
 	Submenu "$SGD_SUBTTL_CONTROLS", "SGD_KeyConfig"
 
-	TooltipGeometry 1.0, 1.0, 1.0, 2.0, 0.5, 1.0
-	TooltipAppearance "", "", "tfttbg"
-	Tooltip "$SGD_TOOLTIP_SETUP"
+	SGDTooltipGeometry 1.0, 1.0, 1.0, 2.0, 0.5, 1.0
+	SGDTooltipAppearance "", "", "tfttbg"
+	SGDTooltip "$SGD_TOOLTIP_SETUP"
 }
 
 OptionMenu "SGD_KeyConfig"
 {
-	class TF_TooltipOptionMenu
+	class SGD_TooltipOptionMenu
 
 	Title "$SGD_TTL_CONTROLS"
 	/* StaticText "$SGD_OMENU_KEYBIND", "Gold"
@@ -88,9 +88,9 @@ OptionMenu "SGD_KeyConfig"
 	Control "$SGD_KEY_GOGGLES", "quick_goggles"
 	Control "$SGD_KEY_RADSUIT", "quick_radsuit"
 
-	TooltipGeometry 1.0, 1.0, 1.0, 2.0, 0.5, 1.0
-	TooltipAppearance "", "", "tfttbg"
-	Tooltip "$SGD_TOOLTIP_KEYBINDS"
+	SGDTooltipGeometry 1.0, 1.0, 1.0, 2.0, 0.5, 1.0
+	SGDTooltipAppearance "", "", "tfttbg"
+	SGDTooltip "$SGD_TOOLTIP_KEYBINDS"
 }
 
 OptionValue "FinisherPrompt"

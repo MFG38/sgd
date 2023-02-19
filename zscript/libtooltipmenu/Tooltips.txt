@@ -1,6 +1,6 @@
 // Common code shared between the TooltipListMenu and TooltipOptionMenu.
 
-class TF_Tooltip : Object ui {
+class SGD_Tooltip : Object ui {
   double x, y, w, xpad, ypad, scale; // Geometry
   uint first, last; // First and last menuitems this applies to
   Font font;
@@ -8,7 +8,7 @@ class TF_Tooltip : Object ui {
   TextureID texture;
   string text;
 
-  void CopyFrom(TF_Tooltip settings) {
+  void CopyFrom(SGD_Tooltip settings) {
     self.x = settings.x;
     self.y = settings.y;
     self.w = settings.w;
@@ -86,17 +86,17 @@ class TF_Tooltip : Object ui {
 }
 
 // Mixin classes used for the menu and menu items.
-mixin class TF_TooltipMenu {
-  array<TF_Tooltip> tooltips;
-  TF_Tooltip tooltip_settings;
+mixin class SGD_TooltipMenu {
+  array<SGD_Tooltip> tooltips;
+  SGD_Tooltip tooltip_settings;
 
   // Default settings:
   // - top left corner
   // - 30% of the screen width
   // - 1em horizontal margin and 0.5lh vertical margin
   // - white text using newsmallfont
-  TF_Tooltip GetDefaults() {
-    let tt = TF_Tooltip(new("TF_Tooltip"));
+  SGD_Tooltip GetDefaults() {
+    let tt = SGD_Tooltip(new("SGD_Tooltip"));
     tt.x = tt.y = 0.0;
     tt.w = 0.3;
     tt.xpad = 1.0;
@@ -107,7 +107,7 @@ mixin class TF_TooltipMenu {
     return tt;
   }
 
-  TF_Tooltip AppendableTooltip(uint first, uint last) {
+  SGD_Tooltip AppendableTooltip(uint first, uint last) {
     if (tooltips.size() <= 0) return null;
     let tt = tooltips[tooltips.size()-1];
     if (tt.first == first) return tt;
@@ -124,7 +124,7 @@ mixin class TF_TooltipMenu {
       return;
     }
     // No existing tooltip for these menu entries, create a new one.
-    tt = new("TF_Tooltip");
+    tt = new("SGD_Tooltip");
     tt.CopyFrom(tooltip_settings);
     tt.first = first;
     tt.last = last;
@@ -132,7 +132,7 @@ mixin class TF_TooltipMenu {
     tooltips.push(tt);
   }
 
-  TF_Tooltip FindTooltipFor(int item) {
+  SGD_Tooltip FindTooltipFor(int item) {
     // console.printf("FindTooltipFor(%d)", item);
     if (item < 0 || item >= mDesc.mItems.size()) return null;
     if (!mDesc.mItems[item].Selectable()) return null;
@@ -154,6 +154,7 @@ mixin class TF_TooltipMenu {
 
   // Dynamic tooltip API.
   void PushTooltip(String tooltip, uint n=1) {
+    if (!tooltip) return;
     if (n<1) ThrowAbortException("Tooltip must apply to at least one menu item!");
     AddTooltip(mDesc.mItems.size()-n, mDesc.mItems.size()-1, tooltip);
   }
@@ -177,10 +178,10 @@ mixin class TF_TooltipMenu {
   }
 }
 
-mixin class TF_TooltipHolder {
-  array<TF_Tooltip> tooltips;
+mixin class SGD_TooltipHolder {
+  array<SGD_Tooltip> tooltips;
 
-  Object Init(array<TF_Tooltip> tts) {
+  Object Init(array<SGD_Tooltip> tts) {
     self.tooltips.copy(tts);
     return self;
   }
@@ -188,7 +189,7 @@ mixin class TF_TooltipHolder {
   override bool Selectable() { return false; }
 }
 
-mixin class TF_TooltipItem {
+mixin class SGD_TooltipItem {
   string tooltip;
 
   Object Init(string tooltip) {
@@ -197,7 +198,7 @@ mixin class TF_TooltipItem {
   }
 }
 
-mixin class TF_TooltipGeometry {
+mixin class SGD_TooltipGeometry {
   double x, y, w, xpad, ypad, scale;
 
   Object Init(
@@ -210,7 +211,7 @@ mixin class TF_TooltipGeometry {
     return self;
   }
 
-  void CopyTo(TF_Tooltip settings) {
+  void CopyTo(SGD_Tooltip settings) {
     if (self.x >= 0) settings.x = self.x;
     if (self.y >= 0) settings.y = self.y;
     if (self.w >= 0) settings.w = self.w;
@@ -220,7 +221,7 @@ mixin class TF_TooltipGeometry {
   }
 }
 
-mixin class TF_TooltipAppearance {
+mixin class SGD_TooltipAppearance {
   Font myfont;
   Color colour;
   TextureID texture;
@@ -232,7 +233,7 @@ mixin class TF_TooltipAppearance {
     return self;
   }
 
-  void CopyTo(TF_Tooltip settings) {
+  void CopyTo(SGD_Tooltip settings) {
     if (self.myfont) settings.font = self.myfont;
     if (self.colour) settings.colour = self.colour;
     if (self.texture) settings.texture = self.texture;

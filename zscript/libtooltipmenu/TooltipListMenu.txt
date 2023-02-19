@@ -2,13 +2,13 @@
 // Released under the MIT license; see COPYING.md for details.
 //
 // To use this, declare your list menu in MENUDEF as normal, but add:
-//   class TF_TooltipListMenu
+//   class SGD_TooltipListMenu
 // You can then use the "Tooltip", "TooltipGeometry", and "TooltipAppearance"
 // menu pseudo-items to add and configure tooltips.
 // For details, see the included README.
 
-class TF_TooltipListMenu : ListMenu {
-  mixin TF_TooltipMenu;
+class SGD_TooltipListMenu : ListMenu {
+  mixin SGD_TooltipMenu;
 
   void InitDynamic(Menu parent, ListMenuDescriptor desc) {
     desc.mItems.Clear();
@@ -23,7 +23,7 @@ class TF_TooltipListMenu : ListMenu {
 
     // If there's already a TooltipHolder in tail position, we've already been
     // initialized and just need to retrieve our saved tooltips from it.
-    let tail = ListMenuItemTooltipHolder(desc.mItems[desc.mItems.size()-1]);
+    let tail = ListMenuItemSGDTooltipHolder(desc.mItems[desc.mItems.size()-1]);
     if (tail) {
       tooltips.copy(tail.tooltips);
       return;
@@ -41,8 +41,8 @@ class TF_TooltipListMenu : ListMenu {
     // items.
     bool tooltip_mode = true;
     for (uint i = 0; i < items.size(); ++i) {
-      if (items[i] is "ListMenuItemTooltip") {
-        let tt = ListMenuItemTooltip(items[i]);
+      if (items[i] is "ListMenuItemSGDTooltip") {
+        let tt = ListMenuItemSGDTooltip(items[i]);
         if (tt.tooltip == "" && !tooltip_mode) {
           // Explicit marker that the above items should have no tooltips.
           startblock = desc.mItems.size();
@@ -50,10 +50,10 @@ class TF_TooltipListMenu : ListMenu {
           AddTooltip(startblock, desc.mItems.size()-1, tt.tooltip);
           tooltip_mode = true;
         }
-      } else if (items[i] is "ListMenuItemTooltipGeometry") {
-        ListMenuItemTooltipGeometry(items[i]).CopyTo(tooltip_settings);
-      } else if (items[i] is "ListMenuItemTooltipAppearance") {
-        ListMenuItemTooltipAppearance(items[i]).CopyTo(tooltip_settings);
+      } else if (items[i] is "ListMenuItemSGDTooltipGeometry") {
+        ListMenuItemSGDTooltipGeometry(items[i]).CopyTo(tooltip_settings);
+      } else if (items[i] is "ListMenuItemSGDTooltipAppearance") {
+        ListMenuItemSGDTooltipAppearance(items[i]).CopyTo(tooltip_settings);
       } else {
         if (tooltip_mode) {
           // Just finished a run of tooltips.
@@ -66,22 +66,22 @@ class TF_TooltipListMenu : ListMenu {
 
     // Store our tooltips inside the menu descriptor so we can recover them when
     // the menu is redisplayed.
-    desc.mItems.push(ListMenuItemTooltipHolder(new("ListMenuItemTooltipHolder").Init(tooltips)));
+    desc.mItems.push(ListMenuItemSGDTooltipHolder(new("ListMenuItemSGDTooltipHolder").Init(tooltips)));
   }
 }
 
-class ListMenuItemTooltipHolder : ListMenuItem {
-  mixin TF_TooltipHolder;
+class ListMenuItemSGDTooltipHolder : ListMenuItem {
+  mixin SGD_TooltipHolder;
 }
 
-class ListMenuItemTooltip : ListMenuItem {
-  mixin TF_TooltipItem;
+class ListMenuItemSGDTooltip : ListMenuItem {
+  mixin SGD_TooltipItem;
 }
 
-class ListMenuItemTooltipGeometry : ListMenuitem {
-  mixin TF_TooltipGeometry;
+class ListMenuItemSGDTooltipGeometry : ListMenuitem {
+  mixin SGD_TooltipGeometry;
 }
 
-class ListMenuItemTooltipAppearance : ListMenuitem {
-  mixin TF_TooltipAppearance;
+class ListMenuItemSGDTooltipAppearance : ListMenuitem {
+  mixin SGD_TooltipAppearance;
 }
