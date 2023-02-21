@@ -1,3 +1,6 @@
+[??-??-????] v2.1.1:
+- Finisher bar no longer obstructs map statistics in automap view.
+
 [19-02-2023] v2.1:
 - Fixed missing A_BossDeath calls from the Baron's special Death states.
 - Localized the difficulty setting descriptions.

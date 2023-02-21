@@ -73,7 +73,7 @@ class SGDStatusBar : BaseStatusBar
         finisherbar = CVar.FindCVar('sgd_displayfbar');
         bool drawfbar = finisherbar.GetBool();
 
-        if(drawfbar)
+        if(drawfbar && !automapactive)
         {
             DrawImage("FTBARFRM",(4,4),DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP);
             DrawBar("FTBAR_FG","FTBAR_BG",GetAmount("FinisherToken"),GetMaxAmount("FinisherToken"),(10,10),0,0,DI_SCREEN_LEFT_TOP|DI_ITEM_LEFT_TOP);
