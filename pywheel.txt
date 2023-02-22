@@ -1,0 +1,11 @@
+SGDPlayer
+{
+    forceicon "SGDRifle", "RGUPA0";
+    forceicon "SGDShotgun", "DNSPA0";
+    forceicon "SGDSuperShotgun", "COCPA0";
+    forceicon "SGDMinigun", "MNGNA0";
+    forceicon "SGDBazooka", "HSGNA0";
+    forceicon "SGDFlamethrower", "WFLMA0";
+    forceicon "SGDArgentRifle", "STPPA0";
+    forceicon "SGDDarkMatterCannon", "DCANA0";
+}

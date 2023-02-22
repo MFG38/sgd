@@ -111,6 +111,7 @@ class DemonizerMorphFX : Actor
 	States
 	{
 	Spawn:
+		// If only this worked properly with a for loop.
 		TNT1 A 0 A_SpawnItemEx("DemonizerMorphParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
 		TNT1 A 0 A_SpawnItemEx("DemonizerMorphParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
 		TNT1 A 0 A_SpawnItemEx("DemonizerMorphParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
