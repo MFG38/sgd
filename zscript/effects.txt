@@ -34,6 +34,7 @@ class SGDProjectileTrail : Actor
 		+NOBLOCKMAP;
 		+NOGRAVITY;
 		+NOINTERACTION;
+		+NOTELEPORT;
 	}
 
 	States
@@ -206,38 +207,13 @@ class SGDTeleportFog : Actor
 		TFOG BABCDEFGHIJ 6 BRIGHT;
 		Stop;
 	AltSpawn:
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
-		TNT1 A 0 A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
+		TNT1 A 0
+		{
+			for(int i = 0; i < 32; i++)
+			{
+				A_SpawnItemEx("TeleportParticle",random(-32,32),random(-32,32),random(0,8),0,0,random(4,8));
+			}
+		}
 		TNT1 A 70 A_StartSound("misc/teleport",CHAN_BODY);
 		Stop;
 	}
@@ -245,7 +221,7 @@ class SGDTeleportFog : Actor
 	override void PostBeginPlay()
 	{
 		super.PostBeginPlay();
-		if(CVar.FindCVar('sgd_fancyteleport').GetInt() == 1)
+		if(CVar.FindCVar('sgd_fancyteleport').GetInt() >= 1)
 		{
 			SetStateLabel("AltSpawn");
 		}
