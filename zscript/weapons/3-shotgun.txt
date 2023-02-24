@@ -273,13 +273,13 @@ extend class SGDShotgun
 			default:
 				if(FindInventory("Shotgun_Cone"))
 				{
-					xspread = angle + random2() * (11.25 / 256);
-					yspread = pitch + random2() * (8.65 / 256);
+					xspread = angle + random2() * (10.25 / 256);
+					yspread = pitch + random2() * (8.125 / 256);
 				}
 				else
 				{
-					xspread = angle + random2() * (16.65 / 256);
-					yspread = pitch + random2() * (13.5 / 256);
+					xspread = angle + random2() * (14.75 / 256);
+					yspread = pitch + random2() * (12.875 / 256);
 				}
 				break;
 			}

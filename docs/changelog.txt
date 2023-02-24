@@ -2,6 +2,7 @@
 - Finisher bar no longer obstructs map statistics in automap view.
 - Truncated SGDTeleportFog's code.
 - Added PYWHEEL lump to override weapon icons in PyWeaponWheel's weapon selector.
+- Tightened the Shotgun's spread (both upgraded and unupgraded) ever so slightly.
 
 [19-02-2023] v2.1:
 - Fixed missing A_BossDeath calls from the Baron's special Death states.
