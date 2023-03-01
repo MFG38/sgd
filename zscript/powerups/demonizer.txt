@@ -11,6 +11,7 @@ class DemonizerOrb : CustomInventory
 		Inventory.PickupMessage "$SGD_PU_DEMONIZER";
 		Inventory.ForbiddenTo "DemonizedPlayer";
 		+INVENTORY.INVBAR;
+		+INVENTORY.BIGPOWERUP;
 	}
 
 	States

@@ -9,6 +9,7 @@ class SGDFists : SGDWeapon
 		Inventory.Icon "";
 		+WEAPON.MELEEWEAPON;
 		+WEAPON.AMMO_OPTIONAL;
+		+WEAPON.WIMPY_WEAPON;
 	}
 
 	States
