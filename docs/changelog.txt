@@ -1,4 +1,4 @@
-[??-??-????] v2.1.1:
+[03-03-2023] v2.1.1:
 - Finisher bar no longer obstructs map statistics in automap view.
 - Truncated SGDTeleportFog's code.
 - Added PYWHEEL lump to override weapon icons in PyWeaponWheel's weapon selector.
