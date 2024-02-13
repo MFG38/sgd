@@ -247,7 +247,7 @@ extend class SGDRifle
 		}
 		
 		A_AlertMonsters();
-		LineAttack(xspread,1280,yspread,dmg,'Normal',"BulletPuff");
+		LineAttack(xspread,MISSILERANGE,yspread,dmg,'Normal',"BulletPuff");
 		ACS_NamedExecute("FeatTracker",0);
 	}
 	

@@ -349,7 +349,7 @@ extend class SGDSuperShotgun
 				break;
 			}
 			
-			LineAttack(xspread,384,yspread,dmg,'Normal',"BulletPuff");
+			LineAttack(xspread,MISSILERANGE,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
 	}
