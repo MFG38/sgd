@@ -194,7 +194,7 @@ extend class SGDChainsaw
 		}
 
 		A_AlertMonsters();
-		LineAttack(angle,64,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
+		LineAttack(angle,SAWRANGE,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
 		
 		if(t.linetarget)
 		{

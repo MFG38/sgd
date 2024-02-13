@@ -257,11 +257,11 @@ extend class SGDShotgun
 			
 			if(FindInventory("Shotgun_Range"))
 			{
-				range = 480;
+				range = MISSILERANGE;
 			}
 			else
 			{
-				range = 384;
+				range = MISSILERANGE / 2;
 			}
 			
 			switch(i)

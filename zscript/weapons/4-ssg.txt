@@ -438,7 +438,7 @@ extend class SGDSuperShotgun
 			double xspread = angle + random2() * (16.875 / 256);
 			double yspread = pitch + random2() * (14.45 / 256);
 			
-			LineAttack(xspread,768,yspread,50,'Normal',"BulletPuff");
+			LineAttack(xspread,MISSILERANGE,yspread,50,'Normal',"BulletPuff");
 		}
 		A_Recoil(2);
 		
