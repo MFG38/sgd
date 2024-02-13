@@ -180,7 +180,7 @@ extend class SGDMinigun
 			double xspread = angle + random2() * (8.25 / 256);
 			double yspread = pitch + random2() * (6.575 / 256);
 
-			LineAttack(xspread,768,yspread,dmg,'Normal',"BulletPuff");
+			LineAttack(xspread,MISSILERANGE,yspread,dmg,'Normal',"BulletPuff");
 		}
 		ACS_NamedExecute("FeatTracker",0);
 	}
