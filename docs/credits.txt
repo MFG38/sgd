@@ -20,6 +20,8 @@ seen fit by MFG38
 
 libtooltipmenu by ToxicFrog
 
+ZScript HudMessage by Agent_Ash
+
 
 ==============
 == GRAPHICS ==

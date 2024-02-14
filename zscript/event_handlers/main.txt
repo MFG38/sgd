@@ -18,6 +18,9 @@ class SGDMainHandler : EventHandler
 {
 	override void WorldThingDied(WorldEvent e)
 	{
+		// TODO: Convert feat system from ACS to ZScript. WorldThingDied
+		// is likely to be the place it needs to be handled.
+		
 		// Inventory reset if the player or an Icon of Sin dies
 		if(e.Thing.GetClassName() == "SGDPlayer" || e.Thing.GetClassName() == "BossBrain")
 		{
@@ -45,7 +48,7 @@ class SGDMainHandler : EventHandler
 		}
 	}
 
-	override void WorldLinePreActivated(WorldEvent e)
+	/* override void WorldLinePreActivated(WorldEvent e)
 	{
 		// Inventory reset on exit
 		if(e.ActivatedLine.Special == 243 || e.ActivatedLine.Special == 244)
@@ -73,11 +76,11 @@ class SGDMainHandler : EventHandler
 			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
 			p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF);
 		}
-	}
+	} */
 
 	override void PlayerEntered(PlayerEvent e)
 	{
-		// Workaround for maps with exits like those in E1M8 and Plutonia MAP11.
+		// The inventory reset really only needs to be done here.
 		PlayerInfo p = players[e.PlayerNumber];
 
 		if(p.mo.FindInventory("FinisherToken"))				{ p.mo.TakeInventory("FinisherToken",0x7FFFFFFF); }
@@ -94,5 +97,8 @@ class SGDMainHandler : EventHandler
 		if(p.mo.FindInventory("FistFinisherTimeFreeze"))	{ p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF); }
 		if(p.mo.FindInventory("FinisherInvul"))				{ p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF); }
 		if(p.mo.FindInventory("FinisherSpeed"))				{ p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF); }
+
+		// Let's also reset the Argent Rifle because why not.
+		if(p.mo.FindInventory("ArgentRifleHeat"))			{ p.mo.TakeInventory("ArgentRifleHeat",0x7FFFFFFF); }
 	}
 }

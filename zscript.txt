@@ -14,6 +14,9 @@ version "4.5"
 #include "zscript/libtooltipmenu/TooltipListMenu.txt"
 #include "zscript/libtooltipmenu/TooltipOptionMenu.txt"
 
+// ZScript HUDMessage by Agent_Ash
+#include "zscript/zshudmsg/hudmsg.txt"
+
 #include "zscript/event_handlers/main.txt"
 #include "zscript/event_handlers/replacer.txt"
 #include "zscript/event_handlers/dootal.txt"
