@@ -46,6 +46,7 @@ SGD_OM_GOGGLETOGGLESOUND = "Light Amp Visor toggle sound";
 SGD_OM_SPAWNBEHAVIOR = "Enemy spawn behavior (*)";
 SGD_OM_HITSCANBEHAVIOR = "Bullet attack type";
 SGD_OM_TRACERBEHAVIOR = "Revenant rocket type";
+SGD_OM_WEAKLOSTSOULS = "Halve health of Lost Souls";
 
 SGD_OM_RPLASMA = "Plasma Rifle replacement";
 SGD_OM_RBFG = "BFG9000 replacement";

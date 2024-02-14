@@ -46,6 +46,7 @@ SGD_OM_GOGGLETOGGLESOUND = "Pimeänäkölasien kytkemisääni";
 SGD_OM_SPAWNBEHAVIOR = "Vihollisten lähtökäytös (*)";
 SGD_OM_HITSCANBEHAVIOR = "Luotien tyyppi";
 SGD_OM_TRACERBEHAVIOR = "Revenantin rakettien tyyppi";
+SGD_OM_WEAKLOSTSOULS = "Puolita kadotettujen sielujen HP";
 
 SGD_OM_RPLASMA = "Plasmakiväärin korvike";
 SGD_OM_RBFG = "BFG9000:n korvike";

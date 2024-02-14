@@ -107,4 +107,13 @@ class SGDLostSoul : SGDMonster replaces LostSoul
 		SKUL K 6;
 		Stop;
 	}
+
+	override void PostBeginPlay()
+	{
+		if(CVar.FindCVar('sgd_weaklostsouls').GetBool() == true)
+		{
+			self.Health /= 2;
+		}
+		else return;
+	}
 }

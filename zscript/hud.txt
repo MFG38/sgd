@@ -48,9 +48,8 @@ class SGDStatusBar : BaseStatusBar
         if(ammo != null)
         {
             if(ammo.GetClassName() == 'ArgentRifleHeat')
-            {   DrawBar("ARGOHBAR","",GetAmount("ArgentRifleHeat"),GetMaxAmount("ArgentRifleHeat"),(-58,-17),0,0,DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_RIGHT_BOTTOM); }
-            else
-            {   DrawString(sfont,FormatNumber(ammo.Amount,3),(-88,-29),DI_SCREEN_RIGHT_BOTTOM|DI_TEXT_ALIGN_CENTER,Font.CR_RED); }
+                DrawBar("ARGOHBAR","",GetAmount("ArgentRifleHeat"),GetMaxAmount("ArgentRifleHeat"),(-58,-17),0,0,DI_SCREEN_RIGHT_BOTTOM|DI_ITEM_RIGHT_BOTTOM);
+            else DrawString(sfont,FormatNumber(ammo.Amount,3),(-88,-29),DI_SCREEN_RIGHT_BOTTOM|DI_TEXT_ALIGN_CENTER,Font.CR_RED);
 
             // Well, this is embarrassing. I spent three entire days wracking my brain with different ways to
             // render the ammo icons, all of which produced fatal errors, and the solution that finally works

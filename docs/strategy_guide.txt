@@ -305,6 +305,11 @@ Revenant Rocket type (sgd_tracerbehavior) - default: 1
 ------------------------------------------------------
 Controls the behavior of Revenant rockets. Set this to 0 for the original behavior.
 
+Halve health of Lost Souls (sgd_weaklostsouls) - default: 1
+-----------------------------------------------------------
+Controls whether Lost Souls should have their health reduced to half. Set this to 0 to have Lost Souls spawn with
+normal health.
+
 Plasma Rifle replacement (sgd_replaceplasmagun) - default: 0
 ------------------------------------------------------------
 Controls what should spawn in place of the Plasma Rifle. 0 spawns only the Flamethrower, 1 spawns either the Flamethrower

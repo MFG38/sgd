@@ -13,6 +13,7 @@ server bool sgd_propdynlights = true;
 //server int sgd_spawnbehavior = 0;		// 0 = Stand still, 1 = Wander
 server int sgd_hitscanbehavior = 1;		// 0 = Hitscan, 1 = Projectile
 server int sgd_revrocketbehavior = 1;		// 0 = Original, 1 = SGD-style
+server bool sgd_weaklostsouls = true;
 
 // Spawning stuff
 server int sgd_replaceplasmagun = 0;		// 0 = Flamethrower only, 1 = Flamethrower or Argent Rifle
