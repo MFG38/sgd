@@ -119,4 +119,17 @@ class SGDPlayer : PlayerPawn
 		DoFinisherDecay();
 		DoArgentCooldown();
 	}
+
+	override bool OnGiveSecret(bool printmsg, bool playsound)
+	{
+		let fuck = JGP_HudMessageHandler(StaticEventHandler.Find("JGP_HudMessageHandler"));
+		let msg = JGP_HudMessage.Create(
+			"You found a secret!", 0, 'OriginalBigFont', Font.CR_Red, (160,172),
+			JGP_HudMessage.ALIGN_CENTER, 0, 0, 70, 35, (0.5,0.5));
+		if(msg) fuck.hudmessages.Push(msg);
+
+		A_StartSound("misc/secret", CHAN_AUTO);
+
+		return false;
+	}
 }
