@@ -53,7 +53,7 @@ SGD_OM_RBFG = "BFG9000:n korvike";
 SGD_OM_RBACKP = "Ammusrepun korvike";
 SGD_OM_CLASSICPWR = "Klassiset powerupit";
 
-SGD_OM_SECRETMSG = "Poista GZDoomin sala-alueviesti";
+SGD_SECRETMSG = "Löysit sala-alueen!";
 
 SGD_CVAR_FMSG0 = "Pois päältä";
 SGD_CVAR_FMSG1 = "Ei näppäinohjetta";

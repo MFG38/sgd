@@ -53,7 +53,7 @@ SGD_OM_RBFG = "BFG9000 replacement";
 SGD_OM_RBACKP = "Backpack replacement";
 SGD_OM_CLASSICPWR = "Classic powerups";
 
-SGD_OM_SECRETMSG = "Disable GZDoom secret message";
+SGD_SECRETMSG = "You found a secret!";
 
 SGD_CVAR_FMSG0 = "Off";
 SGD_CVAR_FMSG1 = "No button prompt";

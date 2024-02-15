@@ -103,6 +103,8 @@ Drone sounds: Railbot
 
 Chainsaw nail firing and hit sounds: id Software, Raven Software
 
+Secret find sound: id Software (from Quake)
+
 
 =============
 == SPRITES ==
