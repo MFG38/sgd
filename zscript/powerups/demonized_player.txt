@@ -120,7 +120,7 @@ class DemonizedPlayer : PlayerPawn
 		let fuck = JGP_HudMessageHandler(StaticEventHandler.Find("JGP_HudMessageHandler"));
 		let msg = JGP_HudMessage.Create(
 			StringTable.Localize("$SGD_SECRETMSG"), 0, 'OriginalBigFont', Font.CR_Red,
-			(160,172), JGP_HudMessage.ALIGN_CENTER, 0, 0, 70, 35, (0.5,0.5));
+			(160,163), JGP_HudMessage.ALIGN_CENTER, 0, 0, 70, 35, (0.5,0.5));
 		if(msg) fuck.hudmessages.Push(msg);
 
 		A_StartSound("misc/secret", CHAN_AUTO);

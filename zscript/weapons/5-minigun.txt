@@ -78,7 +78,7 @@ class SGDMinigun : SGDWeapon
 			invoker.fsindex = 0;
 		}
 		MNGG ABABABABABABABAB 2 {
-			A_MinigunFinisher(3, invoker.fsindex % 2 == 0 ? SetStateLabel("Flash1") : SetStateLabel("Flash2"));
+			A_MinigunFinisher(3, invoker.fsindex);
 			invoker.fsindex++;
 		}
 		MNGG A 3 A_MinigunWindDown;
@@ -94,7 +94,7 @@ class SGDMinigun : SGDWeapon
 			invoker.fsindex = 0;
 		}
 		MNGG ABABABABABABABABABABABABABAB 2 {
-			A_MinigunFinisher(5, invoker.fsindex % 2 == 0 ? SetStateLabel("Flash1") : SetStateLabel("Flash2"));
+			A_MinigunFinisher(5, invoker.fsindex);
 			invoker.fsindex++;
 		}
 		MNGG A 3 A_MinigunWindDown;
@@ -106,7 +106,7 @@ class SGDMinigun : SGDWeapon
 		Goto ReadyLoop;
 	Finisher3:
 		TNT1 A 0 {
-			A_BeginFinisher(false);
+			A_BeginFinisher(true);
 			invoker.fsindex = 0;
 		}
 		MNGG A 6 A_MinigunWindup;
@@ -115,7 +115,7 @@ class SGDMinigun : SGDWeapon
 		MNGG AB 4;
 		MNGG AB 3;
 		MNGG ABABABABABABABABABABABABABABABABABAB 2 {
-			A_MinigunFinisher(7, invoker.fsindex % 2 == 0 ? SetStateLabel("Flash1") : SetStateLabel("Flash2"));
+			A_MinigunFinisher(7, invoker.fsindex);
 			invoker.fsindex++;
 		}
 		MNGG A 3 A_MinigunWindDown;
@@ -181,7 +181,7 @@ extend class SGDMinigun
 		ACS_NamedExecute("FeatTracker",0);
 	}
 
-	action void A_MinigunFinisher(int bullets, statelabel flashstate)
+	action void A_MinigunFinisher(int bullets, int fsindex)
 	{
 		if (player == null)
 		{
@@ -194,8 +194,11 @@ extend class SGDMinigun
 			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
 			{
 				return;
-			}	
-			player.SetPsprite(PSP_FLASH, weap.FindState(flashstate), true);
+			}
+
+			statelabel fs;
+			if(fsindex % 2 == 0) fs = "Flash1"; else fs = "Flash2";
+			player.SetPsprite(PSP_FLASH, weap.FindState(fs), true);
 		}
 		player.mo.PlayAttacking2 ();
 
