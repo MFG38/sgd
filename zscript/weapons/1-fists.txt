@@ -75,6 +75,7 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 		
 		PlayerInfo p = players[consoleplayer];
 		Shader.SetEnabled(p,"OldVideo",true);
+		owner.A_SetBlend("FF FF FF", 0.4, 20);
 	}
 	
 	override void EndEffect()
@@ -83,6 +84,18 @@ class FistFinisherTimeFreeze : PowerTimeFreezer
 		
 		PlayerInfo p = players[consoleplayer];
 		Shader.SetEnabled(p,"OldVideo",false);
+		owner.A_SetBlend("FF FF FF", 0.4, 20);
+	}
+
+	override void DoEffect()
+	{
+		super.DoEffect();
+		
+		if (Level.maptime & 1 || (Owner != null && Owner.player != null && Owner.player.cheats & CF_PREDICTING))
+		{
+			return;
+		}
+		Level.SetFrozen(true);
 	}
 
 	override bool IsBlinking()
