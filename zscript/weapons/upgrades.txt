@@ -2,26 +2,26 @@
 // than the actor definitions. The actual code for how the upgrades act is in the code for
 // the weapons themselves - look into those if you wish to find out how the upgrades work.
 
-class Rifle_Accuracy : WeaponUpgrade {}
-class Rifle_FireRate : WeaponUpgrade {}
+class Rifle_Accuracy : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_RIFLEACCURACY"; } }
+class Rifle_FireRate : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_RIFLEFIRERATE"; } }
 
-class Shotgun_Cone : WeaponUpgrade {}
-class Shotgun_Range : WeaponUpgrade {}
+class Shotgun_Cone : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_SHOTTYSPREAD"; } }
+class Shotgun_Range : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_SHOTTYRANGE"; } }
 
-class SSG_Recoil : WeaponUpgrade {}
-class SSG_ReloadSpeed : WeaponUpgrade {}
+class SSG_Recoil : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_SSGRECOIL"; } }
+class SSG_ReloadSpeed : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_SSGRELSPEED"; } }
 
-class Minigun_Accuracy : WeaponUpgrade {}
-class Minigun_Windup : WeaponUpgrade {}
+class Minigun_Accuracy : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_MINIGUNACCURACY"; } }
+class Minigun_Windup : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_MINIGUNWINDUP"; } }
 
-class Bazooka_FireRate : WeaponUpgrade {}
-class Bazooka_Recoil : WeaponUpgrade {}
+class Bazooka_FireRate : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_BAZOOKAFIRERATE"; } }
+class Bazooka_Recoil : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_BAZOOKARECOIL"; } }
 
-class ArgentRifle_Cooldown : WeaponUpgrade {}
+class ArgentRifle_Cooldown : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_ARGENTCOOLDOWN"; } }
 
-class Flamethrower_FlameLinger : WeaponUpgrade {}
+class Flamethrower_FlameLinger : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_FLAMERLINGER"; } }
 
-class Chainsaw_Damage : WeaponUpgrade {}
+class Chainsaw_Damage : WeaponUpgrade { Default { Tag "$SGD_UPGRADE_CHAINSAWDAMAGE"; } }
 
 class AllUpgrades : CustomInventory
 // A shortcut item that gives all the weapon upgrades. Made simply for testing purposes. If you

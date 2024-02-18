@@ -16,13 +16,84 @@ class SGDStaticHandler : StaticEventHandler
 
 class SGDMainHandler : EventHandler
 {
+	bool TrackFeatCompletion(int index, class<Counter> token, int count, class<WeaponUpgrade> reward)
+	{
+		PlayerInfo p = players[consoleplayer];
+
+		if(p.mo.CheckInventory(token, count))
+		{
+			p.mo.GiveInventory(reward, 1);
+			return true;
+		}
+		return false;
+	}
+
+	override void WorldTick()
+	{
+		// Test feat, to be tracked only when debug mode is enabled.
+		if(CVar.FindCVar('sgd_debugmode').GetBool() == true) {
+			TrackFeatCompletion(0, "ZombiemenKilled", 1, "Rifle_FireRate");
+		}
+
+		TrackFeatCompletion(1, "ZombiemenKilled",			75,		"Rifle_Accuracy");
+		TrackFeatCompletion(2, "ImpsKilled",				50,		"Rifle_Accuracy");
+		TrackFeatCompletion(3, "CacodemonsKilled",			50,		"Rifle_Accuracy");
+
+		TrackFeatCompletion(4, "ZombiemenKilled",			150,	"Rifle_FireRate");
+		TrackFeatCompletion(5, "ImpsKilled",				100,	"Rifle_FireRate");
+		TrackFeatCompletion(6, "PinkiesKilled",				50,		"Rifle_FireRate");
+
+		TrackFeatCompletion(7, "ShotgunnersKilled",			125,	"Shotgun_Cone");
+		TrackFeatCompletion(8, "PinkiesKilled",				100,	"Shotgun_Cone");
+		TrackFeatCompletion(9, "LostSoulsKilled",			150,	"Shotgun_Cone");
+
+		TrackFeatCompletion(10, "ShotgunnersKilled",		200,	"Shotgun_Range");
+		TrackFeatCompletion(11, "ImpsKilled",				125,	"Shotgun_Range");
+		TrackFeatCompletion(12, "PinkiesKilled",			125,	"Shotgun_Range");
+
+		TrackFeatCompletion(13, "SpectresKilled",			100,	"SSG_Recoil");
+		TrackFeatCompletion(14, "CacodemonsKilled",			100,	"SSG_Recoil");
+		TrackFeatCompletion(15, "HellKnightsKilled",		75,		"SSG_Recoil");
+
+		TrackFeatCompletion(16, "SpectresKilled",			125,	"SSG_ReloadSpeed");
+		TrackFeatCompletion(17, "CacodemonsKilled",			150,	"SSG_ReloadSpeed");
+		TrackFeatCompletion(18, "ArchvilesKilled",			50,		"SSG_ReloadSpeed");
+
+		TrackFeatCompletion(19, "ChaingunnersKilled",		50,		"Minigun_Accuracy");
+		TrackFeatCompletion(20, "HellKnightsKilled",		50,		"Minigun_Accuracy");
+		TrackFeatCompletion(21, "BaronsKilled",				25,		"Minigun_Accuracy");
+
+		TrackFeatCompletion(22, "ChaingunnersKilled",		100,	"Minigun_Windup");
+		TrackFeatCompletion(23, "HellKnightsKilled",		100,	"Minigun_Windup");
+		TrackFeatCompletion(24, "BaronsKilled",				75,		"Minigun_Windup");
+
+		TrackFeatCompletion(25, "BaronsKilled",				100,	"Bazooka_FireRate");
+		TrackFeatCompletion(26, "RevenantsKilled",			150,	"Bazooka_FireRate");
+		TrackFeatCompletion(27, "MancubiKilled",			100,	"Bazooka_FireRate");
+
+		TrackFeatCompletion(28, "PainElementalsKilled",		50,		"Bazooka_Recoil");
+		TrackFeatCompletion(29, "RevenantsKilled",			100,	"Bazooka_Recoil");
+		TrackFeatCompletion(30, "ArachnotronsKilled",		75,		"Bazooka_Recoil");
+
+		TrackFeatCompletion(31, "SpiderMastermindsKilled",	10,		"ArgentRifle_Cooldown");
+		TrackFeatCompletion(32, "CyberdemonsKilled",		10,		"ArgentRifle_Cooldown");
+		TrackFeatCompletion(33, "PainElementalsKilled",		100,	"ArgentRifle_Cooldown");
+
+		TrackFeatCompletion(34, "ArchvilesKilled",			50,		"Flamethrower_FlameLinger");
+		TrackFeatCompletion(35, "MancubiKilled",			75,		"Flamethrower_FlameLinger");
+		TrackFeatCompletion(36, "ArachnotronsKilled",		50,		"Flamethrower_FlameLinger");
+
+		TrackFeatCompletion(37, "ChaingunnersKilled",		200,	"Chainsaw_Damage");
+		TrackFeatCompletion(38, "SpectresKilled",			75,		"Chainsaw_Damage");
+		TrackFeatCompletion(39, "PainElementalsKilled",		75,		"Chainsaw_Damage");
+	}
+
 	override void WorldThingDied(WorldEvent e)
 	{
-		// TODO: Convert feat system from ACS to ZScript. WorldThingDied
-		// is likely to be the place it needs to be handled.
+		let fuck = JGP_HudMessageHandler(StaticEventHandler.Find("JGP_HudMessageHandler"));
 		
 		// Inventory reset if the player or an Icon of Sin dies
-		if(e.Thing.GetClassName() == "SGDPlayer" || e.Thing.GetClassName() == "BossBrain")
+		/* if(e.Thing.GetClassName() == "SGDPlayer" || e.Thing.GetClassName() == "BossBrain")
 		{
 			PlayerInfo p = players[consoleplayer];
 
@@ -45,7 +116,7 @@ class SGDMainHandler : EventHandler
 			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
 			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
 			p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF);
-		}
+		} */
 	}
 
 	/* override void WorldLinePreActivated(WorldEvent e)

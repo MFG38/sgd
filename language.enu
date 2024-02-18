@@ -90,6 +90,7 @@ SGD_FMSG_USE = "ALTFIRE TO USE";
 //SGD_FMSG_USE2 = " TO USE";
 
 SGD_FEATACCOMPLISHED = "FEAT ACCOMPLISHED: ";
+SGD_FEAT00 = "1 zombieman killed";
 SGD_FEAT01 = "75 zombiemen killed";
 SGD_FEAT02 = "50 imps killed";
 SGD_FEAT03 = "50 cacodemons killed";
