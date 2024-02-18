@@ -286,7 +286,6 @@ extend class SGDShotgun
 
 			LineAttack(xspread,range,yspread,dmg,'Normal',"BulletPuff");
 		}
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_ShotgunSlug()
@@ -310,7 +309,6 @@ extend class SGDShotgun
 		A_AlertMonsters();
 		A_StartSound("DukeShotgun/slug",CHAN_WEAPON);
 		SpawnPlayerMissile("ShotgunSlug");
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_ShotgunBouncySlug(double ang)
@@ -334,6 +332,5 @@ extend class SGDShotgun
 		A_AlertMonsters();
 		A_StartSound("DukeShotgun/slug",CHAN_WEAPON);
 		SpawnPlayerMissile("ShotgunBouncySlug",angle+ang);
-		ACS_NamedExecute("FeatTracker",0);
 	}
 }

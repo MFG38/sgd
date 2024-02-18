@@ -178,7 +178,6 @@ extend class SGDMinigun
 		}
 
 		LineAttack(xspread,MISSILERANGE,yspread,dmg,'Normal',"BulletPuff");
-		ACS_NamedExecute("FeatTracker",0);
 	}
 
 	action void A_MinigunFinisher(int bullets, int fsindex)
@@ -213,6 +212,5 @@ extend class SGDMinigun
 
 			LineAttack(xspread,MISSILERANGE,yspread,dmg,'Normal',"BulletPuff");
 		}
-		ACS_NamedExecute("FeatTracker",0);
 	}
 }

@@ -157,6 +157,5 @@ extend class SGDDarkMatterCannon
 		A_SetBlend("99 33 99",0.5,15);
 		A_StartSound("DMC/Fire",CHAN_WEAPON);
 		SpawnPlayerMissile("DarkMatterProjectile");
-		ACS_NamedExecute("FeatTracker",0);
 	}
 }

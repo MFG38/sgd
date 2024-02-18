@@ -124,7 +124,6 @@ extend class SGDFists
 		if(FindInventory("PowerStrength")) { dmg *= 8; }
 
 		LineAttack(angle,DEFMELEERANGE,pitch,dmg,'Melee',"BulletPuff",LAF_ISMELEEATTACK,t);
-		ACS_NamedExecute("FeatTracker",0);
 		
 		if(t.linetarget)
 		{
@@ -150,7 +149,6 @@ extend class SGDFists
 		A_Recoil(-10);
 		LineAttack(angle,64,pitch,100,damagetype,"BulletPuff",LAF_ISMELEEATTACK,t);
 		//A_RadiusThrust(CountInv("FistFinisherThrustScaler") * 2000,64,RTF_NOTMISSILE);
-		ACS_NamedExecute("FeatTracker",0);
 		
 		if(t.linetarget)
 		{

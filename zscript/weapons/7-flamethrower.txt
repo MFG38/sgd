@@ -276,8 +276,6 @@ extend class SGDFlamethrower
 		{
 			SpawnPlayerMissile("FlamethrowerFire",ang);
 		}
-		
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_SpitFlameWall()
@@ -300,7 +298,6 @@ extend class SGDFlamethrower
 		SpawnPlayerMissile("FlamethrowerFlameWall",angle-14.0);
 		SpawnPlayerMissile("FlamethrowerFlameWall",angle-16.0);
 		A_AlertMonsters();
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_SpitABFlameWall()
@@ -323,13 +320,11 @@ extend class SGDFlamethrower
 		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-14.0);
 		SpawnPlayerMissile("FlamethrowerFlameWallAfterburner",angle-16.0);
 		A_AlertMonsters();
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_FireCBeam()
 	{
 		SpawnPlayerMissile("FlamethrowerCBeam");
 		A_AlertMonsters();
-		ACS_NamedExecute("FeatTracker",0);
 	}
 }

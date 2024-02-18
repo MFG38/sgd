@@ -351,7 +351,6 @@ extend class SGDSuperShotgun
 			
 			LineAttack(xspread,MISSILERANGE,yspread,dmg,'Normal',"BulletPuff");
 		}
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_SSGSploderShot()
@@ -379,8 +378,6 @@ extend class SGDSuperShotgun
 
 		SpawnPlayerMissile("SSGExplosiveShot");
 		A_Recoil(5);
-
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_SSGNapalmShot()
@@ -408,8 +405,6 @@ extend class SGDSuperShotgun
 
 		SpawnPlayerMissile("SSGNapalmShot");
 		A_Recoil(5);
-
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_SSGMegaShot()
@@ -441,7 +436,5 @@ extend class SGDSuperShotgun
 			LineAttack(xspread,MISSILERANGE,yspread,50,'Normal',"BulletPuff");
 		}
 		A_Recoil(2);
-		
-		ACS_NamedExecute("FeatTracker",0);
 	}
 }

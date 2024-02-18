@@ -21,11 +21,7 @@ class SGDWeapon : Weapon
 		TNT1 A 0;
 		Goto ReadyLoop;
 	ReadyLoop:
-		"####" "#" 1
-		{
-			A_WeaponReady();
-			ACS_NamedExecute("FeatTracker",0);
-		}
+		"####" "#" 1 A_WeaponReady;
 		Loop;
 	Fire:
 		TNT1 A 0;

@@ -204,8 +204,6 @@ extend class SGDChainsaw
 		{
 			A_StartSound("chainsaw/attack",CHAN_WEAPON);
 		}
-		
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_FireNail()

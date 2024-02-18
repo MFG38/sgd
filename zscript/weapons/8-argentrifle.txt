@@ -29,19 +29,11 @@ class SGDArgentRifle : SGDWeapon
 	ReadyLoop:
 		STPO A 0 A_JumpIfInventory("ArgentRifle_Cooldown",1,"ReadyLoopUpgraded");
 		STPO A 0 A_TakeInventory("ArgentRifleHeat",1);
-		STPO ABCABCABCABC 2
-		{
-			A_WeaponReady();
-			ACS_NamedExecute("FeatTracker",0);
-		}
+		STPO ABCABCABCABC 2 A_WeaponReady;
 		Loop;
 	ReadyLoopUpgraded:
 		STPO A 0 A_TakeInventory("ArgentRifleHeat",1);
-		STPO ABCABCABC 2
-		{
-			A_WeaponReady();
-			ACS_NamedExecute("FeatTracker",0);
-		}
+		STPO ABCABCABC 2 A_WeaponReady;
 		Loop;
 	Fire:
 		STPO D 0 A_JumpIfInventory("ArgentRifleHeat",100,"OverheatLoop");
@@ -209,14 +201,12 @@ extend class SGDArgentRifle
 		A_AlertMonsters();
 		A_StartSound("argentrifle/fire",CHAN_WEAPON);
 		SpawnPlayerMissile("ArgentRifleBall");
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_ArgentRifleLaser(double ang, int xoffset)
 	{
 		A_AlertMonsters();
 		SpawnPlayerMissile("ArgentRifleLaser",angle+ang,xoffset);
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_ArgentBomb()

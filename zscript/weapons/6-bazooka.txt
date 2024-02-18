@@ -204,8 +204,6 @@ extend class SGDBazooka
 		{
 			A_Recoil(2);
 		}
-		
-		ACS_NamedExecute("FeatTracker",0);
 	}
 	
 	action void A_BazookaSeeker(double ang)
@@ -213,6 +211,5 @@ extend class SGDBazooka
 		A_AlertMonsters();
 		A_StartSound("bazooka/fire",CHAN_WEAPON);
 		SpawnPlayerMissile("BazookaSeeker",angle+ang);
-		ACS_NamedExecute("FeatTracker",0);
 	}
 }
