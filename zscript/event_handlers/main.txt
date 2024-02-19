@@ -116,6 +116,16 @@ class SGDMainHandler : EventHandler
 		TrackFeatCompletion(39, "PainElementalsKilled",		75,		"Chainsaw_Damage");
 	}
 
+	override void WorldThingDied(WorldEvent e)
+	{
+		if(e.Thing && e.Thing.bIsMonster) {
+			String lastKilled = e.Thing.GetClassName();
+			if(e.Thing.GetClassName() != lastKilled) {
+				buffer = 0;
+			}
+		}
+	}
+
 	override void PlayerEntered(PlayerEvent e)
 	{
 		// The inventory reset really only needs to be done here.
