@@ -32,7 +32,6 @@ class SGDChainsaw : SGDWeapon
 		{
 			A_WeaponReady();
 			A_StartSound("chainsaw/idle",CHAN_WEAPON);
-			ACS_NamedExecute("FeatTracker",0);
 		}
 		Loop;
 	Fire:

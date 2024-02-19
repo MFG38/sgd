@@ -1,3 +1,7 @@
+// Old ACS-based feat system that was used prior to v2.2. Keeping around
+// strictly for historical purposes. If you're curious about the code that
+// handled the feats prior to the migration, look no further.
+
 #library "feats"
 #include "zcommon.acs"
 #include "miscdef.acs"

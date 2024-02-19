@@ -16,16 +16,41 @@ class SGDStaticHandler : StaticEventHandler
 
 class SGDMainHandler : EventHandler
 {
-	bool TrackFeatCompletion(int index, class<Counter> token, int count, class<WeaponUpgrade> reward)
+	private bool TrackFeatCompletion(int index, class<Counter> token, int count, class<WeaponUpgrade> reward)
 	{
 		PlayerInfo p = players[consoleplayer];
+		int buffer;
 
-		if(p.mo.CheckInventory(token, count))
+		if(p.mo.CountInv(token) >= count)
 		{
+			DisplayFeatMessage(index, reward);
 			p.mo.GiveInventory(reward, 1);
 			return true;
 		}
 		return false;
+	}
+
+	private void DisplayFeatMessage(int index, class<WeaponUpgrade> reward)
+	{
+		let fuck = JGP_HudMessageHandler(StaticEventHandler.Find("JGP_HudMessageHandler"));
+		let upgrade = WeaponUpgrade(Actor.Spawn(reward));
+		PlayerInfo p = players[consoleplayer];
+		String msg1a, msg1b, msg2a, msg2b;
+
+		msg1a = StringTable.Localize("$SGD_FEATACCOMPLISHED");
+		msg1b = StringTable.Localize(String.Format("$SGD_FEAT%02i", index));
+		msg2a = !p.mo.FindInventory(reward) ? StringTable.Localize("$SGD_UPGRADEAWARDED") : StringTable.Localize("$SGD_UPGRADEALREADYAWARDED");
+		msg2b = StringTable.Localize(upgrade.GetTag());
+
+		let msg1 = JGP_HudMessage.Create(
+			msg1a..msg1b, 1, 'OriginalBigFont', Font.CR_Red,
+			(160,36), JGP_HudMessage.ALIGN_CENTER, 0, 0, 105, 35, (0.5,0.5));
+		if(msg1) fuck.hudmessages.Push(msg1);
+
+		let msg2 = JGP_HudMessage.Create(
+			msg2a..msg2b, 2, 'SmallFont', Font.CR_Red,
+			(160,48), JGP_HudMessage.ALIGN_CENTER, 0, 0, 105, 35, (0.5,0.5));
+		if(msg2) fuck.hudmessages.Push(msg2);
 	}
 
 	override void WorldTick()
@@ -87,67 +112,6 @@ class SGDMainHandler : EventHandler
 		TrackFeatCompletion(38, "SpectresKilled",			75,		"Chainsaw_Damage");
 		TrackFeatCompletion(39, "PainElementalsKilled",		75,		"Chainsaw_Damage");
 	}
-
-	override void WorldThingDied(WorldEvent e)
-	{
-		let fuck = JGP_HudMessageHandler(StaticEventHandler.Find("JGP_HudMessageHandler"));
-		
-		// Inventory reset if the player or an Icon of Sin dies
-		/* if(e.Thing.GetClassName() == "SGDPlayer" || e.Thing.GetClassName() == "BossBrain")
-		{
-			PlayerInfo p = players[consoleplayer];
-
-			// Tokens
-			p.mo.TakeInventory("FinisherToken",0x7FFFFFFF);
-			p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF);
-			p.mo.TakeInventory("RadSuitTimer",0x7FFFFFFF);
-
-			// Powerups
-			p.mo.TakeInventory("FieldMedPack",0x7FFFFFFF);
-			p.mo.TakeInventory("DemonizerOrb",0x7FFFFFFF);
-			p.mo.TakeInventory("HolyWaterGrenadePickup",0x7FFFFFFF);
-			p.mo.TakeInventory("SGDRadSuit",0x7FFFFFFF);
-			p.mo.TakeInventory("SGDLightAmpGoggles",0x7FFFFFFF);
-
-			// Powerup givers
-			p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
-			p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
-			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
-			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
-			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
-			p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF);
-		} */
-	}
-
-	/* override void WorldLinePreActivated(WorldEvent e)
-	{
-		// Inventory reset on exit
-		if(e.ActivatedLine.Special == 243 || e.ActivatedLine.Special == 244)
-		{
-			e.ShouldActivate = 1;
-			PlayerInfo p = players[consoleplayer];
-
-			// Tokens
-			p.mo.TakeInventory("FinisherToken",0x7FFFFFFF);
-			p.mo.TakeInventory("DemonizerTimer",0x7FFFFFFF);
-			p.mo.TakeInventory("RadSuitTimer",0x7FFFFFFF);
-
-			// Powerups
-			p.mo.TakeInventory("FieldMedPack",0x7FFFFFFF);
-			p.mo.TakeInventory("DemonizerOrb",0x7FFFFFFF);
-			p.mo.TakeInventory("HolyWaterGrenadePickup",0x7FFFFFFF);
-			p.mo.TakeInventory("SGDRadSuit",0x7FFFFFFF);
-			p.mo.TakeInventory("SGDLightAmpGoggles",0x7FFFFFFF);
-
-			// Powerup givers
-			p.mo.TakeInventory("LightAmpGogglesGiver",0x7FFFFFFF);
-			p.mo.TakeInventory("RadSuitGiver",0x7FFFFFFF);
-			p.mo.TakeInventory("DemonizerMorph",0x7FFFFFFF);
-			p.mo.TakeInventory("FistFinisherTimeFreeze",0x7FFFFFFF);
-			p.mo.TakeInventory("FinisherInvul",0x7FFFFFFF);
-			p.mo.TakeInventory("FinisherSpeed",0x7FFFFFFF);
-		}
-	} */
 
 	override void PlayerEntered(PlayerEvent e)
 	{
