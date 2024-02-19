@@ -9,6 +9,7 @@
 - Tweaked the behavior of the Fists' Level 3 finisher (now it actually freezes time instead of
   effectively just slowing it down).
 - Migrated the feat system from ACS to ZScript.
+- Reduced the number of Arch-Vile kills required for the SSG reload speed upgrade from 50 to 25.
 
 [2023-03-03] v2.1.1:
 - Finisher bar no longer obstructs map statistics in automap view.

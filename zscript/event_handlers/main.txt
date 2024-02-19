@@ -85,7 +85,7 @@ class SGDMainHandler : EventHandler
 
 		TrackFeatCompletion(16, "SpectresKilled",			125,	"SSG_ReloadSpeed");
 		TrackFeatCompletion(17, "CacodemonsKilled",			150,	"SSG_ReloadSpeed");
-		TrackFeatCompletion(18, "ArchvilesKilled",			50,		"SSG_ReloadSpeed");
+		TrackFeatCompletion(18, "ArchvilesKilled",			25,		"SSG_ReloadSpeed");
 
 		TrackFeatCompletion(19, "ChaingunnersKilled",		50,		"Minigun_Accuracy");
 		TrackFeatCompletion(20, "HellKnightsKilled",		50,		"Minigun_Accuracy");
