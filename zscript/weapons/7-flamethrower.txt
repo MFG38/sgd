@@ -27,11 +27,7 @@ class SGDFlamethrower : SGDWeapon
 		FLMG A 0;
 		Goto ReadyLoop;
 	ReadyLoop:
-		FLMG BCD 2
-		{
-			A_WeaponReady();
-			ACS_NamedExecute("FeatTracker",0);
-		}
+		FLMG BCD 2 A_WeaponReady();
 		Loop;
 	Fire:
 		FLMG E 2 A_FlamerAttack;

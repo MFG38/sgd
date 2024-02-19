@@ -16,14 +16,16 @@ class SGDStaticHandler : StaticEventHandler
 
 class SGDMainHandler : EventHandler
 {
+	int buffer;
+
 	private bool TrackFeatCompletion(int index, class<Counter> token, int count, class<WeaponUpgrade> reward)
 	{
 		PlayerInfo p = players[consoleplayer];
-		int buffer;
 
-		if(p.mo.CountInv(token) >= count)
+		if(!buffer && p.mo.CountInv(token) >= count)
 		{
-			DisplayFeatMessage(index, reward);
+			buffer++;
+			if(buffer == 1) DisplayFeatMessage(index, reward);
 			p.mo.GiveInventory(reward, 1);
 			return true;
 		}
@@ -45,12 +47,13 @@ class SGDMainHandler : EventHandler
 		let msg1 = JGP_HudMessage.Create(
 			msg1a..msg1b, 1, 'OriginalBigFont', Font.CR_Red,
 			(160,36), JGP_HudMessage.ALIGN_CENTER, 0, 0, 105, 35, (0.5,0.5));
-		if(msg1) fuck.hudmessages.Push(msg1);
-
 		let msg2 = JGP_HudMessage.Create(
 			msg2a..msg2b, 2, 'SmallFont', Font.CR_Red,
 			(160,48), JGP_HudMessage.ALIGN_CENTER, 0, 0, 105, 35, (0.5,0.5));
-		if(msg2) fuck.hudmessages.Push(msg2);
+		if(msg1 && msg2) {
+			fuck.hudmessages.Push(msg1);
+			fuck.hudmessages.Push(msg2);
+		}
 	}
 
 	override void WorldTick()
