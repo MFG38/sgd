@@ -17,6 +17,7 @@ class SGDStaticHandler : StaticEventHandler
 class SGDMainHandler : EventHandler
 {
 	int buffer;
+	Class<Actor> lastKilled;
 
 	private bool TrackFeatCompletion(int index, class<Counter> token, int count, class<WeaponUpgrade> reward)
 	{
@@ -119,9 +120,11 @@ class SGDMainHandler : EventHandler
 	override void WorldThingDied(WorldEvent e)
 	{
 		if(e.Thing && e.Thing.bIsMonster) {
-			String lastKilled = e.Thing.GetClassName();
-			if(e.Thing.GetClassName() != lastKilled) {
+			String k = e.Thing.GetClassName();
+
+			if(k != lastKilled) {
 				buffer = 0;
+				lastKilled = k;
 			}
 		}
 	}
